@@ -69,7 +69,7 @@ function drawWarlord(){
  if(!arena){const r=s.gauntlet.room;ctx.textAlign='center';ctx.font='bold 16px monospace';ctx.fillStyle='#e6c58a';ctx.fillText('ARMORY ENTRANCE',r.mainX,r.startY+42);}
 }
 function drawWarlordProp(o){
- if(s.active!=='warlord'||o.hp===0)return;if(['rack','dummy','shield'].includes(o.kind)&&warlordDecorReady())return;if(['wood','crate','barrel','wall','pillar','rubble'].includes(o.kind)&&warlordPropAtlas.complete&&warlordPropAtlas.naturalWidth)return;const x=o.x,y=o.y;
+ if(s.active!=='warlord'||o.hp===0||o.kind==='masonry')return;if(['rack','dummy','shield'].includes(o.kind)&&warlordDecorReady())return;if(['wood','crate','barrel','wall','pillar','rubble'].includes(o.kind)&&warlordPropAtlas.complete&&warlordPropAtlas.naturalWidth)return;const x=o.x,y=o.y;
  const b=(a,c,w,h,color)=>{ctx.fillStyle=color;ctx.fillRect(x+a,y+c,w,h)};
  if(['masonry','wall','pillar'].includes(o.kind)){warlordMaterial(ctx,1,x,y,o.w,o.h);b(0,0,o.w,4,'#9da7a2')}
  if(o.kind==='rack'){b(0,0,o.w,o.h,'#4a352b');for(let i=0;i<4;i++){b(7+i*16,3,4,26,'#bdc7c5');b(2+i*16,23,14,3,'#d0ad70')}b(0,0,o.w,5,'#9e7953')}

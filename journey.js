@@ -45,7 +45,6 @@ function drawHeroCamp(){
  journeySprite(7,120,260,104,70);journeySprite(7,W-224,260,104,70);
  journeySprite(8,80,H-180,148,90);journeySprite(6,W/2-53,H/2-58,106,112);
  ctx.globalAlpha=.65+Math.sin(s.elapsed*7)*.12;ctx.drawImage(warlordGlow,W/2-78,H/2-80,156,156);ctx.globalAlpha=1;
- const companions=['mage','knight','rogue'].filter(c=>c!==selectedClass);
- companions.forEach((cls,i)=>showSprite(cls,W/2+(i?105:-105),H/2+65,66,80,'idle',i?-1:1,0,i+1));
+ drawCampCompanions();
  ctx.fillStyle='#e8c58d';ctx.font='bold 18px Georgia';ctx.textAlign='center';ctx.fillText('HEROES’ CAMP',W/2,42);ctx.restore();
 }

@@ -2,6 +2,16 @@
 
 ## Environment path update
 
+### Camp companions and stable wall textures
+
+The other two classes now defend camp against ordinary mobs, pursuing nearby targets and returning to their fireside positions afterward. Knight uses melee; Mage/Rogue fire real projectiles. Helpers use 75% of normal basic attack damage and a slightly slower attack interval, do not take damage, and remain in camp. Their kills use normal minion/reinforcement bookkeeping. Companion state resets with matches and clears upon dungeon simulation; boss selection already clears projectiles. Pausing stops all companion actions. `test-camp-allies.cjs` verifies independent kills by all three companion classes, kill accounting, pausing, dungeon exclusion and reset.
+
+Warlord masonry now uses a cached, world-anchored material pattern rather than restarting the texture at the visible camera edge. `test-walls.cjs` compares identical world-space wall pixels before/after scrolling for every theme on desktop/mobile, in addition to collision and reachability checks.
+
+### Raised wall perspective
+
+`walls.js` gives solid masonry and short wall blocks a raised, offset top, darker side/front faces, highlighted coping stones and cast/contact shadows. Necromancer uses pale funerary-stone caps against dark jade faces; Pyromancer uses warm copper/basalt caps against charcoal faces. Dungeon perimeter trim receives the same treatment. Existing materials are reused, with no new image downloads. Projection is cosmetic: movement, navigation, projectiles and gates retain their original footprint masks. `test-walls.cjs` captures desktop/mobile views and verifies unchanged masks, objective reachability and solid movement blocking for all three environments.
+
 ### Campsite floor and buff artwork
 
 Heroes' Camp now uses detailed grass, packed earth, rustic cobblestone and forest-litter materials from `assets/camp-materials-v1.png`. The ground is composed once into a cached camp canvas. Buffs use higher-detail sword/shield/crystal/hourglass sprites in 80px UI canvases and on the reward shrine. Active and spent shrine artwork replaces the plain rectangular altar. The atlas is embedded for offline play; exact benefits, costs and durations remain unchanged and visible. `assets/camp-buffs-v1.md` records the generation and transparency-cleanup prompts. `test-camp-buffs.cjs` checks all four distinct icons, high-density canvases, unchanged config/masks, exact reward copy and touch/mouse claiming.
@@ -12,7 +22,7 @@ Heroes' Camp now uses detailed grass, packed earth, rustic cobblestone and fores
 
 The north gate is now an open royal archway for Warlord, a crypt doorway for Necromancer, and carved volcanic pillars for Pyromancer. Two explicit side-post masks block the architectural supports while the central opening retains the existing immediate boss transition. Sprite opacity is never a collision source.
 
-The selection/waiting room is now Heroes' Camp, with seeded earth/grass, tents, campfire/cooking pot, bedrolls, supply table and the other two playable classes resting nearby. Camp props and companions are cosmetic; existing race, wave, health and boss-order mechanics remain intact. `assets/journey-v1.md` records the prompt and integration details. `test-journey.cjs` checks camp labeling and all three entrance transitions/geometry on desktop and mobile, with generated camp and entrance screenshots.
+The selection/waiting room is now Heroes' Camp, with seeded earth/grass, tents, campfire/cooking pot, bedrolls, supply table and the other two playable classes resting nearby. Camp props are cosmetic; companion heroes now assist against ordinary camp waves. Existing race, wave, health and boss-order mechanics remain intact. `assets/journey-v1.md` records the prompt and integration details. `test-journey.cjs` checks camp labeling and all three entrance transitions/geometry on desktop and mobile, with generated camp and entrance screenshots.
 
 ### Pyromancer environment update
 
