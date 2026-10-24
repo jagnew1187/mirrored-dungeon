@@ -2,6 +2,6 @@
   "name": "mirrored-dungeon",
   "version": "0.6.0",
   "private": true,
-  "scripts": {"start":"node serve.cjs", "build": "node integrate.cjs", "test": "node test-game.cjs && node test-environments.cjs && node test-warlord.cjs"},
+  "scripts": {"start":"node serve.cjs", "build": "node integrate.cjs", "test": "node test-game.cjs && node test-environments.cjs && node test-warlord.cjs && node test-necro.cjs && node test-pyro.cjs && node test-journey.cjs && node test-camp-buffs.cjs"},
   "devDependencies": {"playwright": "1.62.1"}
 }

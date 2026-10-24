@@ -37,7 +37,7 @@ function environmentArt(id,arena=false){
 }
 function drawThemedEnvironment(){
  const id=s.active;if(!ENVIRONMENTS[id]||!['gauntlet','boss'].includes(s.phase))return;
- if(id==='warlord'){drawWarlord();return}
+ if(id==='warlord'){drawWarlord();return}if(id==='necro'){drawNecro();return}if(id==='pyro'){drawPyro();return}
  const arena=s.phase==='boss',art=environmentArt(id,arena),top=cameraY();
  if(arena)ctx.drawImage(art,0,0);else{for(let y=Math.floor(top/512)*512;y<top+H;y+=512)ctx.drawImage(art,0,y)}
  ctx.fillStyle='#0b1423dd';ctx.fillRect(W/2-132,top+12,264,29);ctx.fillStyle=ENVIRONMENTS[id].accent;ctx.font='bold 16px monospace';ctx.textAlign='center';ctx.fillText(ENVIRONMENTS[id][arena?'arena':'gauntlet'].toUpperCase(),W/2,top+32);

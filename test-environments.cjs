@@ -4,6 +4,8 @@ let pw;try{pw=require('playwright')}catch{pw=require(path.resolve(path.dirname(p
  const page=await browser.newPage({viewport:{width:1440,height:1000}});await page.addInitScript(()=>window.requestAnimationFrame=()=>0);
  await page.goto('file:///'+path.resolve('index.html').replaceAll('\\','/'));await page.waitForFunction(()=>window.MirroredDungeonDebug);
  await page.waitForFunction(()=>document.getElementById('game').dataset.warlordDecor==='ready');
+ await page.waitForFunction(()=>document.getElementById('game').dataset.necroAssets==='ready');
+ await page.waitForFunction(()=>document.getElementById('game').dataset.pyroAssets==='ready');
  const images=[];
  for(const boss of ['warlord','pyro','necro'])for(const arena of [false,true]){
   const result=await page.evaluate(({boss,arena})=>{const d=MirroredDungeonDebug;d.reset();d.start();d.selectBoss(boss);const s=d.state(),mask=JSON.stringify(s.obstacles);d.draw();const unchanged=JSON.stringify(s.obstacles)===mask;

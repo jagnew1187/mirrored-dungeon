@@ -2,6 +2,34 @@
 
 ## Environment path update
 
+### Campsite floor and buff artwork
+
+Heroes' Camp now uses detailed grass, packed earth, rustic cobblestone and forest-litter materials from `assets/camp-materials-v1.png`. The ground is composed once into a cached camp canvas. Buffs use higher-detail sword/shield/crystal/hourglass sprites in 80px UI canvases and on the reward shrine. Active and spent shrine artwork replaces the plain rectangular altar. The atlas is embedded for offline play; exact benefits, costs and durations remain unchanged and visible. `assets/camp-buffs-v1.md` records the generation and transparency-cleanup prompts. `test-camp-buffs.cjs` checks all four distinct icons, high-density canvases, unchanged config/masks, exact reward copy and touch/mouse claiming.
+
+### Narrative cues, entrances and heroes' camp
+
+`journey.js` replaces painted `BOSS` and `GUARDED` floor text with a wounded scout giving a themed plea and directions, worn tracks along the main route, and a supply-cache cue on the eastern detour. Reward previews still show exact benefits, drawbacks and durations before commitment. Dialogue and collection never pause the race.
+
+The north gate is now an open royal archway for Warlord, a crypt doorway for Necromancer, and carved volcanic pillars for Pyromancer. Two explicit side-post masks block the architectural supports while the central opening retains the existing immediate boss transition. Sprite opacity is never a collision source.
+
+The selection/waiting room is now Heroes' Camp, with seeded earth/grass, tents, campfire/cooking pot, bedrolls, supply table and the other two playable classes resting nearby. Camp props and companions are cosmetic; existing race, wave, health and boss-order mechanics remain intact. `assets/journey-v1.md` records the prompt and integration details. `test-journey.cjs` checks camp labeling and all three entrance transitions/geometry on desktop and mobile, with generated camp and entrance screenshots.
+
+### Pyromancer environment update
+
+The Lava Cave and Fire Sanctuary now use `pyro.js` and embedded higher-detail volcanic material/prop atlases. The cave features rough basalt, carved volcanic walls, a copper-inlaid processional path, obsidian formations, altars, flame sconces and breakable charred barriers. The sanctuary has polished obsidian floors, ritual rings, a fire altar, braziers and four solid cover pillars. Ring markings and background ember cracks are decorative; hazards remain explicit game entities.
+
+Both fire vents and burning-floor hazards have cold, warning and active sprites with colored outlines and no `!` marker. Original damage intervals, timing and hit radius remain unchanged, along with boss abilities, inherited powers, rewards, route choices, competitive timers and seeded rival progression. Source art/prompts are in `assets/pyro-materials-v1.png`, `assets/pyro-props-v1.png` and `assets/pyro-art-v1.md`. The Warlord and Necromancer environments retain their implementations.
+
+`test-pyro.cjs` verifies all classes, deterministic room equivalence, mask preservation, reward lifecycle, boss transitions, real combat damage, projectile cover, physical boss navigation, active/recovery vent behavior, destroyed barrier passability and cleanup. Existing route and mobile tests cover the complete build. Physical iPhone Safari and human play-feel/balance testing remain outstanding.
+
+### Necromancer environment update
+
+The Halls of the Dead and Crypt now use dedicated higher-detail burial floors, funerary masonry, an engraved jade-inlaid ceremonial path, sarcophagi, hooded statues, crypt pillars, skull sconces with ghost light, candle altars, bone debris and breakable coffins. Rune traps have dormant, awakening and active sprite states with visible outlines and no `!` marker. Their existing slow, timing and radius are preserved. Coffin damage/debris states use the existing breakable collision system. `necro.js` defines the art and extra explicit prop masks; pixels never determine collisions.
+
+The direct/reward fork, offered rewards, numerical tradeoffs, running timer, summoners and inheritance remain operational. The crypt has four solid pillars with open space around each; targeting, shots and enemy navigation use the existing cover system. Both mirrors generate the same seeded room. Warlord and Pyromancer environment behavior is unchanged by this update.
+
+Source art and prompts are in `assets/necro-materials-v1.png`, `assets/necro-props-v1.png`, and `assets/necro-art-v1.md`. The build embeds both atlases for offline play. Run `node test-necro.cjs` for the 48 new checks covering each class, deterministic geometry, mask preservation, rewards, boss transition/damage, crypt cover and physical boss navigation, curse states, broken-coffin passability, victory and restart. Existing full-route desktop/mobile and rival tests also pass. Physical iPhone Safari and human balance evaluation remain untested; the rival remains the existing analytic simulation.
+
 ### Warlord vertical slice
 
 Sconces, braziers, throne and dais, banners, weapon racks, training dummies, and wall shields now use the matching `assets/warlord-decor-v1.png` atlas. `warlord-decor.js` caches scaled sprites and a warm light texture, then flickers light opacity. Throne-room layout, prop collision, and combat remain unchanged. Sampling bounds isolate the broad dais and rack to avoid neighboring sprite fragments. The source prompt is in `assets/warlord-decor-v1.md`.

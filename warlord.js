@@ -66,7 +66,7 @@ function drawWarlord(){
   ctx.fillStyle='#ffb7530c';ctx.fillRect(x-22,y+36,68,68);
  }
  if(arena)for(const x of [128,W-152]){if(warlordDecorReady()){warlordDecor(1,x-14,64,52,76);warlordLight(x+12,85,1.3);continue}box(x,100,24,32,'#4b4140');box(x-5,96,34,7,'#be9d68');box(x,80,24,17,'#e9823c');box(x+6,72,12,24,'#ffe0a0')}
- if(!arena){const r=s.gauntlet.room;ctx.textAlign='center';ctx.font='bold 16px monospace';ctx.fillStyle='#e6c58a';ctx.fillText('ARMORY ENTRANCE',r.mainX,r.startY+42);ctx.fillText('THRONE ROOM ↑',r.mainX,150)}
+ if(!arena){const r=s.gauntlet.room;ctx.textAlign='center';ctx.font='bold 16px monospace';ctx.fillStyle='#e6c58a';ctx.fillText('ARMORY ENTRANCE',r.mainX,r.startY+42);}
 }
 function drawWarlordProp(o){
  if(s.active!=='warlord'||o.hp===0)return;if(['rack','dummy','shield'].includes(o.kind)&&warlordDecorReady())return;if(['wood','crate','barrel','wall','pillar','rubble'].includes(o.kind)&&warlordPropAtlas.complete&&warlordPropAtlas.naturalWidth)return;const x=o.x,y=o.y;
