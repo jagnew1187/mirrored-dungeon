@@ -2,6 +2,13 @@
   "name": "mirrored-dungeon",
   "version": "0.6.0",
   "private": true,
-  "scripts": {"start":"node serve.cjs", "build": "node integrate.cjs", "test": "node test-game.cjs && node test-environments.cjs && node test-warlord.cjs && node test-necro.cjs && node test-pyro.cjs && node test-journey.cjs && node test-camp-buffs.cjs && node test-walls.cjs && node test-camp-allies.cjs"},
-  "devDependencies": {"playwright": "1.62.1"}
+  "scripts": {
+    "start": "node serve.cjs",
+    "build": "node integrate.cjs",
+    "test": "node test-game.cjs && node test-environments.cjs && node test-warlord.cjs && node test-necro.cjs && node test-pyro.cjs && node test-journey.cjs && node test-camp-buffs.cjs && node test-walls.cjs && node test-camp-allies.cjs && node test-combat.cjs && node test-hero-animation.cjs && node test-knight-gait.cjs && node test-knight-diagonals.cjs && node test-class-gaits.cjs && node test-boss-gaits.cjs && node test-boss-skills.cjs && node test-mob-animation.cjs",
+    "test:packaging": "node test-packaging.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
 }

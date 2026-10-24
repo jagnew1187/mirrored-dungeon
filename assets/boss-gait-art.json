@@ -1,0 +1,152 @@
+{
+  "warlord": {
+    "right": {
+      "cols": 3,
+      "file": "warlord-walk-right-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "southeast": {
+      "cols": 3,
+      "file": "warlord-walk-southeast-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "down": {
+      "cols": 3,
+      "file": "warlord-walk-down-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "southwest": {
+      "cols": 3,
+      "file": "warlord-walk-southwest-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "left": {
+      "cols": 3,
+      "file": "warlord-walk-left-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "northwest": {
+      "cols": 3,
+      "file": "warlord-walk-northwest-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "up": {
+      "cols": 3,
+      "file": "warlord-walk-up-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "northeast": {
+      "cols": 3,
+      "file": "warlord-walk-northeast-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    }
+  },
+  "pyro": {
+    "right": {
+      "cols": 3,
+      "file": "pyro-walk-right-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "southeast": {
+      "cols": 3,
+      "file": "pyro-walk-southeast-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "down": {
+      "cols": 3,
+      "file": "pyro-walk-down-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "southwest": {
+      "cols": 3,
+      "file": "pyro-walk-southwest-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "left": {
+      "cols": 3,
+      "file": "pyro-walk-left-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "northwest": {
+      "cols": 3,
+      "file": "pyro-walk-northwest-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "up": {
+      "cols": 3,
+      "file": "pyro-walk-up-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "northeast": {
+      "cols": 3,
+      "file": "pyro-walk-northeast-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    }
+  },
+  "necro": {
+    "right": {
+      "cols": 3,
+      "file": "necro-walk-right-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "southeast": {
+      "cols": 3,
+      "file": "necro-walk-southeast-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "down": {
+      "cols": 3,
+      "file": "necro-walk-down-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "southwest": {
+      "cols": 3,
+      "file": "necro-walk-southwest-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "left": {
+      "cols": 3,
+      "file": "necro-walk-left-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "northwest": {
+      "cols": 3,
+      "file": "necro-walk-northwest-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "up": {
+      "cols": 3,
+      "file": "necro-walk-up-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    },
+    "northeast": {
+      "cols": 3,
+      "file": "necro-walk-northeast-v2.png",
+      "idleFrame": 8,
+      "rows": 3
+    }
+  }
+}

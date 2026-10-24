@@ -1,0 +1,11 @@
+{
+  "right": {"file":"knight-walk-right-v2.png","cols":4,"rows":2},
+  "left": {"file":"knight-walk-left-v2.png","cols":4,"rows":2},
+  "down": {"file":"knight-walk-down-v2.png","cols":4,"rows":2},
+  "up": {"file":"knight-walk-up-v2.png","cols":4,"rows":2},
+  "idle": {"file":"knight-idle-v2.png","cols":4,"rows":1},
+  "southeast": {"file":"knight-walk-southeast-v3.png","cols":3,"rows":3,"idleFrame":8},
+  "southwest": {"file":"knight-walk-southwest-v3.png","cols":3,"rows":3,"idleFrame":8},
+  "northeast": {"file":"knight-walk-northeast-v4.png","cols":3,"rows":3,"idleFrame":8},
+  "northwest": {"file":"knight-walk-northwest-v3.png","cols":3,"rows":3,"idleFrame":8}
+}

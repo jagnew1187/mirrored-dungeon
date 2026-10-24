@@ -6,14 +6,14 @@ function campCompanions(){
 function updateCampCompanions(dt){
  if(s.phase!=='vault'){s.campFriends=null;return}
  for(const ally of campCompanions()){
-  const stats=CLASSES[ally.cls];ally.attackCd=Math.max(0,ally.attackCd-dt);ally.attackAnim=Math.max(0,ally.attackAnim-dt);ally.move=false;
+  const old={x:ally.x,y:ally.y};const stats=CLASSES[ally.cls];ally.attackCd=Math.max(0,ally.attackCd-dt);ally.attackAnim=Math.max(0,ally.attackAnim-dt);ally.move=false;
   let target=null,nearest=Infinity;
   for(const enemy of s.enemies){if(enemy.dead||enemy.type==='boss'||Math.hypot(enemy.x-ally.home.x,enemy.y-ally.home.y)>340)continue;
    const distance=Math.hypot(enemy.x-ally.x,enemy.y-ally.y);if(distance<nearest){nearest=distance;target=enemy}
   }
   const goal=target||ally.home,range=target?stats.range*.85:8,dx=goal.x-ally.x,dy=goal.y-ally.y,distance=Math.hypot(dx,dy);
   if(distance>range){const travel=Math.min(145*dt,distance-range);ally.x=clamp(ally.x+dx/distance*travel,45,W-45);ally.y=clamp(ally.y+dy/distance*travel,90,H-45);ally.move=true}
-  if(Math.abs(dx)>1)ally.facing=dx<0?-1:1;
+  trackMotion(ally,old,dt);if(Math.abs(dx)>1)ally.facing=dx<0?-1:1;
   if(target&&Math.hypot(target.x-ally.x,target.y-ally.y)<=stats.range&&ally.attackCd<=0){
    ally.attackAnim=.3;ally.attackCd=stats.attackRate*1.15;
    if(ally.cls==='knight'){damage(target,stats.attackDamage*.75);s.rings.push({x:target.x,y:target.y,r:4,max:24,ttl:.18,color:'#e6c88b'})}
@@ -23,7 +23,7 @@ function updateCampCompanions(dt){
 }
 function drawCampCompanions(){
  for(const ally of campCompanions()){
-  ctx.save();ctx.strokeStyle='#a9d5b66b';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(ally.x,ally.y+7,18,7,0,0,Math.PI*2);ctx.stroke();ctx.restore();
-  showSprite(ally.cls,ally.x,ally.y+12,66,80,ally.attackAnim>0?'attack':ally.move?'walk':'idle',ally.facing,0,ally.cls.length);
+  ctx.save();ctx.strokeStyle='#a9d5b66b';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(ally.x,ally.y+7,18*HERO_WORLD_SCALE,7*HERO_WORLD_SCALE,0,0,Math.PI*2);ctx.stroke();ctx.restore();
+  showSprite(ally.cls,ally.x,ally.y+7,66,80,ally.move?'walk':ally.attackAnim>0?'attack':'idle',ally.facing,0,ally.cls.length,ally);
  }
 }

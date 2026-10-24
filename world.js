@@ -36,6 +36,7 @@ function makeRoom(id,seed=DEV.seed){
 function makeLayout(id){return makeRoom(id).obstacles}
 function selectBoss(id){
  if(s.mode!=='running'||s.paused||s.active||!s.bossStates[id]||s.bossStates[id].done)return;
+ preloadBossGait(id);
  closeBossSheet();closeRewards();resetJoystick();expireReward();s.reward=null;s.active=id;s.phase='gauntlet';s.selectNeeded=false;s.boss=null;s.enemies=[];s.shots=[];s.rings=[];pointerTarget=null;
  const room=makeRoom(id);s.gauntlet={id,room,start:s.elapsed,claimed:false,offered:false,completed:false,committed:false,commitTime:null,options:[...room.options],route:'direct',startDamage:s.stats.damageReceived};
  s.obstacles=room.obstacles;s.hazards=room.hazards;s.hero.x=room.mainX;s.hero.y=room.startY;s.hero.slowUntil=0;

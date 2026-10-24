@@ -1,0 +1,12 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),cp=require('node:child_process');let pw;try{pw=require('playwright')}catch{pw=require(path.resolve(path.dirname(process.execPath),'../node_modules/playwright'))}
+(async()=>{const server=cp.spawn(process.execPath,['serve.cjs'],{env:{...process.env,PORT:'19417'},stdio:['ignore','pipe','pipe'],windowsHide:true});let browser;try{
+ await new Promise((resolve,reject)=>{server.once('error',reject);server.once('exit',code=>reject(Error('Preview server exited '+code)));server.stdout.once('data',resolve)});
+ const html=fs.readFileSync('index.html','utf8'),bundles=[...html.matchAll(/<script src="(runtime-assets\/[^"]+)"/g)].map(m=>m[1]);assert(bundles.length>0);for(const file of ['index.html',...bundles])assert(fs.statSync(file).size<100*1024*1024,file+' exceeds publication limit');
+ browser=await pw.chromium.launch({headless:true,executablePath:process.env.CHROME_PATH});const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true}),errors=[],loaded=new Set();page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.url().includes('/runtime-assets/')){assert.equal(r.status(),200);loaded.add(r.url().split('/').pop())}});
+ await page.goto('http://127.0.0.1:19417/');await page.waitForFunction(()=>window.MirroredDungeonDebug);assert.equal(loaded.size,bundles.length);
+ await page.evaluate(()=>{const d=MirroredDungeonDebug;d.chooseClass('mage');d.start();d.selectBoss('warlord');d.preloadMobArt('hound')});await page.waitForFunction(()=>document.getElementById('game').dataset.mobArthoundright==='ready'&&document.getElementById('game').dataset.bossGaitwarlordright==='ready');
+ await page.evaluate(()=>{const d=MirroredDungeonDebug;d.enterBoss();d.step(.04);d.draw();if(!d.state().enemies.some(e=>e.type==='boss'))throw Error('Packaged encounter unavailable')});assert.deepEqual(errors,[]);
+ for(const url of ['/missing.js','/README.md','/runtime-assets/../README.md'])assert.equal((await page.request.get('http://127.0.0.1:19417'+url)).status(),404);
+ assert.equal((await page.request.post('http://127.0.0.1:19417/')).status(),404);
+ console.log((bundles.length+9)+' HTTP/mobile packaging, asset-load, encounter and publication-size checks passed');
+}finally{if(browser)await browser.close();server.kill()}})().catch(e=>{console.error(e);process.exitCode=1});

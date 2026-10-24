@@ -1,0 +1,102 @@
+{
+  "mage": {
+    "right": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "mage-walk-right-v2.png",
+      "cols": 3
+    },
+    "southeast": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "mage-walk-southeast-v2.png",
+      "cols": 3
+    },
+    "down": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "mage-walk-down-v2.png",
+      "cols": 3
+    },
+    "southwest": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "mage-walk-southwest-v2.png",
+      "cols": 3
+    },
+    "left": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "mage-walk-left-v2.png",
+      "cols": 3
+    },
+    "northwest": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "mage-walk-northwest-v2.png",
+      "cols": 3
+    },
+    "up": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "mage-walk-up-v2.png",
+      "cols": 3
+    },
+    "northeast": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "mage-walk-northeast-v2.png",
+      "cols": 3
+    }
+  },
+  "rogue": {
+    "right": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "rogue-walk-right-v2.png",
+      "cols": 3
+    },
+    "southeast": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "rogue-walk-southeast-v2.png",
+      "cols": 3
+    },
+    "down": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "rogue-walk-down-v2.png",
+      "cols": 3
+    },
+    "southwest": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "rogue-walk-southwest-v2.png",
+      "cols": 3
+    },
+    "left": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "rogue-walk-left-v2.png",
+      "cols": 3
+    },
+    "northwest": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "rogue-walk-northwest-v2.png",
+      "cols": 3
+    },
+    "up": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "rogue-walk-up-v2.png",
+      "cols": 3
+    },
+    "northeast": {
+      "idleFrame": 8,
+      "rows": 3,
+      "file": "rogue-walk-northeast-v2.png",
+      "cols": 3
+    }
+  }
+}
