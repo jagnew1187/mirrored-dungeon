@@ -1,0 +1,7 @@
+{
+  "name": "mirrored-dungeon",
+  "version": "0.6.0",
+  "private": true,
+  "scripts": {"start":"node serve.cjs", "build": "node integrate.cjs", "test": "node test-game.cjs"},
+  "devDependencies": {"playwright": "1.62.1"}
+}

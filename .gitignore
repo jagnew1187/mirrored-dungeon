@@ -1,0 +1,4 @@
+node_modules/
+*-preview.png
+test-results/
+test-results.json
