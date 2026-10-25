@@ -18,8 +18,11 @@ function paintCampGround(canvas){
  g.fillStyle=g.createPattern(campMaterial(0),'repeat');g.fillRect(0,0,W,H);
  // Overlapping translucent rims soften the grass/clearing boundary without per-frame work.
  g.fillStyle=g.createPattern(campMaterial(1),'repeat');
- for(const [size,alpha]of [[1,.28],[.97,.45],[.93,1]]){g.globalAlpha=alpha;g.beginPath();g.ellipse(W/2,H/2,W*.46*size,H*.44*size,0,0,Math.PI*2);g.fill()}g.globalAlpha=1;
- g.fillStyle=g.createPattern(campMaterial(2),'repeat');g.fillRect(W/2-44,H/2+75,88,H/2-75);
+ for(const [size,alpha]of [[1,.28],[.97,.45],[.93,1]]){g.globalAlpha=alpha;g.beginPath();g.ellipse(W*.53,H*.53,W*.46*size,H*.44*size,-.09,0,Math.PI*2);g.fill()}g.globalAlpha=1;
+ // A curved approach joins the spawn clearing to the offset fire, rather than
+ // dividing the camp into two mirrored halves with a straight central strip.
+ g.strokeStyle=g.createPattern(campMaterial(2),'repeat');g.lineWidth=72;g.lineCap='round';
+ g.beginPath();g.moveTo(W/2,H+36);g.bezierCurveTo(W*.47,H*.83,W*.61,H*.76,CAMP_LAYOUT.fire.x,CAMP_LAYOUT.fire.y+58);g.stroke();
  // Leaf-litter perimeter keeps tents grounded in a woodland clearing.
  g.fillStyle=g.createPattern(campMaterial(3),'repeat');g.fillRect(0,0,26,H);g.fillRect(W-26,0,26,H);return true;
 }

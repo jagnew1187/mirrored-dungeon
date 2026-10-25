@@ -5,7 +5,7 @@ let pw;try{pw=require('playwright')}catch{pw=require(path.resolve(path.dirname(p
  for(const mobile of [false,true]){
   const page=await browser.newPage({viewport:mobile?{width:390,height:844}:{width:1440,height:1000},isMobile:mobile,hasTouch:mobile}),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(()=>window.requestAnimationFrame=()=>0);await page.goto('file:///'+path.resolve('index.html').replaceAll('\\','/'));await page.waitForFunction(()=>window.MirroredDungeonDebug&&document.getElementById('game').dataset.journeyAssets==='ready'&&document.getElementById('game').dataset.campMaterials==='ready'&&document.getElementById('game').dataset.buffArt==='ready');
-  await page.evaluate(()=>{const d=MirroredDungeonDebug;d.start();d.draw()});if(mobile)await page.locator('#bossClose').tap();await page.locator('#game').screenshot({path:mobile?'mobile-camp-preview.png':'heroes-camp-preview.png'});
+  await page.evaluate(()=>{const d=MirroredDungeonDebug;d.start();d.draw()});await page.locator('#game').screenshot({path:mobile?'mobile-camp-preview.png':'heroes-camp-preview.png'});
   assert.equal(await page.locator('#arenaTag').textContent(),'HEROES’ CAMP');checks++;
   for(const boss of ['warlord','necro','pyro']){
    const result=await page.evaluate(boss=>{const d=MirroredDungeonDebug;d.reset();d.start();d.selectBoss(boss);const s=d.state(),r=s.gauntlet.room,mask=JSON.stringify(s.obstacles);d.draw();const intact=mask===JSON.stringify(s.obstacles),posts=s.obstacles.filter(o=>o.kind==='gateway');

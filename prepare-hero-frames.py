@@ -100,6 +100,13 @@ for key, (filename, bands, body_height) in specs.items():
     if key == 'knight-left':
         frames[10] = dict(frames[9])
         frames[13] = dict(frames[14])
+    if key == 'knight-strike':
+        # This separately authored impact has a much wider stance. Its rear boot
+        # dominates the bottom-pixel median, shifting the whole body forward.
+        # Register to the pelvis/stance root and match the surrounding sheet's
+        # helmet scale, rather than sizing from the crouched silhouette height.
+        body_height = 850
+        frames[0]['anchorX'] = 800
     result[key] = dict(bodyHeight=body_height, frames=frames)
 (root / 'assets' / 'hero-frames-v1.json').write_text(json.dumps(result, indent=2) + '\n')
 print('Prepared foot anchors for', len(result), 'directional sheets')

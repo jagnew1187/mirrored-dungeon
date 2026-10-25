@@ -1,5 +1,5 @@
 function drawRewardIcon(g,id,x,y,scale=1){if(drawDetailedReward(g,id,x,y,scale))return;g.save();g.translate(Math.round(x),Math.round(y));g.scale(scale,scale);g.imageSmoothingEnabled=false;const rect=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h)};if(id==='edge'){rect(-3,-16,6,24,'#ffe0a3');rect(-10,4,20,4,'#f7a05f');rect(-2,8,4,10,'#926548')}else if(id==='ward'){rect(-13,-14,26,22,'#916e46');rect(-9,-10,18,22,'#ddb076');rect(-5,10,10,5,'#ddb076');rect(-2,-8,4,18,'#fff0c7')}else if(id==='crystal'){rect(-6,-16,12,32,'#84cfa3');rect(-12,-8,24,16,'#4d9b83');rect(-4,-12,5,22,'#c9ffce')}else{rect(-12,-16,24,4,'#ddb076');rect(-12,12,24,4,'#ddb076');rect(-8,-12,16,8,'#9dc1cf');rect(-4,-4,8,8,'#ebedbf');rect(-8,4,16,8,'#9dc1cf')}g.restore()}
-function drawEnemyDetails(e){ctx.save();ctx.translate(Math.round(e.x),Math.round(e.y));if(e.armored){ctx.fillStyle='#40596a';ctx.fillRect(-19,-16,14,22);ctx.fillStyle='#a6b7ba';ctx.fillRect(-17,-14,10,3);ctx.fillRect(-14,-11,3,14);ctx.fillStyle='#ddb076';ctx.fillRect(-17,-4,10,3);}if(e.charger&&e.ability>0&&e.ability<.9){ctx.strokeStyle='#ddb076';ctx.lineWidth=3;ctx.strokeRect(-23,-25,46,44);}if(e.sprite==='hound'){ctx.fillStyle='#f7a05f';for(let i=0;i<3;i++)ctx.fillRect(-15+i*12,6-Math.floor((s.elapsed*5+i)%3)*3,4,7);}if(e.summoner){ctx.fillStyle='#9dc1cf';ctx.fillRect(-3,-42,6,6);ctx.fillRect(-7,-38,14,3);}ctx.restore()}
+function drawEnemyDetails(e){ctx.save();ctx.translate(Math.round(e.x),Math.round(e.y));if(e.armored){ctx.fillStyle='#40596a';ctx.fillRect(-19,-16,14,22);ctx.fillStyle='#a6b7ba';ctx.fillRect(-17,-14,10,3);ctx.fillRect(-14,-11,3,14);ctx.fillStyle='#ddb076';ctx.fillRect(-17,-4,10,3);}if(e.charger&&e.ability>0&&e.ability<.9){ctx.strokeStyle='#ddb076';ctx.lineWidth=3;ctx.strokeRect(-23,-25,46,44);}if(e.summoner){ctx.fillStyle='#9dc1cf';ctx.fillRect(-3,-42,6,6);ctx.fillRect(-7,-38,14,3);}ctx.restore()}
 function drawGauntletFloor(){
  const room=s.gauntlet.room,top=cameraY(),palette=room.id==='pyro'?['#181e28','#252b32','#f7a05f']:room.id==='necro'?['#14242b','#22353a','#9dc1cf']:['#20262d','#303a41','#ddb076'];
  if(room.id==='warlord')drawWarlordPath(room,top);else if(room.id==='necro')drawNecroPath(room,top);else if(room.id==='pyro')drawPyroPath(room,top);else{ctx.fillStyle=palette[1];ctx.fillRect(room.mainX-62,top,124,H);ctx.fillRect(room.rewardX-56,Math.max(top,room.rewardY-60),112,Math.max(0,Math.min(top+H,room.junctionY+154)-Math.max(top,room.rewardY-60)));if(top+H>room.junctionY+68&&top<room.junctionY+155)ctx.fillRect(room.mainX-60,room.junctionY+68,room.rewardX-room.mainX+116,86);}
@@ -10,9 +10,39 @@ function drawGauntletFloor(){
 function drawEnvironment(){ctx.save();ctx.imageSmoothingEnabled=false;const top=cameraY();drawRaisedPerimeter();
  for(const o of s.obstacles){if(o.y+o.h<top-40||o.y>top+H+40)continue;const x=Math.round(o.x),y=Math.round(o.y);if(o.kind==='gateway')continue;if(drawRaisedWall(o,top)||drawPyroObstacle(o,top)||drawNecroObstacle(o,top)||drawWarlordDecorObstacle(o)||drawWarlordBarrier(o))continue;if(o.hp===0){ctx.fillStyle='#926548';for(let i=0;i<4;i++)ctx.fillRect(x+i*9,y+(i%2)*8,6,4);continue}ctx.fillStyle='#060f18aa';ctx.fillRect(x+4,y+7,o.w,o.h);ctx.fillStyle=o.kind==='wood'?'#735039':'#375263';ctx.fillRect(x,y,o.w,o.h);ctx.fillStyle=o.kind==='wood'?'#bc8a52':'#64828d';ctx.fillRect(x,y,o.w,5);ctx.fillRect(x,y,5,o.h);ctx.fillStyle='#203543';for(let k=12;k<o.w;k+=16)ctx.fillRect(x+k,y+5,3,o.h-5);if(o.kind==='masonry'){for(let row=Math.max(y,Math.floor(top/32)*32);row<Math.min(y+o.h,top+H+32);row+=32){ctx.fillStyle='#15232d';ctx.fillRect(x,row,o.w,3);ctx.fillStyle='#89a0a0';ctx.fillRect(x+4,row+5,6,3)}}if(o.kind==='pillar'){ctx.fillStyle='#88a0a3';ctx.fillRect(x-4,y-4,o.w+8,8)}if(o.kind==='rubble'){ctx.fillStyle='#14242b';ctx.fillRect(x+8,y,12,9);ctx.fillRect(x+24,y+17,8,11)}}
  if(s.active==='warlord')for(const o of s.obstacles)drawWarlordProp(o);
- for(const h of s.hazards){if(h.y<top-50||h.y>top+H+50)continue;const state=h.state||hazardState(h),x=Math.round(h.x),y=Math.round(h.y),color=h.kind==='rune'?'#9dc1cf':h.kind==='spike'?'#ddb076':'#f7a05f';if(drawPyroTrap(h,state)||drawNecroTrap(h,state)||drawWarlordTrap(h,state))continue;ctx.fillStyle=state==='active'?color+'35':'#203543';ctx.fillRect(x-24,y-24,48,48);ctx.strokeStyle=state==='recovery'?'#48616c':color;ctx.lineWidth=state==='warning'?4:2;ctx.strokeRect(x-23,y-23,46,46);if(h.kind==='rune'){ctx.strokeRect(x-12,y-12,24,24);ctx.fillStyle=state==='active'?color:'#51717a';ctx.fillRect(x-3,y-18,6,36)}else for(let i=0;i<3;i++){ctx.fillStyle=state==='active'?color:'#0b1019';ctx.fillRect(x-16+i*12,y-12,8,state==='active'?28:8);if(state==='active'){ctx.fillStyle='#ffe0a3';ctx.fillRect(x-14+i*12,y-17-(i%2)*6,4,11)}}if(state==='warning'&&!['warlord','necro','pyro'].includes(s.active)){ctx.fillStyle=color;ctx.font='bold 20px monospace';ctx.textAlign='center';ctx.fillText('!',x,y+7)}}
+ for(const h of s.hazards){if(h.y<top-50||h.y>top+H+50)continue;const state=h.state||hazardState(h),x=Math.round(h.x),y=Math.round(h.y),color=h.kind==='rune'?'#9dc1cf':h.kind==='spike'?'#ddb076':'#f7a05f';if(drawPyroTrap(h,state)||drawNecroTrap(h,state)||drawWarlordTrap(h,state))continue;if(h.kind==='rune'){ctx.strokeRect(x-12,y-12,24,24);ctx.fillStyle=state==='active'?color:'#51717a';ctx.fillRect(x-3,y-18,6,36)}else for(let i=0;i<3;i++){ctx.fillStyle=state==='active'?color:'#0b1019';ctx.fillRect(x-16+i*12,y-12,8,state==='active'?28:8);if(state==='active'){ctx.fillStyle='#ffe0a3';ctx.fillRect(x-14+i*12,y-17-(i%2)*6,4,11)}}if(state==='warning'&&!['warlord','necro','pyro'].includes(s.active)){ctx.fillStyle=color;ctx.font='bold 20px monospace';ctx.textAlign='center';ctx.fillText('!',x,y+7)}}
  if(s.phase==='gauntlet')drawRewardShrine();
  ctx.restore();
 }
 function drawRiskBadge(g){g.fillStyle='#3a2431';g.fillRect(27,1,12,14);g.fillStyle='#ff9fa4';g.fillRect(31,3,4,2);g.fillRect(29,5,8,2);g.fillRect(28,7,10,6);g.fillStyle='#182431';g.fillRect(32,5,2,4);g.fillRect(32,10,2,2)}
 function drawRewardRisk(h){const r=s.reward;if(!r||!DEV.rewards[r.id].drawback?.amount||r.started===undefined||s.elapsed>=r.drawbackUntil||r.status==='expired')return;ctx.save();ctx.fillStyle='#ff9fa4';const blink=Math.floor(s.elapsed*4)%2;for(const side of [-1,1]){const x=Math.round(h.x+side*(h.r+7)),y=Math.round(h.y+12-blink*3);ctx.fillRect(x,y,4,7);ctx.fillRect(x-2,y+7,8,3)}ctx.restore()}
+// Small stepped pixel clusters share the armor/fire/rune palette. No hitbox
+// overlays: effects follow actual damage and the simulation's slow duration.
+function drawHeroStatus(h){
+ ctx.save();ctx.translate(Math.round(h.x),Math.round(h.y));ctx.imageSmoothingEnabled=false;
+ if(h.flash>0){
+  const fire=h.trapImpactUntil>s.elapsed&&['fire','burn'].includes(h.trapImpact),spike=h.trapImpactUntil>s.elapsed&&h.trapImpact==='spike';
+  const colors=fire?['#7f3029','#ef833e','#ffe3a1']:spike?['#58454b','#d1a478','#fff0bf']:['#6b263d','#e37579','#ffe0ba'];
+  ctx.globalAlpha=Math.min(1,h.flash/.16);
+  const spread=3+Math.floor((.32-h.flash)*24);
+  for(const side of [-1,1])for(let i=0;i<3;i++){
+   const x=side*(17+spread+i*3),y=-20+i*9;
+   ctx.fillStyle=colors[0];ctx.fillRect(x-3,y-3,7,7);ctx.fillStyle=colors[1];ctx.fillRect(x-2,y-2,5,5);ctx.fillStyle=colors[2];ctx.fillRect(x,y-2,2,2);
+  }
+ }
+ if(h.burnUntil>s.elapsed){
+  const flicker=reduceMotion.matches?0:Math.floor(s.elapsed*8)%3;
+  for(const side of [-1,1]){const x=side*16;ctx.fillStyle='#893b30';ctx.fillRect(x-4,2,8,9);ctx.fillStyle='#ee843d';ctx.fillRect(x-3,-2-flicker,6,11+flicker);ctx.fillStyle='#ffe1a0';ctx.fillRect(x-1,3,2,6)}
+ }
+ if(h.slowUntil>s.elapsed){
+  ctx.globalAlpha=Math.min(1,(h.slowUntil-s.elapsed)/.2);const lift=Math.floor(s.elapsed*6)%2;
+  for(const side of [-1,1]){
+   const x=side*20;ctx.fillStyle='#234b4b';ctx.fillRect(x-5,4-lift,10,8);ctx.fillStyle='#72bba6';ctx.fillRect(x-4,5-lift,8,2);ctx.fillRect(x-4,10-lift,8,2);ctx.fillRect(x-4,7-lift,2,3);ctx.fillRect(x+2,7-lift,2,3);
+   ctx.fillStyle='#c7f6cf';ctx.fillRect(x-1,5-lift,2,2);
+  }
+  // An hourglass beside the shoulder makes the effect readable above traps.
+  ctx.fillStyle='#183b3e';ctx.fillRect(22,-49,12,16);ctx.fillStyle='#a6d9c0';ctx.fillRect(23,-48,10,2);ctx.fillRect(23,-36,10,2);
+  ctx.fillStyle='#70ae9c';ctx.fillRect(25,-46,6,3);ctx.fillRect(27,-43,2,3);ctx.fillRect(25,-40,6,4);ctx.fillStyle='#e4f1bf';ctx.fillRect(27,-39,2,3);
+ }
+ ctx.restore();
+}

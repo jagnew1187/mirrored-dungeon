@@ -26,7 +26,7 @@ function animationIndex(kind,anim,actor,seed=0){
  const sequence=spriteSequences[kind][anim]||spriteSequences[kind].idle;if(reduceMotion.matches&&anim==='idle')return sequence.start;
  let index;
  if(actor&&anim==='walk')index=Math.floor((actor.walkCycle||0)*sequence.count)%sequence.count;
- else if(actor&&(anim==='attack'||anim==='skill')){const duration=anim==='skill'?(actor.type==='boss'?.78:.66):(actor===s.hero?.32:actor.type?.45:.3),remaining=anim==='skill'?actor.skillAnim:actor.attackAnim;
+ else if(actor&&(anim==='attack'||anim==='skill')){const duration=anim==='skill'?(actor.type==='boss'?.78:.66):((actor===s.hero||actor.drawingJumpPose)?.32:actor.type?.45:.3),remaining=anim==='skill'?actor.skillAnim:actor.attackAnim;
   index=Math.min(sequence.count-1,Math.floor(clamp(1-(remaining||0)/duration,0,1)*sequence.count));
  }else index=Math.floor((actor?.idleClock??s.elapsed)*3+(seed%7)*.7)%sequence.count;
  return sequence.start+index;
@@ -42,8 +42,8 @@ function advanceProjectile(p,dt){
  for(let i=1;i<=n;i++){
   p.x=x+p.vx*dt*i/n;p.y=y+p.vy*dt*i/n;
   const cover=s.obstacles.find(o=>overlaps({x:p.x,y:p.y,r:p.r},o));
-  if(cover){if(cover.hp>0&&p.team==='hero')cover.hp=Math.max(0,cover.hp-p.damage);impact(p.x,p.y,'#c3b393');p.ttl=0;return}
-  if(p.team==='hero'){const target=s.enemies.find(e=>!e.dead&&Math.hypot(e.x-p.x,e.y-p.y)<e.r+p.r);if(target){damage(target,p.damage);p.ttl=0;return}}
-  else if(Math.hypot(s.hero.x-p.x,s.hero.y-p.y)<s.hero.r+p.r){hurt(p.damage,p.bossHit);p.ttl=0;return}
+  if(cover){GameAudio.effect(coverHitSound(cover),p.x,p.y);if(cover.hp>0&&p.team==='hero')cover.hp=Math.max(0,cover.hp-p.damage);impact(p.x,p.y,'#c3b393');p.ttl=0;return}
+  if(p.team==='hero'){const target=s.enemies.find(e=>!e.dead&&Math.hypot(e.x-p.x,e.y-p.y)<e.r+p.r);if(target){damage(target,p.damage,p.impactSound);p.ttl=0;return}}
+  else if(Math.hypot(s.hero.x-p.x,s.hero.y-p.y)<s.hero.r+p.r){hurt(p.damage,p.bossHit,p.impactSound);p.ttl=0;return}
  }
 }

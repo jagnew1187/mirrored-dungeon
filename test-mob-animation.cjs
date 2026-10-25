@@ -26,8 +26,8 @@ for(const mobile of [false,true]){
     const image=args[0],idle=image.gaitData.frames[8];d.showSprite(kind,420,310,62,76,'idle',1,0,0,{r:11,walkDirection:dir});check(args[1]===idle.x&&args[2]===idle.y,'planted standing pose');check(!mirrored,'no mirrored equipment');check(image.width*image.height<image.sourcePixels,'compact cached atlas');check(Math.abs(image.gaitData.bodyHeight-body*2)<1,'2x body resolution');
     }finally{g.drawImage=draw;g.scale=scale}
    }
-   e.x=420;e.y=310;s.hero.x=445;s.hero.y=310;e.attack=0;e.attackAnim=0;const hp=s.hero.hp;d.step(.02);check(e.attackAnim===.45&&e.attack===1.6,'original attack duration and cooldown');check(s.hero.hp===hp-5,'original contact damage');check(e.attackDirection==='right','attack aims at hero');
-   const phase=e.walkCycle;s.paused=true;d.step(.1);check(e.attackAnim===.45&&e.walkCycle===phase,'pause freezes mob animation');s.paused=false;
+   e.x=420;e.y=310;s.hero.x=445;s.hero.y=310;e.attack=0;e.attackAnim=0;const hp=s.hero.hp;d.step(.02);check(e.attackAnim===.45&&e.attack===1.6,'original attack duration and cooldown');check(s.hero.hp===hp,'contact windup does not damage early');check(e.attackDirection==='right','attack aims at hero');
+   const phase=e.walkCycle;s.paused=true;d.step(.1);check(e.attackAnim===.45&&e.walkCycle===phase,'pause freezes mob animation');s.paused=false;d.step(.21);check(s.hero.hp===hp-5,'contact damage follows windup');
    // Rendering prioritizes attacks even when a hurt enemy is pursuing a moving hero.
    e.move=true;e.walkDirection='left';e.attackDirection='right';e.attackAnim=.3;let used=false;const draw=g.drawImage;g.drawImage=function(...a){if(a[0].gaitClass===kind&&a[0].gaitDirection==='right'&&a[1]===a[0].gaitData.frames[11].x&&a[2]===a[0].gaitData.frames[11].y)used=true;return draw.apply(this,a)};try{d.draw();check(used,'attack remains visible during movement')}finally{g.drawImage=draw}
    d.reset();check(!d.state().enemies.some(e=>e.id==='mob-test'),'restart clears animated enemies');return n;

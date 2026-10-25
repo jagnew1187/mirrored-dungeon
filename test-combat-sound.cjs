@@ -1,0 +1,31 @@
+const path=require('node:path'),assert=require('node:assert/strict');let pw;try{pw=require('playwright')}catch{pw=require(path.resolve(path.dirname(process.execPath),'../node_modules/playwright'))}
+(async()=>{const browser=await pw.chromium.launch({headless:true,executablePath:process.env.CHROME_PATH});try{let checks=0;
+ for(const mobile of [false,true]){
+  const page=await browser.newPage({viewport:mobile?{width:390,height:844}:{width:1440,height:1000},isMobile:mobile,hasTouch:mobile}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.addInitScript(()=>{const raf=window.requestAnimationFrame.bind(window);window.requestAnimationFrame=fn=>fn.name==='frame'?0:raf(fn)});await page.goto('file:///'+path.resolve('index.html').replaceAll('\\','/'));await page.locator('#overlayButton').click();await page.waitForFunction(()=>MirroredDungeonDebug.audio.snapshot().state==='running');
+  await page.evaluate(()=>{const a=MirroredDungeonDebug.audio;a.set('music',0);a.set('ambience',0);a.set('effects',1);a.set('master',.8)});
+  async function fresh(cls='knight'){
+   await page.waitForTimeout(90);await page.evaluate(cls=>{const d=MirroredDungeonDebug;d.reset();d.chooseClass(cls);d.start();d.selectBoss('warlord');d.enterBoss();const s=d.state();s.enemies=[];s.obstacles=[];s.hazards=[];s.rival.remaining=9999;s.waveAt=9999;s.hero.x=420;s.hero.y=310;s.hero.attack=0;d.renderAll()},cls);await page.waitForFunction(()=>MirroredDungeonDebug.audio.snapshot().state==='running');
+  }
+  for(const [cls,sound] of [['knight','sword-swing'],['mage','arcane-cast'],['rogue','dagger-throw']]){
+   await fresh(cls);const result=await page.evaluate(sound=>{const d=MirroredDungeonDebug,s=d.state(),a=d.audio,before=a.snapshot().effectCounts[sound]||0;s.enemies=[{id:'sound-target',type:'shade',sprite:'cultist',x:460,y:310,r:11,hp:999,max:999,speed:0,dmg:0,attack:999,ability:999,slow:0,dead:false,hit:0,attackAnim:0,skillAnim:0}];d.setAttackInput(true,'sound-test');d.setAttackInput(false,'sound-test');d.step(.01);const early=(a.snapshot().effectCounts[sound]||0)===before;for(let i=0;i<18;i++)d.step(.01);const released=(a.snapshot().effectCounts[sound]||0)===before+1;for(let i=0;i<20;i++)d.step(.01);return{early,released,hit:!!(a.snapshot().effectCounts[sound==='arcane-cast'?'hit-arcane':'hit-flesh'])}},sound);
+   assert.ok(result.early&&result.released&&result.hit);checks+=3;
+   await page.waitForFunction(()=>MirroredDungeonDebug.audio.meter()>.00001);checks++;
+  }
+  for(const [cls,skill,sound] of [['mage','fire','fire-cast'],['mage','frost','frost-cast'],['mage','heal','heal'],['knight','fire','cleave'],['knight','frost','shield'],['knight','heal','guard'],['rogue','fire','twin-daggers'],['rogue','frost','shadow'],['rogue','heal','smoke']]){
+   await fresh(cls);const result=await page.evaluate(({skill,sound})=>{const d=MirroredDungeonDebug,s=d.state(),count=()=>d.audio.snapshot().effectCounts[sound]||0;const before=count();s.hero.hp=s.hero.max-40;s.enemies=[{id:'skill-sound',type:'shade',sprite:'cultist',x:465,y:310,r:11,hp:999,max:999,speed:0,dmg:0,attack:999,ability:999,slow:0,dead:false,hit:0,attackAnim:0,skillAnim:0}];d.cast(skill);const fired=count()===before+1;d.cast(skill);return fired&&count()===before+1},{skill,sound});assert.ok(result,cls+' '+skill+' only sounds when successfully cast');checks++;
+  }
+  await fresh('mage');assert.ok(await page.evaluate(()=>{const d=MirroredDungeonDebug,before=JSON.stringify(d.audio.snapshot().effectCounts);d.cast('fire');d.cast('heal');return JSON.stringify(d.audio.snapshot().effectCounts)===before}));checks++;
+  await fresh('knight');assert.ok(await page.evaluate(()=>{const d=MirroredDungeonDebug,before=d.audio.snapshot().effectCounts;d.setAttackInput(true,'miss-test');d.setAttackInput(false,'miss-test');for(let i=0;i<22;i++)d.step(.01);const after=d.audio.snapshot().effectCounts;return(after['sword-swing']||0)===(before['sword-swing']||0)+1&&(after['hit-flesh']||0)===(before['hit-flesh']||0)&&(after['hit-metal']||0)===(before['hit-metal']||0)}));checks++;
+  for(const [kind,sound]of [['wood','hit-wood'],['wall','hit-stone']]){
+   await fresh();assert.ok(await page.evaluate(({kind,sound})=>{const d=MirroredDungeonDebug,s=d.state(),before=d.audio.snapshot().effectCounts[sound]||0;s.obstacles=[{x:440,y:290,w:20,h:40,kind,hp:100}];const p={x:420,y:310,r:4,vx:500,vy:0,damage:10,team:'hero',ttl:2};d.advanceProjectile(p,.1);d.advanceProjectile({...p,ttl:0},0);return p.ttl===0&&(d.audio.snapshot().effectCounts[sound]||0)===before+1},{kind,sound}));checks++;
+  }
+  await fresh();assert.ok(await page.evaluate(()=>{const d=MirroredDungeonDebug,s=d.state();s.obstacles=[{x:445,y:300,w:20,h:20,kind:'wood',hp:10}];d.step(.01);const before=d.audio.snapshot().effectCounts['break-wood']||0;s.obstacles[0].hp=0;d.step(.01);d.step(.01);return(d.audio.snapshot().effectCounts['break-wood']||0)===before+1}));checks++;
+  await fresh();assert.ok(await page.evaluate(()=>{const d=MirroredDungeonDebug,s=d.state(),a=d.audio;s.enemies=[{id:'armor',sprite:'skeleton',type:'shade',x:460,y:310,r:11,hp:100,max:100}];const n=a.snapshot().effectCounts['hit-metal']||0;d.damage(s.enemies[0],10);d.damage(s.enemies[0],0);return(a.snapshot().effectCounts['hit-metal']||0)===n+1}));checks++;
+  await page.waitForTimeout(100);assert.ok(await page.evaluate(()=>{const a=MirroredDungeonDebug.audio;let played=0;for(let i=0;i<100;i++)if(a.effect('hit-flesh'))played++;return played===1&&a.snapshot().voices<=48}));checks++;
+  await page.evaluate(()=>{const a=MirroredDungeonDebug.audio;a.set('effects',0)});assert.equal(await page.evaluate(()=>MirroredDungeonDebug.audio.effect('shield')),false);checks++;
+  await page.locator('.audio-settings summary').click();assert.equal(await page.locator('#audioEffects').inputValue(),'0');checks++;
+  await page.reload();await page.waitForFunction(()=>window.MirroredDungeonDebug?.audio);assert.equal(await page.evaluate(()=>MirroredDungeonDebug.audio.snapshot().effects),0);checks++;
+  assert.deepEqual(errors,[]);checks++;await page.close();
+ }
+ console.log(checks+' weapon/spell release, impact materials, cooldown, output, effects volume, persistence and burst-limit checks passed');
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});

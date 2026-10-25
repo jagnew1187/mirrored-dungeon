@@ -1,5 +1,19 @@
 // Narrative cues and campsite dressing do not change routes, gates or collision masks.
 const journeyAtlas=new Image(),journeyCache=new Map();
+const campPavilion=new Image();
+campPavilion.onload=()=>{C.dataset.campPavilion='ready'};
+if(typeof CAMP_PAVILION!=='undefined')campPavilion.src=CAMP_PAVILION;
+// Golden-section anchors create an offset focal point and unequal camp clusters.
+// These are visual/home positions only; the clearing stays fully walkable.
+const CAMP_PHI=(Math.sqrt(5)-1)/2;
+const CAMP_LAYOUT={
+ fire:{x:Math.round(W*CAMP_PHI),y:Math.round(H*CAMP_PHI)},
+ tents:[{x:W*(1-CAMP_PHI)**1.5,y:H*(1-CAMP_PHI)**1.5,w:186,h:144},
+        {x:W*(1-(1-CAMP_PHI)**1.5),y:H*(1-CAMP_PHI),w:180,h:162,pavilion:true}],
+ supplies:[{x:W*(1-CAMP_PHI)**2,y:H*.49,w:104,h:70},
+           {x:W*.81,y:H*CAMP_PHI,w:88,h:60}],
+ table:{x:W*.27,y:H*.73,w:148,h:90}
+};
 journeyAtlas.onload=()=>{journeyCache.clear();C.dataset.journeyAssets='ready'};
 if(typeof JOURNEY_ATLAS!=='undefined')journeyAtlas.src=JOURNEY_ATLAS;
 function journeySprite(frame,x,y,w,h){
@@ -34,17 +48,21 @@ function campGround(){
  let tile=journeyCache.get('camp');if(tile)return tile;
  tile=document.createElement('canvas');tile.width=W;tile.height=H;if(paintCampGround(tile)){journeyCache.set('camp',tile);return tile}const g=tile.getContext('2d'),rng=seeded(7331);
  g.fillStyle='#2a342d';g.fillRect(0,0,W,H);
- for(let y=0;y<H;y+=8)for(let x=0;x<W;x+=8){const clearing=((x-W/2)/(W*.45))**2+((y-H/2)/(H*.44))**2<1;
+ for(let y=0;y<H;y+=8)for(let x=0;x<W;x+=8){const clearing=((x-W*.53)/(W*.45))**2+((y-H*.53)/(H*.44))**2<1;
   g.fillStyle=clearing?['#484036','#514638','#3e3b32'][Math.floor(rng()*3)]:['#253a31','#304238','#26362f'][Math.floor(rng()*3)];g.fillRect(x,y,8,8);
   if(rng()<.15){g.fillStyle=clearing?'#85765b':'#667652';g.fillRect(x+2,y+3,3,2)}
  }journeyCache.set('camp',tile);return tile;
 }
 function drawHeroCamp(){
  if(s.phase!=='vault')return;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(campGround(),0,0);
- journeySprite(5,80,72,186,144);journeySprite(5,W-266,72,186,144);
- journeySprite(7,120,260,104,70);journeySprite(7,W-224,260,104,70);
- journeySprite(8,80,H-180,148,90);journeySprite(6,W/2-53,H/2-58,106,112);
- ctx.globalAlpha=.65+Math.sin(s.elapsed*7)*.12;ctx.drawImage(warlordGlow,W/2-78,H/2-80,156,156);ctx.globalAlpha=1;
+ for(const tent of CAMP_LAYOUT.tents){
+  const x=Math.round(tent.x-tent.w/2),y=Math.round(tent.y-tent.h/2);
+  if(tent.pavilion&&campPavilion.naturalWidth)ctx.drawImage(campPavilion,x,y,tent.w,tent.h);else journeySprite(5,x,y,tent.w,tent.h);
+ }
+ for(const pack of CAMP_LAYOUT.supplies)journeySprite(7,pack.x-pack.w/2,pack.y-pack.h/2,pack.w,pack.h);
+ const table=CAMP_LAYOUT.table,fire=CAMP_LAYOUT.fire;
+ journeySprite(8,table.x-table.w/2,table.y-table.h/2,table.w,table.h);journeySprite(6,fire.x-53,fire.y-58,106,112);
+ ctx.globalAlpha=.65+Math.sin(s.elapsed*7)*.12;ctx.drawImage(warlordGlow,fire.x-78,fire.y-80,156,156);ctx.globalAlpha=1;
  drawCampCompanions();
- ctx.fillStyle='#e8c58d';ctx.font='bold 18px Georgia';ctx.textAlign='center';ctx.fillText('HEROES’ CAMP',W/2,42);ctx.restore();
+ ctx.fillStyle='#e8c58d';ctx.font='bold 18px Georgia';ctx.textAlign='center';if(!s.lobby)ctx.fillText('HEROES’ CAMP',W/2,42);ctx.restore();
 }

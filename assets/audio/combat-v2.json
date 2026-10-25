@@ -1,0 +1,319 @@
+{
+  "sampleRate": 44100,
+  "channels": 1,
+  "seconds": 29.739773242630385,
+  "bytes": 2623092,
+  "clips": {
+    "sword-swing": [
+      {
+        "offset": 0.0,
+        "duration": 0.38
+      },
+      {
+        "offset": 0.4,
+        "duration": 0.38
+      }
+    ],
+    "dagger-throw": [
+      {
+        "offset": 0.8,
+        "duration": 0.3
+      },
+      {
+        "offset": 1.12,
+        "duration": 0.3
+      }
+    ],
+    "twin-daggers": [
+      {
+        "offset": 1.44,
+        "duration": 0.42
+      },
+      {
+        "offset": 1.88,
+        "duration": 0.42
+      }
+    ],
+    "arcane-cast": [
+      {
+        "offset": 2.32,
+        "duration": 0.24
+      },
+      {
+        "offset": 2.58,
+        "duration": 0.24
+      }
+    ],
+    "fire-cast": [
+      {
+        "offset": 2.84,
+        "duration": 0.3
+      },
+      {
+        "offset": 3.16,
+        "duration": 0.3
+      }
+    ],
+    "frost-cast": [
+      {
+        "offset": 3.48,
+        "duration": 0.32
+      },
+      {
+        "offset": 3.82,
+        "duration": 0.32
+      }
+    ],
+    "cleave": [
+      {
+        "offset": 4.16,
+        "duration": 0.52
+      },
+      {
+        "offset": 4.7,
+        "duration": 0.52
+      }
+    ],
+    "shield": [
+      {
+        "offset": 5.24,
+        "duration": 0.6999773242630386
+      },
+      {
+        "offset": 5.959977324263039,
+        "duration": 0.6999773242630386
+      }
+    ],
+    "heal": [
+      {
+        "offset": 6.679954648526077,
+        "duration": 0.6
+      },
+      {
+        "offset": 7.299954648526077,
+        "duration": 0.6
+      }
+    ],
+    "guard": [
+      {
+        "offset": 7.919954648526077,
+        "duration": 0.8
+      },
+      {
+        "offset": 8.739954648526076,
+        "duration": 0.8
+      }
+    ],
+    "shadow": [
+      {
+        "offset": 9.559954648526077,
+        "duration": 0.65
+      },
+      {
+        "offset": 10.229954648526077,
+        "duration": 0.65
+      }
+    ],
+    "smoke": [
+      {
+        "offset": 10.899954648526077,
+        "duration": 0.6
+      },
+      {
+        "offset": 11.519954648526078,
+        "duration": 0.6
+      }
+    ],
+    "necro-cast": [
+      {
+        "offset": 12.139954648526077,
+        "duration": 1.0
+      },
+      {
+        "offset": 13.159954648526076,
+        "duration": 1.0
+      }
+    ],
+    "boss-slam": [
+      {
+        "offset": 14.179954648526078,
+        "duration": 0.85
+      },
+      {
+        "offset": 15.049954648526077,
+        "duration": 0.85
+      }
+    ],
+    "enemy-swing": [
+      {
+        "offset": 15.919954648526078,
+        "duration": 0.3
+      },
+      {
+        "offset": 16.239954648526076,
+        "duration": 0.3
+      }
+    ],
+    "bite": [
+      {
+        "offset": 16.559954648526077,
+        "duration": 0.3
+      },
+      {
+        "offset": 16.879954648526077,
+        "duration": 0.3
+      }
+    ],
+    "hit-metal": [
+      {
+        "offset": 17.199954648526077,
+        "duration": 0.65
+      },
+      {
+        "offset": 17.869954648526075,
+        "duration": 0.65
+      }
+    ],
+    "hit-flesh": [
+      {
+        "offset": 18.539954648526077,
+        "duration": 0.3
+      },
+      {
+        "offset": 18.859954648526077,
+        "duration": 0.3
+      }
+    ],
+    "hit-arcane": [
+      {
+        "offset": 19.179954648526078,
+        "duration": 0.16
+      },
+      {
+        "offset": 19.359954648526077,
+        "duration": 0.16
+      }
+    ],
+    "hit-fire": [
+      {
+        "offset": 19.539954648526077,
+        "duration": 0.18
+      },
+      {
+        "offset": 19.739954648526076,
+        "duration": 0.18
+      }
+    ],
+    "hit-frost": [
+      {
+        "offset": 19.939954648526076,
+        "duration": 0.2
+      },
+      {
+        "offset": 20.159954648526078,
+        "duration": 0.2
+      }
+    ],
+    "hit-stone": [
+      {
+        "offset": 20.379954648526077,
+        "duration": 0.48
+      },
+      {
+        "offset": 20.879954648526077,
+        "duration": 0.48
+      }
+    ],
+    "hit-wood": [
+      {
+        "offset": 21.379954648526077,
+        "duration": 0.42
+      },
+      {
+        "offset": 21.81995464852608,
+        "duration": 0.42
+      }
+    ],
+    "break-wood": [
+      {
+        "offset": 22.259954648526076,
+        "duration": 0.9
+      },
+      {
+        "offset": 23.179954648526078,
+        "duration": 0.9
+      }
+    ],
+    "break-stone": [
+      {
+        "offset": 24.099954648526076,
+        "duration": 0.8
+      },
+      {
+        "offset": 24.919954648526076,
+        "duration": 0.8
+      }
+    ],
+    "hurt": [
+      {
+        "offset": 25.739954648526076,
+        "duration": 0.32
+      },
+      {
+        "offset": 26.079954648526076,
+        "duration": 0.32
+      }
+    ],
+    "foot-grass": [
+      {
+        "offset": 26.419954648526076,
+        "duration": 0.34997732426303857
+      },
+      {
+        "offset": 26.789931972789116,
+        "duration": 0.34997732426303857
+      }
+    ],
+    "foot-stone": [
+      {
+        "offset": 27.159909297052153,
+        "duration": 0.34997732426303857
+      },
+      {
+        "offset": 27.529886621315192,
+        "duration": 0.34997732426303857
+      }
+    ],
+    "foot-carpet": [
+      {
+        "offset": 27.899863945578232,
+        "duration": 0.34997732426303857
+      },
+      {
+        "offset": 28.26984126984127,
+        "duration": 0.34997732426303857
+      }
+    ],
+    "foot-lava": [
+      {
+        "offset": 28.63981859410431,
+        "duration": 0.34997732426303857
+      },
+      {
+        "offset": 29.009795918367345,
+        "duration": 0.34997732426303857
+      }
+    ],
+    "foot-metal": [
+      {
+        "offset": 29.379773242630385,
+        "duration": 0.16
+      },
+      {
+        "offset": 29.559773242630385,
+        "duration": 0.16
+      }
+    ]
+  },
+  "peak": 0.6200000000000001
+}

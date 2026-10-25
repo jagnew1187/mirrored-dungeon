@@ -20,7 +20,7 @@ let pw;try{pw=require('playwright')}catch{pw=require(path.resolve(path.dirname(p
  for(const action of ['walk','attack']){
   await page.evaluate(action=>{const d=MirroredDungeonDebug,c=document.getElementById('game');c.width=action==='walk'?1680:840;const g=c.getContext('2d');g.fillStyle='#17242d';g.fillRect(0,0,c.width,c.height);
    [['mage',1],['knight',1],['knight',-1],['rogue',1]].forEach(([cls,facing],row)=>{g.fillStyle='#eed8ad';g.font='bold 14px monospace';g.fillText(cls.toUpperCase()+(facing<0?' LEFT':' RIGHT')+' · '+action,16,28+row*150);
-    const count=action==='walk'?16:8;for(let i=0;i<count;i++){const actor={walkCycle:(i+.01)/count,attackAnim:.3*(1-(i+.01)/8)};d.drawHeroSprite(cls,65+i*101,135+row*150,70,84,action,facing,0,0,actor);}
+    const count=action==='walk'?16:8;for(let i=0;i<count;i++){const actor=d.state().hero;actor.walkCycle=(i+.01)/count;actor.attackAnim=.32*(1-(i+.01)/8);d.drawHeroSprite(cls,65+i*101,135+row*150,70,84,action,facing,0,0,actor);}
    });
   },action);await page.locator('#game').screenshot({path:`hero-${action}-frames-preview.png`});
  }
@@ -56,5 +56,26 @@ let pw;try{pw=require('playwright')}catch{pw=require(path.resolve(path.dirname(p
    finally{g.drawImage=original}
   }return n;
  });assert.equal(idleChecks,4);
- console.log((n+gaitChecks+betweenChecks+idleChecks)+' hero sprite checks passed');
+ const strikeChecks=await page.evaluate(()=>{
+  const d=MirroredDungeonDebug,g=document.getElementById('game').getContext('2d');let args,count=0;
+  const original=g.drawImage,poses=[];
+  g.drawImage=function(...a){args=a;return original.apply(this,a)};
+  try{
+   for(const action of ['attack','skill']){
+    poses.length=0;
+    // Measured helmet landmarks in the three source poses surrounding impact.
+    for(const [frame,headX,headHeight] of [[11,1118,61],[12,750,201],[13,821,61]]){
+     const duration=action==='attack'?.32:.66;
+     const actor=d.state().hero;actor.attackAnim=actor.skillAnim=duration*(1-(frame-8+.01)/8);
+     d.drawHeroSprite('knight',420,310,78,92,action,-1,0,0,actor);
+     const scale=args[7]/args[3];
+     poses.push({x:args[5]+(headX-args[1])*scale,height:headHeight*scale});
+     if(Math.abs(args[6]+(args[0].heroKey==='knight-strike'?912:d.heroFrameRect(args[0],frame).anchorY)*scale)>.001)throw Error('swing feet must stay on ground');count++;
+    }
+    if(Math.max(...poses.map(p=>p.x))-Math.min(...poses.map(p=>p.x))>7)throw Error('isolated impact must not jump sideways');count++;
+    if(Math.max(...poses.map(p=>p.height))/Math.min(...poses.map(p=>p.height))>1.15)throw Error('impact helmet must match neighboring body scale');count++;
+   }
+  }finally{g.drawImage=original}return count;
+ });assert.equal(strikeChecks,10);
+ console.log((n+gaitChecks+betweenChecks+idleChecks+strikeChecks)+' hero sprite checks passed');
  }finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});

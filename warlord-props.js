@@ -23,7 +23,5 @@ function drawWarlordBarrier(o){
 function drawWarlordTrap(h,state){
  if(s.active!=='warlord'||h.kind!=='spike')return false;
  if(!warlordPropSprite(state==='active'?2:state==='warning'?1:0,h.x-24,h.y-24,48,48))return false;
- ctx.save();ctx.strokeStyle=state==='active'?'#ff8b70':state==='warning'?'#ffd36f':'#687d88';ctx.lineWidth=state==='warning'?3:2;
- ctx.strokeRect(Math.round(h.x)-23,Math.round(h.y)-23,46,46);
- ctx.restore();return true;
+ return true;
 }

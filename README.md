@@ -2,6 +2,80 @@
 
 Open `index.html` with the `runtime-assets/` folder beside it for offline play, or run `node serve.cjs` for the local preview. Keep that folder with the HTML when copying the build. `node integrate.cjs` rebuilds these bundles from the source assets. Artwork is split into local JavaScript bundles so no published file exceeds GitHub's per-file limit. Animation review pages remain self-contained.
 
+## Practice lobby
+
+Enter the heroes’ camp to practice movement, attacks, jumps and skills against
+recurring mobs alongside the other heroes. The match countdown and rival stay
+stopped. Falling in practice restores your health. Choose a first boss (Start
+match on mobile) to begin a fresh race: health, cooldowns, kills and practice
+effects reset, and the 210-second countdown and simulated rival start together.
+Returning to camp between bosses during a match keeps the timer running.
+
+The right-hand tent is a square canvas pavilion. The lobby's shared kill counter
+includes companion kills. **+ Spawn wave** adds up to four mobs, with a cap of
+12 active enemies. Automatic practice waves continue; kills and wave controls
+reset on restart and disappear when a fresh competitive match begins.
+
+## Sound and atmosphere
+
+Open **Sound · music & effects** below the battlefield to set overall, ambience,
+music and effects volume, or press **M** to mute. Settings persist locally. Audio unlocks
+on a tap or keypress, pauses with the game and suspends when the tab is hidden.
+Music and ambient beds use an original procedural Web Audio score. Combat uses
+clean CC0 Foley samples and restrained spell textures, bundled for offline play.
+See `assets/audio/CREDITS.md` for sources and rebuild instructions. Camp has woodland air, fire crackle and sparse
+melody; armory, crypt and lava cave have distinct drones and textures. Boss rooms
+crossfade to separate marching, hollow and driving musical themes.
+
+Combat effects follow actual attack releases, successful casts and collisions:
+Knight sword/cleave/shield sounds, Rogue dagger throws and shadow/smoke effects,
+Mage arcane/fire/frost/healing sounds, enemy swings/bites, boss slams and summons.
+Impacts distinguish flesh, metal, wood, stone and magic. Broken cover cracks once;
+misses keep the swing/release sound without inventing a hit. Offscreen culling,
+distance attenuation, per-effect throttling and a shared voice limit keep busy
+practice waves from overwhelming the mix. Effects volume also controls footsteps.
+The v2 bank adds 62 variants, natural transients and restrained stereo positioning.
+Cues play dry at their original pitch, with isolated buffers and an eight-cue overlap
+cap to keep fights clear. Mono PCM is decoded
+once and shared across rooms; the procedural cues remain a decoding fallback.
+
+Footsteps follow actual travel and floor material, with a light Knight armor
+rattle. Boss arrival captions and musical stingers briefly duck the ambience
+without pausing movement or the race. Embers, dust motes, cloth ripples and
+breakage debris are decorative only and respect reduced-motion settings.
+
+## Manual combat controls prototype
+
+Jump has directional takeoff, airborne leg poses and a brief landing settle with
+dust, using the existing hero artwork. Spikes, burning floor tiles and slowing
+runes are avoided while sufficiently airborne; flame jets, enemy attacks and
+projectiles still hit. Damage flashes include pixel impact flecks (orange for
+fire traps), and active rune slows show ankle links and an hourglass. These
+indicators follow actual damage and slow timers.
+
+Basic attacks now resolve at the authored contact/release frame: 0.16 seconds
+for Knight/Mage and 0.12 seconds for Rogue. Melee checks range and cover again
+at impact. Enemy contact attacks have a 0.2-second windup with a small amber
+cue; moving away before impact avoids the hit. Boss special abilities retain
+their existing telegraphs and behavior. Repeated clicks cycle overlapping
+enemies, starting with the frontmost, and a pointer above the target stays clear
+of its sprite.
+
+Spikes deal 7 immediate damage at default difficulty. Fire traps apply one
+non-stacking burn: four ticks totaling the same 7 damage over two seconds.
+Continued exposure refreshes its duration without postponing ticks. Runes slow
+movement by 25% for 0.8 seconds, refreshing without stacking. Jumping avoids new
+effects from ground traps; it does not extinguish an existing burn. Trap tuning
+is configurable in `DEV.traps` and recorded with balance telemetry.
+
+On desktop, **left click an enemy** to select it, approach and automatically repeat attacks while in range and line of sight. Release does not cancel this selected-target command. A ring marks the selected enemy. **Click the ground** to cancel selection and move without attacking. Defeating the target stops attacks instead of selecting another enemy. Pause, blur and restart also clear selection. Right mouse is ignored; touch dragging remains movement-only. Attack/J retain their independent tap/hold behavior. `test-mouse-controls.cjs` checks all classes, target approach/range/death, cover, ground cancellation and touch isolation.
+
+Basic attacks require input: tap **Attack** / **J** once, or hold to repeat at the selected class's existing attack rate. A nearby visible enemy is targeted automatically; Mage and Rogue can also fire in their last movement direction with no target. Knight can swing at nearby destructible cover. Walking no longer hides a basic attack animation. The three class abilities remain on buttons and keys **1 / 2 / 3**; camp companions and enemies retain automatic combat.
+
+**Jump** / **Space** performs a 0.46-second hop with a 1.25-second cooldown. During the raised portion it clears spikes, burning floor tiles and curse runes. Flame jets, enemy attacks, boss attacks and projectiles still hit. Solid walls/cover, movement speed and the competitive clock remain in effect. All three classes share the jump tuning (`PLAYER_ACTIONS` in `manual-controls.js`). The hop uses directional poses with takeoff/landing compression. Balance history includes impact delays, trap values and enemy windup tuning. The simulated rival is unchanged; human balance testing and physical iPhone Safari testing remain outstanding.
+
+Attack and Jump sit inside the arena, clear of the movement joystick and original skill bar at 320px portrait and landscape sizes. Pointer capture supports holding Attack while moving and jumping; cancellation, blur, pause and restart release held input. `test-manual-controls.cjs` exercises actual keyboard/button input and three simultaneous touch points in addition to damage, cooldown, hazard and collision checks. Rebuild with `node integrate.cjs`.
+
 ## Environment path update
 
 ### Wizard and Rogue movement
@@ -105,7 +179,7 @@ Pending, active, consumed, and expired reward states prevent stacking and repeat
 
 Pyromancer rooms contain fire vents, burning floor tiles, hounds and a guarded shrine. Necromancer rooms contain skeletons, cursed slowing runes and a priority-target summoner. Warlord rooms contain fortifications, breakable wood, armored guards and warned charges. Rival victories add controlled hazards or reinforcements to the corresponding gauntlet. Every trap has warning, active and recovery states. The main passage retains room to dodge.
 
-Solid cover blocks projectiles and targeting, including Shadowstep through a wall. Enemies use cached grid paths and optional guards remain in their wing when the player takes the direct route. The Knight can break nearby wooden cover through its normal auto attack.
+Solid cover blocks projectiles and targeting, including Shadowstep through a wall. Enemies use cached grid paths and optional guards remain in their wing when the player takes the direct route. The Knight can break nearby wooden cover with the manual Attack button.
 
 ## Competition
 
@@ -144,7 +218,7 @@ All new graphics use the existing Canvas pipeline and palette, including pixel w
 
 Install Node.js, run `npm install`, then `npx playwright install chromium`. Run `npm test`. Alternatively set `CHROME_PATH` to an installed Chromium browser. The test runner also supports the bundled Codex Playwright runtime when available.
 
-The latest run passed 10,150 counted checks across 17 suites, including 512 authored mob poses, eight-direction movement, standing, attacks, ground anchors, animation clocks and compact runtime atlases. Tests include 36 actual route traversals (three classes × three bosses × both routes × desktop/mobile), 20 generation seeds per boss per primary viewport, visible pre-commitment reward values, unchanged claim options, touch claiming/declining, ongoing timers, all buff effects/lifecycles, healing caps, resets, collisions, hazards, inheritance, full rival progression, telemetry and sample thresholds. Extra viewport checks cover 320×568 portrait and 844×390 landscape, visible ability buttons and touch movement with letterboxing. Preview PNGs and raw `test-results.json` are generated locally and ignored by Git.
+The automated suite includes over 10,600 checks across 27 suites, including 512 authored mob poses, eight-direction movement, standing, attacks, ground anchors, animation clocks and compact runtime atlases. Tests include 36 actual route traversals (three classes × three bosses × both routes × desktop/mobile), 20 generation seeds per boss per primary viewport, visible pre-commitment reward values, unchanged claim options, touch claiming/declining, ongoing timers, all buff effects/lifecycles, healing caps, resets, collisions, hazards, inheritance, full rival progression, telemetry and sample thresholds. Extra viewport checks cover 320×568 portrait and 844×390 landscape, visible ability buttons and touch movement with letterboxing. Preview PNGs and raw `test-results.json` are generated locally and ignored by Git.
 
 Chromium tests and visual checks are complete. Physical iPhone Safari testing, human class win-rate testing, and statistically meaningful reward-payoff testing have not been performed. See `BALANCE.md` before treating provisional values as final balance.
 
@@ -161,3 +235,10 @@ Boss skills now have nine-pose axe-slam, fire-cast and summoning sequences match
 
 ### Mob animation artwork
 Cultists, skeleton soldiers, acolytes and crystal hounds share new eight-direction movement and attacks across themed dungeons, waves, summons and camp. Each authored view has eight walk poses, a planted standing pose and seven attack poses. Actual travel drives walking; stopping retains phase and direction. An attack holds its target direction and takes visual priority over walking for the existing 0.45 second action window. Existing contact damage, AI, cooldowns, collision, wave logic and companion combat stay unchanged. Textures load on first use per mob design and cache at twice displayed body resolution. Rebuild metadata with `python prepare-mob-animation.py`, compile compact atlases with `node compile-mob-atlases.cjs`, build with `node integrate.cjs`, and generate `mob-animation-review.html` with `node make-mob-preview.cjs`. `test-mob-animation.cjs` verifies AI pursuit, pose selection, grounded feet, attacks, pause, resets and desktop/mobile rendering. Asset prompts are in `assets/mob-animation-v1.md`.
+
+
+
+Hold **Shift** to stand still. While held, left-click or hold left mouse to attack
+toward the cursor, including empty ground (Mage and Rogue projectiles; Knight
+directional swings). Release the mouse to stop free fire; release Shift to move
+again. Existing click-to-move/enemy selection and touch controls still apply.

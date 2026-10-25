@@ -532,14 +532,14 @@
     ]
   },
   "knight-strike": {
-    "bodyHeight": 750,
+    "bodyHeight": 850,
     "frames": [
       {
         "x": 0,
         "y": 0,
         "w": 1536,
         "h": 1024,
-        "anchorX": 1165,
+        "anchorX": 800,
         "anchorY": 912
       }
     ]

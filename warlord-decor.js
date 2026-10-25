@@ -13,7 +13,10 @@ function warlordDecor(frame,x,y,w,h){
   const sx=Math.round(rx*iw),sy=Math.round(ry*ih),ex=Math.round((rx+rw)*iw),ey=Math.round((ry+rh)*ih);
   g.drawImage(warlordDecorAtlas,sx,sy,ex-sx,ey-sy,0,0,w,h);warlordDecorCache.set(key,tile);
  }
- ctx.drawImage(tile,Math.round(x),Math.round(y));return true;
+ if(frame===3&&!reduceMotion.matches){
+  // The fixed hanging point stays aligned to the wall; only the cloth ripples.
+  for(let row=0;row<h;row+=3){const height=Math.min(3,h-row),sway=Math.round(Math.sin(s.elapsed*1.6+row*.055)*(row/h)*1.4);ctx.drawImage(tile,0,row,w,height,Math.round(x)+sway,Math.round(y)+row,w,height)}
+ }else ctx.drawImage(tile,Math.round(x),Math.round(y));return true;
 }
 const warlordGlow=document.createElement('canvas');warlordGlow.width=warlordGlow.height=96;
 {const g=warlordGlow.getContext('2d'),light=g.createRadialGradient(48,48,3,48,48,48);light.addColorStop(0,'#ffcb6245');light.addColorStop(.4,'#f7962922');light.addColorStop(1,'#f7962900');g.fillStyle=light;g.fillRect(0,0,96,96)}

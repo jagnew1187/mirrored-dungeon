@@ -1,6 +1,9 @@
 // Camp companions help with ordinary waves only; they never enter dungeon combat.
 function campCompanions(){
- if(!s.campFriends)s.campFriends=['mage','knight','rogue'].filter(cls=>cls!==selectedClass).map((cls,i)=>({cls,x:W/2+(i?105:-105),y:H/2+65,home:{x:W/2+(i?105:-105),y:H/2+65},r:15,attackCd:0,attackAnim:0,move:false,facing:i?-1:1}));
+ if(!s.campFriends)s.campFriends=['mage','knight','rogue'].filter(cls=>cls!==selectedClass).map((cls,i)=>{
+  const home={x:CAMP_LAYOUT.fire.x+(i?82:-112),y:CAMP_LAYOUT.fire.y+(i?48:-8)};
+  return {cls,...home,home,r:15,attackCd:0,attackAnim:0,move:false,facing:i?-1:1};
+ });
  return s.campFriends;
 }
 function updateCampCompanions(dt){
@@ -14,9 +17,10 @@ function updateCampCompanions(dt){
   const goal=target||ally.home,range=target?stats.range*.85:8,dx=goal.x-ally.x,dy=goal.y-ally.y,distance=Math.hypot(dx,dy);
   if(distance>range){const travel=Math.min(145*dt,distance-range);ally.x=clamp(ally.x+dx/distance*travel,45,W-45);ally.y=clamp(ally.y+dy/distance*travel,90,H-45);ally.move=true}
   trackMotion(ally,old,dt);if(Math.abs(dx)>1)ally.facing=dx<0?-1:1;
+  if(!ally.move){const look=target||s.enemies.find(e=>!e.dead&&Math.hypot(e.x-ally.x,e.y-ally.y)<420);if(look){ally.facing=look.x<ally.x?-1:1;ally.walkDirection=knightMovementDirection(look.x-ally.x,look.y-ally.y,ally.walkDirection)}}
   if(target&&Math.hypot(target.x-ally.x,target.y-ally.y)<=stats.range&&ally.attackCd<=0){
    ally.attackAnim=.3;ally.attackCd=stats.attackRate*1.15;
-   if(ally.cls==='knight'){damage(target,stats.attackDamage*.75);s.rings.push({x:target.x,y:target.y,r:4,max:24,ttl:.18,color:'#e6c88b'})}
+   if(ally.cls==='knight'){GameAudio.effect('sword-swing',ally.x,ally.y);damage(target,stats.attackDamage*.75);s.rings.push({x:target.x,y:target.y,r:4,max:24,ttl:.18,color:'#e6c88b'})}
    else{shot(ally.x,ally.y,target.x,target.y,ally.cls==='rogue'?545:445,stats.attackDamage*.75,'hero',stats.auto,4);s.shots.at(-1).campAlly=ally.cls}
   }
  }

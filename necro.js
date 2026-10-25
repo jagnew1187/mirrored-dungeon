@@ -69,5 +69,5 @@ function drawNecroObstacle(o,top){
 function drawNecroTrap(h,state){
  if(s.active!=='necro'||h.kind!=='rune'||!necroAssetReady())return false;
  necroSprite(state==='active'?2:state==='warning'?1:0,h.x-24,h.y-24,48,48);
- ctx.save();ctx.strokeStyle=state==='active'?'#a2ffce':state==='warning'?'#e1cc83':'#52756d';ctx.lineWidth=state==='warning'?3:2;ctx.strokeRect(Math.round(h.x)-23,Math.round(h.y)-23,46,46);ctx.restore();return true;
+ return true;
 }

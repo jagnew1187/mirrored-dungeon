@@ -5,7 +5,7 @@ let pw;try{pw=require('playwright')}catch{pw=require(path.resolve(path.dirname(p
  const checks=await page.evaluate(()=>{
   const d=MirroredDungeonDebug;let checks=0;const check=(v,m)=>{if(!v)throw Error(m);checks++};
   for(const cls of ['mage','knight','rogue']){
-   d.reset();d.chooseClass(cls);d.start();const s=d.state();s.waveAt=9999;s.rival.remaining=9999;s.hero.x=770;s.hero.y=570;s.hero.hp=9999;s.hero.attack=999;d.step(.01);
+   d.reset();d.chooseClass(cls);d.start();let s=d.state();s.enemies=[];s.practiceWaveAt=9999;s.waveAt=9999;s.hero.x=770;s.hero.y=570;s.hero.hp=9999;s.hero.attack=999;d.step(.01);
    check(s.campFriends.length===2&&s.campFriends.every(a=>a.cls!==cls),'other two classes assist');
    for(const ally of s.campFriends){
     for(const a of s.campFriends)a.attackCd=999;ally.attackCd=0;
@@ -13,7 +13,7 @@ let pw;try{pw=require('playwright')}catch{pw=require(path.resolve(path.dirname(p
     let frames=0;while(!mob.dead&&frames++<350)d.step(.04);check(mob.dead,'companion '+ally.cls+' kills a real mob without player attacks');check(s.mobSent===sent+1,'normal kill bookkeeping exactly once');
    }
    const before=s.elapsed;s.paused=true;d.step(1);check(s.elapsed===before,'pause stops companion combat');s.paused=false;
-   d.selectBoss('warlord');d.step(.01);check(!s.campFriends&&!s.shots.some(p=>p.campAlly),'companions and their shots stay out of dungeons');
+   d.selectBoss('warlord');s=d.state();d.step(.01);check(!s.campFriends&&!s.shots.some(p=>p.campAlly),'companions and their shots stay out of dungeons');
    d.reset();check(!d.state().campFriends,'restart clears companions');
   }return checks;
  });assert.equal(checks,24);console.log(checks+' camp companion checks passed');

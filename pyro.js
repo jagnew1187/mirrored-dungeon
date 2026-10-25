@@ -69,5 +69,5 @@ function drawPyroObstacle(o,top){
 function drawPyroTrap(h,state){
  if(s.active!=='pyro'||!['fire','burn'].includes(h.kind)||!pyroAssetReady())return false;
  pyroSprite(state==='active'?2:state==='warning'?1:0,h.x-24,h.y-24,48,48);
- ctx.save();ctx.strokeStyle=state==='active'?'#ffb16e':state==='warning'?'#ffdb83':'#6d5a52';ctx.lineWidth=state==='warning'?3:2;ctx.strokeRect(Math.round(h.x)-23,Math.round(h.y)-23,46,46);ctx.restore();return true;
+ return true;
 }

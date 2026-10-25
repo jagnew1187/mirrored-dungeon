@@ -33,6 +33,15 @@ function heroFrameRect(img,frame){if(typeof HERO_FRAME_DATA!=='undefined'&&HERO_
  return{x,y,w:ex-x,h:ey-y,anchorX:(ex-x)/2,anchorY:(ey-y)*.85};
 }
 function drawHeroSprite(kind,x,y,width,height,anim,facing,hit,seed,actor){
+ if(actor===s?.hero&&!actor.drawingJumpPose&&(actor.jumpRemaining>0||actor.jumpLanding>0)){
+  const phase=1-(actor.jumpRemaining||0)/PLAYER_ACTIONS.jumpDuration,air=actor.jumpRemaining>0&&phase>.16&&phase<.84;
+  const crouch=actor.jumpLanding>0?actor.jumpLanding/.12:phase<.16?Math.sin(phase/.16*Math.PI):phase>.84?Math.sin((phase-.84)/.16*Math.PI):0;
+  const posed={...actor,drawingJumpPose:true,walkCycle:phase<.5?.25:.75};
+  const pose=anim==='attack'||anim==='skill'?anim:air?'walk':'idle';
+  ctx.save();ctx.translate(Math.round(x),Math.round(y));
+  ctx.scale(1+crouch*.06,1-crouch*.12);
+  const drawn=drawHeroSprite(kind,0,0,width,height,pose,facing,hit,seed,posed);ctx.restore();return drawn;
+ }
  if((kind==='mage'||kind==='rogue')&&(anim==='walk'||anim==='idle')&&drawClassGait(kind,x,y,height,anim,facing,hit,actor))return true;
  if(kind==='knight'&&(anim==='walk'||anim==='idle')&&drawKnightGait(x,y,height,anim,facing,hit,actor))return true;
  if(!heroArtReady(kind))return false;
