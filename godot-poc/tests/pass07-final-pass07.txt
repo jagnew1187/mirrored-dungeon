@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: knight: all eight directions, frame bounds, feet, impact frame and idle transition
+PASS: knight ability 0: facing and current playback duration
+PASS: knight ability 1: facing and current playback duration
+PASS: mage: all eight directions, frame bounds, feet, impact frame and idle transition
+PASS: mage ability 0: facing and current playback duration
+PASS: mage ability 1: facing and current playback duration
+PASS: rogue: all eight directions, frame bounds, feet, impact frame and idle transition
+PASS: rogue ability 0: facing and current playback duration
+PASS: rogue ability 1: facing and current playback duration
+PASS: vigil: all NPCs and interactions reachable
+PASS: vigil: feet-based depth sorting retained
+PASS: road: all NPCs and interactions reachable
+PASS: road: feet-based depth sorting retained
+PASS: bannerfall: all NPCs and interactions reachable
+PASS: bannerfall: feet-based depth sorting retained
+PASS: Five role atlases provide seven states with stable origin and unchanged foot collider
+PASS: Enemy runtime transitions select windup, release, recovery and hurt artwork
+PASS: Foreground roof fades without disabling facade collision
+RESULT: 18 visual checks, 0 failures

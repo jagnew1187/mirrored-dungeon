@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-01",
+  "original_files": 567,
+  "original_changed": [],
+  "original_godot_assets": 317,
+  "godot_asset_changed": [],
+  "installed_saves": 8,
+  "head": "477ae70194e2b5b1cfe7814b2b724c11bd30cfa6",
+  "branch": "main",
+  "installed_saves_unverified": [
+    "knight_1792996260.911_26731217.json",
+    "knight_1792996260.911_26731217.json.bak",
+    "knight_1792996843.621_31514483.json",
+    "knight_1792996843.621_31514483.json.bak",
+    "mage_1792998396.52_103269460.json",
+    "mage_1792998396.52_103269460.json.bak",
+    "rogue_1792998720.271_427034076.json",
+    "rogue_1792998720.271_427034076.json.bak"
+  ],
+  "save_verification_note": "Live installed-profile reads returned access denied during the final audit; these are unverified, not detected modifications. Pass 07 processes used redirected validation APPDATA. Prior save checkpoint remains preserved."
+}

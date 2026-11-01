@@ -1,0 +1,25 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 610.88 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS: knight: all eight directions, frame bounds, feet, impact frame and idle transition
+PASS: knight ability 0: facing and current playback duration
+PASS: knight ability 1: facing and current playback duration
+PASS: mage: all eight directions, frame bounds, feet, impact frame and idle transition
+PASS: mage ability 0: facing and current playback duration
+PASS: mage ability 1: facing and current playback duration
+PASS: rogue: all eight directions, frame bounds, feet, impact frame and idle transition
+PASS: rogue ability 0: facing and current playback duration
+PASS: rogue ability 1: facing and current playback duration
+PASS: vigil: all NPCs and interactions reachable
+PASS: vigil: feet-based depth sorting retained
+PERF vigil draw_calls=89.0 texture_bytes=55543023.0 nodes=116.0 process_seconds=0.109773
+PASS: road: all NPCs and interactions reachable
+PASS: road: feet-based depth sorting retained
+PERF road draw_calls=111.0 texture_bytes=63325309.0 nodes=407.0 process_seconds=0.109773
+PASS: bannerfall: all NPCs and interactions reachable
+PASS: bannerfall: feet-based depth sorting retained
+PERF bannerfall draw_calls=41.0 texture_bytes=66812113.0 nodes=81.0 process_seconds=0.141944
+PASS: Five role atlases provide seven states with stable origin and unchanged foot collider
+PASS: Enemy runtime transitions select windup, release, recovery and hurt artwork
+PASS: Foreground roof fades without disabling facade collision
+RESULT: 18 visual checks, 0 failures

@@ -1,0 +1,4054 @@
+[
+  {
+    "output": "knight_left_0.png",
+    "source": "knight-walk-left-v2.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "frame": {
+      "x": 13,
+      "y": 49,
+      "w": 452,
+      "h": 371,
+      "anchorX": 208.0,
+      "anchorY": 369
+    },
+    "bodyHeight": 369.0
+  },
+  {
+    "output": "knight_left_1.png",
+    "source": "knight-walk-left-v2.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "frame": {
+      "x": 463,
+      "y": 49,
+      "w": 434,
+      "h": 377,
+      "anchorX": 195.5,
+      "anchorY": 375
+    },
+    "bodyHeight": 369.0
+  },
+  {
+    "output": "knight_left_2.png",
+    "source": "knight-walk-left-v2.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "frame": {
+      "x": 897,
+      "y": 49,
+      "w": 416,
+      "h": 376,
+      "anchorX": 180.0,
+      "anchorY": 374
+    },
+    "bodyHeight": 369.0
+  },
+  {
+    "output": "knight_left_3.png",
+    "source": "knight-walk-left-v2.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "frame": {
+      "x": 1325,
+      "y": 49,
+      "w": 420,
+      "h": 377,
+      "anchorX": 181.0,
+      "anchorY": 375
+    },
+    "bodyHeight": 369.0
+  },
+  {
+    "output": "knight_left_4.png",
+    "source": "knight-walk-left-v2.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "frame": {
+      "x": 22,
+      "y": 468,
+      "w": 450,
+      "h": 366,
+      "anchorX": 206.0,
+      "anchorY": 364
+    },
+    "bodyHeight": 369.0
+  },
+  {
+    "output": "knight_left_5.png",
+    "source": "knight-walk-left-v2.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "frame": {
+      "x": 469,
+      "y": 469,
+      "w": 435,
+      "h": 372,
+      "anchorX": 195.5,
+      "anchorY": 370
+    },
+    "bodyHeight": 369.0
+  },
+  {
+    "output": "knight_left_6.png",
+    "source": "knight-walk-left-v2.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "frame": {
+      "x": 907,
+      "y": 468,
+      "w": 417,
+      "h": 374,
+      "anchorX": 173.0,
+      "anchorY": 372
+    },
+    "bodyHeight": 369.0
+  },
+  {
+    "output": "knight_left_7.png",
+    "source": "knight-walk-left-v2.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "frame": {
+      "x": 1324,
+      "y": 469,
+      "w": 432,
+      "h": 370,
+      "anchorX": 184.0,
+      "anchorY": 368
+    },
+    "bodyHeight": 369.0
+  },
+  {
+    "output": "knight_right_0.png",
+    "source": "knight-walk-right-v2.png",
+    "dimensions": [
+      1659,
+      948
+    ],
+    "frame": {
+      "x": 11,
+      "y": 72,
+      "w": 402,
+      "h": 381,
+      "anchorX": 245.5,
+      "anchorY": 379
+    },
+    "bodyHeight": 383.0
+  },
+  {
+    "output": "knight_right_1.png",
+    "source": "knight-walk-right-v2.png",
+    "dimensions": [
+      1659,
+      948
+    ],
+    "frame": {
+      "x": 423,
+      "y": 72,
+      "w": 376,
+      "h": 385,
+      "anchorX": 228.0,
+      "anchorY": 383
+    },
+    "bodyHeight": 383.0
+  },
+  {
+    "output": "knight_right_2.png",
+    "source": "knight-walk-right-v2.png",
+    "dimensions": [
+      1659,
+      948
+    ],
+    "frame": {
+      "x": 820,
+      "y": 72,
+      "w": 348,
+      "h": 386,
+      "anchorX": 213.5,
+      "anchorY": 384
+    },
+    "bodyHeight": 383.0
+  },
+  {
+    "output": "knight_right_3.png",
+    "source": "knight-walk-right-v2.png",
+    "dimensions": [
+      1659,
+      948
+    ],
+    "frame": {
+      "x": 1210,
+      "y": 72,
+      "w": 377,
+      "h": 385,
+      "anchorX": 227.0,
+      "anchorY": 383
+    },
+    "bodyHeight": 383.0
+  },
+  {
+    "output": "knight_right_4.png",
+    "source": "knight-walk-right-v2.png",
+    "dimensions": [
+      1659,
+      948
+    ],
+    "frame": {
+      "x": 11,
+      "y": 511,
+      "w": 395,
+      "h": 388,
+      "anchorX": 240.0,
+      "anchorY": 386
+    },
+    "bodyHeight": 383.0
+  },
+  {
+    "output": "knight_right_5.png",
+    "source": "knight-walk-right-v2.png",
+    "dimensions": [
+      1659,
+      948
+    ],
+    "frame": {
+      "x": 426,
+      "y": 511,
+      "w": 383,
+      "h": 390,
+      "anchorX": 227.5,
+      "anchorY": 388
+    },
+    "bodyHeight": 383.0
+  },
+  {
+    "output": "knight_right_6.png",
+    "source": "knight-walk-right-v2.png",
+    "dimensions": [
+      1659,
+      948
+    ],
+    "frame": {
+      "x": 825,
+      "y": 511,
+      "w": 351,
+      "h": 388,
+      "anchorX": 211.5,
+      "anchorY": 386
+    },
+    "bodyHeight": 383.0
+  },
+  {
+    "output": "knight_right_7.png",
+    "source": "knight-walk-right-v2.png",
+    "dimensions": [
+      1659,
+      948
+    ],
+    "frame": {
+      "x": 1213,
+      "y": 511,
+      "w": 387,
+      "h": 389,
+      "anchorX": 230.0,
+      "anchorY": 387
+    },
+    "bodyHeight": 383.0
+  },
+  {
+    "output": "knight_up_0.png",
+    "source": "knight-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 53,
+      "y": 44,
+      "w": 359,
+      "h": 440,
+      "anchorX": 149.5,
+      "anchorY": 438
+    },
+    "bodyHeight": 438.5
+  },
+  {
+    "output": "knight_up_1.png",
+    "source": "knight-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 436,
+      "y": 44,
+      "w": 350,
+      "h": 440,
+      "anchorX": 139.5,
+      "anchorY": 438
+    },
+    "bodyHeight": 438.5
+  },
+  {
+    "output": "knight_up_2.png",
+    "source": "knight-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 810,
+      "y": 44,
+      "w": 356,
+      "h": 440,
+      "anchorX": 144.0,
+      "anchorY": 438
+    },
+    "bodyHeight": 438.5
+  },
+  {
+    "output": "knight_up_3.png",
+    "source": "knight-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1186,
+      "y": 44,
+      "w": 350,
+      "h": 440,
+      "anchorX": 146.0,
+      "anchorY": 438
+    },
+    "bodyHeight": 438.5
+  },
+  {
+    "output": "knight_up_4.png",
+    "source": "knight-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 58,
+      "y": 520,
+      "w": 362,
+      "h": 445,
+      "anchorX": 146.5,
+      "anchorY": 443
+    },
+    "bodyHeight": 438.5
+  },
+  {
+    "output": "knight_up_5.png",
+    "source": "knight-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 437,
+      "y": 520,
+      "w": 351,
+      "h": 446,
+      "anchorX": 140.5,
+      "anchorY": 444
+    },
+    "bodyHeight": 438.5
+  },
+  {
+    "output": "knight_up_6.png",
+    "source": "knight-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 812,
+      "y": 520,
+      "w": 360,
+      "h": 446,
+      "anchorX": 144.5,
+      "anchorY": 444
+    },
+    "bodyHeight": 438.5
+  },
+  {
+    "output": "knight_up_7.png",
+    "source": "knight-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1188,
+      "y": 520,
+      "w": 348,
+      "h": 446,
+      "anchorX": 144.5,
+      "anchorY": 444
+    },
+    "bodyHeight": 438.5
+  },
+  {
+    "output": "knight_down_0.png",
+    "source": "knight-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 22,
+      "y": 71,
+      "w": 373,
+      "h": 434,
+      "anchorX": 201.5,
+      "anchorY": 432
+    },
+    "bodyHeight": 430.5
+  },
+  {
+    "output": "knight_down_1.png",
+    "source": "knight-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 396,
+      "y": 72,
+      "w": 372,
+      "h": 431,
+      "anchorX": 195.5,
+      "anchorY": 431
+    },
+    "bodyHeight": 430.5
+  },
+  {
+    "output": "knight_down_2.png",
+    "source": "knight-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 768,
+      "y": 73,
+      "w": 362,
+      "h": 427,
+      "anchorX": 190.0,
+      "anchorY": 427
+    },
+    "bodyHeight": 430.5
+  },
+  {
+    "output": "knight_down_3.png",
+    "source": "knight-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1130,
+      "y": 70,
+      "w": 378,
+      "h": 435,
+      "anchorX": 201.5,
+      "anchorY": 433
+    },
+    "bodyHeight": 430.5
+  },
+  {
+    "output": "knight_down_4.png",
+    "source": "knight-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 22,
+      "y": 543,
+      "w": 374,
+      "h": 435,
+      "anchorX": 199.5,
+      "anchorY": 433
+    },
+    "bodyHeight": 430.5
+  },
+  {
+    "output": "knight_down_5.png",
+    "source": "knight-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 396,
+      "y": 544,
+      "w": 372,
+      "h": 425,
+      "anchorX": 195.5,
+      "anchorY": 425
+    },
+    "bodyHeight": 430.5
+  },
+  {
+    "output": "knight_down_6.png",
+    "source": "knight-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 768,
+      "y": 545,
+      "w": 362,
+      "h": 424,
+      "anchorX": 189.5,
+      "anchorY": 424
+    },
+    "bodyHeight": 430.5
+  },
+  {
+    "output": "knight_down_7.png",
+    "source": "knight-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1130,
+      "y": 542,
+      "w": 378,
+      "h": 436,
+      "anchorX": 198.5,
+      "anchorY": 434
+    },
+    "bodyHeight": 430.5
+  },
+  {
+    "output": "knight_southeast_0.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 42,
+      "y": 51,
+      "w": 335,
+      "h": 357,
+      "anchorX": 183.0,
+      "anchorY": 355
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southeast_1.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 443,
+      "y": 51,
+      "w": 346,
+      "h": 361,
+      "anchorX": 202.0,
+      "anchorY": 359
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southeast_2.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 882,
+      "y": 51,
+      "w": 324,
+      "h": 361,
+      "anchorX": 184.0,
+      "anchorY": 359
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southeast_3.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 32,
+      "y": 443,
+      "w": 345,
+      "h": 362,
+      "anchorX": 193.0,
+      "anchorY": 360
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southeast_4.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 448,
+      "y": 443,
+      "w": 348,
+      "h": 367,
+      "anchorX": 195.0,
+      "anchorY": 365
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southeast_5.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 871,
+      "y": 443,
+      "w": 343,
+      "h": 366,
+      "anchorX": 196.0,
+      "anchorY": 364
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southeast_6.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 41,
+      "y": 834,
+      "w": 335,
+      "h": 363,
+      "anchorX": 186.0,
+      "anchorY": 361
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southeast_7.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 450,
+      "y": 834,
+      "w": 348,
+      "h": 367,
+      "anchorX": 196.0,
+      "anchorY": 365
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southeast_8.png",
+    "source": "knight-walk-southeast-v3.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "frame": {
+      "x": 871,
+      "y": 834,
+      "w": 335,
+      "h": 363,
+      "anchorX": 182.0,
+      "anchorY": 361
+    },
+    "bodyHeight": 359
+  },
+  {
+    "output": "knight_southwest_0.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 16,
+      "y": 33,
+      "w": 410,
+      "h": 377,
+      "anchorX": 203.0,
+      "anchorY": 377
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_southwest_1.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 440,
+      "y": 31,
+      "w": 418,
+      "h": 383,
+      "anchorX": 178.0,
+      "anchorY": 381
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_southwest_2.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 858,
+      "y": 31,
+      "w": 404,
+      "h": 382,
+      "anchorX": 169.5,
+      "anchorY": 380
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_southwest_3.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 21,
+      "y": 429,
+      "w": 428,
+      "h": 378,
+      "anchorX": 165.5,
+      "anchorY": 376
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_southwest_4.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 437,
+      "y": 428,
+      "w": 413,
+      "h": 381,
+      "anchorX": 171.0,
+      "anchorY": 379
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_southwest_5.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 848,
+      "y": 432,
+      "w": 416,
+      "h": 378,
+      "anchorX": 173.5,
+      "anchorY": 376
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_southwest_6.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 24,
+      "y": 819,
+      "w": 423,
+      "h": 383,
+      "anchorX": 192.5,
+      "anchorY": 381
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_southwest_7.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 432,
+      "y": 819,
+      "w": 423,
+      "h": 383,
+      "anchorX": 187.5,
+      "anchorY": 381
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_southwest_8.png",
+    "source": "knight-walk-southwest-v3.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "frame": {
+      "x": 842,
+      "y": 820,
+      "w": 422,
+      "h": 382,
+      "anchorX": 193.0,
+      "anchorY": 380
+    },
+    "bodyHeight": 379
+  },
+  {
+    "output": "knight_northeast_0.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 36,
+      "y": 58,
+      "w": 397,
+      "h": 348,
+      "anchorX": 199.5,
+      "anchorY": 346
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northeast_1.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 450,
+      "y": 58,
+      "w": 385,
+      "h": 350,
+      "anchorX": 180.5,
+      "anchorY": 348
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northeast_2.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 887,
+      "y": 58,
+      "w": 329,
+      "h": 343,
+      "anchorX": 142.0,
+      "anchorY": 341
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northeast_3.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 37,
+      "y": 471,
+      "w": 400,
+      "h": 350,
+      "anchorX": 193.0,
+      "anchorY": 348
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northeast_4.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 449,
+      "y": 471,
+      "w": 390,
+      "h": 342,
+      "anchorX": 181.5,
+      "anchorY": 340
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northeast_5.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 874,
+      "y": 470,
+      "w": 343,
+      "h": 343,
+      "anchorX": 154.5,
+      "anchorY": 341
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northeast_6.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 95,
+      "y": 870,
+      "w": 324,
+      "h": 346,
+      "anchorX": 137.5,
+      "anchorY": 344
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northeast_7.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 450,
+      "y": 870,
+      "w": 390,
+      "h": 346,
+      "anchorX": 177.5,
+      "anchorY": 344
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northeast_8.png",
+    "source": "knight-walk-northeast-v4.png",
+    "dimensions": [
+      1230,
+      1278
+    ],
+    "frame": {
+      "x": 889,
+      "y": 870,
+      "w": 334,
+      "h": 344,
+      "anchorX": 137.0,
+      "anchorY": 342
+    },
+    "bodyHeight": 342
+  },
+  {
+    "output": "knight_northwest_0.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 121,
+      "y": 46,
+      "w": 304,
+      "h": 333,
+      "anchorX": 100.5,
+      "anchorY": 331
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "knight_northwest_1.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 532,
+      "y": 46,
+      "w": 306,
+      "h": 329,
+      "anchorX": 99.5,
+      "anchorY": 327
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "knight_northwest_2.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 973,
+      "y": 46,
+      "w": 295,
+      "h": 328,
+      "anchorX": 101.0,
+      "anchorY": 326
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "knight_northwest_3.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 97,
+      "y": 428,
+      "w": 319,
+      "h": 331,
+      "anchorX": 104.5,
+      "anchorY": 329
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "knight_northwest_4.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 532,
+      "y": 429,
+      "w": 319,
+      "h": 330,
+      "anchorX": 103.0,
+      "anchorY": 328
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "knight_northwest_5.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 975,
+      "y": 428,
+      "w": 313,
+      "h": 324,
+      "anchorX": 98.0,
+      "anchorY": 322
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "knight_northwest_6.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 112,
+      "y": 803,
+      "w": 304,
+      "h": 329,
+      "anchorX": 96.5,
+      "anchorY": 327
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "knight_northwest_7.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 525,
+      "y": 803,
+      "w": 319,
+      "h": 332,
+      "anchorX": 101.0,
+      "anchorY": 330
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "knight_northwest_8.png",
+    "source": "knight-walk-northwest-v3.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "frame": {
+      "x": 970,
+      "y": 803,
+      "w": 278,
+      "h": 328,
+      "anchorX": 103.5,
+      "anchorY": 326
+    },
+    "bodyHeight": 325
+  },
+  {
+    "output": "mage_left_0.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 227,
+      "y": 37,
+      "w": 254,
+      "h": 288,
+      "anchorX": 104.5,
+      "anchorY": 286
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_left_1.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 658,
+      "y": 35,
+      "w": 255,
+      "h": 290,
+      "anchorX": 105.0,
+      "anchorY": 288
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_left_2.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1107,
+      "y": 35,
+      "w": 248,
+      "h": 289,
+      "anchorX": 105.5,
+      "anchorY": 287
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_left_3.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 198,
+      "y": 367,
+      "w": 273,
+      "h": 291,
+      "anchorX": 108.0,
+      "anchorY": 289
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_left_4.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 676,
+      "y": 367,
+      "w": 255,
+      "h": 291,
+      "anchorX": 102.5,
+      "anchorY": 289
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_left_5.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1111,
+      "y": 367,
+      "w": 253,
+      "h": 291,
+      "anchorX": 106.5,
+      "anchorY": 289
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_left_6.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 198,
+      "y": 693,
+      "w": 252,
+      "h": 291,
+      "anchorX": 107.5,
+      "anchorY": 289
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_left_7.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 658,
+      "y": 694,
+      "w": 274,
+      "h": 293,
+      "anchorX": 109.0,
+      "anchorY": 291
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_left_8.png",
+    "source": "mage-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1117,
+      "y": 692,
+      "w": 257,
+      "h": 297,
+      "anchorX": 109.0,
+      "anchorY": 295
+    },
+    "bodyHeight": 287
+  },
+  {
+    "output": "mage_right_0.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 97,
+      "y": 35,
+      "w": 272,
+      "h": 288,
+      "anchorX": 167.0,
+      "anchorY": 286
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_right_1.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 609,
+      "y": 35,
+      "w": 277,
+      "h": 287,
+      "anchorX": 176.0,
+      "anchorY": 285
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_right_2.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1157,
+      "y": 35,
+      "w": 224,
+      "h": 288,
+      "anchorX": 123.5,
+      "anchorY": 286
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_right_3.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 91,
+      "y": 364,
+      "w": 281,
+      "h": 289,
+      "anchorX": 177.5,
+      "anchorY": 287
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_right_4.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 620,
+      "y": 364,
+      "w": 269,
+      "h": 289,
+      "anchorX": 164.0,
+      "anchorY": 287
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_right_5.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1146,
+      "y": 361,
+      "w": 259,
+      "h": 289,
+      "anchorX": 152.0,
+      "anchorY": 287
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_right_6.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 111,
+      "y": 690,
+      "w": 258,
+      "h": 291,
+      "anchorX": 151.5,
+      "anchorY": 289
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_right_7.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 608,
+      "y": 691,
+      "w": 272,
+      "h": 293,
+      "anchorX": 166.5,
+      "anchorY": 291
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_right_8.png",
+    "source": "mage-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1164,
+      "y": 686,
+      "w": 239,
+      "h": 298,
+      "anchorX": 135.0,
+      "anchorY": 296
+    },
+    "bodyHeight": 278
+  },
+  {
+    "output": "mage_up_0.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 146,
+      "y": 13,
+      "w": 252,
+      "h": 313,
+      "anchorX": 169.0,
+      "anchorY": 311
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_up_1.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 654,
+      "y": 12,
+      "w": 239,
+      "h": 314,
+      "anchorX": 149.0,
+      "anchorY": 312
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_up_2.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1166,
+      "y": 13,
+      "w": 193,
+      "h": 314,
+      "anchorX": 109.0,
+      "anchorY": 312
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_up_3.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 139,
+      "y": 347,
+      "w": 253,
+      "h": 310,
+      "anchorX": 170.0,
+      "anchorY": 308
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_up_4.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 640,
+      "y": 341,
+      "w": 244,
+      "h": 313,
+      "anchorX": 160.0,
+      "anchorY": 311
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_up_5.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1155,
+      "y": 341,
+      "w": 221,
+      "h": 313,
+      "anchorX": 134.5,
+      "anchorY": 311
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_up_6.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 200,
+      "y": 683,
+      "w": 202,
+      "h": 303,
+      "anchorX": 116.0,
+      "anchorY": 301
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_up_7.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 625,
+      "y": 683,
+      "w": 262,
+      "h": 303,
+      "anchorX": 175.0,
+      "anchorY": 301
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_up_8.png",
+    "source": "mage-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1169,
+      "y": 683,
+      "w": 204,
+      "h": 305,
+      "anchorX": 115.5,
+      "anchorY": 303
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_down_0.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 183,
+      "y": 17,
+      "w": 247,
+      "h": 316,
+      "anchorX": 126.0,
+      "anchorY": 314
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_down_1.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 623,
+      "y": 33,
+      "w": 240,
+      "h": 300,
+      "anchorX": 126.0,
+      "anchorY": 298
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_down_2.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1145,
+      "y": 33,
+      "w": 227,
+      "h": 296,
+      "anchorX": 113.5,
+      "anchorY": 294
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_down_3.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 174,
+      "y": 359,
+      "w": 252,
+      "h": 300,
+      "anchorX": 128.5,
+      "anchorY": 298
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_down_4.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 617,
+      "y": 356,
+      "w": 252,
+      "h": 303,
+      "anchorX": 130.5,
+      "anchorY": 301
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_down_5.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1130,
+      "y": 358,
+      "w": 248,
+      "h": 298,
+      "anchorX": 132.0,
+      "anchorY": 296
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_down_6.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 174,
+      "y": 683,
+      "w": 245,
+      "h": 304,
+      "anchorX": 126.0,
+      "anchorY": 302
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_down_7.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 617,
+      "y": 683,
+      "w": 253,
+      "h": 304,
+      "anchorX": 134.5,
+      "anchorY": 302
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_down_8.png",
+    "source": "mage-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1145,
+      "y": 683,
+      "w": 242,
+      "h": 304,
+      "anchorX": 115.5,
+      "anchorY": 302
+    },
+    "bodyHeight": 299
+  },
+  {
+    "output": "mage_southeast_0.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 134,
+      "y": 30,
+      "w": 255,
+      "h": 292,
+      "anchorX": 123.5,
+      "anchorY": 290
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southeast_1.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 648,
+      "y": 30,
+      "w": 241,
+      "h": 293,
+      "anchorX": 122.5,
+      "anchorY": 291
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southeast_2.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1136,
+      "y": 29,
+      "w": 243,
+      "h": 295,
+      "anchorX": 132.5,
+      "anchorY": 293
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southeast_3.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 129,
+      "y": 361,
+      "w": 264,
+      "h": 296,
+      "anchorX": 128.0,
+      "anchorY": 294
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southeast_4.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 633,
+      "y": 361,
+      "w": 265,
+      "h": 296,
+      "anchorX": 134.5,
+      "anchorY": 294
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southeast_5.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1135,
+      "y": 361,
+      "w": 253,
+      "h": 296,
+      "anchorX": 131.0,
+      "anchorY": 294
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southeast_6.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 137,
+      "y": 692,
+      "w": 240,
+      "h": 303,
+      "anchorX": 121.0,
+      "anchorY": 301
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southeast_7.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 633,
+      "y": 693,
+      "w": 261,
+      "h": 297,
+      "anchorX": 133.0,
+      "anchorY": 295
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southeast_8.png",
+    "source": "mage-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1145,
+      "y": 691,
+      "w": 246,
+      "h": 304,
+      "anchorX": 124.0,
+      "anchorY": 302
+    },
+    "bodyHeight": 292
+  },
+  {
+    "output": "mage_southwest_0.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 156,
+      "y": 10,
+      "w": 351,
+      "h": 320,
+      "anchorX": 125.5,
+      "anchorY": 318
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_southwest_1.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 616,
+      "y": 11,
+      "w": 345,
+      "h": 317,
+      "anchorX": 119.5,
+      "anchorY": 315
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_southwest_2.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1102,
+      "y": 11,
+      "w": 334,
+      "h": 317,
+      "anchorX": 121.0,
+      "anchorY": 315
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_southwest_3.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 156,
+      "y": 351,
+      "w": 351,
+      "h": 311,
+      "anchorX": 122.5,
+      "anchorY": 309
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_southwest_4.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 622,
+      "y": 353,
+      "w": 359,
+      "h": 301,
+      "anchorX": 124.5,
+      "anchorY": 299
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_southwest_5.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1103,
+      "y": 353,
+      "w": 343,
+      "h": 307,
+      "anchorX": 123.0,
+      "anchorY": 305
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_southwest_6.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 154,
+      "y": 683,
+      "w": 346,
+      "h": 307,
+      "anchorX": 123.0,
+      "anchorY": 305
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_southwest_7.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 629,
+      "y": 683,
+      "w": 338,
+      "h": 307,
+      "anchorX": 118.5,
+      "anchorY": 305
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_southwest_8.png",
+    "source": "mage-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1109,
+      "y": 683,
+      "w": 333,
+      "h": 309,
+      "anchorX": 119.0,
+      "anchorY": 307
+    },
+    "bodyHeight": 307
+  },
+  {
+    "output": "mage_northeast_0.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 142,
+      "y": 36,
+      "w": 265,
+      "h": 288,
+      "anchorX": 167.0,
+      "anchorY": 286
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northeast_1.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 623,
+      "y": 36,
+      "w": 266,
+      "h": 288,
+      "anchorX": 160.5,
+      "anchorY": 286
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northeast_2.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1152,
+      "y": 35,
+      "w": 224,
+      "h": 289,
+      "anchorX": 120.0,
+      "anchorY": 287
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northeast_3.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 142,
+      "y": 368,
+      "w": 269,
+      "h": 289,
+      "anchorX": 166.5,
+      "anchorY": 287
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northeast_4.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 630,
+      "y": 368,
+      "w": 263,
+      "h": 289,
+      "anchorX": 164.0,
+      "anchorY": 287
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northeast_5.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1156,
+      "y": 368,
+      "w": 233,
+      "h": 287,
+      "anchorX": 129.0,
+      "anchorY": 285
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northeast_6.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 185,
+      "y": 695,
+      "w": 210,
+      "h": 292,
+      "anchorX": 111.0,
+      "anchorY": 290
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northeast_7.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 628,
+      "y": 697,
+      "w": 267,
+      "h": 290,
+      "anchorX": 168.5,
+      "anchorY": 288
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northeast_8.png",
+    "source": "mage-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1167,
+      "y": 695,
+      "w": 203,
+      "h": 294,
+      "anchorX": 102.0,
+      "anchorY": 292
+    },
+    "bodyHeight": 285
+  },
+  {
+    "output": "mage_northwest_0.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 193,
+      "y": 21,
+      "w": 245,
+      "h": 304,
+      "anchorX": 119.5,
+      "anchorY": 302
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_northwest_1.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 676,
+      "y": 21,
+      "w": 248,
+      "h": 302,
+      "anchorX": 116.0,
+      "anchorY": 300
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_northwest_2.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1188,
+      "y": 21,
+      "w": 246,
+      "h": 304,
+      "anchorX": 116.5,
+      "anchorY": 302
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_northwest_3.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 194,
+      "y": 350,
+      "w": 254,
+      "h": 300,
+      "anchorX": 118.0,
+      "anchorY": 298
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_northwest_4.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 674,
+      "y": 350,
+      "w": 262,
+      "h": 299,
+      "anchorX": 118.0,
+      "anchorY": 297
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_northwest_5.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1188,
+      "y": 350,
+      "w": 257,
+      "h": 298,
+      "anchorX": 117.0,
+      "anchorY": 296
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_northwest_6.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 193,
+      "y": 683,
+      "w": 256,
+      "h": 294,
+      "anchorX": 118.5,
+      "anchorY": 292
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_northwest_7.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 674,
+      "y": 683,
+      "w": 256,
+      "h": 295,
+      "anchorX": 118.0,
+      "anchorY": 293
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "mage_northwest_8.png",
+    "source": "mage-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1200,
+      "y": 683,
+      "w": 210,
+      "h": 294,
+      "anchorX": 106.0,
+      "anchorY": 292
+    },
+    "bodyHeight": 291
+  },
+  {
+    "output": "rogue_left_0.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 180,
+      "y": 19,
+      "w": 286,
+      "h": 314,
+      "anchorX": 92.5,
+      "anchorY": 312
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_left_1.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 685,
+      "y": 19,
+      "w": 285,
+      "h": 314,
+      "anchorX": 91.5,
+      "anchorY": 312
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_left_2.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1199,
+      "y": 19,
+      "w": 233,
+      "h": 314,
+      "anchorX": 67.0,
+      "anchorY": 312
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_left_3.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 154,
+      "y": 358,
+      "w": 311,
+      "h": 316,
+      "anchorX": 97.5,
+      "anchorY": 314
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_left_4.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 666,
+      "y": 359,
+      "w": 284,
+      "h": 312,
+      "anchorX": 86.0,
+      "anchorY": 310
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_left_5.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1189,
+      "y": 358,
+      "w": 262,
+      "h": 313,
+      "anchorX": 66.5,
+      "anchorY": 311
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_left_6.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 191,
+      "y": 686,
+      "w": 253,
+      "h": 316,
+      "anchorX": 67.5,
+      "anchorY": 314
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_left_7.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 655,
+      "y": 686,
+      "w": 313,
+      "h": 316,
+      "anchorX": 97.0,
+      "anchorY": 314
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_left_8.png",
+    "source": "rogue-walk-left-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1193,
+      "y": 686,
+      "w": 244,
+      "h": 314,
+      "anchorX": 91.0,
+      "anchorY": 312
+    },
+    "bodyHeight": 310
+  },
+  {
+    "output": "rogue_right_0.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 83,
+      "y": 12,
+      "w": 304,
+      "h": 319,
+      "anchorX": 206.5,
+      "anchorY": 317
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_right_1.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 600,
+      "y": 13,
+      "w": 303,
+      "h": 318,
+      "anchorX": 213.5,
+      "anchorY": 316
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_right_2.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1121,
+      "y": 14,
+      "w": 292,
+      "h": 317,
+      "anchorX": 205.5,
+      "anchorY": 315
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_right_3.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 81,
+      "y": 357,
+      "w": 326,
+      "h": 306,
+      "anchorX": 212.5,
+      "anchorY": 303
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_right_4.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 593,
+      "y": 357,
+      "w": 315,
+      "h": 308,
+      "anchorX": 213.0,
+      "anchorY": 306
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_right_5.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1125,
+      "y": 357,
+      "w": 300,
+      "h": 306,
+      "anchorX": 201.0,
+      "anchorY": 304
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_right_6.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 94,
+      "y": 688,
+      "w": 293,
+      "h": 317,
+      "anchorX": 197.5,
+      "anchorY": 315
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_right_7.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 597,
+      "y": 688,
+      "w": 322,
+      "h": 317,
+      "anchorX": 210.5,
+      "anchorY": 315
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_right_8.png",
+    "source": "rogue-walk-right-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1143,
+      "y": 684,
+      "w": 267,
+      "h": 321,
+      "anchorX": 168.5,
+      "anchorY": 319
+    },
+    "bodyHeight": 313
+  },
+  {
+    "output": "rogue_up_0.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 104,
+      "y": 33,
+      "w": 271,
+      "h": 303,
+      "anchorX": 153.5,
+      "anchorY": 301
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_up_1.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 615,
+      "y": 29,
+      "w": 270,
+      "h": 305,
+      "anchorX": 151.0,
+      "anchorY": 303
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_up_2.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1132,
+      "y": 33,
+      "w": 255,
+      "h": 303,
+      "anchorX": 136.5,
+      "anchorY": 301
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_up_3.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 104,
+      "y": 359,
+      "w": 273,
+      "h": 295,
+      "anchorX": 151.0,
+      "anchorY": 293
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_up_4.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 614,
+      "y": 359,
+      "w": 273,
+      "h": 296,
+      "anchorX": 150.5,
+      "anchorY": 294
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_up_5.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1121,
+      "y": 356,
+      "w": 277,
+      "h": 301,
+      "anchorX": 152.5,
+      "anchorY": 299
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_up_6.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 119,
+      "y": 683,
+      "w": 260,
+      "h": 296,
+      "anchorX": 139.0,
+      "anchorY": 294
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_up_7.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 610,
+      "y": 683,
+      "w": 278,
+      "h": 296,
+      "anchorX": 153.5,
+      "anchorY": 294
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_up_8.png",
+    "source": "rogue-walk-up-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1119,
+      "y": 683,
+      "w": 278,
+      "h": 293,
+      "anchorX": 157.5,
+      "anchorY": 291
+    },
+    "bodyHeight": 294
+  },
+  {
+    "output": "rogue_down_0.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 120,
+      "y": 38,
+      "w": 274,
+      "h": 303,
+      "anchorX": 152.0,
+      "anchorY": 302
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_down_1.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 616,
+      "y": 38,
+      "w": 275,
+      "h": 302,
+      "anchorX": 149.5,
+      "anchorY": 300
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_down_2.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1118,
+      "y": 38,
+      "w": 267,
+      "h": 303,
+      "anchorX": 144.5,
+      "anchorY": 302
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_down_3.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 116,
+      "y": 355,
+      "w": 278,
+      "h": 303,
+      "anchorX": 153.0,
+      "anchorY": 301
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_down_4.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 609,
+      "y": 357,
+      "w": 282,
+      "h": 303,
+      "anchorX": 157.0,
+      "anchorY": 301
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_down_5.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1104,
+      "y": 361,
+      "w": 283,
+      "h": 299,
+      "anchorX": 159.5,
+      "anchorY": 297
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_down_6.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 121,
+      "y": 683,
+      "w": 272,
+      "h": 295,
+      "anchorX": 148.0,
+      "anchorY": 293
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_down_7.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 610,
+      "y": 683,
+      "w": 281,
+      "h": 296,
+      "anchorX": 155.5,
+      "anchorY": 294
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_down_8.png",
+    "source": "rogue-walk-down-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1103,
+      "y": 683,
+      "w": 294,
+      "h": 293,
+      "anchorX": 158.5,
+      "anchorY": 291
+    },
+    "bodyHeight": 298
+  },
+  {
+    "output": "rogue_southeast_0.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 102,
+      "y": 22,
+      "w": 325,
+      "h": 318,
+      "anchorX": 204.0,
+      "anchorY": 316
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southeast_1.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 600,
+      "y": 22,
+      "w": 308,
+      "h": 318,
+      "anchorX": 195.0,
+      "anchorY": 316
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southeast_2.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1100,
+      "y": 15,
+      "w": 285,
+      "h": 325,
+      "anchorX": 187.5,
+      "anchorY": 323
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southeast_3.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 106,
+      "y": 358,
+      "w": 316,
+      "h": 307,
+      "anchorX": 204.0,
+      "anchorY": 305
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southeast_4.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 610,
+      "y": 359,
+      "w": 304,
+      "h": 306,
+      "anchorX": 198.5,
+      "anchorY": 304
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southeast_5.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1112,
+      "y": 355,
+      "w": 294,
+      "h": 311,
+      "anchorX": 189.5,
+      "anchorY": 309
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southeast_6.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 114,
+      "y": 683,
+      "w": 291,
+      "h": 312,
+      "anchorX": 189.5,
+      "anchorY": 310
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southeast_7.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 585,
+      "y": 683,
+      "w": 328,
+      "h": 301,
+      "anchorX": 204.5,
+      "anchorY": 299
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southeast_8.png",
+    "source": "rogue-walk-southeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1107,
+      "y": 683,
+      "w": 291,
+      "h": 310,
+      "anchorX": 174.0,
+      "anchorY": 308
+    },
+    "bodyHeight": 308
+  },
+  {
+    "output": "rogue_southwest_0.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 166,
+      "y": 19,
+      "w": 308,
+      "h": 311,
+      "anchorX": 107.5,
+      "anchorY": 309
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_southwest_1.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 626,
+      "y": 18,
+      "w": 310,
+      "h": 311,
+      "anchorX": 102.0,
+      "anchorY": 309
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_southwest_2.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1126,
+      "y": 17,
+      "w": 303,
+      "h": 316,
+      "anchorX": 96.0,
+      "anchorY": 314
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_southwest_3.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 168,
+      "y": 345,
+      "w": 319,
+      "h": 321,
+      "anchorX": 104.0,
+      "anchorY": 319
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_southwest_4.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 626,
+      "y": 344,
+      "w": 310,
+      "h": 316,
+      "anchorX": 102.0,
+      "anchorY": 314
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_southwest_5.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1130,
+      "y": 346,
+      "w": 302,
+      "h": 314,
+      "anchorX": 91.5,
+      "anchorY": 312
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_southwest_6.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 168,
+      "y": 683,
+      "w": 310,
+      "h": 310,
+      "anchorX": 98.5,
+      "anchorY": 308
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_southwest_7.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 628,
+      "y": 683,
+      "w": 338,
+      "h": 313,
+      "anchorX": 102.5,
+      "anchorY": 311
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_southwest_8.png",
+    "source": "rogue-walk-southwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1127,
+      "y": 683,
+      "w": 297,
+      "h": 313,
+      "anchorX": 100.0,
+      "anchorY": 311
+    },
+    "bodyHeight": 311
+  },
+  {
+    "output": "rogue_northeast_0.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 120,
+      "y": 40,
+      "w": 256,
+      "h": 299,
+      "anchorX": 180.5,
+      "anchorY": 297
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northeast_1.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 618,
+      "y": 40,
+      "w": 256,
+      "h": 300,
+      "anchorX": 172.5,
+      "anchorY": 298
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northeast_2.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1119,
+      "y": 40,
+      "w": 248,
+      "h": 300,
+      "anchorX": 173.5,
+      "anchorY": 298
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northeast_3.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 112,
+      "y": 370,
+      "w": 278,
+      "h": 296,
+      "anchorX": 185.5,
+      "anchorY": 294
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northeast_4.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 598,
+      "y": 367,
+      "w": 271,
+      "h": 295,
+      "anchorX": 182.0,
+      "anchorY": 293
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northeast_5.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1103,
+      "y": 368,
+      "w": 269,
+      "h": 298,
+      "anchorX": 184.5,
+      "anchorY": 296
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northeast_6.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 134,
+      "y": 685,
+      "w": 248,
+      "h": 296,
+      "anchorX": 163.0,
+      "anchorY": 294
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northeast_7.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 603,
+      "y": 684,
+      "w": 292,
+      "h": 300,
+      "anchorX": 194.5,
+      "anchorY": 298
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northeast_8.png",
+    "source": "rogue-walk-northeast-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1117,
+      "y": 683,
+      "w": 260,
+      "h": 303,
+      "anchorX": 159.0,
+      "anchorY": 301
+    },
+    "bodyHeight": 295
+  },
+  {
+    "output": "rogue_northwest_0.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 123,
+      "y": 14,
+      "w": 285,
+      "h": 326,
+      "anchorX": 105.5,
+      "anchorY": 324
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "rogue_northwest_1.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 656,
+      "y": 14,
+      "w": 286,
+      "h": 326,
+      "anchorX": 107.0,
+      "anchorY": 324
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "rogue_northwest_2.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1210,
+      "y": 14,
+      "w": 273,
+      "h": 326,
+      "anchorX": 107.0,
+      "anchorY": 324
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "rogue_northwest_3.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 123,
+      "y": 348,
+      "w": 294,
+      "h": 323,
+      "anchorX": 105.0,
+      "anchorY": 321
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "rogue_northwest_4.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 658,
+      "y": 350,
+      "w": 294,
+      "h": 322,
+      "anchorX": 104.5,
+      "anchorY": 320
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "rogue_northwest_5.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1199,
+      "y": 350,
+      "w": 299,
+      "h": 324,
+      "anchorX": 104.0,
+      "anchorY": 322
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "rogue_northwest_6.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 121,
+      "y": 683,
+      "w": 298,
+      "h": 327,
+      "anchorX": 105.0,
+      "anchorY": 325
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "rogue_northwest_7.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 653,
+      "y": 683,
+      "w": 291,
+      "h": 327,
+      "anchorX": 108.0,
+      "anchorY": 325
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "rogue_northwest_8.png",
+    "source": "rogue-walk-northwest-v2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "frame": {
+      "x": 1214,
+      "y": 683,
+      "w": 260,
+      "h": 318,
+      "anchorX": 101.5,
+      "anchorY": 316
+    },
+    "bodyHeight": 322
+  },
+  {
+    "output": "mara_0.png",
+    "source": "mara-animation-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      260,
+      16,
+      130,
+      318
+    ]
+  },
+  {
+    "output": "mara_1.png",
+    "source": "mara-animation-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      559,
+      16,
+      132,
+      318
+    ]
+  },
+  {
+    "output": "mara_2.png",
+    "source": "mara-animation-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      851,
+      16,
+      132,
+      318
+    ]
+  },
+  {
+    "output": "mara_3.png",
+    "source": "mara-animation-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      1151,
+      16,
+      132,
+      318
+    ]
+  },
+  {
+    "output": "mara_portrait.png",
+    "source": "mara-portrait-v1.png",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "rect": [
+      0,
+      0,
+      1254,
+      1254
+    ]
+  },
+  {
+    "output": "anja.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      40,
+      66,
+      263,
+      535
+    ]
+  },
+  {
+    "output": "anja_portrait.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      22,
+      636,
+      286,
+      338
+    ]
+  },
+  {
+    "output": "oren.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      344,
+      51,
+      267,
+      551
+    ]
+  },
+  {
+    "output": "oren_portrait.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      338,
+      636,
+      282,
+      338
+    ]
+  },
+  {
+    "output": "ves.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      680,
+      68,
+      219,
+      532
+    ]
+  },
+  {
+    "output": "ves_portrait.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      641,
+      636,
+      281,
+      338
+    ]
+  },
+  {
+    "output": "tomas.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      980,
+      64,
+      218,
+      540
+    ]
+  },
+  {
+    "output": "tomas_portrait.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      945,
+      636,
+      283,
+      338
+    ]
+  },
+  {
+    "output": "boy.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      1315,
+      204,
+      166,
+      392
+    ]
+  },
+  {
+    "output": "boy_portrait.png",
+    "source": "campaign-villagers-v1.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "rect": [
+      1265,
+      685,
+      238,
+      289
+    ]
+  },
+  {
+    "output": "tile_0.png",
+    "source": "camp-materials-v1.png",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "rect": [
+      0,
+      0,
+      627,
+      627
+    ]
+  },
+  {
+    "output": "tile_1.png",
+    "source": "camp-materials-v1.png",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "rect": [
+      627,
+      0,
+      627,
+      627
+    ]
+  },
+  {
+    "output": "tile_2.png",
+    "source": "camp-materials-v1.png",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "rect": [
+      0,
+      627,
+      627,
+      627
+    ]
+  },
+  {
+    "output": "tile_3.png",
+    "source": "camp-materials-v1.png",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "rect": [
+      627,
+      627,
+      627,
+      627
+    ]
+  },
+  {
+    "output": "tent.png",
+    "source": "journey-v1.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "rect": [
+      833,
+      510,
+      479,
+      347
+    ]
+  },
+  {
+    "output": "fire.png",
+    "source": "journey-v1.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "rect": [
+      0,
+      851,
+      437,
+      330
+    ]
+  },
+  {
+    "output": "crate.png",
+    "source": "journey-v1.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "rect": [
+      459,
+      905,
+      407,
+      264
+    ]
+  },
+  {
+    "output": "table.png",
+    "source": "journey-v1.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "rect": [
+      872,
+      875,
+      440,
+      324
+    ]
+  },
+  {
+    "output": "enemy_0.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      69,
+      58,
+      211,
+      243
+    ]
+  },
+  {
+    "output": "enemy_1.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      385,
+      58,
+      221,
+      243
+    ]
+  },
+  {
+    "output": "enemy_2.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      713,
+      58,
+      202,
+      243
+    ]
+  },
+  {
+    "output": "enemy_3.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      1017,
+      57,
+      221,
+      244
+    ]
+  },
+  {
+    "output": "enemy_4.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      78,
+      360,
+      223,
+      241
+    ]
+  },
+  {
+    "output": "enemy_5.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      397,
+      360,
+      215,
+      241
+    ]
+  },
+  {
+    "output": "enemy_6.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      711,
+      360,
+      221,
+      241
+    ]
+  },
+  {
+    "output": "enemy_7.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      1017,
+      360,
+      210,
+      241
+    ]
+  },
+  {
+    "output": "enemy_8.png",
+    "source": "cultist-motion-right-v1.png",
+    "dimensions": [
+      1278,
+      1230
+    ],
+    "rect": [
+      83,
+      650,
+      179,
+      239
+    ]
+  }
+]

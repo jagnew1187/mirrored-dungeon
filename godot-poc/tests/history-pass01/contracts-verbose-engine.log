@@ -1,0 +1,711 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 2004498165
+EDITOR API HASH: 1696660745
+Loading resource: res://tests/pass02_contracts.gd remapped: res://tests/pass02_contracts.gd
+Completed load for: 'res://tests/pass02_contracts.gd' remapped 'res://tests/pass02_contracts.gd' at thread -1
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://scenes/main.tscn remapped: res://scenes/main.tscn
+Loading resource: res://scripts/main.gd remapped: res://scripts/main.gd
+Completed load for: 'res://scripts/main.gd' remapped 'res://scripts/main.gd' at thread -1
+Completed load for: 'res://scenes/main.tscn' remapped 'res://scenes/main.tscn' at thread -1
+Loading resource: res://scripts/interface.gd remapped: res://scripts/interface.gd
+Completed load for: 'res://scripts/interface.gd' remapped 'res://scripts/interface.gd' at thread -1
+Loading resource: res://scripts/touch_pad.gd remapped: res://scripts/touch_pad.gd
+Completed load for: 'res://scripts/touch_pad.gd' remapped 'res://scripts/touch_pad.gd' at thread -1
+Loading resource: res://scenes/vigil.tscn remapped: res://scenes/vigil.tscn
+Loading resource: res://scripts/area.gd remapped: res://scripts/area.gd
+Completed load for: 'res://scripts/area.gd' remapped 'res://scripts/area.gd' at thread -1
+Completed load for: 'res://scenes/vigil.tscn' remapped 'res://scenes/vigil.tscn' at thread -1
+Loading resource: res://assets/tile_0.png remapped: res://assets/tile_0.png
+Loading resource: res://.godot/imported/tile_0.png-0055f351d02e7277228426fdadf74cea.ctex remapped: res://.godot/imported/tile_0.png-0055f351d02e7277228426fdadf74cea.ctex
+Completed load for: 'res://assets/tile_0.png' remapped 'res://assets/tile_0.png' at thread -1
+Loading resource: res://assets/tile_1.png remapped: res://assets/tile_1.png
+Loading resource: res://.godot/imported/tile_1.png-ed2b9d4f610c7fb97158295d6e76ce89.ctex remapped: res://.godot/imported/tile_1.png-ed2b9d4f610c7fb97158295d6e76ce89.ctex
+Completed load for: 'res://assets/tile_1.png' remapped 'res://assets/tile_1.png' at thread -1
+Loading resource: res://assets/tile_2.png remapped: res://assets/tile_2.png
+Loading resource: res://.godot/imported/tile_2.png-002bac65af41227d3e24091c8a6140f0.ctex remapped: res://.godot/imported/tile_2.png-002bac65af41227d3e24091c8a6140f0.ctex
+Completed load for: 'res://assets/tile_2.png' remapped 'res://assets/tile_2.png' at thread -1
+Loading resource: res://assets/tile_3.png remapped: res://assets/tile_3.png
+Loading resource: res://.godot/imported/tile_3.png-59d12404f7195fb37d1f2a78b344b2f9.ctex remapped: res://.godot/imported/tile_3.png-59d12404f7195fb37d1f2a78b344b2f9.ctex
+Completed load for: 'res://assets/tile_3.png' remapped 'res://assets/tile_3.png' at thread -1
+Loading resource: res://scripts/prop.gd remapped: res://scripts/prop.gd
+Completed load for: 'res://scripts/prop.gd' remapped 'res://scripts/prop.gd' at thread -1
+Loading resource: res://assets/tent.png remapped: res://assets/tent.png
+Loading resource: res://.godot/imported/tent.png-536a6fa46d66e6acda070bccd224af03.ctex remapped: res://.godot/imported/tent.png-536a6fa46d66e6acda070bccd224af03.ctex
+Completed load for: 'res://assets/tent.png' remapped 'res://assets/tent.png' at thread -1
+Loading resource: res://assets/masonry.png remapped: res://assets/masonry.png
+Loading resource: res://.godot/imported/masonry.png-4515a34cd5a207d43a7e3ac895caa3f1.ctex remapped: res://.godot/imported/masonry.png-4515a34cd5a207d43a7e3ac895caa3f1.ctex
+Completed load for: 'res://assets/masonry.png' remapped 'res://assets/masonry.png' at thread -1
+Loading resource: res://assets/pavilion.png remapped: res://assets/pavilion.png
+Loading resource: res://.godot/imported/pavilion.png-837d55ef957b9e8b99fe0f3aaf12e54c.ctex remapped: res://.godot/imported/pavilion.png-837d55ef957b9e8b99fe0f3aaf12e54c.ctex
+Completed load for: 'res://assets/pavilion.png' remapped 'res://assets/pavilion.png' at thread -1
+Loading resource: res://assets/fire.png remapped: res://assets/fire.png
+Loading resource: res://.godot/imported/fire.png-dcd8d46f0ab7d214a6d8da4be8adf942.ctex remapped: res://.godot/imported/fire.png-dcd8d46f0ab7d214a6d8da4be8adf942.ctex
+Completed load for: 'res://assets/fire.png' remapped 'res://assets/fire.png' at thread -1
+Loading resource: res://assets/chest.png remapped: res://assets/chest.png
+Loading resource: res://.godot/imported/chest.png-ec5c0ce22911c81d595ed790e257ceb9.ctex remapped: res://.godot/imported/chest.png-ec5c0ce22911c81d595ed790e257ceb9.ctex
+Completed load for: 'res://assets/chest.png' remapped 'res://assets/chest.png' at thread -1
+Loading resource: res://assets/table.png remapped: res://assets/table.png
+Loading resource: res://.godot/imported/table.png-14b755b19e8ff9a139cf951e8fcb8e14.ctex remapped: res://.godot/imported/table.png-14b755b19e8ff9a139cf951e8fcb8e14.ctex
+Completed load for: 'res://assets/table.png' remapped 'res://assets/table.png' at thread -1
+Loading resource: res://assets/crate.png remapped: res://assets/crate.png
+Loading resource: res://.godot/imported/crate.png-b083c7143ec8103676df154d007e744f.ctex remapped: res://.godot/imported/crate.png-b083c7143ec8103676df154d007e744f.ctex
+Completed load for: 'res://assets/crate.png' remapped 'res://assets/crate.png' at thread -1
+Loading resource: res://assets/barrel.png remapped: res://assets/barrel.png
+Loading resource: res://.godot/imported/barrel.png-d7558aef31a8f4899a7ffc3a3f2685b7.ctex remapped: res://.godot/imported/barrel.png-d7558aef31a8f4899a7ffc3a3f2685b7.ctex
+Completed load for: 'res://assets/barrel.png' remapped 'res://assets/barrel.png' at thread -1
+Loading resource: res://assets/supply_crate.png remapped: res://assets/supply_crate.png
+Loading resource: res://.godot/imported/supply_crate.png-421ad6587d7f0952d31e5fcae4efd4aa.ctex remapped: res://.godot/imported/supply_crate.png-421ad6587d7f0952d31e5fcae4efd4aa.ctex
+Completed load for: 'res://assets/supply_crate.png' remapped 'res://assets/supply_crate.png' at thread -1
+Loading resource: res://scripts/actor.gd remapped: res://scripts/actor.gd
+Completed load for: 'res://scripts/actor.gd' remapped 'res://scripts/actor.gd' at thread -1
+Loading resource: res://assets/mara_0.png remapped: res://assets/mara_0.png
+Loading resource: res://.godot/imported/mara_0.png-c0b39f93eb686dece88f6c7c812fc45e.ctex remapped: res://.godot/imported/mara_0.png-c0b39f93eb686dece88f6c7c812fc45e.ctex
+Completed load for: 'res://assets/mara_0.png' remapped 'res://assets/mara_0.png' at thread -1
+Loading resource: res://assets/mara_1.png remapped: res://assets/mara_1.png
+Loading resource: res://.godot/imported/mara_1.png-82c65773a3172a88c48dd6c7ed81c8ac.ctex remapped: res://.godot/imported/mara_1.png-82c65773a3172a88c48dd6c7ed81c8ac.ctex
+Completed load for: 'res://assets/mara_1.png' remapped 'res://assets/mara_1.png' at thread -1
+Loading resource: res://assets/mara_2.png remapped: res://assets/mara_2.png
+Loading resource: res://.godot/imported/mara_2.png-c4ef8e9884d219f7670af4f5398c99c9.ctex remapped: res://.godot/imported/mara_2.png-c4ef8e9884d219f7670af4f5398c99c9.ctex
+Completed load for: 'res://assets/mara_2.png' remapped 'res://assets/mara_2.png' at thread -1
+Loading resource: res://assets/mara_3.png remapped: res://assets/mara_3.png
+Loading resource: res://.godot/imported/mara_3.png-ef54828f1ac9079caf5dd563c403be28.ctex remapped: res://.godot/imported/mara_3.png-ef54828f1ac9079caf5dd563c403be28.ctex
+Completed load for: 'res://assets/mara_3.png' remapped 'res://assets/mara_3.png' at thread -1
+Loading resource: res://assets/boy.png remapped: res://assets/boy.png
+Loading resource: res://.godot/imported/boy.png-bf940026e474b8cab52c8e178ed4ebd3.ctex remapped: res://.godot/imported/boy.png-bf940026e474b8cab52c8e178ed4ebd3.ctex
+Completed load for: 'res://assets/boy.png' remapped 'res://assets/boy.png' at thread -1
+Loading resource: res://scripts/ground.gdshader remapped: res://scripts/ground.gdshader
+Completed load for: 'res://scripts/ground.gdshader' remapped 'res://scripts/ground.gdshader' at thread -1
+Loading resource: res://assets/knight_right_0.png remapped: res://assets/knight_right_0.png
+Loading resource: res://.godot/imported/knight_right_0.png-f80e701fe69f553f54604c8b21f5477e.ctex remapped: res://.godot/imported/knight_right_0.png-f80e701fe69f553f54604c8b21f5477e.ctex
+Completed load for: 'res://assets/knight_right_0.png' remapped 'res://assets/knight_right_0.png' at thread -1
+Loading resource: res://assets/knight_right_1.png remapped: res://assets/knight_right_1.png
+Loading resource: res://.godot/imported/knight_right_1.png-ca7998a6b15d85b0b42a385e2dc02d1d.ctex remapped: res://.godot/imported/knight_right_1.png-ca7998a6b15d85b0b42a385e2dc02d1d.ctex
+Completed load for: 'res://assets/knight_right_1.png' remapped 'res://assets/knight_right_1.png' at thread -1
+Loading resource: res://assets/knight_right_2.png remapped: res://assets/knight_right_2.png
+Loading resource: res://.godot/imported/knight_right_2.png-7026886b56eb4c34b6e2dfe85b9f0c94.ctex remapped: res://.godot/imported/knight_right_2.png-7026886b56eb4c34b6e2dfe85b9f0c94.ctex
+Completed load for: 'res://assets/knight_right_2.png' remapped 'res://assets/knight_right_2.png' at thread -1
+Loading resource: res://assets/knight_right_3.png remapped: res://assets/knight_right_3.png
+Loading resource: res://.godot/imported/knight_right_3.png-de0c3f1274adab88585ddccd95acc248.ctex remapped: res://.godot/imported/knight_right_3.png-de0c3f1274adab88585ddccd95acc248.ctex
+Completed load for: 'res://assets/knight_right_3.png' remapped 'res://assets/knight_right_3.png' at thread -1
+Loading resource: res://assets/knight_right_4.png remapped: res://assets/knight_right_4.png
+Loading resource: res://.godot/imported/knight_right_4.png-553d449ab37d2dc81ddecfc63af22dc6.ctex remapped: res://.godot/imported/knight_right_4.png-553d449ab37d2dc81ddecfc63af22dc6.ctex
+Completed load for: 'res://assets/knight_right_4.png' remapped 'res://assets/knight_right_4.png' at thread -1
+Loading resource: res://assets/knight_right_5.png remapped: res://assets/knight_right_5.png
+Loading resource: res://.godot/imported/knight_right_5.png-c212a7c398e9df9f738e1469b714dfa2.ctex remapped: res://.godot/imported/knight_right_5.png-c212a7c398e9df9f738e1469b714dfa2.ctex
+Completed load for: 'res://assets/knight_right_5.png' remapped 'res://assets/knight_right_5.png' at thread -1
+Loading resource: res://assets/knight_right_6.png remapped: res://assets/knight_right_6.png
+Loading resource: res://.godot/imported/knight_right_6.png-2fdf3804b1b998a50773226b6d72af94.ctex remapped: res://.godot/imported/knight_right_6.png-2fdf3804b1b998a50773226b6d72af94.ctex
+Completed load for: 'res://assets/knight_right_6.png' remapped 'res://assets/knight_right_6.png' at thread -1
+Loading resource: res://assets/knight_right_7.png remapped: res://assets/knight_right_7.png
+Loading resource: res://.godot/imported/knight_right_7.png-6c950a4233ae91e35691fe7ce55664a1.ctex remapped: res://.godot/imported/knight_right_7.png-6c950a4233ae91e35691fe7ce55664a1.ctex
+Completed load for: 'res://assets/knight_right_7.png' remapped 'res://assets/knight_right_7.png' at thread -1
+Loading resource: res://assets/knight_idle_right.png remapped: res://assets/knight_idle_right.png
+Loading resource: res://.godot/imported/knight_idle_right.png-f634711d9c8a2c3937adfbd42c93012c.ctex remapped: res://.godot/imported/knight_idle_right.png-f634711d9c8a2c3937adfbd42c93012c.ctex
+Completed load for: 'res://assets/knight_idle_right.png' remapped 'res://assets/knight_idle_right.png' at thread -1
+Loading resource: res://assets/knight_southeast_0.png remapped: res://assets/knight_southeast_0.png
+Loading resource: res://.godot/imported/knight_southeast_0.png-38784794cf0df4e43764c1f8e004a900.ctex remapped: res://.godot/imported/knight_southeast_0.png-38784794cf0df4e43764c1f8e004a900.ctex
+Completed load for: 'res://assets/knight_southeast_0.png' remapped 'res://assets/knight_southeast_0.png' at thread -1
+Loading resource: res://assets/knight_southeast_1.png remapped: res://assets/knight_southeast_1.png
+Loading resource: res://.godot/imported/knight_southeast_1.png-00908d65f2b9ce151c9efebd3352b812.ctex remapped: res://.godot/imported/knight_southeast_1.png-00908d65f2b9ce151c9efebd3352b812.ctex
+Completed load for: 'res://assets/knight_southeast_1.png' remapped 'res://assets/knight_southeast_1.png' at thread -1
+Loading resource: res://assets/knight_southeast_2.png remapped: res://assets/knight_southeast_2.png
+Loading resource: res://.godot/imported/knight_southeast_2.png-f886420e5c155a63f9f2070e70b4a2c5.ctex remapped: res://.godot/imported/knight_southeast_2.png-f886420e5c155a63f9f2070e70b4a2c5.ctex
+Completed load for: 'res://assets/knight_southeast_2.png' remapped 'res://assets/knight_southeast_2.png' at thread -1
+Loading resource: res://assets/knight_southeast_3.png remapped: res://assets/knight_southeast_3.png
+Loading resource: res://.godot/imported/knight_southeast_3.png-3a1fff8fbf464e4a5ea9430d6a441107.ctex remapped: res://.godot/imported/knight_southeast_3.png-3a1fff8fbf464e4a5ea9430d6a441107.ctex
+Completed load for: 'res://assets/knight_southeast_3.png' remapped 'res://assets/knight_southeast_3.png' at thread -1
+Loading resource: res://assets/knight_southeast_4.png remapped: res://assets/knight_southeast_4.png
+Loading resource: res://.godot/imported/knight_southeast_4.png-09de18f4843cadbaadf64c3d023787e0.ctex remapped: res://.godot/imported/knight_southeast_4.png-09de18f4843cadbaadf64c3d023787e0.ctex
+Completed load for: 'res://assets/knight_southeast_4.png' remapped 'res://assets/knight_southeast_4.png' at thread -1
+Loading resource: res://assets/knight_southeast_5.png remapped: res://assets/knight_southeast_5.png
+Loading resource: res://.godot/imported/knight_southeast_5.png-af7b331187b8d7b578156ac8fca518e1.ctex remapped: res://.godot/imported/knight_southeast_5.png-af7b331187b8d7b578156ac8fca518e1.ctex
+Completed load for: 'res://assets/knight_southeast_5.png' remapped 'res://assets/knight_southeast_5.png' at thread -1
+Loading resource: res://assets/knight_southeast_6.png remapped: res://assets/knight_southeast_6.png
+Loading resource: res://.godot/imported/knight_southeast_6.png-b1f4241b2efb8d86ce6843cefa585cb1.ctex remapped: res://.godot/imported/knight_southeast_6.png-b1f4241b2efb8d86ce6843cefa585cb1.ctex
+Completed load for: 'res://assets/knight_southeast_6.png' remapped 'res://assets/knight_southeast_6.png' at thread -1
+Loading resource: res://assets/knight_southeast_7.png remapped: res://assets/knight_southeast_7.png
+Loading resource: res://.godot/imported/knight_southeast_7.png-5241ec4d3030eb33f624c1d18a68582c.ctex remapped: res://.godot/imported/knight_southeast_7.png-5241ec4d3030eb33f624c1d18a68582c.ctex
+Completed load for: 'res://assets/knight_southeast_7.png' remapped 'res://assets/knight_southeast_7.png' at thread -1
+Loading resource: res://assets/knight_southeast_8.png remapped: res://assets/knight_southeast_8.png
+Loading resource: res://.godot/imported/knight_southeast_8.png-cb9d964f172e3d1b18a62bf0f75a4987.ctex remapped: res://.godot/imported/knight_southeast_8.png-cb9d964f172e3d1b18a62bf0f75a4987.ctex
+Completed load for: 'res://assets/knight_southeast_8.png' remapped 'res://assets/knight_southeast_8.png' at thread -1
+Loading resource: res://assets/knight_down_0.png remapped: res://assets/knight_down_0.png
+Loading resource: res://.godot/imported/knight_down_0.png-1b27c79954b2a1b4b31c6316045f7393.ctex remapped: res://.godot/imported/knight_down_0.png-1b27c79954b2a1b4b31c6316045f7393.ctex
+Completed load for: 'res://assets/knight_down_0.png' remapped 'res://assets/knight_down_0.png' at thread -1
+Loading resource: res://assets/knight_down_1.png remapped: res://assets/knight_down_1.png
+Loading resource: res://.godot/imported/knight_down_1.png-fb3bc51a3e0f8a6208fd7dbec847d7d8.ctex remapped: res://.godot/imported/knight_down_1.png-fb3bc51a3e0f8a6208fd7dbec847d7d8.ctex
+Completed load for: 'res://assets/knight_down_1.png' remapped 'res://assets/knight_down_1.png' at thread -1
+Loading resource: res://assets/knight_down_2.png remapped: res://assets/knight_down_2.png
+Loading resource: res://.godot/imported/knight_down_2.png-21f8612a9d8574afa6cba4364b1bfcec.ctex remapped: res://.godot/imported/knight_down_2.png-21f8612a9d8574afa6cba4364b1bfcec.ctex
+Completed load for: 'res://assets/knight_down_2.png' remapped 'res://assets/knight_down_2.png' at thread -1
+Loading resource: res://assets/knight_down_3.png remapped: res://assets/knight_down_3.png
+Loading resource: res://.godot/imported/knight_down_3.png-4641662407782831e5d73a7987fef22f.ctex remapped: res://.godot/imported/knight_down_3.png-4641662407782831e5d73a7987fef22f.ctex
+Completed load for: 'res://assets/knight_down_3.png' remapped 'res://assets/knight_down_3.png' at thread -1
+Loading resource: res://assets/knight_down_4.png remapped: res://assets/knight_down_4.png
+Loading resource: res://.godot/imported/knight_down_4.png-5a2adef68971e4cfe6b886c63f4fbf36.ctex remapped: res://.godot/imported/knight_down_4.png-5a2adef68971e4cfe6b886c63f4fbf36.ctex
+Completed load for: 'res://assets/knight_down_4.png' remapped 'res://assets/knight_down_4.png' at thread -1
+Loading resource: res://assets/knight_down_5.png remapped: res://assets/knight_down_5.png
+Loading resource: res://.godot/imported/knight_down_5.png-e4c798817b2ffc28c06edcd022af97d6.ctex remapped: res://.godot/imported/knight_down_5.png-e4c798817b2ffc28c06edcd022af97d6.ctex
+Completed load for: 'res://assets/knight_down_5.png' remapped 'res://assets/knight_down_5.png' at thread -1
+Loading resource: res://assets/knight_down_6.png remapped: res://assets/knight_down_6.png
+Loading resource: res://.godot/imported/knight_down_6.png-0e3b04d04aa7e9d63e8e61f8c7890860.ctex remapped: res://.godot/imported/knight_down_6.png-0e3b04d04aa7e9d63e8e61f8c7890860.ctex
+Completed load for: 'res://assets/knight_down_6.png' remapped 'res://assets/knight_down_6.png' at thread -1
+Loading resource: res://assets/knight_down_7.png remapped: res://assets/knight_down_7.png
+Loading resource: res://.godot/imported/knight_down_7.png-bc6e762a23c6368bb5afbcfc5b5ab429.ctex remapped: res://.godot/imported/knight_down_7.png-bc6e762a23c6368bb5afbcfc5b5ab429.ctex
+Completed load for: 'res://assets/knight_down_7.png' remapped 'res://assets/knight_down_7.png' at thread -1
+Loading resource: res://assets/knight_idle_down.png remapped: res://assets/knight_idle_down.png
+Loading resource: res://.godot/imported/knight_idle_down.png-cf9c43411e4fae9c9f2115162d8a9307.ctex remapped: res://.godot/imported/knight_idle_down.png-cf9c43411e4fae9c9f2115162d8a9307.ctex
+Completed load for: 'res://assets/knight_idle_down.png' remapped 'res://assets/knight_idle_down.png' at thread -1
+Loading resource: res://assets/knight_southwest_0.png remapped: res://assets/knight_southwest_0.png
+Loading resource: res://.godot/imported/knight_southwest_0.png-603a26aa658955e7cad9acf55ef26217.ctex remapped: res://.godot/imported/knight_southwest_0.png-603a26aa658955e7cad9acf55ef26217.ctex
+Completed load for: 'res://assets/knight_southwest_0.png' remapped 'res://assets/knight_southwest_0.png' at thread -1
+Loading resource: res://assets/knight_southwest_1.png remapped: res://assets/knight_southwest_1.png
+Loading resource: res://.godot/imported/knight_southwest_1.png-4ed7080aa9c4ba463db779edb7411d57.ctex remapped: res://.godot/imported/knight_southwest_1.png-4ed7080aa9c4ba463db779edb7411d57.ctex
+Completed load for: 'res://assets/knight_southwest_1.png' remapped 'res://assets/knight_southwest_1.png' at thread -1
+Loading resource: res://assets/knight_southwest_2.png remapped: res://assets/knight_southwest_2.png
+Loading resource: res://.godot/imported/knight_southwest_2.png-c9748b20b29dffad0ddf9f937e259f5e.ctex remapped: res://.godot/imported/knight_southwest_2.png-c9748b20b29dffad0ddf9f937e259f5e.ctex
+Completed load for: 'res://assets/knight_southwest_2.png' remapped 'res://assets/knight_southwest_2.png' at thread -1
+Loading resource: res://assets/knight_southwest_3.png remapped: res://assets/knight_southwest_3.png
+Loading resource: res://.godot/imported/knight_southwest_3.png-fd6fc8c73884eeeeb4075a455d130e43.ctex remapped: res://.godot/imported/knight_southwest_3.png-fd6fc8c73884eeeeb4075a455d130e43.ctex
+Completed load for: 'res://assets/knight_southwest_3.png' remapped 'res://assets/knight_southwest_3.png' at thread -1
+Loading resource: res://assets/knight_southwest_4.png remapped: res://assets/knight_southwest_4.png
+Loading resource: res://.godot/imported/knight_southwest_4.png-2fed8e5f8d71dd40a4c38e161ad0ae95.ctex remapped: res://.godot/imported/knight_southwest_4.png-2fed8e5f8d71dd40a4c38e161ad0ae95.ctex
+Completed load for: 'res://assets/knight_southwest_4.png' remapped 'res://assets/knight_southwest_4.png' at thread -1
+Loading resource: res://assets/knight_southwest_5.png remapped: res://assets/knight_southwest_5.png
+Loading resource: res://.godot/imported/knight_southwest_5.png-6795413db6295e77df60f515be0a0fbd.ctex remapped: res://.godot/imported/knight_southwest_5.png-6795413db6295e77df60f515be0a0fbd.ctex
+Completed load for: 'res://assets/knight_southwest_5.png' remapped 'res://assets/knight_southwest_5.png' at thread -1
+Loading resource: res://assets/knight_southwest_6.png remapped: res://assets/knight_southwest_6.png
+Loading resource: res://.godot/imported/knight_southwest_6.png-88b5e331971f2a155f136a646efed431.ctex remapped: res://.godot/imported/knight_southwest_6.png-88b5e331971f2a155f136a646efed431.ctex
+Completed load for: 'res://assets/knight_southwest_6.png' remapped 'res://assets/knight_southwest_6.png' at thread -1
+Loading resource: res://assets/knight_southwest_7.png remapped: res://assets/knight_southwest_7.png
+Loading resource: res://.godot/imported/knight_southwest_7.png-29efac26f1f0dcf31480bc3a377b0b70.ctex remapped: res://.godot/imported/knight_southwest_7.png-29efac26f1f0dcf31480bc3a377b0b70.ctex
+Completed load for: 'res://assets/knight_southwest_7.png' remapped 'res://assets/knight_southwest_7.png' at thread -1
+Loading resource: res://assets/knight_southwest_8.png remapped: res://assets/knight_southwest_8.png
+Loading resource: res://.godot/imported/knight_southwest_8.png-1464fc7f632e3af4d538bb9dd8ebde68.ctex remapped: res://.godot/imported/knight_southwest_8.png-1464fc7f632e3af4d538bb9dd8ebde68.ctex
+Completed load for: 'res://assets/knight_southwest_8.png' remapped 'res://assets/knight_southwest_8.png' at thread -1
+Loading resource: res://assets/knight_left_0.png remapped: res://assets/knight_left_0.png
+Loading resource: res://.godot/imported/knight_left_0.png-a26592adf3c642c5b9ebc79d61e3a29f.ctex remapped: res://.godot/imported/knight_left_0.png-a26592adf3c642c5b9ebc79d61e3a29f.ctex
+Completed load for: 'res://assets/knight_left_0.png' remapped 'res://assets/knight_left_0.png' at thread -1
+Loading resource: res://assets/knight_left_1.png remapped: res://assets/knight_left_1.png
+Loading resource: res://.godot/imported/knight_left_1.png-485c4ac35b66ba254141576a3a2c264b.ctex remapped: res://.godot/imported/knight_left_1.png-485c4ac35b66ba254141576a3a2c264b.ctex
+Completed load for: 'res://assets/knight_left_1.png' remapped 'res://assets/knight_left_1.png' at thread -1
+Loading resource: res://assets/knight_left_2.png remapped: res://assets/knight_left_2.png
+Loading resource: res://.godot/imported/knight_left_2.png-483c7b4643da2fafb23c27293d1fdad6.ctex remapped: res://.godot/imported/knight_left_2.png-483c7b4643da2fafb23c27293d1fdad6.ctex
+Completed load for: 'res://assets/knight_left_2.png' remapped 'res://assets/knight_left_2.png' at thread -1
+Loading resource: res://assets/knight_left_3.png remapped: res://assets/knight_left_3.png
+Loading resource: res://.godot/imported/knight_left_3.png-22c02df9f19051b48d5f81c2fed7d2c0.ctex remapped: res://.godot/imported/knight_left_3.png-22c02df9f19051b48d5f81c2fed7d2c0.ctex
+Completed load for: 'res://assets/knight_left_3.png' remapped 'res://assets/knight_left_3.png' at thread -1
+Loading resource: res://assets/knight_left_4.png remapped: res://assets/knight_left_4.png
+Loading resource: res://.godot/imported/knight_left_4.png-0e4a8acba725438a6e97a9eae9132a51.ctex remapped: res://.godot/imported/knight_left_4.png-0e4a8acba725438a6e97a9eae9132a51.ctex
+Completed load for: 'res://assets/knight_left_4.png' remapped 'res://assets/knight_left_4.png' at thread -1
+Loading resource: res://assets/knight_left_5.png remapped: res://assets/knight_left_5.png
+Loading resource: res://.godot/imported/knight_left_5.png-d49d58e43ce8055329976465133eb528.ctex remapped: res://.godot/imported/knight_left_5.png-d49d58e43ce8055329976465133eb528.ctex
+Completed load for: 'res://assets/knight_left_5.png' remapped 'res://assets/knight_left_5.png' at thread -1
+Loading resource: res://assets/knight_left_6.png remapped: res://assets/knight_left_6.png
+Loading resource: res://.godot/imported/knight_left_6.png-8a3ae03b3863701cc57072c2152b90b8.ctex remapped: res://.godot/imported/knight_left_6.png-8a3ae03b3863701cc57072c2152b90b8.ctex
+Completed load for: 'res://assets/knight_left_6.png' remapped 'res://assets/knight_left_6.png' at thread -1
+Loading resource: res://assets/knight_left_7.png remapped: res://assets/knight_left_7.png
+Loading resource: res://.godot/imported/knight_left_7.png-91282e8b35d7b8a90a6b5f7cbddff37a.ctex remapped: res://.godot/imported/knight_left_7.png-91282e8b35d7b8a90a6b5f7cbddff37a.ctex
+Completed load for: 'res://assets/knight_left_7.png' remapped 'res://assets/knight_left_7.png' at thread -1
+Loading resource: res://assets/knight_idle_left.png remapped: res://assets/knight_idle_left.png
+Loading resource: res://.godot/imported/knight_idle_left.png-a8cae447f2f7e253db0f80224502b29f.ctex remapped: res://.godot/imported/knight_idle_left.png-a8cae447f2f7e253db0f80224502b29f.ctex
+Completed load for: 'res://assets/knight_idle_left.png' remapped 'res://assets/knight_idle_left.png' at thread -1
+Loading resource: res://assets/knight_northwest_0.png remapped: res://assets/knight_northwest_0.png
+Loading resource: res://.godot/imported/knight_northwest_0.png-e3e69ba7b32c193a23a907232f8c0b53.ctex remapped: res://.godot/imported/knight_northwest_0.png-e3e69ba7b32c193a23a907232f8c0b53.ctex
+Completed load for: 'res://assets/knight_northwest_0.png' remapped 'res://assets/knight_northwest_0.png' at thread -1
+Loading resource: res://assets/knight_northwest_1.png remapped: res://assets/knight_northwest_1.png
+Loading resource: res://.godot/imported/knight_northwest_1.png-40d2066c9a893a0f63ab05ccca525121.ctex remapped: res://.godot/imported/knight_northwest_1.png-40d2066c9a893a0f63ab05ccca525121.ctex
+Completed load for: 'res://assets/knight_northwest_1.png' remapped 'res://assets/knight_northwest_1.png' at thread -1
+Loading resource: res://assets/knight_northwest_2.png remapped: res://assets/knight_northwest_2.png
+Loading resource: res://.godot/imported/knight_northwest_2.png-9720252d1c9022912cbc9489dbf2d679.ctex remapped: res://.godot/imported/knight_northwest_2.png-9720252d1c9022912cbc9489dbf2d679.ctex
+Completed load for: 'res://assets/knight_northwest_2.png' remapped 'res://assets/knight_northwest_2.png' at thread -1
+Loading resource: res://assets/knight_northwest_3.png remapped: res://assets/knight_northwest_3.png
+Loading resource: res://.godot/imported/knight_northwest_3.png-c7126f2099998c2cb251f2b626921fcf.ctex remapped: res://.godot/imported/knight_northwest_3.png-c7126f2099998c2cb251f2b626921fcf.ctex
+Completed load for: 'res://assets/knight_northwest_3.png' remapped 'res://assets/knight_northwest_3.png' at thread -1
+Loading resource: res://assets/knight_northwest_4.png remapped: res://assets/knight_northwest_4.png
+Loading resource: res://.godot/imported/knight_northwest_4.png-7d67eb7fbe744923ba821965e4a46d6a.ctex remapped: res://.godot/imported/knight_northwest_4.png-7d67eb7fbe744923ba821965e4a46d6a.ctex
+Completed load for: 'res://assets/knight_northwest_4.png' remapped 'res://assets/knight_northwest_4.png' at thread -1
+Loading resource: res://assets/knight_northwest_5.png remapped: res://assets/knight_northwest_5.png
+Loading resource: res://.godot/imported/knight_northwest_5.png-ded3246e4c10705e688fce540d2f198e.ctex remapped: res://.godot/imported/knight_northwest_5.png-ded3246e4c10705e688fce540d2f198e.ctex
+Completed load for: 'res://assets/knight_northwest_5.png' remapped 'res://assets/knight_northwest_5.png' at thread -1
+Loading resource: res://assets/knight_northwest_6.png remapped: res://assets/knight_northwest_6.png
+Loading resource: res://.godot/imported/knight_northwest_6.png-1caf1f1da6b8c5b214c2ccff57f3cfa3.ctex remapped: res://.godot/imported/knight_northwest_6.png-1caf1f1da6b8c5b214c2ccff57f3cfa3.ctex
+Completed load for: 'res://assets/knight_northwest_6.png' remapped 'res://assets/knight_northwest_6.png' at thread -1
+Loading resource: res://assets/knight_northwest_7.png remapped: res://assets/knight_northwest_7.png
+Loading resource: res://.godot/imported/knight_northwest_7.png-fb5b6a2c170f34694d33c18ddec40745.ctex remapped: res://.godot/imported/knight_northwest_7.png-fb5b6a2c170f34694d33c18ddec40745.ctex
+Completed load for: 'res://assets/knight_northwest_7.png' remapped 'res://assets/knight_northwest_7.png' at thread -1
+Loading resource: res://assets/knight_northwest_8.png remapped: res://assets/knight_northwest_8.png
+Loading resource: res://.godot/imported/knight_northwest_8.png-faecb05a27c9a3b343de8e1069ccee27.ctex remapped: res://.godot/imported/knight_northwest_8.png-faecb05a27c9a3b343de8e1069ccee27.ctex
+Completed load for: 'res://assets/knight_northwest_8.png' remapped 'res://assets/knight_northwest_8.png' at thread -1
+Loading resource: res://assets/knight_up_0.png remapped: res://assets/knight_up_0.png
+Loading resource: res://.godot/imported/knight_up_0.png-a93547ef95a2cfead91053c7602d0cae.ctex remapped: res://.godot/imported/knight_up_0.png-a93547ef95a2cfead91053c7602d0cae.ctex
+Completed load for: 'res://assets/knight_up_0.png' remapped 'res://assets/knight_up_0.png' at thread -1
+Loading resource: res://assets/knight_up_1.png remapped: res://assets/knight_up_1.png
+Loading resource: res://.godot/imported/knight_up_1.png-ba78026d774413260fd7d22b053e9979.ctex remapped: res://.godot/imported/knight_up_1.png-ba78026d774413260fd7d22b053e9979.ctex
+Completed load for: 'res://assets/knight_up_1.png' remapped 'res://assets/knight_up_1.png' at thread -1
+Loading resource: res://assets/knight_up_2.png remapped: res://assets/knight_up_2.png
+Loading resource: res://.godot/imported/knight_up_2.png-fdf19193f33e3910ad8469acd358802c.ctex remapped: res://.godot/imported/knight_up_2.png-fdf19193f33e3910ad8469acd358802c.ctex
+Completed load for: 'res://assets/knight_up_2.png' remapped 'res://assets/knight_up_2.png' at thread -1
+Loading resource: res://assets/knight_up_3.png remapped: res://assets/knight_up_3.png
+Loading resource: res://.godot/imported/knight_up_3.png-6d4a8fefb0ee56ef46cac2ec591721db.ctex remapped: res://.godot/imported/knight_up_3.png-6d4a8fefb0ee56ef46cac2ec591721db.ctex
+Completed load for: 'res://assets/knight_up_3.png' remapped 'res://assets/knight_up_3.png' at thread -1
+Loading resource: res://assets/knight_up_4.png remapped: res://assets/knight_up_4.png
+Loading resource: res://.godot/imported/knight_up_4.png-b3a4475c6cc58f6b1c77a2456a2aeffd.ctex remapped: res://.godot/imported/knight_up_4.png-b3a4475c6cc58f6b1c77a2456a2aeffd.ctex
+Completed load for: 'res://assets/knight_up_4.png' remapped 'res://assets/knight_up_4.png' at thread -1
+Loading resource: res://assets/knight_up_5.png remapped: res://assets/knight_up_5.png
+Loading resource: res://.godot/imported/knight_up_5.png-cf6c12f9f491233db884d2e30267a009.ctex remapped: res://.godot/imported/knight_up_5.png-cf6c12f9f491233db884d2e30267a009.ctex
+Completed load for: 'res://assets/knight_up_5.png' remapped 'res://assets/knight_up_5.png' at thread -1
+Loading resource: res://assets/knight_up_6.png remapped: res://assets/knight_up_6.png
+Loading resource: res://.godot/imported/knight_up_6.png-96f8f15d801e08ef543d1854e4be747f.ctex remapped: res://.godot/imported/knight_up_6.png-96f8f15d801e08ef543d1854e4be747f.ctex
+Completed load for: 'res://assets/knight_up_6.png' remapped 'res://assets/knight_up_6.png' at thread -1
+Loading resource: res://assets/knight_up_7.png remapped: res://assets/knight_up_7.png
+Loading resource: res://.godot/imported/knight_up_7.png-a9bab8338d37ce04231819f3f5c51b06.ctex remapped: res://.godot/imported/knight_up_7.png-a9bab8338d37ce04231819f3f5c51b06.ctex
+Completed load for: 'res://assets/knight_up_7.png' remapped 'res://assets/knight_up_7.png' at thread -1
+Loading resource: res://assets/knight_idle_up.png remapped: res://assets/knight_idle_up.png
+Loading resource: res://.godot/imported/knight_idle_up.png-6ac8636da77523c1725713b0835da94f.ctex remapped: res://.godot/imported/knight_idle_up.png-6ac8636da77523c1725713b0835da94f.ctex
+Completed load for: 'res://assets/knight_idle_up.png' remapped 'res://assets/knight_idle_up.png' at thread -1
+Loading resource: res://assets/knight_northeast_0.png remapped: res://assets/knight_northeast_0.png
+Loading resource: res://.godot/imported/knight_northeast_0.png-7b84006302e98f73ae907284417f2fad.ctex remapped: res://.godot/imported/knight_northeast_0.png-7b84006302e98f73ae907284417f2fad.ctex
+Completed load for: 'res://assets/knight_northeast_0.png' remapped 'res://assets/knight_northeast_0.png' at thread -1
+Loading resource: res://assets/knight_northeast_1.png remapped: res://assets/knight_northeast_1.png
+Loading resource: res://.godot/imported/knight_northeast_1.png-5c545e70ba8a5541a936b5306d7ceb2d.ctex remapped: res://.godot/imported/knight_northeast_1.png-5c545e70ba8a5541a936b5306d7ceb2d.ctex
+Completed load for: 'res://assets/knight_northeast_1.png' remapped 'res://assets/knight_northeast_1.png' at thread -1
+Loading resource: res://assets/knight_northeast_2.png remapped: res://assets/knight_northeast_2.png
+Loading resource: res://.godot/imported/knight_northeast_2.png-6e0d04fe2d60f018d4a9cc817fcda175.ctex remapped: res://.godot/imported/knight_northeast_2.png-6e0d04fe2d60f018d4a9cc817fcda175.ctex
+Completed load for: 'res://assets/knight_northeast_2.png' remapped 'res://assets/knight_northeast_2.png' at thread -1
+Loading resource: res://assets/knight_northeast_3.png remapped: res://assets/knight_northeast_3.png
+Loading resource: res://.godot/imported/knight_northeast_3.png-fb4c7b99ed53fcbbfa11483e8e0bd6fa.ctex remapped: res://.godot/imported/knight_northeast_3.png-fb4c7b99ed53fcbbfa11483e8e0bd6fa.ctex
+Completed load for: 'res://assets/knight_northeast_3.png' remapped 'res://assets/knight_northeast_3.png' at thread -1
+Loading resource: res://assets/knight_northeast_4.png remapped: res://assets/knight_northeast_4.png
+Loading resource: res://.godot/imported/knight_northeast_4.png-c9a09b87cce8f3b21832b4be15857972.ctex remapped: res://.godot/imported/knight_northeast_4.png-c9a09b87cce8f3b21832b4be15857972.ctex
+Completed load for: 'res://assets/knight_northeast_4.png' remapped 'res://assets/knight_northeast_4.png' at thread -1
+Loading resource: res://assets/knight_northeast_5.png remapped: res://assets/knight_northeast_5.png
+Loading resource: res://.godot/imported/knight_northeast_5.png-82e342771ff670d087f1628447f1ecab.ctex remapped: res://.godot/imported/knight_northeast_5.png-82e342771ff670d087f1628447f1ecab.ctex
+Completed load for: 'res://assets/knight_northeast_5.png' remapped 'res://assets/knight_northeast_5.png' at thread -1
+Loading resource: res://assets/knight_northeast_6.png remapped: res://assets/knight_northeast_6.png
+Loading resource: res://.godot/imported/knight_northeast_6.png-fd53d8e1e4e27302d3a54c481e3cc866.ctex remapped: res://.godot/imported/knight_northeast_6.png-fd53d8e1e4e27302d3a54c481e3cc866.ctex
+Completed load for: 'res://assets/knight_northeast_6.png' remapped 'res://assets/knight_northeast_6.png' at thread -1
+Loading resource: res://assets/knight_northeast_7.png remapped: res://assets/knight_northeast_7.png
+Loading resource: res://.godot/imported/knight_northeast_7.png-1ba2fc658cba03c9610c3bc861b12425.ctex remapped: res://.godot/imported/knight_northeast_7.png-1ba2fc658cba03c9610c3bc861b12425.ctex
+Completed load for: 'res://assets/knight_northeast_7.png' remapped 'res://assets/knight_northeast_7.png' at thread -1
+Loading resource: res://assets/knight_northeast_8.png remapped: res://assets/knight_northeast_8.png
+Loading resource: res://.godot/imported/knight_northeast_8.png-290232164bd4ac5dcbaa6bbcde00e475.ctex remapped: res://.godot/imported/knight_northeast_8.png-290232164bd4ac5dcbaa6bbcde00e475.ctex
+Completed load for: 'res://assets/knight_northeast_8.png' remapped 'res://assets/knight_northeast_8.png' at thread -1
+Loading resource: res://assets/knight_attack_right_0.png remapped: res://assets/knight_attack_right_0.png
+Loading resource: res://.godot/imported/knight_attack_right_0.png-84b6da7cbedf6fca0477a9e4a9048764.ctex remapped: res://.godot/imported/knight_attack_right_0.png-84b6da7cbedf6fca0477a9e4a9048764.ctex
+Completed load for: 'res://assets/knight_attack_right_0.png' remapped 'res://assets/knight_attack_right_0.png' at thread -1
+Loading resource: res://assets/knight_attack_right_1.png remapped: res://assets/knight_attack_right_1.png
+Loading resource: res://.godot/imported/knight_attack_right_1.png-910a00552124c2925ef6cb4c1dc580b4.ctex remapped: res://.godot/imported/knight_attack_right_1.png-910a00552124c2925ef6cb4c1dc580b4.ctex
+Completed load for: 'res://assets/knight_attack_right_1.png' remapped 'res://assets/knight_attack_right_1.png' at thread -1
+Loading resource: res://assets/knight_attack_right_2.png remapped: res://assets/knight_attack_right_2.png
+Loading resource: res://.godot/imported/knight_attack_right_2.png-70f994e47acb8b3deb8972c0dbe6da40.ctex remapped: res://.godot/imported/knight_attack_right_2.png-70f994e47acb8b3deb8972c0dbe6da40.ctex
+Completed load for: 'res://assets/knight_attack_right_2.png' remapped 'res://assets/knight_attack_right_2.png' at thread -1
+Loading resource: res://assets/knight_attack_right_3.png remapped: res://assets/knight_attack_right_3.png
+Loading resource: res://.godot/imported/knight_attack_right_3.png-c57c0ec1c8b4ba99ca77033995eb01e3.ctex remapped: res://.godot/imported/knight_attack_right_3.png-c57c0ec1c8b4ba99ca77033995eb01e3.ctex
+Completed load for: 'res://assets/knight_attack_right_3.png' remapped 'res://assets/knight_attack_right_3.png' at thread -1
+Loading resource: res://assets/knight_attack_right_4.png remapped: res://assets/knight_attack_right_4.png
+Loading resource: res://.godot/imported/knight_attack_right_4.png-de73e596b4c6bec0c0ae72684d29fb4d.ctex remapped: res://.godot/imported/knight_attack_right_4.png-de73e596b4c6bec0c0ae72684d29fb4d.ctex
+Completed load for: 'res://assets/knight_attack_right_4.png' remapped 'res://assets/knight_attack_right_4.png' at thread -1
+Loading resource: res://assets/knight_attack_right_5.png remapped: res://assets/knight_attack_right_5.png
+Loading resource: res://.godot/imported/knight_attack_right_5.png-d1d7b7415504a8661d14501716b7ec62.ctex remapped: res://.godot/imported/knight_attack_right_5.png-d1d7b7415504a8661d14501716b7ec62.ctex
+Completed load for: 'res://assets/knight_attack_right_5.png' remapped 'res://assets/knight_attack_right_5.png' at thread -1
+Loading resource: res://assets/knight_attack_right_6.png remapped: res://assets/knight_attack_right_6.png
+Loading resource: res://.godot/imported/knight_attack_right_6.png-f29d4de450bb0809d54b0736a7c8edd4.ctex remapped: res://.godot/imported/knight_attack_right_6.png-f29d4de450bb0809d54b0736a7c8edd4.ctex
+Completed load for: 'res://assets/knight_attack_right_6.png' remapped 'res://assets/knight_attack_right_6.png' at thread -1
+Loading resource: res://assets/knight_attack_right_7.png remapped: res://assets/knight_attack_right_7.png
+Loading resource: res://.godot/imported/knight_attack_right_7.png-6cd3b8799d045a58dfd7ec84c240ae21.ctex remapped: res://.godot/imported/knight_attack_right_7.png-6cd3b8799d045a58dfd7ec84c240ae21.ctex
+Completed load for: 'res://assets/knight_attack_right_7.png' remapped 'res://assets/knight_attack_right_7.png' at thread -1
+Loading resource: res://assets/knight_attack_left_0.png remapped: res://assets/knight_attack_left_0.png
+Loading resource: res://.godot/imported/knight_attack_left_0.png-8a0a2065d407173b80767b0f8ce45ab2.ctex remapped: res://.godot/imported/knight_attack_left_0.png-8a0a2065d407173b80767b0f8ce45ab2.ctex
+Completed load for: 'res://assets/knight_attack_left_0.png' remapped 'res://assets/knight_attack_left_0.png' at thread -1
+Loading resource: res://assets/knight_attack_left_1.png remapped: res://assets/knight_attack_left_1.png
+Loading resource: res://.godot/imported/knight_attack_left_1.png-25ba06511e93aee82f5edf539e7b0722.ctex remapped: res://.godot/imported/knight_attack_left_1.png-25ba06511e93aee82f5edf539e7b0722.ctex
+Completed load for: 'res://assets/knight_attack_left_1.png' remapped 'res://assets/knight_attack_left_1.png' at thread -1
+Loading resource: res://assets/knight_attack_left_2.png remapped: res://assets/knight_attack_left_2.png
+Loading resource: res://.godot/imported/knight_attack_left_2.png-cefdfc33ab1cdc3e4882ee94d8d25196.ctex remapped: res://.godot/imported/knight_attack_left_2.png-cefdfc33ab1cdc3e4882ee94d8d25196.ctex
+Completed load for: 'res://assets/knight_attack_left_2.png' remapped 'res://assets/knight_attack_left_2.png' at thread -1
+Loading resource: res://assets/knight_attack_left_3.png remapped: res://assets/knight_attack_left_3.png
+Loading resource: res://.godot/imported/knight_attack_left_3.png-91ee33d0a406d9c603ac4c0dbb0b1289.ctex remapped: res://.godot/imported/knight_attack_left_3.png-91ee33d0a406d9c603ac4c0dbb0b1289.ctex
+Completed load for: 'res://assets/knight_attack_left_3.png' remapped 'res://assets/knight_attack_left_3.png' at thread -1
+Loading resource: res://assets/knight_attack_left_4.png remapped: res://assets/knight_attack_left_4.png
+Loading resource: res://.godot/imported/knight_attack_left_4.png-778c54e6717c8342803642f09022f23f.ctex remapped: res://.godot/imported/knight_attack_left_4.png-778c54e6717c8342803642f09022f23f.ctex
+Completed load for: 'res://assets/knight_attack_left_4.png' remapped 'res://assets/knight_attack_left_4.png' at thread -1
+Loading resource: res://assets/knight_attack_left_5.png remapped: res://assets/knight_attack_left_5.png
+Loading resource: res://.godot/imported/knight_attack_left_5.png-ed68ee0335ca36724a45a2bbde01efc0.ctex remapped: res://.godot/imported/knight_attack_left_5.png-ed68ee0335ca36724a45a2bbde01efc0.ctex
+Completed load for: 'res://assets/knight_attack_left_5.png' remapped 'res://assets/knight_attack_left_5.png' at thread -1
+Loading resource: res://assets/knight_attack_left_6.png remapped: res://assets/knight_attack_left_6.png
+Loading resource: res://.godot/imported/knight_attack_left_6.png-4a98a48d13dbf0243249cb2b3044f75b.ctex remapped: res://.godot/imported/knight_attack_left_6.png-4a98a48d13dbf0243249cb2b3044f75b.ctex
+Completed load for: 'res://assets/knight_attack_left_6.png' remapped 'res://assets/knight_attack_left_6.png' at thread -1
+Loading resource: res://assets/knight_attack_left_7.png remapped: res://assets/knight_attack_left_7.png
+Loading resource: res://.godot/imported/knight_attack_left_7.png-7cfa1527a9a2f71a4557da300e59855d.ctex remapped: res://.godot/imported/knight_attack_left_7.png-7cfa1527a9a2f71a4557da300e59855d.ctex
+Completed load for: 'res://assets/knight_attack_left_7.png' remapped 'res://assets/knight_attack_left_7.png' at thread -1
+PASS: Native collision blocks tent footprint
+PASS: Collision does not play sliding walk forever
+PASS: Manual input cancels NPC approach
+PASS: Menu cancels NPC approach
+Loading resource: res://scenes/road.tscn remapped: res://scenes/road.tscn
+Completed load for: 'res://scenes/road.tscn' remapped 'res://scenes/road.tscn' at thread -1
+Loading resource: res://assets/enemy_0.png remapped: res://assets/enemy_0.png
+Loading resource: res://.godot/imported/enemy_0.png-06df409da3f6e8beb32c3a6f6768d296.ctex remapped: res://.godot/imported/enemy_0.png-06df409da3f6e8beb32c3a6f6768d296.ctex
+Completed load for: 'res://assets/enemy_0.png' remapped 'res://assets/enemy_0.png' at thread -1
+Loading resource: res://assets/enemy_1.png remapped: res://assets/enemy_1.png
+Loading resource: res://.godot/imported/enemy_1.png-e79ed82a0c2567394d03e3b32cd5d110.ctex remapped: res://.godot/imported/enemy_1.png-e79ed82a0c2567394d03e3b32cd5d110.ctex
+Completed load for: 'res://assets/enemy_1.png' remapped 'res://assets/enemy_1.png' at thread -1
+Loading resource: res://assets/enemy_2.png remapped: res://assets/enemy_2.png
+Loading resource: res://.godot/imported/enemy_2.png-330b6b14630b3a3e63810990566412f6.ctex remapped: res://.godot/imported/enemy_2.png-330b6b14630b3a3e63810990566412f6.ctex
+Completed load for: 'res://assets/enemy_2.png' remapped 'res://assets/enemy_2.png' at thread -1
+Loading resource: res://assets/enemy_3.png remapped: res://assets/enemy_3.png
+Loading resource: res://.godot/imported/enemy_3.png-b317c36743b88817818e7d1344d69f5a.ctex remapped: res://.godot/imported/enemy_3.png-b317c36743b88817818e7d1344d69f5a.ctex
+Completed load for: 'res://assets/enemy_3.png' remapped 'res://assets/enemy_3.png' at thread -1
+Loading resource: res://assets/enemy_4.png remapped: res://assets/enemy_4.png
+Loading resource: res://.godot/imported/enemy_4.png-9a78415aec1e39b6022886cffe1f03b8.ctex remapped: res://.godot/imported/enemy_4.png-9a78415aec1e39b6022886cffe1f03b8.ctex
+Completed load for: 'res://assets/enemy_4.png' remapped 'res://assets/enemy_4.png' at thread -1
+Loading resource: res://assets/enemy_5.png remapped: res://assets/enemy_5.png
+Loading resource: res://.godot/imported/enemy_5.png-56816f379f232a248458ab3d47059b59.ctex remapped: res://.godot/imported/enemy_5.png-56816f379f232a248458ab3d47059b59.ctex
+Completed load for: 'res://assets/enemy_5.png' remapped 'res://assets/enemy_5.png' at thread -1
+Loading resource: res://assets/enemy_6.png remapped: res://assets/enemy_6.png
+Loading resource: res://.godot/imported/enemy_6.png-ca6822db491da524bfbcb5157541df60.ctex remapped: res://.godot/imported/enemy_6.png-ca6822db491da524bfbcb5157541df60.ctex
+Completed load for: 'res://assets/enemy_6.png' remapped 'res://assets/enemy_6.png' at thread -1
+Loading resource: res://assets/enemy_7.png remapped: res://assets/enemy_7.png
+Loading resource: res://.godot/imported/enemy_7.png-fbd3fa311b554a587a537e2edc41b46c.ctex remapped: res://.godot/imported/enemy_7.png-fbd3fa311b554a587a537e2edc41b46c.ctex
+Completed load for: 'res://assets/enemy_7.png' remapped 'res://assets/enemy_7.png' at thread -1
+Loading resource: res://assets/enemy_8.png remapped: res://assets/enemy_8.png
+Loading resource: res://.godot/imported/enemy_8.png-00d8531622335e9f6328c66177405c7d.ctex remapped: res://.godot/imported/enemy_8.png-00d8531622335e9f6328c66177405c7d.ctex
+Completed load for: 'res://assets/enemy_8.png' remapped 'res://assets/enemy_8.png' at thread -1
+Loading resource: res://assets/arch.png remapped: res://assets/arch.png
+Loading resource: res://.godot/imported/arch.png-deb0f53e11ad60cc2bca011ae10cc8de.ctex remapped: res://.godot/imported/arch.png-deb0f53e11ad60cc2bca011ae10cc8de.ctex
+Completed load for: 'res://assets/arch.png' remapped 'res://assets/arch.png' at thread -1
+PASS: Absent enemies cannot complete authored encounter
+Loading resource: res://assets/sword-swing.wav remapped: res://assets/sword-swing.wav
+Loading resource: res://.godot/imported/sword-swing.wav-b18aaaf108e93a7e178755733327b4e3.sample remapped: res://.godot/imported/sword-swing.wav-b18aaaf108e93a7e178755733327b4e3.sample
+Completed load for: 'res://assets/sword-swing.wav' remapped 'res://assets/sword-swing.wav' at thread -1
+PASS: Damage waits for strike frame
+Loading resource: res://assets/hit-metal.wav remapped: res://assets/hit-metal.wav
+Loading resource: res://.godot/imported/hit-metal.wav-3d8ad7edbce72e9332903d7b6d300eea.sample remapped: res://.godot/imported/hit-metal.wav-3d8ad7edbce72e9332903d7b6d300eea.sample
+Completed load for: 'res://assets/hit-metal.wav' remapped 'res://assets/hit-metal.wav' at thread -1
+PASS: Directional sword cannot hit behind its strike
+PASS: Early repeated command buffers exactly one next attack
+PASS: Pause freezes combat and damage
+PASS: Critical modal hides health and attack controls
+Loading resource: res://assets/hit-flesh.wav remapped: res://assets/hit-flesh.wav
+Loading resource: res://.godot/imported/hit-flesh.wav-24f22585c2df411077a6f04564cf42d1.sample remapped: res://.godot/imported/hit-flesh.wav-24f22585c2df411077a6f04564cf42d1.sample
+Completed load for: 'res://assets/hit-flesh.wav' remapped 'res://assets/hit-flesh.wav' at thread -1
+Loading resource: res://scenes/road.tscn remapped: res://scenes/road.tscn
+Completed load for: 'res://scenes/road.tscn' remapped 'res://scenes/road.tscn' at thread -1
+Loading resource: res://assets/arch.png remapped: res://assets/arch.png
+Loading resource: res://.godot/imported/arch.png-deb0f53e11ad60cc2bca011ae10cc8de.ctex remapped: res://.godot/imported/arch.png-deb0f53e11ad60cc2bca011ae10cc8de.ctex
+Completed load for: 'res://assets/arch.png' remapped 'res://assets/arch.png' at thread -1
+PASS: Leash enters explicit return state
+PASS: Random population respects cooldown
+PASS: Random population respawns only after distant cooldown
+PASS: Random population state leaves quest ledger untouched
+PASS: Touch NPC/landmark target respects scrolling camera
+PASS: Touch joystick drag produces movement
+PASS: Touch release stops joystick
+Loading resource: res://scenes/vigil.tscn remapped: res://scenes/vigil.tscn
+Completed load for: 'res://scenes/vigil.tscn' remapped 'res://scenes/vigil.tscn' at thread -1
+Loading resource: res://assets/tent.png remapped: res://assets/tent.png
+Loading resource: res://.godot/imported/tent.png-536a6fa46d66e6acda070bccd224af03.ctex remapped: res://.godot/imported/tent.png-536a6fa46d66e6acda070bccd224af03.ctex
+Completed load for: 'res://assets/tent.png' remapped 'res://assets/tent.png' at thread -1
+Loading resource: res://assets/pavilion.png remapped: res://assets/pavilion.png
+Loading resource: res://.godot/imported/pavilion.png-837d55ef957b9e8b99fe0f3aaf12e54c.ctex remapped: res://.godot/imported/pavilion.png-837d55ef957b9e8b99fe0f3aaf12e54c.ctex
+Completed load for: 'res://assets/pavilion.png' remapped 'res://assets/pavilion.png' at thread -1
+Loading resource: res://assets/fire.png remapped: res://assets/fire.png
+Loading resource: res://.godot/imported/fire.png-dcd8d46f0ab7d214a6d8da4be8adf942.ctex remapped: res://.godot/imported/fire.png-dcd8d46f0ab7d214a6d8da4be8adf942.ctex
+Completed load for: 'res://assets/fire.png' remapped 'res://assets/fire.png' at thread -1
+Loading resource: res://assets/chest.png remapped: res://assets/chest.png
+Loading resource: res://.godot/imported/chest.png-ec5c0ce22911c81d595ed790e257ceb9.ctex remapped: res://.godot/imported/chest.png-ec5c0ce22911c81d595ed790e257ceb9.ctex
+Completed load for: 'res://assets/chest.png' remapped 'res://assets/chest.png' at thread -1
+Loading resource: res://assets/table.png remapped: res://assets/table.png
+Loading resource: res://.godot/imported/table.png-14b755b19e8ff9a139cf951e8fcb8e14.ctex remapped: res://.godot/imported/table.png-14b755b19e8ff9a139cf951e8fcb8e14.ctex
+Completed load for: 'res://assets/table.png' remapped 'res://assets/table.png' at thread -1
+Loading resource: res://assets/barrel.png remapped: res://assets/barrel.png
+Loading resource: res://.godot/imported/barrel.png-d7558aef31a8f4899a7ffc3a3f2685b7.ctex remapped: res://.godot/imported/barrel.png-d7558aef31a8f4899a7ffc3a3f2685b7.ctex
+Completed load for: 'res://assets/barrel.png' remapped 'res://assets/barrel.png' at thread -1
+Loading resource: res://assets/supply_crate.png remapped: res://assets/supply_crate.png
+Loading resource: res://.godot/imported/supply_crate.png-421ad6587d7f0952d31e5fcae4efd4aa.ctex remapped: res://.godot/imported/supply_crate.png-421ad6587d7f0952d31e5fcae4efd4aa.ctex
+Completed load for: 'res://assets/supply_crate.png' remapped 'res://assets/supply_crate.png' at thread -1
+Loading resource: res://assets/mage_right_0.png remapped: res://assets/mage_right_0.png
+Loading resource: res://.godot/imported/mage_right_0.png-a0f84fe04f4c347e28d4efe8755212e9.ctex remapped: res://.godot/imported/mage_right_0.png-a0f84fe04f4c347e28d4efe8755212e9.ctex
+Completed load for: 'res://assets/mage_right_0.png' remapped 'res://assets/mage_right_0.png' at thread -1
+Loading resource: res://assets/mage_right_1.png remapped: res://assets/mage_right_1.png
+Loading resource: res://.godot/imported/mage_right_1.png-45505ac922c3b16e938c4ac4e30d7d12.ctex remapped: res://.godot/imported/mage_right_1.png-45505ac922c3b16e938c4ac4e30d7d12.ctex
+Completed load for: 'res://assets/mage_right_1.png' remapped 'res://assets/mage_right_1.png' at thread -1
+Loading resource: res://assets/mage_right_2.png remapped: res://assets/mage_right_2.png
+Loading resource: res://.godot/imported/mage_right_2.png-ace7e4365a90749e53c3d02e32ca5996.ctex remapped: res://.godot/imported/mage_right_2.png-ace7e4365a90749e53c3d02e32ca5996.ctex
+Completed load for: 'res://assets/mage_right_2.png' remapped 'res://assets/mage_right_2.png' at thread -1
+Loading resource: res://assets/mage_right_3.png remapped: res://assets/mage_right_3.png
+Loading resource: res://.godot/imported/mage_right_3.png-8c896f50946fa16911278a0da97b352c.ctex remapped: res://.godot/imported/mage_right_3.png-8c896f50946fa16911278a0da97b352c.ctex
+Completed load for: 'res://assets/mage_right_3.png' remapped 'res://assets/mage_right_3.png' at thread -1
+Loading resource: res://assets/mage_right_4.png remapped: res://assets/mage_right_4.png
+Loading resource: res://.godot/imported/mage_right_4.png-4ba64c11f4af41defd2ab09b162fac7e.ctex remapped: res://.godot/imported/mage_right_4.png-4ba64c11f4af41defd2ab09b162fac7e.ctex
+Completed load for: 'res://assets/mage_right_4.png' remapped 'res://assets/mage_right_4.png' at thread -1
+Loading resource: res://assets/mage_right_5.png remapped: res://assets/mage_right_5.png
+Loading resource: res://.godot/imported/mage_right_5.png-bfb225f60817a6761b88a709b10e39ad.ctex remapped: res://.godot/imported/mage_right_5.png-bfb225f60817a6761b88a709b10e39ad.ctex
+Completed load for: 'res://assets/mage_right_5.png' remapped 'res://assets/mage_right_5.png' at thread -1
+Loading resource: res://assets/mage_right_6.png remapped: res://assets/mage_right_6.png
+Loading resource: res://.godot/imported/mage_right_6.png-55178206624444416a7268b1e8f5a090.ctex remapped: res://.godot/imported/mage_right_6.png-55178206624444416a7268b1e8f5a090.ctex
+Completed load for: 'res://assets/mage_right_6.png' remapped 'res://assets/mage_right_6.png' at thread -1
+Loading resource: res://assets/mage_right_7.png remapped: res://assets/mage_right_7.png
+Loading resource: res://.godot/imported/mage_right_7.png-7c81c73ef0eed1709ee8a2139ce40f6c.ctex remapped: res://.godot/imported/mage_right_7.png-7c81c73ef0eed1709ee8a2139ce40f6c.ctex
+Completed load for: 'res://assets/mage_right_7.png' remapped 'res://assets/mage_right_7.png' at thread -1
+Loading resource: res://assets/mage_right_8.png remapped: res://assets/mage_right_8.png
+Loading resource: res://.godot/imported/mage_right_8.png-bf978846bc2cdc2296cb0aefd1b94571.ctex remapped: res://.godot/imported/mage_right_8.png-bf978846bc2cdc2296cb0aefd1b94571.ctex
+Completed load for: 'res://assets/mage_right_8.png' remapped 'res://assets/mage_right_8.png' at thread -1
+Loading resource: res://assets/mage_southeast_0.png remapped: res://assets/mage_southeast_0.png
+Loading resource: res://.godot/imported/mage_southeast_0.png-679bdb6683b6758a318cb0b9f4b6aac5.ctex remapped: res://.godot/imported/mage_southeast_0.png-679bdb6683b6758a318cb0b9f4b6aac5.ctex
+Completed load for: 'res://assets/mage_southeast_0.png' remapped 'res://assets/mage_southeast_0.png' at thread -1
+Loading resource: res://assets/mage_southeast_1.png remapped: res://assets/mage_southeast_1.png
+Loading resource: res://.godot/imported/mage_southeast_1.png-3e029a2ec64ac8f8bb6f966b3cd9776f.ctex remapped: res://.godot/imported/mage_southeast_1.png-3e029a2ec64ac8f8bb6f966b3cd9776f.ctex
+Completed load for: 'res://assets/mage_southeast_1.png' remapped 'res://assets/mage_southeast_1.png' at thread -1
+Loading resource: res://assets/mage_southeast_2.png remapped: res://assets/mage_southeast_2.png
+Loading resource: res://.godot/imported/mage_southeast_2.png-5e9649e5d344d34d31ecb2d24612e5fa.ctex remapped: res://.godot/imported/mage_southeast_2.png-5e9649e5d344d34d31ecb2d24612e5fa.ctex
+Completed load for: 'res://assets/mage_southeast_2.png' remapped 'res://assets/mage_southeast_2.png' at thread -1
+Loading resource: res://assets/mage_southeast_3.png remapped: res://assets/mage_southeast_3.png
+Loading resource: res://.godot/imported/mage_southeast_3.png-ce6225703b7b3338fbfb22d7c8858b9a.ctex remapped: res://.godot/imported/mage_southeast_3.png-ce6225703b7b3338fbfb22d7c8858b9a.ctex
+Completed load for: 'res://assets/mage_southeast_3.png' remapped 'res://assets/mage_southeast_3.png' at thread -1
+Loading resource: res://assets/mage_southeast_4.png remapped: res://assets/mage_southeast_4.png
+Loading resource: res://.godot/imported/mage_southeast_4.png-940c4000fef8e1dbb4562c4303211fa8.ctex remapped: res://.godot/imported/mage_southeast_4.png-940c4000fef8e1dbb4562c4303211fa8.ctex
+Completed load for: 'res://assets/mage_southeast_4.png' remapped 'res://assets/mage_southeast_4.png' at thread -1
+Loading resource: res://assets/mage_southeast_5.png remapped: res://assets/mage_southeast_5.png
+Loading resource: res://.godot/imported/mage_southeast_5.png-046b6274cd4908591d429d2c9a46e712.ctex remapped: res://.godot/imported/mage_southeast_5.png-046b6274cd4908591d429d2c9a46e712.ctex
+Completed load for: 'res://assets/mage_southeast_5.png' remapped 'res://assets/mage_southeast_5.png' at thread -1
+Loading resource: res://assets/mage_southeast_6.png remapped: res://assets/mage_southeast_6.png
+Loading resource: res://.godot/imported/mage_southeast_6.png-31475d0fe3e6d93c76222ac3ceaffdbb.ctex remapped: res://.godot/imported/mage_southeast_6.png-31475d0fe3e6d93c76222ac3ceaffdbb.ctex
+Completed load for: 'res://assets/mage_southeast_6.png' remapped 'res://assets/mage_southeast_6.png' at thread -1
+Loading resource: res://assets/mage_southeast_7.png remapped: res://assets/mage_southeast_7.png
+Loading resource: res://.godot/imported/mage_southeast_7.png-d0f015b2be41bda247255a41c53dbe5c.ctex remapped: res://.godot/imported/mage_southeast_7.png-d0f015b2be41bda247255a41c53dbe5c.ctex
+Completed load for: 'res://assets/mage_southeast_7.png' remapped 'res://assets/mage_southeast_7.png' at thread -1
+Loading resource: res://assets/mage_southeast_8.png remapped: res://assets/mage_southeast_8.png
+Loading resource: res://.godot/imported/mage_southeast_8.png-f36a77533d1f38102f993811c74ce54b.ctex remapped: res://.godot/imported/mage_southeast_8.png-f36a77533d1f38102f993811c74ce54b.ctex
+Completed load for: 'res://assets/mage_southeast_8.png' remapped 'res://assets/mage_southeast_8.png' at thread -1
+Loading resource: res://assets/mage_down_0.png remapped: res://assets/mage_down_0.png
+Loading resource: res://.godot/imported/mage_down_0.png-8eb2dce665577aad2a4d60eb5112c705.ctex remapped: res://.godot/imported/mage_down_0.png-8eb2dce665577aad2a4d60eb5112c705.ctex
+Completed load for: 'res://assets/mage_down_0.png' remapped 'res://assets/mage_down_0.png' at thread -1
+Loading resource: res://assets/mage_down_1.png remapped: res://assets/mage_down_1.png
+Loading resource: res://.godot/imported/mage_down_1.png-ca6c41fa64ad4afa4bf5f29fad03cae1.ctex remapped: res://.godot/imported/mage_down_1.png-ca6c41fa64ad4afa4bf5f29fad03cae1.ctex
+Completed load for: 'res://assets/mage_down_1.png' remapped 'res://assets/mage_down_1.png' at thread -1
+Loading resource: res://assets/mage_down_2.png remapped: res://assets/mage_down_2.png
+Loading resource: res://.godot/imported/mage_down_2.png-a6b4a7ab0502879032dbdbd56abab289.ctex remapped: res://.godot/imported/mage_down_2.png-a6b4a7ab0502879032dbdbd56abab289.ctex
+Completed load for: 'res://assets/mage_down_2.png' remapped 'res://assets/mage_down_2.png' at thread -1
+Loading resource: res://assets/mage_down_3.png remapped: res://assets/mage_down_3.png
+Loading resource: res://.godot/imported/mage_down_3.png-d727694f6c7043614ff8012b50254d94.ctex remapped: res://.godot/imported/mage_down_3.png-d727694f6c7043614ff8012b50254d94.ctex
+Completed load for: 'res://assets/mage_down_3.png' remapped 'res://assets/mage_down_3.png' at thread -1
+Loading resource: res://assets/mage_down_4.png remapped: res://assets/mage_down_4.png
+Loading resource: res://.godot/imported/mage_down_4.png-52152101896543f4a3822b6d05b135e6.ctex remapped: res://.godot/imported/mage_down_4.png-52152101896543f4a3822b6d05b135e6.ctex
+Completed load for: 'res://assets/mage_down_4.png' remapped 'res://assets/mage_down_4.png' at thread -1
+Loading resource: res://assets/mage_down_5.png remapped: res://assets/mage_down_5.png
+Loading resource: res://.godot/imported/mage_down_5.png-e218d8b20283044963b365b2545b99aa.ctex remapped: res://.godot/imported/mage_down_5.png-e218d8b20283044963b365b2545b99aa.ctex
+Completed load for: 'res://assets/mage_down_5.png' remapped 'res://assets/mage_down_5.png' at thread -1
+Loading resource: res://assets/mage_down_6.png remapped: res://assets/mage_down_6.png
+Loading resource: res://.godot/imported/mage_down_6.png-f40ef79601f986d28181b652b1eaafad.ctex remapped: res://.godot/imported/mage_down_6.png-f40ef79601f986d28181b652b1eaafad.ctex
+Completed load for: 'res://assets/mage_down_6.png' remapped 'res://assets/mage_down_6.png' at thread -1
+Loading resource: res://assets/mage_down_7.png remapped: res://assets/mage_down_7.png
+Loading resource: res://.godot/imported/mage_down_7.png-011859e89a20692bcc8baa85b20a2c61.ctex remapped: res://.godot/imported/mage_down_7.png-011859e89a20692bcc8baa85b20a2c61.ctex
+Completed load for: 'res://assets/mage_down_7.png' remapped 'res://assets/mage_down_7.png' at thread -1
+Loading resource: res://assets/mage_down_8.png remapped: res://assets/mage_down_8.png
+Loading resource: res://.godot/imported/mage_down_8.png-30cbb8cb82ee81ad5a976c3a29fa1668.ctex remapped: res://.godot/imported/mage_down_8.png-30cbb8cb82ee81ad5a976c3a29fa1668.ctex
+Completed load for: 'res://assets/mage_down_8.png' remapped 'res://assets/mage_down_8.png' at thread -1
+Loading resource: res://assets/mage_southwest_0.png remapped: res://assets/mage_southwest_0.png
+Loading resource: res://.godot/imported/mage_southwest_0.png-4a2f2e27b9892b861bc104972de1b631.ctex remapped: res://.godot/imported/mage_southwest_0.png-4a2f2e27b9892b861bc104972de1b631.ctex
+Completed load for: 'res://assets/mage_southwest_0.png' remapped 'res://assets/mage_southwest_0.png' at thread -1
+Loading resource: res://assets/mage_southwest_1.png remapped: res://assets/mage_southwest_1.png
+Loading resource: res://.godot/imported/mage_southwest_1.png-7fae17b43a7a6fbed006796fe93a0eaa.ctex remapped: res://.godot/imported/mage_southwest_1.png-7fae17b43a7a6fbed006796fe93a0eaa.ctex
+Completed load for: 'res://assets/mage_southwest_1.png' remapped 'res://assets/mage_southwest_1.png' at thread -1
+Loading resource: res://assets/mage_southwest_2.png remapped: res://assets/mage_southwest_2.png
+Loading resource: res://.godot/imported/mage_southwest_2.png-ebc83c06f38374b1c166b4345edf08fc.ctex remapped: res://.godot/imported/mage_southwest_2.png-ebc83c06f38374b1c166b4345edf08fc.ctex
+Completed load for: 'res://assets/mage_southwest_2.png' remapped 'res://assets/mage_southwest_2.png' at thread -1
+Loading resource: res://assets/mage_southwest_3.png remapped: res://assets/mage_southwest_3.png
+Loading resource: res://.godot/imported/mage_southwest_3.png-2bcd326a7e84a76ed0a127aff91ee0dc.ctex remapped: res://.godot/imported/mage_southwest_3.png-2bcd326a7e84a76ed0a127aff91ee0dc.ctex
+Completed load for: 'res://assets/mage_southwest_3.png' remapped 'res://assets/mage_southwest_3.png' at thread -1
+Loading resource: res://assets/mage_southwest_4.png remapped: res://assets/mage_southwest_4.png
+Loading resource: res://.godot/imported/mage_southwest_4.png-789f524e90aa2e9213612a73cad01c82.ctex remapped: res://.godot/imported/mage_southwest_4.png-789f524e90aa2e9213612a73cad01c82.ctex
+Completed load for: 'res://assets/mage_southwest_4.png' remapped 'res://assets/mage_southwest_4.png' at thread -1
+Loading resource: res://assets/mage_southwest_5.png remapped: res://assets/mage_southwest_5.png
+Loading resource: res://.godot/imported/mage_southwest_5.png-b82670ac6924e683924aab314107f622.ctex remapped: res://.godot/imported/mage_southwest_5.png-b82670ac6924e683924aab314107f622.ctex
+Completed load for: 'res://assets/mage_southwest_5.png' remapped 'res://assets/mage_southwest_5.png' at thread -1
+Loading resource: res://assets/mage_southwest_6.png remapped: res://assets/mage_southwest_6.png
+Loading resource: res://.godot/imported/mage_southwest_6.png-6216e089c2271d342f1618070a6753b9.ctex remapped: res://.godot/imported/mage_southwest_6.png-6216e089c2271d342f1618070a6753b9.ctex
+Completed load for: 'res://assets/mage_southwest_6.png' remapped 'res://assets/mage_southwest_6.png' at thread -1
+Loading resource: res://assets/mage_southwest_7.png remapped: res://assets/mage_southwest_7.png
+Loading resource: res://.godot/imported/mage_southwest_7.png-f474cfdc713bd3acc2fb56570e663044.ctex remapped: res://.godot/imported/mage_southwest_7.png-f474cfdc713bd3acc2fb56570e663044.ctex
+Completed load for: 'res://assets/mage_southwest_7.png' remapped 'res://assets/mage_southwest_7.png' at thread -1
+Loading resource: res://assets/mage_southwest_8.png remapped: res://assets/mage_southwest_8.png
+Loading resource: res://.godot/imported/mage_southwest_8.png-4e68b30afefc4f3e299347ed27f6bcf1.ctex remapped: res://.godot/imported/mage_southwest_8.png-4e68b30afefc4f3e299347ed27f6bcf1.ctex
+Completed load for: 'res://assets/mage_southwest_8.png' remapped 'res://assets/mage_southwest_8.png' at thread -1
+Loading resource: res://assets/mage_left_0.png remapped: res://assets/mage_left_0.png
+Loading resource: res://.godot/imported/mage_left_0.png-6eb100916248a80be5e38fdf1eed4225.ctex remapped: res://.godot/imported/mage_left_0.png-6eb100916248a80be5e38fdf1eed4225.ctex
+Completed load for: 'res://assets/mage_left_0.png' remapped 'res://assets/mage_left_0.png' at thread -1
+Loading resource: res://assets/mage_left_1.png remapped: res://assets/mage_left_1.png
+Loading resource: res://.godot/imported/mage_left_1.png-f780f3bdd9e814f908f7a4d89225710c.ctex remapped: res://.godot/imported/mage_left_1.png-f780f3bdd9e814f908f7a4d89225710c.ctex
+Completed load for: 'res://assets/mage_left_1.png' remapped 'res://assets/mage_left_1.png' at thread -1
+Loading resource: res://assets/mage_left_2.png remapped: res://assets/mage_left_2.png
+Loading resource: res://.godot/imported/mage_left_2.png-a91f179230ddcc95f346fc6ee3d09b1a.ctex remapped: res://.godot/imported/mage_left_2.png-a91f179230ddcc95f346fc6ee3d09b1a.ctex
+Completed load for: 'res://assets/mage_left_2.png' remapped 'res://assets/mage_left_2.png' at thread -1
+Loading resource: res://assets/mage_left_3.png remapped: res://assets/mage_left_3.png
+Loading resource: res://.godot/imported/mage_left_3.png-3b9ed4b6f2e61bbcf786dce1db925cc1.ctex remapped: res://.godot/imported/mage_left_3.png-3b9ed4b6f2e61bbcf786dce1db925cc1.ctex
+Completed load for: 'res://assets/mage_left_3.png' remapped 'res://assets/mage_left_3.png' at thread -1
+Loading resource: res://assets/mage_left_4.png remapped: res://assets/mage_left_4.png
+Loading resource: res://.godot/imported/mage_left_4.png-6a8ea27f0cbc748b18cb64bdd8124364.ctex remapped: res://.godot/imported/mage_left_4.png-6a8ea27f0cbc748b18cb64bdd8124364.ctex
+Completed load for: 'res://assets/mage_left_4.png' remapped 'res://assets/mage_left_4.png' at thread -1
+Loading resource: res://assets/mage_left_5.png remapped: res://assets/mage_left_5.png
+Loading resource: res://.godot/imported/mage_left_5.png-bdedb128278553b9522c8fe584c446cf.ctex remapped: res://.godot/imported/mage_left_5.png-bdedb128278553b9522c8fe584c446cf.ctex
+Completed load for: 'res://assets/mage_left_5.png' remapped 'res://assets/mage_left_5.png' at thread -1
+Loading resource: res://assets/mage_left_6.png remapped: res://assets/mage_left_6.png
+Loading resource: res://.godot/imported/mage_left_6.png-8a85d121a09fe73cab80316d519b22c8.ctex remapped: res://.godot/imported/mage_left_6.png-8a85d121a09fe73cab80316d519b22c8.ctex
+Completed load for: 'res://assets/mage_left_6.png' remapped 'res://assets/mage_left_6.png' at thread -1
+Loading resource: res://assets/mage_left_7.png remapped: res://assets/mage_left_7.png
+Loading resource: res://.godot/imported/mage_left_7.png-8042957b345e54f43064ff97866f1063.ctex remapped: res://.godot/imported/mage_left_7.png-8042957b345e54f43064ff97866f1063.ctex
+Completed load for: 'res://assets/mage_left_7.png' remapped 'res://assets/mage_left_7.png' at thread -1
+Loading resource: res://assets/mage_left_8.png remapped: res://assets/mage_left_8.png
+Loading resource: res://.godot/imported/mage_left_8.png-94e9e717d9ac494af53f8c93d9d5062b.ctex remapped: res://.godot/imported/mage_left_8.png-94e9e717d9ac494af53f8c93d9d5062b.ctex
+Completed load for: 'res://assets/mage_left_8.png' remapped 'res://assets/mage_left_8.png' at thread -1
+Loading resource: res://assets/mage_northwest_0.png remapped: res://assets/mage_northwest_0.png
+Loading resource: res://.godot/imported/mage_northwest_0.png-6ebae024e7d0a4cabb25a03d40cbc06f.ctex remapped: res://.godot/imported/mage_northwest_0.png-6ebae024e7d0a4cabb25a03d40cbc06f.ctex
+Completed load for: 'res://assets/mage_northwest_0.png' remapped 'res://assets/mage_northwest_0.png' at thread -1
+Loading resource: res://assets/mage_northwest_1.png remapped: res://assets/mage_northwest_1.png
+Loading resource: res://.godot/imported/mage_northwest_1.png-aefb150fc5de9c7c71903740d99e80e1.ctex remapped: res://.godot/imported/mage_northwest_1.png-aefb150fc5de9c7c71903740d99e80e1.ctex
+Completed load for: 'res://assets/mage_northwest_1.png' remapped 'res://assets/mage_northwest_1.png' at thread -1
+Loading resource: res://assets/mage_northwest_2.png remapped: res://assets/mage_northwest_2.png
+Loading resource: res://.godot/imported/mage_northwest_2.png-5018c31748261ea6a22a05a8060e8fa3.ctex remapped: res://.godot/imported/mage_northwest_2.png-5018c31748261ea6a22a05a8060e8fa3.ctex
+Completed load for: 'res://assets/mage_northwest_2.png' remapped 'res://assets/mage_northwest_2.png' at thread -1
+Loading resource: res://assets/mage_northwest_3.png remapped: res://assets/mage_northwest_3.png
+Loading resource: res://.godot/imported/mage_northwest_3.png-fade2420671df0e850fa5e71cca367e5.ctex remapped: res://.godot/imported/mage_northwest_3.png-fade2420671df0e850fa5e71cca367e5.ctex
+Completed load for: 'res://assets/mage_northwest_3.png' remapped 'res://assets/mage_northwest_3.png' at thread -1
+Loading resource: res://assets/mage_northwest_4.png remapped: res://assets/mage_northwest_4.png
+Loading resource: res://.godot/imported/mage_northwest_4.png-ad36ba70dbe1d2dea55ddd89f5fa1b9d.ctex remapped: res://.godot/imported/mage_northwest_4.png-ad36ba70dbe1d2dea55ddd89f5fa1b9d.ctex
+Completed load for: 'res://assets/mage_northwest_4.png' remapped 'res://assets/mage_northwest_4.png' at thread -1
+Loading resource: res://assets/mage_northwest_5.png remapped: res://assets/mage_northwest_5.png
+Loading resource: res://.godot/imported/mage_northwest_5.png-2485eb485741a4dbb0633dbed9654e23.ctex remapped: res://.godot/imported/mage_northwest_5.png-2485eb485741a4dbb0633dbed9654e23.ctex
+Completed load for: 'res://assets/mage_northwest_5.png' remapped 'res://assets/mage_northwest_5.png' at thread -1
+Loading resource: res://assets/mage_northwest_6.png remapped: res://assets/mage_northwest_6.png
+Loading resource: res://.godot/imported/mage_northwest_6.png-c0b2491a668328adf8e061047169eefc.ctex remapped: res://.godot/imported/mage_northwest_6.png-c0b2491a668328adf8e061047169eefc.ctex
+Completed load for: 'res://assets/mage_northwest_6.png' remapped 'res://assets/mage_northwest_6.png' at thread -1
+Loading resource: res://assets/mage_northwest_7.png remapped: res://assets/mage_northwest_7.png
+Loading resource: res://.godot/imported/mage_northwest_7.png-84e61998612e4b57751ed7b30a5df66d.ctex remapped: res://.godot/imported/mage_northwest_7.png-84e61998612e4b57751ed7b30a5df66d.ctex
+Completed load for: 'res://assets/mage_northwest_7.png' remapped 'res://assets/mage_northwest_7.png' at thread -1
+Loading resource: res://assets/mage_northwest_8.png remapped: res://assets/mage_northwest_8.png
+Loading resource: res://.godot/imported/mage_northwest_8.png-fa982bfadcfd9c66628d03f9e8497fe4.ctex remapped: res://.godot/imported/mage_northwest_8.png-fa982bfadcfd9c66628d03f9e8497fe4.ctex
+Completed load for: 'res://assets/mage_northwest_8.png' remapped 'res://assets/mage_northwest_8.png' at thread -1
+Loading resource: res://assets/mage_up_0.png remapped: res://assets/mage_up_0.png
+Loading resource: res://.godot/imported/mage_up_0.png-86ad8bbe15ba7ef65caed78ab99c3fde.ctex remapped: res://.godot/imported/mage_up_0.png-86ad8bbe15ba7ef65caed78ab99c3fde.ctex
+Completed load for: 'res://assets/mage_up_0.png' remapped 'res://assets/mage_up_0.png' at thread -1
+Loading resource: res://assets/mage_up_1.png remapped: res://assets/mage_up_1.png
+Loading resource: res://.godot/imported/mage_up_1.png-475a168b8ac614c609352f2f5cfab150.ctex remapped: res://.godot/imported/mage_up_1.png-475a168b8ac614c609352f2f5cfab150.ctex
+Completed load for: 'res://assets/mage_up_1.png' remapped 'res://assets/mage_up_1.png' at thread -1
+Loading resource: res://assets/mage_up_2.png remapped: res://assets/mage_up_2.png
+Loading resource: res://.godot/imported/mage_up_2.png-13102663d817896d6c87138001202462.ctex remapped: res://.godot/imported/mage_up_2.png-13102663d817896d6c87138001202462.ctex
+Completed load for: 'res://assets/mage_up_2.png' remapped 'res://assets/mage_up_2.png' at thread -1
+Loading resource: res://assets/mage_up_3.png remapped: res://assets/mage_up_3.png
+Loading resource: res://.godot/imported/mage_up_3.png-a8c2e475c6f4e24a5d1c722d619710f4.ctex remapped: res://.godot/imported/mage_up_3.png-a8c2e475c6f4e24a5d1c722d619710f4.ctex
+Completed load for: 'res://assets/mage_up_3.png' remapped 'res://assets/mage_up_3.png' at thread -1
+Loading resource: res://assets/mage_up_4.png remapped: res://assets/mage_up_4.png
+Loading resource: res://.godot/imported/mage_up_4.png-8c1486801f508812761801e39a0bc86b.ctex remapped: res://.godot/imported/mage_up_4.png-8c1486801f508812761801e39a0bc86b.ctex
+Completed load for: 'res://assets/mage_up_4.png' remapped 'res://assets/mage_up_4.png' at thread -1
+Loading resource: res://assets/mage_up_5.png remapped: res://assets/mage_up_5.png
+Loading resource: res://.godot/imported/mage_up_5.png-931229004c788464a757d3c12461e7d2.ctex remapped: res://.godot/imported/mage_up_5.png-931229004c788464a757d3c12461e7d2.ctex
+Completed load for: 'res://assets/mage_up_5.png' remapped 'res://assets/mage_up_5.png' at thread -1
+Loading resource: res://assets/mage_up_6.png remapped: res://assets/mage_up_6.png
+Loading resource: res://.godot/imported/mage_up_6.png-42f45167d591302e2107ab51948ad8f9.ctex remapped: res://.godot/imported/mage_up_6.png-42f45167d591302e2107ab51948ad8f9.ctex
+Completed load for: 'res://assets/mage_up_6.png' remapped 'res://assets/mage_up_6.png' at thread -1
+Loading resource: res://assets/mage_up_7.png remapped: res://assets/mage_up_7.png
+Loading resource: res://.godot/imported/mage_up_7.png-62dfda111e1b8ac307065d6fece409a5.ctex remapped: res://.godot/imported/mage_up_7.png-62dfda111e1b8ac307065d6fece409a5.ctex
+Completed load for: 'res://assets/mage_up_7.png' remapped 'res://assets/mage_up_7.png' at thread -1
+Loading resource: res://assets/mage_up_8.png remapped: res://assets/mage_up_8.png
+Loading resource: res://.godot/imported/mage_up_8.png-b1cbfdc23b8f0434d6f96f3442432020.ctex remapped: res://.godot/imported/mage_up_8.png-b1cbfdc23b8f0434d6f96f3442432020.ctex
+Completed load for: 'res://assets/mage_up_8.png' remapped 'res://assets/mage_up_8.png' at thread -1
+Loading resource: res://assets/mage_northeast_0.png remapped: res://assets/mage_northeast_0.png
+Loading resource: res://.godot/imported/mage_northeast_0.png-0b42da66d5075f07f6b85d55d710bb54.ctex remapped: res://.godot/imported/mage_northeast_0.png-0b42da66d5075f07f6b85d55d710bb54.ctex
+Completed load for: 'res://assets/mage_northeast_0.png' remapped 'res://assets/mage_northeast_0.png' at thread -1
+Loading resource: res://assets/mage_northeast_1.png remapped: res://assets/mage_northeast_1.png
+Loading resource: res://.godot/imported/mage_northeast_1.png-70a1fa37ab28259e72d3a266f420801a.ctex remapped: res://.godot/imported/mage_northeast_1.png-70a1fa37ab28259e72d3a266f420801a.ctex
+Completed load for: 'res://assets/mage_northeast_1.png' remapped 'res://assets/mage_northeast_1.png' at thread -1
+Loading resource: res://assets/mage_northeast_2.png remapped: res://assets/mage_northeast_2.png
+Loading resource: res://.godot/imported/mage_northeast_2.png-79ff09d190ed9eae3173bc07f821e2c6.ctex remapped: res://.godot/imported/mage_northeast_2.png-79ff09d190ed9eae3173bc07f821e2c6.ctex
+Completed load for: 'res://assets/mage_northeast_2.png' remapped 'res://assets/mage_northeast_2.png' at thread -1
+Loading resource: res://assets/mage_northeast_3.png remapped: res://assets/mage_northeast_3.png
+Loading resource: res://.godot/imported/mage_northeast_3.png-fc5159b251079ea87fc8642189a7045a.ctex remapped: res://.godot/imported/mage_northeast_3.png-fc5159b251079ea87fc8642189a7045a.ctex
+Completed load for: 'res://assets/mage_northeast_3.png' remapped 'res://assets/mage_northeast_3.png' at thread -1
+Loading resource: res://assets/mage_northeast_4.png remapped: res://assets/mage_northeast_4.png
+Loading resource: res://.godot/imported/mage_northeast_4.png-dea9892c66fee48626d9723d87ee5dbc.ctex remapped: res://.godot/imported/mage_northeast_4.png-dea9892c66fee48626d9723d87ee5dbc.ctex
+Completed load for: 'res://assets/mage_northeast_4.png' remapped 'res://assets/mage_northeast_4.png' at thread -1
+Loading resource: res://assets/mage_northeast_5.png remapped: res://assets/mage_northeast_5.png
+Loading resource: res://.godot/imported/mage_northeast_5.png-cad182b7c6e4b86d588d7e0b0f10e18a.ctex remapped: res://.godot/imported/mage_northeast_5.png-cad182b7c6e4b86d588d7e0b0f10e18a.ctex
+Completed load for: 'res://assets/mage_northeast_5.png' remapped 'res://assets/mage_northeast_5.png' at thread -1
+Loading resource: res://assets/mage_northeast_6.png remapped: res://assets/mage_northeast_6.png
+Loading resource: res://.godot/imported/mage_northeast_6.png-fd2b2224898b94e74b6c3271fa1984d5.ctex remapped: res://.godot/imported/mage_northeast_6.png-fd2b2224898b94e74b6c3271fa1984d5.ctex
+Completed load for: 'res://assets/mage_northeast_6.png' remapped 'res://assets/mage_northeast_6.png' at thread -1
+Loading resource: res://assets/mage_northeast_7.png remapped: res://assets/mage_northeast_7.png
+Loading resource: res://.godot/imported/mage_northeast_7.png-fe575e4361ae415b144139cb8d19582d.ctex remapped: res://.godot/imported/mage_northeast_7.png-fe575e4361ae415b144139cb8d19582d.ctex
+Completed load for: 'res://assets/mage_northeast_7.png' remapped 'res://assets/mage_northeast_7.png' at thread -1
+Loading resource: res://assets/mage_northeast_8.png remapped: res://assets/mage_northeast_8.png
+Loading resource: res://.godot/imported/mage_northeast_8.png-845328203d837d71c69ce826a0fd2206.ctex remapped: res://.godot/imported/mage_northeast_8.png-845328203d837d71c69ce826a0fd2206.ctex
+Completed load for: 'res://assets/mage_northeast_8.png' remapped 'res://assets/mage_northeast_8.png' at thread -1
+Loading resource: res://assets/mage_attack_right_0.png remapped: res://assets/mage_attack_right_0.png
+Loading resource: res://.godot/imported/mage_attack_right_0.png-dddadb95247698980c9a056e5754dab0.ctex remapped: res://.godot/imported/mage_attack_right_0.png-dddadb95247698980c9a056e5754dab0.ctex
+Completed load for: 'res://assets/mage_attack_right_0.png' remapped 'res://assets/mage_attack_right_0.png' at thread -1
+Loading resource: res://assets/mage_attack_right_1.png remapped: res://assets/mage_attack_right_1.png
+Loading resource: res://.godot/imported/mage_attack_right_1.png-495fd816ed932bedbe7e51d1d47b069f.ctex remapped: res://.godot/imported/mage_attack_right_1.png-495fd816ed932bedbe7e51d1d47b069f.ctex
+Completed load for: 'res://assets/mage_attack_right_1.png' remapped 'res://assets/mage_attack_right_1.png' at thread -1
+Loading resource: res://assets/mage_attack_right_2.png remapped: res://assets/mage_attack_right_2.png
+Loading resource: res://.godot/imported/mage_attack_right_2.png-d3beb853b501baebc2713223d6074f09.ctex remapped: res://.godot/imported/mage_attack_right_2.png-d3beb853b501baebc2713223d6074f09.ctex
+Completed load for: 'res://assets/mage_attack_right_2.png' remapped 'res://assets/mage_attack_right_2.png' at thread -1
+Loading resource: res://assets/mage_attack_right_3.png remapped: res://assets/mage_attack_right_3.png
+Loading resource: res://.godot/imported/mage_attack_right_3.png-fc7a9eb453da8e8b31df25b4dabfc3e2.ctex remapped: res://.godot/imported/mage_attack_right_3.png-fc7a9eb453da8e8b31df25b4dabfc3e2.ctex
+Completed load for: 'res://assets/mage_attack_right_3.png' remapped 'res://assets/mage_attack_right_3.png' at thread -1
+Loading resource: res://assets/mage_attack_right_4.png remapped: res://assets/mage_attack_right_4.png
+Loading resource: res://.godot/imported/mage_attack_right_4.png-8ee148ee35a47bb63f1932f0116a445d.ctex remapped: res://.godot/imported/mage_attack_right_4.png-8ee148ee35a47bb63f1932f0116a445d.ctex
+Completed load for: 'res://assets/mage_attack_right_4.png' remapped 'res://assets/mage_attack_right_4.png' at thread -1
+Loading resource: res://assets/mage_attack_right_5.png remapped: res://assets/mage_attack_right_5.png
+Loading resource: res://.godot/imported/mage_attack_right_5.png-38b11a827302d87bbb3c2dd4f6ea6b64.ctex remapped: res://.godot/imported/mage_attack_right_5.png-38b11a827302d87bbb3c2dd4f6ea6b64.ctex
+Completed load for: 'res://assets/mage_attack_right_5.png' remapped 'res://assets/mage_attack_right_5.png' at thread -1
+Loading resource: res://assets/mage_attack_right_6.png remapped: res://assets/mage_attack_right_6.png
+Loading resource: res://.godot/imported/mage_attack_right_6.png-7fc188ac5fb42aa161b3bb91f80ef24b.ctex remapped: res://.godot/imported/mage_attack_right_6.png-7fc188ac5fb42aa161b3bb91f80ef24b.ctex
+Completed load for: 'res://assets/mage_attack_right_6.png' remapped 'res://assets/mage_attack_right_6.png' at thread -1
+Loading resource: res://assets/mage_attack_right_7.png remapped: res://assets/mage_attack_right_7.png
+Loading resource: res://.godot/imported/mage_attack_right_7.png-e5f63f6b906a55860a29e0a54a5af082.ctex remapped: res://.godot/imported/mage_attack_right_7.png-e5f63f6b906a55860a29e0a54a5af082.ctex
+Completed load for: 'res://assets/mage_attack_right_7.png' remapped 'res://assets/mage_attack_right_7.png' at thread -1
+Loading resource: res://assets/mage_attack_left_0.png remapped: res://assets/mage_attack_left_0.png
+Loading resource: res://.godot/imported/mage_attack_left_0.png-38c4c75c6e5fa11ac3ac6584d000c4ed.ctex remapped: res://.godot/imported/mage_attack_left_0.png-38c4c75c6e5fa11ac3ac6584d000c4ed.ctex
+Completed load for: 'res://assets/mage_attack_left_0.png' remapped 'res://assets/mage_attack_left_0.png' at thread -1
+Loading resource: res://assets/mage_attack_left_1.png remapped: res://assets/mage_attack_left_1.png
+Loading resource: res://.godot/imported/mage_attack_left_1.png-0add66c92b55003193c1c8ce62709490.ctex remapped: res://.godot/imported/mage_attack_left_1.png-0add66c92b55003193c1c8ce62709490.ctex
+Completed load for: 'res://assets/mage_attack_left_1.png' remapped 'res://assets/mage_attack_left_1.png' at thread -1
+Loading resource: res://assets/mage_attack_left_2.png remapped: res://assets/mage_attack_left_2.png
+Loading resource: res://.godot/imported/mage_attack_left_2.png-5aa858fa2922eb980211a513149f3445.ctex remapped: res://.godot/imported/mage_attack_left_2.png-5aa858fa2922eb980211a513149f3445.ctex
+Completed load for: 'res://assets/mage_attack_left_2.png' remapped 'res://assets/mage_attack_left_2.png' at thread -1
+Loading resource: res://assets/mage_attack_left_3.png remapped: res://assets/mage_attack_left_3.png
+Loading resource: res://.godot/imported/mage_attack_left_3.png-d2b7f11b423879b5485317005e4be321.ctex remapped: res://.godot/imported/mage_attack_left_3.png-d2b7f11b423879b5485317005e4be321.ctex
+Completed load for: 'res://assets/mage_attack_left_3.png' remapped 'res://assets/mage_attack_left_3.png' at thread -1
+Loading resource: res://assets/mage_attack_left_4.png remapped: res://assets/mage_attack_left_4.png
+Loading resource: res://.godot/imported/mage_attack_left_4.png-a6e08d8a9e0c6669395eb3fd77ff8bf8.ctex remapped: res://.godot/imported/mage_attack_left_4.png-a6e08d8a9e0c6669395eb3fd77ff8bf8.ctex
+Completed load for: 'res://assets/mage_attack_left_4.png' remapped 'res://assets/mage_attack_left_4.png' at thread -1
+Loading resource: res://assets/mage_attack_left_5.png remapped: res://assets/mage_attack_left_5.png
+Loading resource: res://.godot/imported/mage_attack_left_5.png-50dab71612b2b39069a351634237c3c4.ctex remapped: res://.godot/imported/mage_attack_left_5.png-50dab71612b2b39069a351634237c3c4.ctex
+Completed load for: 'res://assets/mage_attack_left_5.png' remapped 'res://assets/mage_attack_left_5.png' at thread -1
+Loading resource: res://assets/mage_attack_left_6.png remapped: res://assets/mage_attack_left_6.png
+Loading resource: res://.godot/imported/mage_attack_left_6.png-701c6e93b7ea5d8b57785abfd17f520f.ctex remapped: res://.godot/imported/mage_attack_left_6.png-701c6e93b7ea5d8b57785abfd17f520f.ctex
+Completed load for: 'res://assets/mage_attack_left_6.png' remapped 'res://assets/mage_attack_left_6.png' at thread -1
+Loading resource: res://assets/mage_attack_left_7.png remapped: res://assets/mage_attack_left_7.png
+Loading resource: res://.godot/imported/mage_attack_left_7.png-9711a9739f55361dc78a64ab82b92aba.ctex remapped: res://.godot/imported/mage_attack_left_7.png-9711a9739f55361dc78a64ab82b92aba.ctex
+Completed load for: 'res://assets/mage_attack_left_7.png' remapped 'res://assets/mage_attack_left_7.png' at thread -1
+Loading resource: res://scenes/road.tscn remapped: res://scenes/road.tscn
+Completed load for: 'res://scenes/road.tscn' remapped 'res://scenes/road.tscn' at thread -1
+Loading resource: res://assets/arch.png remapped: res://assets/arch.png
+Loading resource: res://.godot/imported/arch.png-deb0f53e11ad60cc2bca011ae10cc8de.ctex remapped: res://.godot/imported/arch.png-deb0f53e11ad60cc2bca011ae10cc8de.ctex
+Completed load for: 'res://assets/arch.png' remapped 'res://assets/arch.png' at thread -1
+Loading resource: res://assets/arcane-cast.wav remapped: res://assets/arcane-cast.wav
+Loading resource: res://.godot/imported/arcane-cast.wav-1237397a48553c2fd1f0e422db60c2ba.sample remapped: res://.godot/imported/arcane-cast.wav-1237397a48553c2fd1f0e422db60c2ba.sample
+Completed load for: 'res://assets/arcane-cast.wav' remapped 'res://assets/arcane-cast.wav' at thread -1
+Loading resource: res://assets/hit-arcane.wav remapped: res://assets/hit-arcane.wav
+Loading resource: res://.godot/imported/hit-arcane.wav-ed0aa6c0eaf295ed2771e4c7aa94241e.sample remapped: res://.godot/imported/hit-arcane.wav-ed0aa6c0eaf295ed2771e4c7aa94241e.sample
+Completed load for: 'res://assets/hit-arcane.wav' remapped 'res://assets/hit-arcane.wav' at thread -1
+PASS: Projectile collides with solid mill structure
+RESULT: 18 contract checks, 0 failures

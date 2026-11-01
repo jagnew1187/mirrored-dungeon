@@ -1,0 +1,89 @@
+extends SceneTree
+
+var game: Node
+var checks := 0
+var failures := 0
+
+func check(value: bool, description: String) -> void:
+	checks+=1
+	if not value: failures+=1;push_error("FAIL: "+description)
+	else: print("PASS: "+description)
+
+func _initialize() -> void:
+	call_deferred("run")
+
+func run() -> void:
+	game=load("res://scenes/main.tscn").instantiate();root.add_child(game)
+	await process_frame
+	game.close_modal();game.set_physics_process(false)
+	check(game.area.area_id=="vigil","Main scene creates playable Vigil")
+	check(game.area.clear(game.hero.position),"Camp spawn is clear")
+	var mara: Dictionary=game.area.points[0]
+	game.approach(mara)
+	check(not game.path.is_empty() and game.pending.id=="mara","Distant NPC creates reachable pending approach")
+	for i in range(300):
+		game._physics_process(1.0/60)
+		if game.menu_open: break
+	check(game.menu_open,"NPC approach automatically opens dialogue")
+	check(game.modal_box.get_child(0).text=="Mara","Dialogue names current speaker")
+	game.close_modal()
+	for id in ["bram","finn"]:
+		for p in game.area.points:
+			if p.id==id: game.interact(p);check(game.modal_box.get_child(0).text==p.name,id+" has separate dialogue");game.close_modal()
+	game.approach(mara);game.attack();check(game.pending.is_empty(),"Combat cancels pending approach")
+	var before: Vector2=Vector2(250,310);game.hero.position=before
+	game.move_actor(game.hero,Vector2(0,-25));check(game.hero.position==before,"Tent collision blocks motion")
+	for kind in ["knight","mage","rogue"]:
+		game.hero.kind=kind
+		for direction in ["left","right","up","down"]:
+			for frame in range(8):check(game.hero.tex("%s_%s_%d"%[kind,direction,frame])!=null,"Art %s/%s/%d"%[kind,direction,frame])
+	game.enter_area("road")
+	check(game.area.bounds.x>2500,"Wilderness is larger than viewport")
+	check(game.enemies.size()==5,"Three roaming and two authored enemies")
+	check(not game.encounter_complete(),"Empty defeat ledger cannot complete quest")
+	check(game.camera.limit_right==3072 and game.camera.limit_bottom==2112,"Camera limits match road")
+	for p in game.area.points:
+		game.hero.position=game.area.spawn;game.approach(p)
+		check(not game.path.is_empty() or game.menu_open or game.area.area_id!="road","Reachable road point: "+p.id)
+		if game.area.area_id!="road": game.enter_area("road")
+		game.close_modal()
+	# Kill only roaming enemies using real attack damage and cooldown resets.
+	for i in range(3):
+		var target: Dictionary={}
+		for e in game.enemies:
+			if e.random: target=e;break
+		if target.is_empty(): break
+		game.hero.position=target.actor.position
+		game.cooldown=0;game.attack();game.cooldown=0;game.attack()
+	check(game.random_dead.size()==3,"Random cap cleared via combat")
+	check(game.defeated.is_empty() and not game.encounter_complete(),"Random kills do not affect authored ledger")
+	game.hero.position=Vector2(190,1730);game.elapsed=game.respawn_time-1;game.update_enemies(0)
+	check(game.enemies.size()==2,"No random respawn before cooldown")
+	game.elapsed=game.respawn_time+1;game.update_enemies(0)
+	check(game.enemies.size()==5,"Distant cleared population respawns after cooldown")
+	var guard: Dictionary=game.enemies[0]
+	game.hero.position=guard.actor.position;var hp: float=game.hero.health;game.update_enemies(0.1)
+	check(game.hero.health<hp,"Enemies damage hero")
+	guard.actor.position+=Vector2(70,0)
+	game.hero.position=guard.home+Vector2(400,0);game.update_enemies(0.1)
+	check(guard.returning,"Leash triggers return")
+	for i in range(2):
+		var target: Dictionary={}
+		for e in game.enemies:
+			if not e.random: target=e;break
+		if target.is_empty(): break
+		game.hero.position=target.actor.position;game.cooldown=0;game.attack();game.cooldown=0;game.attack()
+	check(game.encounter_complete(),"Explicit authored member defeats complete encounter")
+	game.enter_area("vigil");game.enter_area("road")
+	check(game.enemies.size()==3,"Travel preserves quest defeats")
+	for p in game.area.points:
+		if p.id=="flour": game.interact(p)
+	check(game.recovered,"Flour requires explicit interaction")
+	game.close_modal();game.enter_area("bannerfall")
+	check(game.area.clear(game.hero.position),"Town spawn is clear")
+	for p in game.area.points:
+		game.approach(p);check(not game.path.is_empty(),"Town interaction reachable: "+p.id);game.cancel_approach()
+	game.hero.health=0;game._physics_process(0.016)
+	check(game.area.area_id=="vigil" and game.hero.health==100,"Defeat recovers at camp")
+	print("RESULT: %d checks, %d failures"%[checks,failures])
+	quit(1 if failures else 0)

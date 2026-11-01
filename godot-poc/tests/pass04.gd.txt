@@ -1,0 +1,33 @@
+extends SceneTree
+var failures:=0
+func _initialize() -> void: call_deferred("run")
+func check(ok: bool, message: String) -> void:
+	if ok: print("PASS: "+message)
+	else: failures+=1;push_error(message)
+func tick() -> void:
+	for i in range(3): await physics_frame
+func run() -> void:
+	var game=load("res://scenes/main.tscn").instantiate();root.add_child(game);await tick();game.volume=0
+	game.campaign.directory="user://test-pass04-"+str(Time.get_ticks_usec())
+	for kind in ["knight","mage","rogue"]:
+		game.select_class(kind);game.overlay.close()
+		check(game.defeated.is_empty() and game.campaign.data.xp==0,"Fresh "+kind+" isolated")
+		game.interact(game.area.points[0]);check(game.campaign.data.quest=="patrol","Mara begins objective")
+		game.enter_area("road");await tick()
+		game.interact(game.area.points[2]);check(not game.recovered,"Cannot recover flour before patrol")
+		for enemy in game.enemies.duplicate(): game.damage_enemy(enemy,999)
+		check(game.encounter_complete(),"Both authored guards recorded separately")
+		game.interact(game.area.points[2]);check(game.recovered,"Explicit flour recovery")
+		game.enter_area("bannerfall");game.interact(game.area.points[0])
+		var xp: int=game.campaign.data.xp
+		game.interact(game.area.points[0]);check(game.campaign.data.xp==xp and game.campaign.data.quest=="done","Turn-in idempotent")
+		check(game.campaign.progress().level==2,"Quest and combat grant modest level 2")
+		var damage: float=game.stats.damage
+		game.campaign.data.weapon_equipped=true;game.refresh_stats();check(game.stats.damage==damage+4,"Upgrade affects combat stats")
+		game.enter_area("vigil");game.persist();var slot: String=game.campaign.slot
+		game.select_class(kind);check(game.campaign.slot!=slot and game.campaign.data.xp==0,"New campaign never overwrites")
+		game.continue_campaign(slot);check(game.campaign.data.xp==xp and game.recovered,"Continue restores progression")
+		game.enter_area("road");game.overlay.close();game.hero.health=0;await tick()
+		check(game.fallen and game.overlay.page_id=="defeat" and game.menu_open,"Defeat pauses and offers recovery")
+		game.recover();check(game.hero.health==game.hero.max_health and game.campaign.data.xp==xp,"Recovery preserves rewards")
+	game.queue_free();await tick();print("Pass04 failures: ",failures);quit(failures)

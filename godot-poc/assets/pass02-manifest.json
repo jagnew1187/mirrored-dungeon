@@ -1,0 +1,788 @@
+[
+  {
+    "output": "knight_attack_right_0",
+    "source": "knight-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 590,
+      "w": 328,
+      "h": 330,
+      "anchorX": 198,
+      "anchorY": 309
+    },
+    "bodyHeight": 275
+  },
+  {
+    "output": "knight_attack_right_1",
+    "source": "knight-animation-v1.png",
+    "frame": {
+      "x": 328,
+      "y": 590,
+      "w": 328,
+      "h": 330,
+      "anchorX": 214,
+      "anchorY": 309
+    },
+    "bodyHeight": 275
+  },
+  {
+    "output": "knight_attack_right_2",
+    "source": "knight-animation-v1.png",
+    "frame": {
+      "x": 656,
+      "y": 590,
+      "w": 328,
+      "h": 330,
+      "anchorX": 212,
+      "anchorY": 309
+    },
+    "bodyHeight": 275
+  },
+  {
+    "output": "knight_attack_right_3",
+    "source": "knight-animation-v1.png",
+    "frame": {
+      "x": 984,
+      "y": 590,
+      "w": 328,
+      "h": 330,
+      "anchorX": 193,
+      "anchorY": 310
+    },
+    "bodyHeight": 275
+  },
+  {
+    "output": "knight_attack_right_4",
+    "source": "knight-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 920,
+      "w": 328,
+      "h": 279,
+      "anchorX": 192,
+      "anchorY": 264
+    },
+    "bodyHeight": 275
+  },
+  {
+    "output": "knight_attack_right_5",
+    "source": "knight-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 920,
+      "w": 328,
+      "h": 279,
+      "anchorX": 192,
+      "anchorY": 264
+    },
+    "bodyHeight": 275
+  },
+  {
+    "output": "knight_attack_right_6",
+    "source": "knight-animation-v1.png",
+    "frame": {
+      "x": 656,
+      "y": 920,
+      "w": 328,
+      "h": 279,
+      "anchorX": 208,
+      "anchorY": 264
+    },
+    "bodyHeight": 275
+  },
+  {
+    "output": "knight_attack_right_7",
+    "source": "knight-animation-v1.png",
+    "frame": {
+      "x": 984,
+      "y": 920,
+      "w": 328,
+      "h": 279,
+      "anchorX": 209,
+      "anchorY": 264
+    },
+    "bodyHeight": 275
+  },
+  {
+    "output": "knight_attack_left_0",
+    "source": "knight-left-animation-v1.png",
+    "frame": {
+      "x": 53,
+      "y": 657,
+      "w": 275,
+      "h": 237,
+      "anchorX": 96,
+      "anchorY": 235
+    },
+    "bodyHeight": 255
+  },
+  {
+    "output": "knight_attack_left_1",
+    "source": "knight-left-animation-v1.png",
+    "frame": {
+      "x": 388,
+      "y": 617,
+      "w": 256,
+      "h": 277,
+      "anchorX": 58,
+      "anchorY": 275
+    },
+    "bodyHeight": 255
+  },
+  {
+    "output": "knight_attack_left_2",
+    "source": "knight-left-animation-v1.png",
+    "frame": {
+      "x": 388,
+      "y": 617,
+      "w": 256,
+      "h": 277,
+      "anchorX": 58,
+      "anchorY": 275
+    },
+    "bodyHeight": 255
+  },
+  {
+    "output": "knight_attack_left_3",
+    "source": "knight-left-animation-v1.png",
+    "frame": {
+      "x": 991,
+      "y": 669,
+      "w": 298,
+      "h": 225,
+      "anchorX": 120,
+      "anchorY": 223
+    },
+    "bodyHeight": 255
+  },
+  {
+    "output": "knight_attack_left_4",
+    "source": "knight-left-strike-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 0,
+      "w": 1536,
+      "h": 1024,
+      "anchorX": 800,
+      "anchorY": 912
+    },
+    "bodyHeight": 850
+  },
+  {
+    "output": "knight_attack_left_5",
+    "source": "knight-left-animation-v1.png",
+    "frame": {
+      "x": 691,
+      "y": 937,
+      "w": 293,
+      "h": 220,
+      "anchorX": 128,
+      "anchorY": 218
+    },
+    "bodyHeight": 255
+  },
+  {
+    "output": "knight_attack_left_6",
+    "source": "knight-left-animation-v1.png",
+    "frame": {
+      "x": 691,
+      "y": 937,
+      "w": 293,
+      "h": 220,
+      "anchorX": 128,
+      "anchorY": 218
+    },
+    "bodyHeight": 255
+  },
+  {
+    "output": "knight_attack_left_7",
+    "source": "knight-left-animation-v1.png",
+    "frame": {
+      "x": 1023,
+      "y": 937,
+      "w": 272,
+      "h": 220,
+      "anchorX": 113,
+      "anchorY": 218
+    },
+    "bodyHeight": 255
+  },
+  {
+    "output": "mage_attack_right_0",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 197,
+      "anchorY": 228
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_right_1",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 384,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 189,
+      "anchorY": 228
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_right_2",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 768,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 186,
+      "anchorY": 226
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_right_3",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 1152,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 169,
+      "anchorY": 226
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_right_4",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 205,
+      "anchorY": 216
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_right_5",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 384,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 192,
+      "anchorY": 216
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_right_6",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 768,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 195,
+      "anchorY": 219
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_right_7",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 1152,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 179,
+      "anchorY": 220
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_left_0",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 197,
+      "anchorY": 228
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_left_1",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 384,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 189,
+      "anchorY": 228
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_left_2",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 768,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 186,
+      "anchorY": 226
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_left_3",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 1152,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 169,
+      "anchorY": 226
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_left_4",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 205,
+      "anchorY": 216
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_left_5",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 384,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 192,
+      "anchorY": 216
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_left_6",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 768,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 195,
+      "anchorY": 219
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "mage_attack_left_7",
+    "source": "mage-animation-v1.png",
+    "frame": {
+      "x": 1152,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 179,
+      "anchorY": 220
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_right_0",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 231,
+      "anchorY": 233
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_right_1",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 384,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 206,
+      "anchorY": 233
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_right_2",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 768,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 222,
+      "anchorY": 233
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_right_3",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 1152,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 200,
+      "anchorY": 233
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_right_4",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 217,
+      "anchorY": 219
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_right_5",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 384,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 205,
+      "anchorY": 221
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_right_6",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 768,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 220,
+      "anchorY": 221
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_right_7",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 1152,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 226,
+      "anchorY": 220
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_left_0",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 231,
+      "anchorY": 233
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_left_1",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 384,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 206,
+      "anchorY": 233
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_left_2",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 768,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 222,
+      "anchorY": 233
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_left_3",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 1152,
+      "y": 520,
+      "w": 384,
+      "h": 250,
+      "anchorX": 200,
+      "anchorY": 233
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_left_4",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 0,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 217,
+      "anchorY": 219
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_left_5",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 384,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 205,
+      "anchorY": 221
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_left_6",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 768,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 220,
+      "anchorY": 221
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "rogue_attack_left_7",
+    "source": "rogue-animation-v1.png",
+    "frame": {
+      "x": 1152,
+      "y": 770,
+      "w": 384,
+      "h": 254,
+      "anchorX": 226,
+      "anchorY": 220
+    },
+    "bodyHeight": 210
+  },
+  {
+    "output": "knight_idle_right",
+    "source": "knight-idle-v2.png",
+    "frame": {
+      "x": 24,
+      "y": 115,
+      "w": 479,
+      "h": 520,
+      "anchorX": 284.5,
+      "anchorY": 518
+    },
+    "bodyHeight": 516.0
+  },
+  {
+    "output": "knight_idle_left",
+    "source": "knight-idle-v2.png",
+    "frame": {
+      "x": 569,
+      "y": 115,
+      "w": 479,
+      "h": 520,
+      "anchorX": 199.5,
+      "anchorY": 518
+    },
+    "bodyHeight": 516.0
+  },
+  {
+    "output": "knight_idle_down",
+    "source": "knight-idle-v2.png",
+    "frame": {
+      "x": 1073,
+      "y": 115,
+      "w": 396,
+      "h": 520,
+      "anchorX": 211.0,
+      "anchorY": 518
+    },
+    "bodyHeight": 516.0
+  },
+  {
+    "output": "knight_idle_up",
+    "source": "knight-idle-v2.png",
+    "frame": {
+      "x": 1583,
+      "y": 115,
+      "w": 466,
+      "h": 519,
+      "anchorX": 193.5,
+      "anchorY": 517
+    },
+    "bodyHeight": 516.0
+  },
+  {
+    "output": "chest",
+    "source": "journey-v1.png",
+    "rect": [
+      472,
+      588,
+      328,
+      264
+    ]
+  },
+  {
+    "output": "arch",
+    "source": "journey-v1.png",
+    "rect": [
+      0,
+      0,
+      454,
+      486
+    ]
+  },
+  {
+    "output": "pavilion",
+    "source": "camp-pavilion-v1.png",
+    "rect": [
+      0,
+      0,
+      1312,
+      1199
+    ]
+  },
+  {
+    "output": "supply_crate",
+    "source": "warlord-props-v1.png",
+    "rect": [
+      0,
+      836,
+      418,
+      418
+    ]
+  },
+  {
+    "output": "barrel",
+    "source": "warlord-props-v1.png",
+    "rect": [
+      418,
+      836,
+      418,
+      418
+    ]
+  },
+  {
+    "output": "masonry",
+    "source": "warlord-props-v1.png",
+    "rect": [
+      836,
+      836,
+      418,
+      418
+    ]
+  },
+  {
+    "output": "barricade",
+    "source": "warlord-props-v1.png",
+    "rect": [
+      0,
+      418,
+      418,
+      418
+    ]
+  },
+  {
+    "output": "rubble",
+    "source": "warlord-props-v1.png",
+    "rect": [
+      836,
+      418,
+      418,
+      418
+    ]
+  },
+  {
+    "output": "banner",
+    "source": "warlord-decor-v1.png",
+    "rect": [
+      0,
+      410,
+      426,
+      410
+    ]
+  },
+  {
+    "output": "dummy",
+    "source": "warlord-decor-v1.png",
+    "rect": [
+      852,
+      410,
+      426,
+      410
+    ]
+  },
+  {
+    "output": "brazier",
+    "source": "warlord-decor-v1.png",
+    "rect": [
+      426,
+      0,
+      426,
+      410
+    ]
+  }
+]

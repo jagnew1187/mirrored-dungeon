@@ -1,0 +1,86 @@
+{
+  "timber_door": {
+    "region": [
+      0,
+      0,
+      54,
+      80
+    ],
+    "source_rect": [
+      123,
+      338,
+      205,
+      462
+    ]
+  },
+  "shutter_window": {
+    "region": [
+      56,
+      0,
+      54,
+      64
+    ],
+    "source_rect": [
+      110,
+      190,
+      191,
+      287
+    ]
+  },
+  "roof_shingles": {
+    "region": [
+      112,
+      0,
+      64,
+      36
+    ],
+    "source_rect": [
+      296,
+      89,
+      395,
+      144
+    ]
+  },
+  "timber_wall": {
+    "region": [
+      178,
+      0,
+      36,
+      48
+    ],
+    "source_rect": [
+      355,
+      237,
+      406,
+      310
+    ]
+  },
+  "stone_foundation": {
+    "region": [
+      216,
+      0,
+      30,
+      58
+    ],
+    "source_rect": [
+      80,
+      355,
+      126,
+      443
+    ]
+  },
+  "bakery_sign": {
+    "region": [
+      0,
+      84,
+      36,
+      32
+    ],
+    "source_rect": [
+      24,
+      262,
+      77,
+      310
+    ]
+  }
+}

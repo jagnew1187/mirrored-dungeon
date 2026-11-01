@@ -1,0 +1,38 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: knight: walk to Mara and accept introduction
+PASS: knight: walk out of Vigil
+BALANCE knight combat/travel seconds=27.5 HP=224.7 XP=103
+PASS: knight: defeat all archetypes, guards and optional elite with real attacks
+PASS: knight: authored and elite ledgers complete independently
+PASS: knight: walk to and recover flour
+PASS: knight: southeast route reaches town
+PASS: knight: Anja rewards and leveling
+PASS: knight: quest reward pickup
+PASS: knight: walk to return exit
+PASS: knight: save/title/Continue retains completed quest and elite claim
+PASS: mage: walk to Mara and accept introduction
+PASS: mage: walk out of Vigil
+BALANCE mage combat/travel seconds=32.0 HP=170.0 XP=103
+PASS: mage: defeat all archetypes, guards and optional elite with real attacks
+PASS: mage: authored and elite ledgers complete independently
+PASS: mage: walk to and recover flour
+PASS: mage: southeast route reaches town
+PASS: mage: Anja rewards and leveling
+PASS: mage: quest reward pickup
+PASS: mage: walk to return exit
+PASS: mage: save/title/Continue retains completed quest and elite claim
+PASS: rogue: walk to Mara and accept introduction
+PASS: rogue: walk out of Vigil
+BALANCE rogue combat/travel seconds=28.4 HP=135.0 XP=103
+PASS: rogue: defeat all archetypes, guards and optional elite with real attacks
+PASS: rogue: authored and elite ledgers complete independently
+PASS: rogue: walk to and recover flour
+PASS: rogue: southeast route reaches town
+PASS: rogue: Anja rewards and leveling
+PASS: rogue: quest reward pickup
+PASS: rogue: walk to return exit
+PASS: rogue: save/title/Continue retains completed quest and elite claim
+RESULT: 30 campaign checks, 0 failures

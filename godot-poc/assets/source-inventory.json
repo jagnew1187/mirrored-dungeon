@@ -1,0 +1,890 @@
+[
+  {
+    "file": "acolyte-motion-down-v1.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "acolyte-motion-left-v1.png",
+    "size": [
+      1269,
+      1240
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "acolyte-motion-northeast-v1.png",
+    "size": [
+      1269,
+      1239
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "acolyte-motion-northwest-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "acolyte-motion-right-v1.png",
+    "size": [
+      1261,
+      1247
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "acolyte-motion-southeast-v1.png",
+    "size": [
+      1297,
+      1212
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "acolyte-motion-southwest-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "acolyte-motion-up-v1.png",
+    "size": [
+      1303,
+      1207
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "buff-art-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "camp-materials-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB"
+  },
+  {
+    "file": "camp-pavilion-v1.png",
+    "size": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "campaign-villagers-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "cultist-motion-down-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "cultist-motion-left-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "cultist-motion-northeast-v1.png",
+    "size": [
+      1271,
+      1238
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "cultist-motion-northwest-v1.png",
+    "size": [
+      1280,
+      1229
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "cultist-motion-right-v1.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "cultist-motion-southeast-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "cultist-motion-southwest-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "cultist-motion-up-v1.png",
+    "size": [
+      1261,
+      1247
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "hound-motion-down-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "hound-motion-left-v1.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "hound-motion-northeast-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "hound-motion-northwest-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "hound-motion-right-v1.png",
+    "size": [
+      1485,
+      1059
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "hound-motion-southeast-v1.png",
+    "size": [
+      1352,
+      1163
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "hound-motion-southwest-v1.png",
+    "size": [
+      1492,
+      1054
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "hound-motion-up-v1.png",
+    "size": [
+      1265,
+      1243
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "journey-v1.png",
+    "size": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-animation-v1.png",
+    "size": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-idle-v2.png",
+    "size": [
+      2073,
+      758
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-left-animation-v1.png",
+    "size": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-left-strike-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-left-walk-between-v1.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-between-v1.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-down-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-left-v2.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-northeast-v3.png",
+    "size": [
+      1230,
+      1278
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-northeast-v4.png",
+    "size": [
+      1230,
+      1278
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-northwest-v3.png",
+    "size": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-right-v2.png",
+    "size": [
+      1659,
+      948
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-southeast-v3.png",
+    "size": [
+      1262,
+      1246
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-southwest-v3.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "knight-walk-up-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-animation-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-between-v1.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-down-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-left-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-northeast-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-northwest-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-right-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-southeast-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-southwest-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mage-walk-up-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mara-animation-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "mara-portrait-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-materials-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB"
+  },
+  {
+    "file": "necro-props-v1.png",
+    "size": [
+      1086,
+      1448
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-skill-left-v1.png",
+    "size": [
+      1284,
+      1225
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-skill-right-v1.png",
+    "size": [
+      1284,
+      1225
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-walk-down-v2.png",
+    "size": [
+      1284,
+      1225
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-walk-left-v2.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-walk-northeast-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-walk-northwest-v2.png",
+    "size": [
+      1283,
+      1226
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-walk-right-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-walk-southeast-v2.png",
+    "size": [
+      1264,
+      1244
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-walk-southwest-v2.png",
+    "size": [
+      1310,
+      1200
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "necro-walk-up-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-materials-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB"
+  },
+  {
+    "file": "pyro-props-v1.png",
+    "size": [
+      1086,
+      1448
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-skill-left-v1.png",
+    "size": [
+      1262,
+      1246
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-skill-right-v1.png",
+    "size": [
+      1262,
+      1246
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-walk-down-v2.png",
+    "size": [
+      1262,
+      1246
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-walk-left-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-walk-northeast-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-walk-northwest-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-walk-right-v2.png",
+    "size": [
+      1330,
+      1182
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-walk-southeast-v2.png",
+    "size": [
+      1287,
+      1222
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-walk-southwest-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "pyro-walk-up-v2.png",
+    "size": [
+      1236,
+      1273
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-animation-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-between-v1.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-down-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-left-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-northeast-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-northwest-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-right-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-southeast-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-southwest-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "rogue-walk-up-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "skeleton-motion-down-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "skeleton-motion-left-v1.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "skeleton-motion-northeast-v1.png",
+    "size": [
+      1294,
+      1216
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "skeleton-motion-northwest-v1.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "skeleton-motion-right-v1.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "skeleton-motion-southeast-v1.png",
+    "size": [
+      1274,
+      1235
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "skeleton-motion-southwest-v1.png",
+    "size": [
+      1262,
+      1246
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "skeleton-motion-up-v1.png",
+    "size": [
+      1303,
+      1207
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-decor-v1.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-materials-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB"
+  },
+  {
+    "file": "warlord-props-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-skill-left-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-skill-right-v1.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-walk-down-v2.png",
+    "size": [
+      1286,
+      1223
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-walk-left-v2.png",
+    "size": [
+      1295,
+      1214
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-walk-northeast-v2.png",
+    "size": [
+      1247,
+      1261
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-walk-northwest-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-walk-right-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-walk-southeast-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-walk-southwest-v2.png",
+    "size": [
+      1263,
+      1246
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "warlord-walk-up-v2.png",
+    "size": [
+      1226,
+      1283
+    ],
+    "mode": "RGBA"
+  }
+]

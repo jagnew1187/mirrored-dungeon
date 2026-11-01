@@ -1,0 +1,59 @@
+extends SceneTree
+
+var count:=0
+var failures:=0
+
+func check(ok: bool, text: String) -> void:
+	count+=1
+	if not ok: failures+=1;push_error("FAIL: "+text)
+	else: print("PASS: "+text)
+
+func _initialize() -> void:
+	call_deferred("run")
+
+func run() -> void:
+	var game=load("res://scenes/main.tscn").instantiate();root.add_child(game)
+	await process_frame
+	game.close_modal();game.set_physics_process(false)
+	var key:=InputEventKey.new();key.physical_keycode=KEY_D;key.pressed=true;Input.parse_input_event(key)
+	await process_frame
+	var start: Vector2=game.hero.position
+	game._physics_process(0.1)
+	check(game.hero.position.x>start.x,"Keyboard movement via Input event")
+	key.pressed=false;Input.parse_input_event(key);await process_frame
+	for p in game.area.points:
+		if p.id=="road": game.approach(p)
+	for i in range(500):
+		game._physics_process(1.0/60)
+		if game.area.area_id=="road": break
+	check(game.area.area_id=="road","Walk-and-interact transition from camp to wilderness")
+	game.hero.position=Vector2(1500,1100);game.camera.position=game.hero.position;game.camera.force_update_scroll()
+	await process_frame
+	var center: Vector2=game.camera.get_screen_center_position()
+	check(center.distance_to(game.hero.position)<2,"Camera follows in map interior")
+	game.hero.position=Vector2(40,40);game.camera.position=game.hero.position;game.camera.force_update_scroll();await process_frame
+	var top_center: Vector2=game.camera.get_screen_center_position()
+	check(top_center.x>=575 and top_center.y>=359,"Camera clamps at top-left")
+	game.hero.position=Vector2(80,70);game.camera.position=game.hero.position;game.camera.force_update_scroll();await process_frame
+	check(game.camera.get_screen_center_position().distance_to(top_center)<1,"Hero moves independently after camera clamps")
+	game.hero.position=Vector2(3030,2070);game.camera.position=game.hero.position;game.camera.force_update_scroll();await process_frame
+	center=game.camera.get_screen_center_position()
+	check(center.x<=2497 and center.y<=1753,"Camera clamps at bottom-right")
+	game.hero.position=Vector2(650,750);game.camera.position=game.hero.position;game.camera.force_update_scroll();await process_frame
+	var screen: Vector2=root.get_canvas_transform()*Vector2(650,615)
+	var touch:=InputEventScreenTouch.new();touch.position=screen;touch.index=1;touch.pressed=true
+	game._unhandled_input(touch)
+	check(game.pending.get("id","")=="cross","Touch targeting transforms screen coordinates through scrolling camera")
+	game.cancel_approach()
+	touch.index=0;touch.position=Vector2(100,550);game._unhandled_input(touch)
+	var drag:=InputEventScreenDrag.new();drag.index=0;drag.position=Vector2(150,550);game._unhandled_input(drag)
+	check(game.joystick.x>0.7,"Virtual joystick responds to drag")
+	touch.pressed=false;game._unhandled_input(touch)
+	check(game.joystick==Vector2.ZERO,"Virtual joystick stops on release")
+	game.enter_area("vigil");game.hero.position=Vector2(430,420)
+	game.world_click(Vector2(430,335));check(game.menu_open,"Nearby NPC click opens dialogue immediately")
+	game.close_modal();game.hero.position=Vector2(430,520);game.approach(game.area.points[0]);game.show_menu()
+	check(game.pending.is_empty(),"Menu cancels pending approach")
+	game.close_modal();game.enter_area("road")
+	for e in game.enemies: check(game.area.clear(e.actor.position),"Enemy spawn has clear footprint")
+	print("RESULT: %d input/camera checks, %d failures"%[count,failures]);quit(1 if failures else 0)

@@ -1,0 +1,62 @@
+from pathlib import Path
+p=Path(__file__).resolve().parents[1]
+f=p/'scripts/main.gd';s=f.read_text(encoding='utf-8')
+start=s.index('const STATS :=');end=s.index('\n',start);s=s[:start]+s[end+1:]
+s=s.replace('campaign.fresh(kind);selected=kind','campaign.fresh(kind,overlay.hero_name);selected=kind')
+s=s.replace('campaign.award(reward_id,6 if e.random else 20,3 if e.random else 6)', '''if campaign.award(reward_id,6 if e.random else 20,3 if e.random else 6):
+		var item: String=campaign.Gear.LOOT[(population_cycle+int(e.id))%3] if e.random else (campaign.Gear.UPGRADE[selected] if e.id=="captain" else "tonic")
+		campaign.add_loot(reward_id,item,area.area_id,e.actor.position)
+		overlay.notify("+%d XP · +%d coins · Loot dropped nearby"%[6 if e.random else 20,3 if e.random else 6])''')
+s=s.replace('if campaign.award("bread",100,35):\n\t\t\tcampaign.data.upgraded=true;campaign.data.quest="done";refresh_stats()', 'campaign.data.recovered=recovered\n\t\tif campaign.claim_bread():\n\t\t\trefresh_stats()')
+s=s.replace('Reward: 100 XP, 35 coins and a serviceable weapon upgrade. Inspect it at camp.','Reward: 100 XP, 35 coins and a baker\'s keepsake. Collect it beside Anja. The captain drops a class weapon upgrade.')
+s=s.replace('if p.kind=="stash": overlay.page("stash");return','if p.kind=="stash": overlay.inventory("stash");return')
+s=s.replace('if p.kind=="management": overlay.page("equipment");return','if p.kind=="management": overlay.inventory("shop");return')
+s=s.replace('func world_click(pos: Vector2) -> void:\n', '''func world_click(pos: Vector2) -> void:
+	for id in campaign.data.loot:
+		var drop: Dictionary=campaign.data.loot[id]
+		var location:=Vector2(drop.x,drop.y)
+		if drop.area==area.area_id and pos.distance_to(location)<26:
+			approach({"id":id,"kind":"loot","pos":location});return
+''')
+s=s.replace('\tif p.kind=="exit":', '\tif p.kind=="loot":\n\t\tif campaign.collect(p.id): persist();overlay.notify("Collected. Open inventory (I) to inspect or equip.")\n\t\telse: overlay.notify("Backpack full. Loot stays here; make space and return.")\n\t\treturn\n\tif p.kind=="exit":',1)
+s=s.replace('if event.keycode==KEY_E:\n', '''if event.keycode==KEY_E:
+			for id in campaign.data.loot:
+				var drop: Dictionary=campaign.data.loot[id]
+				if drop.area==area.area_id and hero.position.distance_to(Vector2(drop.x,drop.y))<72:
+					interact({"id":id,"kind":"loot"});return
+''')
+s=s.replace('\tfor p in projectiles:\n', '''	if not menu_open:
+		for id in campaign.data.loot:
+			var drop: Dictionary=campaign.data.loot[id]
+			if drop.area!=area.area_id: continue
+			var location:=Vector2(drop.x,drop.y)
+			var color:=Color("88cda9") if campaign.Gear.ITEMS[drop.item].rarity=="Improved" else Color("e0c98b")
+			draw_circle(location,8,color);draw_arc(location,13,0,TAU,20,color,2)
+			if hero.position.distance_to(location)<110: draw_string(ThemeDB.fallback_font,location+Vector2(-100,-20),campaign.Gear.ITEMS[drop.item].name+" · E",HORIZONTAL_ALIGNMENT_CENTER,200,15,color)
+	for p in projectiles:
+''')
+s+='''
+func use_tonic(index: int) -> bool:
+	if fallen or hero.health>=hero.max_health or index<0 or index>=campaign.data.inventory.size(): return false
+	if campaign.data.inventory[index].id!="tonic": return false
+	campaign.Gear.remove(campaign.data.inventory,index);campaign.revision+=1
+	hero.health=minf(hero.max_health,hero.health+60);persist();return true
+
+func at_camp_service() -> bool:
+	return area.area_id=="vigil" and (hero.position.distance_to(Vector2(220,535))<90 or hero.position.distance_to(Vector2(350,620))<90)
+'''
+f.write_text(s,encoding='utf-8')
+f=p/'scripts/area.gd';s=f.read_text(encoding='utf-8').replace('"Party roster"','"Camp supplies"').replace('"Choose the hero who takes the road."','"Prepare for the next outing."');f.write_text(s,encoding='utf-8')
+f=p/'scripts/interface.gd';s=f.read_text(encoding='utf-8')
+s=s.replace('var objective_label: Label','var objective_label: Label\nvar hero_name := ""\nvar bag_mode := "inventory"\nvar bag_page := 0\nvar slot_page := 0')
+s=s.replace('text("CHOOSE YOUR HERO",28)','text("NEW CAMPAIGN",28);text("Creates a separate save; existing heroes remain available.",15)\n\t\t\tvar name_input:=LineEdit.new();name_input.placeholder_text="Hero name (optional)";name_input.max_length=24;name_input.custom_minimum_size.y=44;name_input.text_changed.connect(func(value):hero_name=value);column.add_child(name_input)')
+s=s.replace('for entry in slots:', 'for entry in slots.slice(slot_page*5,slot_page*5+5):')
+s=s.replace('option("Back",func():page("title"))\n\t\t"journal":', 'if slots.size()>5: option("More campaigns",func():slot_page=(slot_page+1)%ceili(slots.size()/5.0);page("slots"))\n\t\t\toption("Back",func():page("title"))\n\t\t"journal":')
+s=s.replace('Reward once: 100 XP, 35 coins and an equipment upgrade.','Reward once: 100 XP, 35 coins and a baker\'s keepsake. The mill captain drops a class weapon upgrade.')
+start=s.index('\t\t"equipment":');end=s.index('\t\t"defeat":',start)
+s=s[:start]+'\t\t"equipment":\n\t\t\tinventory("inventory")\n'+s[end:]
+start=s.index('\t\t"stash":');end=s.index('\t\t"slots":',start)
+s=s[:start]+'\t\t"stash":\n\t\t\tinventory("stash")\n\n'+s[end:]
+s=s.replace('option("Resume",close);','option("Resume",close);')
+s=s.replace('Space / right mouse: attack  ·  E: interact','Space / right mouse: attack  ·  E: interact / loot  ·  I: gear  ·  J: quest')
+f.write_text(s,encoding='utf-8')

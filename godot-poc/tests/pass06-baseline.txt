@@ -1,0 +1,74 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: Enemy reward idempotency before threshold
+PASS: Increasing level thresholds
+PASS: Second threshold consumed correctly
+PASS: Equip applies central damage calculation
+PASS: Unequip removes modifier
+PASS: Wrong-class gear rejected
+PASS: Full inventory preserves all items
+PASS: Consumable stacks to limit
+PASS: New stack after limit
+PASS: Deposit transfers exactly one
+PASS: Withdraw transfers exactly one
+PASS: Insufficient coins makes no mutation
+PASS: Buy debits listed price
+PASS: Sell credits owned unit only
+PASS: Invalid transactions preserve state
+PASS: Loot generation and pickup cannot duplicate
+PASS: Reloaded kill cannot recreate collected loot
+PASS: Quest reward and keepsake granted once
+PASS: Versioned save writes successfully
+PASS: Save/load round trip retains inventory, stash, quests and claims
+PASS: Corrupt primary recovers valid backup
+PASS: Interrupted temporary write cannot replace valid backup
+PASS: Corrupt primary never overwrites valid backup
+PASS: Invalid item references rejected without deletion
+PASS: Loaded cross-class equipment rejected
+PASS: Pass 04 saves migrate without browser data
+PASS: New Campaign isolates class and all progression
+PASS: Full stash rejects deposit without losing item
+PASS: Full backpack retains ground loot and banked item
+PASS: Temporary modifiers obey central safety clamps
+PASS: Level cap is sixty
+ERROR: Could not create directory: 'user://test-pass05-100233/blocked-file/child'.
+   at: make_dir_recursive (core/io/dir_access.cpp:179)
+   GDScript backtrace (most recent call first):
+       [0] save (res://scripts/campaign.gd:104)
+       [1] run (res://tests/pass05.gd:73)
+PASS: Save failure reports error and preserves existing file
+PASS: Unreadable primary and backup are preserved
+PASS: Actual attack release damages enemy: knight
+PASS: Real encounter deaths yield XP and persistent loot: knight
+PASS: Collect class upgrade: knight
+PASS: Equipment modifies live hero stats: knight
+PASS: Quest integrates with real campaign: knight
+PASS: Modal background encloses contents within viewport: knight
+PASS: Inventory modal hides combat controls: knight
+PASS: Stale rapid click cannot repeat transfer: knight
+PASS: Continue integrated profile retains progression: knight
+PASS: Defeat halts gameplay: knight
+PASS: Recovery protects stash and reward claims: knight
+PASS: Actual attack release damages enemy: mage
+PASS: Real encounter deaths yield XP and persistent loot: mage
+PASS: Collect class upgrade: mage
+PASS: Equipment modifies live hero stats: mage
+PASS: Quest integrates with real campaign: mage
+PASS: Modal background encloses contents within viewport: mage
+PASS: Inventory modal hides combat controls: mage
+PASS: Stale rapid click cannot repeat transfer: mage
+PASS: Continue integrated profile retains progression: mage
+PASS: Defeat halts gameplay: mage
+PASS: Recovery protects stash and reward claims: mage
+PASS: Actual attack release damages enemy: rogue
+PASS: Real encounter deaths yield XP and persistent loot: rogue
+PASS: Collect class upgrade: rogue
+PASS: Equipment modifies live hero stats: rogue
+PASS: Quest integrates with real campaign: rogue
+PASS: Modal background encloses contents within viewport: rogue
+PASS: Inventory modal hides combat controls: rogue
+PASS: Stale rapid click cannot repeat transfer: rogue
+PASS: Continue integrated profile retains progression: rogue
+PASS: Defeat halts gameplay: rogue
+PASS: Recovery protects stash and reward claims: rogue
+RESULT: 66 checks, 0 failures

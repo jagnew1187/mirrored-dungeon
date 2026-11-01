@@ -1,0 +1,10 @@
+# Pass 07 development log
+
+- 26 October: read canon, roadmap, changelogs and Pass 05/06 reports; audited extraction, actors, abilities, AI, props, maps, interface and existing source art. Checkpointed current Godot work and Git state. Baseline four suites: 166 checks, zero failures.
+- Official imagegen availability check succeeded with a woodland sheet. Subsequent production requests created civilian architecture, distinct occupation soldiers and hero directional key poses. Copied all outputs into project-local `art-source/`; no CLI fallback or external artwork downloads.
+- Built deterministic crop/anchor/alpha processing and runtime atlases. Integrated woodland edges, civilian buildings, distinct enemy role/state art, directional hero attacks, impact timing and ability effects. Preserved gameplay balance and save schema.
+- Engine visual review exposed foliage occlusion and HUD/nameplate issues; added enemy-aware fading and label avoidance. Initial 17 visual checks plus all existing suites passed. Native Knight introduction/travel/Cleave inspection started but did not complete the route.
+- 1 November continuation: user requested no further Computer Use testing to conserve usage. Continued only code, file, engine and image-artifact checks. No additional desktop-input calls.
+- Removed source-sheet fragments, corrected upward sword clipping, added actual alpha-gutter and enemy-transition checks, deduplicated enemy atlas frames, added civilian trim atlas and adjusted visual projectile roots. Final five suites: 184 distinct checks, zero failures. Graphical 18 checks and duplicate Knight quest capture route pass.
+- Captured 55 Godot viewport images, reviewed representative camp/town/road/characters/ability/quest output, recorded bounded resource observations and explicit animation/device/native-acceptance limits. Verified original source and Godot asset hashes. Installed save rehash was access-denied and is recorded as unknown; redirected validation profiles and earlier save checkpoint remain separate.
+- Prepared production guide, source provenance, current report/readme/changelog/test index and new archive packaging/verification.

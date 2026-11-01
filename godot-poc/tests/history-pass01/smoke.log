@@ -1,0 +1,132 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: Main scene creates playable Vigil
+PASS: Camp spawn is clear
+PASS: Distant NPC creates reachable pending approach
+PASS: NPC approach automatically opens dialogue
+PASS: Dialogue names current speaker
+PASS: bram has separate dialogue
+PASS: finn has separate dialogue
+PASS: Combat cancels pending approach
+PASS: Tent collision blocks motion
+PASS: Art knight/left/0
+PASS: Art knight/left/1
+PASS: Art knight/left/2
+PASS: Art knight/left/3
+PASS: Art knight/left/4
+PASS: Art knight/left/5
+PASS: Art knight/left/6
+PASS: Art knight/left/7
+PASS: Art knight/right/0
+PASS: Art knight/right/1
+PASS: Art knight/right/2
+PASS: Art knight/right/3
+PASS: Art knight/right/4
+PASS: Art knight/right/5
+PASS: Art knight/right/6
+PASS: Art knight/right/7
+PASS: Art knight/up/0
+PASS: Art knight/up/1
+PASS: Art knight/up/2
+PASS: Art knight/up/3
+PASS: Art knight/up/4
+PASS: Art knight/up/5
+PASS: Art knight/up/6
+PASS: Art knight/up/7
+PASS: Art knight/down/0
+PASS: Art knight/down/1
+PASS: Art knight/down/2
+PASS: Art knight/down/3
+PASS: Art knight/down/4
+PASS: Art knight/down/5
+PASS: Art knight/down/6
+PASS: Art knight/down/7
+PASS: Art mage/left/0
+PASS: Art mage/left/1
+PASS: Art mage/left/2
+PASS: Art mage/left/3
+PASS: Art mage/left/4
+PASS: Art mage/left/5
+PASS: Art mage/left/6
+PASS: Art mage/left/7
+PASS: Art mage/right/0
+PASS: Art mage/right/1
+PASS: Art mage/right/2
+PASS: Art mage/right/3
+PASS: Art mage/right/4
+PASS: Art mage/right/5
+PASS: Art mage/right/6
+PASS: Art mage/right/7
+PASS: Art mage/up/0
+PASS: Art mage/up/1
+PASS: Art mage/up/2
+PASS: Art mage/up/3
+PASS: Art mage/up/4
+PASS: Art mage/up/5
+PASS: Art mage/up/6
+PASS: Art mage/up/7
+PASS: Art mage/down/0
+PASS: Art mage/down/1
+PASS: Art mage/down/2
+PASS: Art mage/down/3
+PASS: Art mage/down/4
+PASS: Art mage/down/5
+PASS: Art mage/down/6
+PASS: Art mage/down/7
+PASS: Art rogue/left/0
+PASS: Art rogue/left/1
+PASS: Art rogue/left/2
+PASS: Art rogue/left/3
+PASS: Art rogue/left/4
+PASS: Art rogue/left/5
+PASS: Art rogue/left/6
+PASS: Art rogue/left/7
+PASS: Art rogue/right/0
+PASS: Art rogue/right/1
+PASS: Art rogue/right/2
+PASS: Art rogue/right/3
+PASS: Art rogue/right/4
+PASS: Art rogue/right/5
+PASS: Art rogue/right/6
+PASS: Art rogue/right/7
+PASS: Art rogue/up/0
+PASS: Art rogue/up/1
+PASS: Art rogue/up/2
+PASS: Art rogue/up/3
+PASS: Art rogue/up/4
+PASS: Art rogue/up/5
+PASS: Art rogue/up/6
+PASS: Art rogue/up/7
+PASS: Art rogue/down/0
+PASS: Art rogue/down/1
+PASS: Art rogue/down/2
+PASS: Art rogue/down/3
+PASS: Art rogue/down/4
+PASS: Art rogue/down/5
+PASS: Art rogue/down/6
+PASS: Art rogue/down/7
+PASS: Wilderness is larger than viewport
+PASS: Three roaming and two authored enemies
+PASS: Empty defeat ledger cannot complete quest
+PASS: Camera limits match road
+PASS: Reachable road point: vigil
+PASS: Reachable road point: bannerfall
+PASS: Reachable road point: flour
+PASS: Reachable road point: cross
+PASS: Random cap cleared via combat
+PASS: Random kills do not affect authored ledger
+PASS: No random respawn before cooldown
+PASS: Distant cleared population respawns after cooldown
+PASS: Enemies damage hero
+PASS: Leash triggers return
+PASS: Explicit authored member defeats complete encounter
+PASS: Travel preserves quest defeats
+PASS: Flour requires explicit interaction
+PASS: Town spawn is clear
+PASS: Town interaction reachable: anja
+PASS: Town interaction reachable: oren
+PASS: Town interaction reachable: ves
+PASS: Town interaction reachable: road
+PASS: Town interaction reachable: vigil
+PASS: Defeat recovers at camp
+RESULT: 129 checks, 0 failures

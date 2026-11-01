@@ -1,0 +1,55 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: Guard activates once; rapid repetition rejected
+PASS: Guard mitigates damage after equipped defense
+PASS: Guard expires before cooldown
+PASS: Cleaving Strike starts
+PASS: Cleave waits for windup
+PASS: Cleave hits two forward enemies but excludes rear
+PASS: Cleave damages each victim once
+PASS: Modal freezes cooldown and hides abilities
+PASS: Travel cannot refresh ability cooldown
+PASS: Burst waits for windup
+PASS: Burst hits both sides and staggers
+PASS: Focused Bolt starts
+PASS: Focused projectile has distinct presentation
+PASS: Focused Bolt applies equipment-scaled impact
+PASS: Focused Bolt blocked by mill cover
+PASS: Evasive Step has controlled finite distance
+PASS: Evasive Step respects native tent collision
+PASS: Twin Daggers first release
+PASS: Twin Daggers separate second release
+PASS: Both daggers hit once each
+PASS: Dialogue cancels pending release without refund
+PASS: Shield reduces frontal hit to 40 percent
+PASS: Shield rear receives full damage
+PASS: Shield recovery opens frontal defense
+PASS: Archer selects ranged windup
+PASS: Archer releases hostile arrow
+PASS: Archer cannot acquire through solid mill
+PASS: Hostile arrows collide with cover
+PASS: Group separation pushes neighbors apart
+PASS: Leash disengages pursuit
+PASS: Disengaged fighter navigates back home
+PASS: Raider commits to second attack burst
+PASS: Raider exposes recovery window
+PASS: Enforcer telegraphs lunge
+PASS: Enforcer commits to collision-aware lunge
+PASS: Enforcer recovery follows lunge
+PASS: Enforcer alternates sweep pattern
+PASS: Elite reward and ground drop claimed once
+PASS: Elite does not count toward flour patrol
+PASS: Defeated elite stays absent on travel
+PASS: Elite claim and uncollected loot survive Continue
+PASS: Target death clears target and approach immediately
+PASS: Held attack acquires nearby victim without distant auto-chase
+PASS: Death cancels defensive effect
+PASS: Recovery clears pending ability
+PASS: Clustered loot label rectangles do not overlap
+PASS: Offset label is a working pickup target
+PASS: Ground drop placement finds clear geometry
+PASS: Ability buffers during ordinary attack
+PASS: Buffered ability starts after attack recovery
+PASS: Touch press/release activates ability button
+PASS: Archer repositions away from close hero
+RESULT: 52 checks, 0 failures

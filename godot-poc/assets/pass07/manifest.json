@@ -1,0 +1,880 @@
+[
+  {
+    "asset": "oak",
+    "source": "woodland.png",
+    "rect": [
+      0,
+      0,
+      650,
+      705
+    ],
+    "source_root": [
+      330,
+      680
+    ],
+    "origin": [
+      144,
+      288
+    ],
+    "canvas": [
+      288,
+      304
+    ],
+    "height": 256
+  },
+  {
+    "asset": "pine",
+    "source": "woodland.png",
+    "rect": [
+      640,
+      0,
+      1080,
+      720
+    ],
+    "source_root": [
+      815,
+      705
+    ],
+    "origin": [
+      128,
+      304
+    ],
+    "canvas": [
+      256,
+      320
+    ],
+    "height": 288
+  },
+  {
+    "asset": "birch",
+    "source": "woodland.png",
+    "rect": [
+      1080,
+      0,
+      1536,
+      720
+    ],
+    "source_root": [
+      1290,
+      705
+    ],
+    "origin": [
+      128,
+      288
+    ],
+    "canvas": [
+      256,
+      304
+    ],
+    "height": 270
+  },
+  {
+    "asset": "shrub",
+    "source": "woodland.png",
+    "rect": [
+      0,
+      710,
+      480,
+      1024
+    ],
+    "source_root": [
+      240,
+      1005
+    ],
+    "origin": [
+      72,
+      96
+    ],
+    "canvas": [
+      144,
+      104
+    ],
+    "height": 88
+  },
+  {
+    "asset": "rock",
+    "source": "woodland.png",
+    "rect": [
+      485,
+      725,
+      965,
+      1024
+    ],
+    "source_root": [
+      740,
+      1000
+    ],
+    "origin": [
+      72,
+      80
+    ],
+    "canvas": [
+      144,
+      88
+    ],
+    "height": 72
+  },
+  {
+    "asset": "log",
+    "source": "woodland.png",
+    "rect": [
+      980,
+      730,
+      1536,
+      1024
+    ],
+    "source_root": [
+      1240,
+      1000
+    ],
+    "origin": [
+      88,
+      80
+    ],
+    "canvas": [
+      176,
+      88
+    ],
+    "height": 68
+  },
+  {
+    "asset": "knight_attacks",
+    "canvas": [
+      1280,
+      1024
+    ],
+    "cell": [
+      160,
+      128
+    ],
+    "origin": [
+      80,
+      112
+    ],
+    "rows": [
+      "right",
+      "southeast",
+      "down",
+      "southwest",
+      "left",
+      "northwest",
+      "up",
+      "northeast"
+    ],
+    "source": "hero-release-poses.png plus original directional idle and side attack frames",
+    "provisional": "Six directions use one generated key pose per direction with isolated weapon-arm rotation and original idle endpoints. Eight timed frames are not eight independently painted poses."
+  },
+  {
+    "asset": "mage_attacks",
+    "canvas": [
+      1280,
+      1024
+    ],
+    "cell": [
+      160,
+      128
+    ],
+    "origin": [
+      80,
+      112
+    ],
+    "rows": [
+      "right",
+      "southeast",
+      "down",
+      "southwest",
+      "left",
+      "northwest",
+      "up",
+      "northeast"
+    ],
+    "source": "hero-release-poses.png plus original directional idle and side attack frames",
+    "provisional": "Six directions use one generated key pose per direction with isolated weapon-arm rotation and original idle endpoints. Eight timed frames are not eight independently painted poses."
+  },
+  {
+    "asset": "rogue_attacks",
+    "canvas": [
+      1280,
+      1024
+    ],
+    "cell": [
+      160,
+      128
+    ],
+    "origin": [
+      80,
+      112
+    ],
+    "rows": [
+      "right",
+      "southeast",
+      "down",
+      "southwest",
+      "left",
+      "northwest",
+      "up",
+      "northeast"
+    ],
+    "source": "hero-release-poses.png plus original directional idle and side attack frames",
+    "provisional": "Six directions use one generated key pose per direction with isolated weapon-arm rotation and original idle endpoints. Eight timed frames are not eight independently painted poses."
+  },
+  {
+    "asset": "bakery",
+    "source": "civilian-buildings.png",
+    "rect": [
+      0,
+      0,
+      535,
+      495
+    ],
+    "source_root": [
+      274,
+      475
+    ],
+    "origin": [
+      200,
+      340
+    ],
+    "canvas": [
+      400,
+      352
+    ],
+    "height": 330
+  },
+  {
+    "asset": "smithy",
+    "source": "civilian-buildings.png",
+    "rect": [
+      540,
+      0,
+      1075,
+      495
+    ],
+    "source_root": [
+      805,
+      475
+    ],
+    "origin": [
+      192,
+      312
+    ],
+    "canvas": [
+      384,
+      324
+    ],
+    "height": 300
+  },
+  {
+    "asset": "residence",
+    "source": "civilian-buildings.png",
+    "rect": [
+      1075,
+      0,
+      1536,
+      495
+    ],
+    "source_root": [
+      1300,
+      475
+    ],
+    "origin": [
+      184,
+      340
+    ],
+    "canvas": [
+      368,
+      352
+    ],
+    "height": 330
+  },
+  {
+    "asset": "ration",
+    "source": "civilian-buildings.png",
+    "rect": [
+      0,
+      505,
+      535,
+      1024
+    ],
+    "source_root": [
+      280,
+      950
+    ],
+    "origin": [
+      180,
+      292
+    ],
+    "canvas": [
+      360,
+      304
+    ],
+    "height": 280
+  },
+  {
+    "asset": "mill",
+    "source": "civilian-buildings.png",
+    "rect": [
+      540,
+      505,
+      1075,
+      1024
+    ],
+    "source_root": [
+      800,
+      970
+    ],
+    "origin": [
+      192,
+      332
+    ],
+    "canvas": [
+      384,
+      344
+    ],
+    "height": 320
+  },
+  {
+    "asset": "checkpoint",
+    "source": "civilian-buildings.png",
+    "rect": [
+      1075,
+      505,
+      1536,
+      1024
+    ],
+    "source_root": [
+      1310,
+      950
+    ],
+    "origin": [
+      164,
+      244
+    ],
+    "canvas": [
+      328,
+      256
+    ],
+    "height": 230
+  },
+  {
+    "asset": "civilian_kit",
+    "source": "civilian-buildings.png",
+    "components": {
+      "timber_door": {
+        "region": [
+          0,
+          0,
+          54,
+          80
+        ],
+        "source_rect": [
+          123,
+          338,
+          205,
+          462
+        ]
+      },
+      "shutter_window": {
+        "region": [
+          56,
+          0,
+          54,
+          64
+        ],
+        "source_rect": [
+          110,
+          190,
+          191,
+          287
+        ]
+      },
+      "roof_shingles": {
+        "region": [
+          112,
+          0,
+          64,
+          36
+        ],
+        "source_rect": [
+          296,
+          89,
+          395,
+          144
+        ]
+      },
+      "timber_wall": {
+        "region": [
+          178,
+          0,
+          36,
+          48
+        ],
+        "source_rect": [
+          355,
+          237,
+          406,
+          310
+        ]
+      },
+      "stone_foundation": {
+        "region": [
+          216,
+          0,
+          30,
+          58
+        ],
+        "source_rect": [
+          80,
+          355,
+          126,
+          443
+        ]
+      },
+      "bakery_sign": {
+        "region": [
+          0,
+          84,
+          36,
+          32
+        ],
+        "source_rect": [
+          24,
+          262,
+          77,
+          310
+        ]
+      }
+    },
+    "seamless": false
+  },
+  {
+    "asset": "enemy_militia",
+    "cell": [
+      128,
+      128
+    ],
+    "origin": [
+      64,
+      116
+    ],
+    "states": {
+      "idle": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "windup": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "attack": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "recover": [
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hurt": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "death": [
+        0,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "unique_frames": 13,
+    "source": "occupation-soldiers.png",
+    "provisional": "Two authored poses. Walk/windup/hurt/collapse are local limited-motion adaptations; eight-direction enemy art is not authored."
+  },
+  {
+    "asset": "enemy_archer",
+    "cell": [
+      128,
+      128
+    ],
+    "origin": [
+      64,
+      116
+    ],
+    "states": {
+      "idle": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "windup": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "attack": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "recover": [
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hurt": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "death": [
+        0,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "unique_frames": 13,
+    "source": "occupation-soldiers.png",
+    "provisional": "Two authored poses. Walk/windup/hurt/collapse are local limited-motion adaptations; eight-direction enemy art is not authored."
+  },
+  {
+    "asset": "enemy_shield",
+    "cell": [
+      128,
+      128
+    ],
+    "origin": [
+      64,
+      116
+    ],
+    "states": {
+      "idle": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "windup": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "attack": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "recover": [
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hurt": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "death": [
+        0,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "unique_frames": 13,
+    "source": "occupation-soldiers.png",
+    "provisional": "Two authored poses. Walk/windup/hurt/collapse are local limited-motion adaptations; eight-direction enemy art is not authored."
+  },
+  {
+    "asset": "enemy_raider",
+    "cell": [
+      128,
+      128
+    ],
+    "origin": [
+      64,
+      116
+    ],
+    "states": {
+      "idle": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "windup": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "attack": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "recover": [
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hurt": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "death": [
+        0,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "unique_frames": 13,
+    "source": "occupation-soldiers.png",
+    "provisional": "Two authored poses. Walk/windup/hurt/collapse are local limited-motion adaptations; eight-direction enemy art is not authored."
+  },
+  {
+    "asset": "enemy_enforcer",
+    "cell": [
+      128,
+      128
+    ],
+    "origin": [
+      64,
+      116
+    ],
+    "states": {
+      "idle": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "windup": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "attack": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "recover": [
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hurt": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "death": [
+        0,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "unique_frames": 13,
+    "source": "occupation-soldiers.png",
+    "provisional": "Two authored poses. Walk/windup/hurt/collapse are local limited-motion adaptations; eight-direction enemy art is not authored."
+  }
+]

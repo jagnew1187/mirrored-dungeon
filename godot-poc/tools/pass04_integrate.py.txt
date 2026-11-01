@@ -1,0 +1,103 @@
+from pathlib import Path
+p=Path(__file__).resolve().parents[1]
+f=p/'scripts/main.gd'
+s=f.read_text(encoding='utf-8')
+s=s.replace('var area: Node2D','var campaign = preload("res://scripts/campaign.gd").new()\nvar stats: Dictionary = {}\nvar fallen := false\nvar population_cycle := 0\nvar area: Node2D')
+s=s.replace('\trng.seed=8026','\trng.seed=8026\n\tcampaign.fresh("knight");campaign.slot="";stats=campaign.stats()')
+s=s.replace('selected=kind;enter_area("vigil")','campaign.fresh(kind);selected=kind;defeated={};recovered=false;random_dead.clear();population_cycle=0;fallen=false;stats=campaign.stats();enter_area("vigil");persist()')
+s=s.replace('STATS[selected]', 'stats')
+s=s.replace('\tcancel_approach();enemies.clear()', '\tvar previous_health: float=hero.health if is_instance_valid(hero) else stats.hp\n\tcancel_approach();enemies.clear()',1)
+s=s.replace('hero.health=stats.hp;hero.max_health=hero.health','hero.max_health=stats.hp;hero.health=stats.hp if id!="road" else minf(previous_health,stats.hp)')
+s=s.replace('\tif id=="road":', '\tif id!="road": campaign.data.checkpoint=id\n\tpersist()\n\tif id=="road":',1)
+s=s.replace('enter_area("vigil");overlay.notify("Defeated. You awaken at Vigil. Recorded patrol defeats are retained.")','fallen=true;cancel_approach();attack_clock=-1;attack_buffer=0;attack_held=false;projectiles.clear();hero.attacking=false;hero.health=0;persist();overlay.page("defeat")')
+s=s.replace('difference.length()<=85', 'difference.length()<=stats.range').replace('damage_enemy(e,34)','damage_enemy(e,stats.damage)')
+s=s.replace('\tif target==e.actor:', '\tvar old_level: int=campaign.progress().level\n\tvar reward_id: String=("wild:%d:%s"%[population_cycle,e.id]) if e.random else (ENCOUNTER+":"+e.id)\n\tcampaign.award(reward_id,6 if e.random else 20,3 if e.random else 6)\n\trefresh_stats();persist()\n\tif campaign.progress().level>old_level: overlay.notify("Level %d · stronger for the road ahead."%campaign.progress().level)\n\tif target==e.actor:')
+s=s.replace('e.windup=0.28','e.windup=0.38')
+s=s.replace('if distance<58: hero.health-=7;hero.hurt=0.18;numbers.append({"pos":hero.position+Vector2(0,-80),"text":"-7","time":0.8});play_sound("hit-flesh")','if distance<58 and area.line_clear(a.position,hero.position):\n\t\t\t\t\tvar damage: float=maxf(1,9-stats.defense)\n\t\t\t\t\thero.health=maxf(0,hero.health-damage);hero.hurt=0.18;numbers.append({"pos":hero.position+Vector2(0,-80),"text":"-%d"%damage,"time":0.8});play_sound("hit-flesh")')
+s=s.replace('random_dead.clear();spawn_random()', 'random_dead.clear();population_cycle+=1;persist();spawn_random()')
+s=s.replace('overlay.page("characters");return','overlay.page("equipment");return')
+s=s.replace('if encounter_complete(): recovered=true;body="The patrol is defeated. You recover the flour for Bannerfall."','if encounter_complete(): recovered=true;campaign.data.quest="deliver" if campaign.data.quest!="done" else "done";body="The patrol is defeated. You recover the flour for Anja in Bannerfall. Follow the southeast road."')
+s=s.replace('if p.id=="anja" and recovered: body="You brought the flour. Tonight everyone gets bread. Thank you."', '''if p.id=="mara" and campaign.data.quest=="meet_mara": campaign.data.quest="patrol"
+	if p.id=="anja" and recovered:
+		if campaign.award("bread",100,35):
+			campaign.data.upgraded=true;campaign.data.quest="done";refresh_stats()
+			body="You brought the flour. Tonight everyone gets bread. Thank you.\\nReward: 100 XP, 35 coins and a serviceable weapon upgrade. Inspect it at camp."
+		else: body="The flour you brought is feeding our neighbors. There is bread to share again."
+	if p.id=="mara" and campaign.data.quest=="done": body="Anja has bread to share again. Rest here with us before your next outing."
+	persist()''')
+s=s.replace('if menu_open and started: overlay.close()','if menu_open and started and not fallen: overlay.close()')
+s=s.replace('else: overlay.page("pause" if started else "title")','else: overlay.page("defeat" if fallen else ("pause" if started else "title"))')
+s=s.replace('if event.keycode==KEY_SPACE: request_attack()', 'if event.keycode==KEY_I: overlay.page("equipment");return\n\t\tif event.keycode==KEY_J: overlay.page("journal");return\n\t\tif event.keycode==KEY_SPACE: request_attack()')
+s+='''
+func refresh_stats() -> void:
+	stats=campaign.stats()
+	if is_instance_valid(hero): hero.max_health=stats.hp;hero.health=minf(hero.health,hero.max_health)
+
+func persist() -> void:
+	campaign.data.defeated=defeated.duplicate();campaign.data.recovered=recovered
+	campaign.data.random_dead=random_dead.duplicate();campaign.data.cycle=population_cycle
+	campaign.data.respawn_remaining=maxf(0,respawn_time-elapsed)
+	if not campaign.save() and is_instance_valid(overlay): overlay.notify(campaign.error)
+
+func continue_campaign(id: String) -> void:
+	if not campaign.load_slot(id): overlay.notify(campaign.error);return
+	selected=campaign.data["class"];defeated=campaign.data.defeated.duplicate();recovered=campaign.data.get("recovered",false)
+	random_dead.clear()
+	for member in campaign.data.get("random_dead",[]): random_dead.append(int(member))
+	population_cycle=int(campaign.data.get("cycle",0));respawn_time=elapsed+float(campaign.data.get("respawn_remaining",30))
+	fallen=false;refresh_stats();enter_area(campaign.data.checkpoint);overlay.close()
+
+func recover() -> void:
+	fallen=false;enter_area(campaign.data.checkpoint);overlay.close();overlay.notify("Recovered safely. Equipment, XP and quest progress retained.")
+
+func objective() -> String:
+	if campaign.data.quest=="done": return "Bread Before Blades complete · Return to Vigil"
+	if recovered: return "Deliver the flour to Anja · Bannerfall bakery"
+	if encounter_complete(): return "Recover the flour · northeast mill"
+	if campaign.data.quest=="meet_mara": return "Speak to Mara at Vigil Camp"
+	return "Defeat the mill patrol · northeast Old Mill Road (%d/2)"%defeated.size()
+'''
+f.write_text(s,encoding='utf-8')
+f=p/'scripts/interface.gd';s=f.read_text(encoding='utf-8')
+s=s.replace('var controls: Label','var controls: Label\nvar objective_label: Label')
+s=s.replace('\tvar pad:=Node2D.new()', '\tobjective_label=Label.new();objective_label.position=Vector2(24,116);objective_label.add_theme_font_size_override("font_size",16);root.add_child(objective_label)\n\tvar pad:=Node2D.new()')
+s=s.replace('toast.hide()','toast.hide();objective_label.hide()')
+s=s.replace('toast.show()','toast.show();objective_label.show()')
+s=s.replace('game.started=true;game.menu_open=false','if game.fallen: return\n\tgame.started=true;game.menu_open=false')
+s=s.replace('option("Continue Prototype" if game.started else "Start Prototype",close)\n\t\t\toption("Character Selection",func():page("characters"));', 'option("New Campaign",func():page("characters"));option("Continue · saved campaigns",func():page("slots"))\n\t\t\t')
+s=s.replace('option("Character Selection · return to camp",func():page("characters"))','option("Character & equipment",func():page("equipment"));option("Quest journal",func():page("journal"))')
+s=s.replace('text("Prototype progress is held in this session only. Closing the project will reset it.")','text("Campaign progress is saved locally. Continue resumes at your last safe refuge.")')
+s=s.replace('func():game.get_tree().quit()', 'func():game.persist();game.get_tree().quit()')
+s=s.replace('option("Character Selection",func():page("characters"))','option("Equipment",func():page("equipment"))')
+anchor='\nfunc dialogue('
+extra='''
+		"slots":
+			text("CONTINUE CAMPAIGN",28)
+			var slots: Array=game.campaign.slots()
+			if slots.is_empty(): text("No saved campaigns yet. New Campaign starts a separate hero.")
+			for entry in slots:
+				option("Unreadable · preserved" if entry.record.is_empty() else "%s · %s"%[entry.record.name,entry.record["class"]],func():game.continue_campaign(entry.id),entry.record.is_empty())
+			option("Back",func():page("title"))
+		"journal":
+			text("BREAD BEFORE BLADES",28);text(game.objective())
+			text("The occupation seized Anja's flour. Take Old Mill Road east from Vigil, then follow the main road northeast to the mill. The two marked guards belong to the patrol; roaming enemies do not count. Recover the sacks after the fight, then take the southeast fork to Bannerfall and speak to Anja at the bakery.")
+			text("Reward once: 100 XP, 35 coins and an equipment upgrade.")
+			option("Close",close)
+		"equipment":
+			text("CHARACTER & EQUIPMENT",28)
+			var progress: Dictionary=game.campaign.progress()
+			text("%s · %s · Level %d\\nXP %d / %d · %d coins"%[game.campaign.data.name,game.selected.capitalize(),progress.level,progress.xp,progress.next,game.campaign.data.gold])
+			text("Health %d · Damage %.1f · Defense %d\\nAttack %.2fs · Movement %d"%[game.stats.hp,game.stats.damage,game.stats.defense,game.stats.cooldown,game.stats.speed])
+			if game.campaign.data.get("upgraded",false):
+				text("Serviceable weapon · +4 attack damage compared with starter gear")
+				option("Unequip upgrade" if game.campaign.data.weapon_equipped else "Equip upgrade",func():game.campaign.data.weapon_equipped=not game.campaign.data.weapon_equipped;game.refresh_stats();game.persist();page("equipment"))
+			else: text("Starter equipment. Help Anja to earn an upgrade.")
+			option("Close",close)
+		"defeat":
+			text("THE ROAD TAKES ITS TOLL",28);text("You have fallen. XP, equipment and recorded quest progress are protected. Unfinished fights reset; rewards cannot be claimed twice.")
+			option("Recover at last safe refuge",game.recover)
+			option("Save and return to title",func():game.persist();page("title"))
+'''
+s=s.replace(anchor,'\n'+extra+anchor)
+s=s.replace('status.text=', 'objective_label.text=game.objective()\n\tstatus.text=')
+f.write_text(s,encoding='utf-8')

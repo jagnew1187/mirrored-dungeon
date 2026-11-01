@@ -1,0 +1,135 @@
+extends SceneTree
+
+var game: Node
+var failures := 0
+var checks := 0
+var capture := false
+var hero_frames: Dictionary = {}
+
+func _initialize() -> void:
+	capture=DisplayServer.get_name()!="headless"
+	if capture: DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	call_deferred("run")
+
+func check(ok: bool, description: String) -> void:
+	checks+=1
+	if ok: print("PASS: "+description)
+	else: failures+=1;push_error("FAIL: "+description)
+
+func frames(n: int) -> void:
+	for i in range(n): await physics_frame
+
+func shot(id: String) -> void:
+	if not capture: return
+	await process_frame;await RenderingServer.frame_post_draw
+	root.get_texture().get_image().save_png("res://tests/pass02/"+id+".png")
+
+func key(code: int, pressed: bool) -> void:
+	var e:=InputEventKey.new();e.keycode=code;e.physical_keycode=code;e.pressed=pressed;Input.parse_input_event(e)
+
+func click_button(prefix: String) -> void:
+	for b in game.overlay.column.get_children():
+		if b is Button and b.text.begins_with(prefix):
+			var motion:=InputEventMouseMotion.new();motion.position=b.get_global_rect().get_center();motion.global_position=motion.position;root.push_input(motion,true)
+			var e:=InputEventMouseButton.new();e.position=motion.position;e.global_position=e.position;e.button_index=MOUSE_BUTTON_LEFT;e.pressed=true;root.push_input(e,true)
+			await frames(2);e.pressed=false;root.push_input(e,true);await frames(2);return
+	check(false,"Button exists: "+prefix)
+
+func walk_to_point(id: String, max_frames := 1800) -> void:
+	for p in game.area.points:
+		if p.id==id: game.world_click(p.pos+Vector2(0,-24));break
+	for i in range(max_frames):
+		await physics_frame
+		if game.menu_open or game.pending.is_empty(): return
+
+func run() -> void:
+	DirAccess.make_dir_recursive_absolute("res://tests/pass02")
+	game=load("res://scenes/main.tscn").instantiate();root.add_child(game);await frames(6)
+	# Accelerated fixed-step tests do not exercise the real-time audio mixer.
+	game.volume=0
+	check(game.overlay.page_id=="title","Branded title opens")
+	await shot("01-main-menu")
+	await click_button("Character Selection");check(game.overlay.page_id=="characters","Main menu mouse click opens selection")
+	await shot("02-character-selection")
+	game.select_class("knight");game.overlay.close();await frames(4)
+	await shot("03-vigil-camp")
+	for id in ["mara","bram","finn"]:
+		await walk_to_point(id,500)
+		check(game.menu_open and game.overlay.page_id=="dialogue","Walk/click approach opens "+id+" dialogue")
+		check(game.overlay.column.get_child(0).text.to_lower()==id,"Correct portrait speaker "+id)
+		if id=="mara": await shot("04-mara-dialogue")
+		await click_button("Continue")
+	await walk_to_point("stash",500)
+	check(game.overlay.page_id=="stash","Protected chest interaction")
+	game.hero.health-=20;await click_button("Restock");check(game.hero.health==game.hero.max_health,"Stash restores supplies")
+	# Observe actual animation progress with input held, not resource existence.
+	for kind in ["knight","mage","rogue"]:
+		game.select_class(kind);game.overlay.close();await frames(3)
+		game.hero.position=Vector2(430,470);await frames(3)
+		var start: Vector2=game.hero.position
+		key(KEY_D,true);var unique: Dictionary={}
+		for i in range(8):
+			await frames(4);unique[game.hero.sprite.frame]=true;await shot(kind+"-walk-%02d"%i)
+		key(KEY_D,false);await frames(3)
+		check(unique.size()>=5,kind+" visibly advances >=5 walk frames")
+		check(game.hero.position.x>start.x+80,kind+" keyboard movement follows class speed")
+		check(str(game.hero.sprite.animation).begins_with("idle"),kind+" stops into idle")
+		game.enter_area("road");game.hero.position=Vector2(650,700);await frames(3)
+		var enemy: Node2D=game.enemies[0].actor;enemy.position=game.hero.position+Vector2(65 if kind=="knight" else 190,0);game.enemies[0].home=enemy.position;game.enemies[0].wander=enemy.position
+		game.target=enemy;var before: float=enemy.health
+		game.request_attack();await frames(2)
+		check(enemy.health==before,kind+" does not damage before windup")
+		unique.clear()
+		for i in range(8):
+			await frames(2);unique[game.hero.sprite.frame]=true;await shot(kind+"-attack-%02d"%i)
+		check(unique.size()>=5,kind+" visible attack sequence advances")
+		await frames(30)
+		check(game.hits_landed>0,kind+" attack reaches target")
+		check(not is_instance_valid(enemy) or enemy.health<before,kind+" applies class damage")
+		key(KEY_SPACE,true);await frames(140);key(KEY_SPACE,false);await frames(3)
+		check(not is_instance_valid(enemy),kind+" repeated attack defeats target")
+		check(not game.hero.attacking or game.hero.attack_age<0.33,kind+" never stuck in attack")
+	game.select_class("knight");game.overlay.close();await frames(3)
+	await walk_to_point("road",600);check(game.area.area_id=="road","Complete walk through camp exit")
+	# Real path traversal from entry to cross, then to authored mill encounter.
+	await walk_to_point("cross",1700);check(game.menu_open,"Road branch is traversable to Pilgrim's Cross")
+	game.overlay.close();await frames(3)
+	game.world_click(Vector2(2400,600))
+	for i in range(2200):
+		await physics_frame
+		if game.path.is_empty(): break
+	check(game.hero.position.distance_to(Vector2(2400,600))<60,"Long road route reaches mill approach")
+	await shot("05-old-mill-road")
+	check(not game.encounter_complete(),"Random defeat cannot complete quest")
+	# Combat through target click auto-approach, not damage injection.
+	for member in game.MEMBERS:
+		for e in game.enemies:
+			if e.id==member: game.world_click(e.actor.position+Vector2(0,-25));break
+		for i in range(700):
+			await physics_frame
+			if game.defeated.has(member): break
+	check(game.encounter_complete(),"Both authored guards defeated via target approach and attacks")
+	await walk_to_point("flour",500);check(game.recovered,"Explicit flour recovery after combat")
+	game.overlay.close();await frames(3)
+	await walk_to_point("bannerfall",2600);check(game.area.area_id=="bannerfall","Road-to-town full traversal and transition")
+	game.world_click(Vector2(1000,800))
+	for i in range(800):
+		await physics_frame
+		if game.path.is_empty(): break
+	await shot("06-bannerfall")
+	await walk_to_point("anja",700);check(game.menu_open and game.overlay.column.get_child(0).text=="Anja","Town resident remains accessible")
+	game.overlay.close();game.enter_area("road");await frames(3)
+	check(game.enemies.all(func(e):return e.random),"Authored defeats retained across travel")
+	game.hero.position=Vector2(40,40);await frames(3)
+	var center: Vector2=game.camera.get_screen_center_position()
+	check(center.x>=575 and center.y>=359,"Camera top-left clamp")
+	game.hero.position=Vector2(80,70);await frames(3)
+	check(game.camera.get_screen_center_position().distance_to(center)<1,"Hero moves at clamped edge")
+	game.hero.position=Vector2(3030,2070);await frames(3);center=game.camera.get_screen_center_position()
+	check(center.x<=2497 and center.y<=1753,"Camera bottom-right clamp")
+	game.hero.health=0;await frames(3);check(game.area.area_id=="vigil","Death recovers at camp")
+	key(KEY_ESCAPE,true);key(KEY_ESCAPE,false);await frames(3)
+	check(game.menu_open,"Escape pauses")
+	await click_button("Settings");check(game.overlay.page_id=="settings","Settings accessible from pause")
+	await shot("07-settings")
+	print("RESULT: %d playthrough checks, %d failures"%[checks,failures]);game.queue_free();await frames(3);quit(1 if failures else 0)

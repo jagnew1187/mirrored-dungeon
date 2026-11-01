@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: Keyboard movement via Input event
+PASS: Walk-and-interact transition from camp to wilderness
+PASS: Camera follows in map interior
+PASS: Camera clamps at top-left
+PASS: Hero moves independently after camera clamps
+PASS: Camera clamps at bottom-right
+PASS: Touch targeting transforms screen coordinates through scrolling camera
+PASS: Virtual joystick responds to drag
+PASS: Virtual joystick stops on release
+PASS: Nearby NPC click opens dialogue immediately
+PASS: Menu cancels pending approach
+PASS: Enemy spawn has clear footprint
+PASS: Enemy spawn has clear footprint
+PASS: Enemy spawn has clear footprint
+PASS: Enemy spawn has clear footprint
+PASS: Enemy spawn has clear footprint
+RESULT: 16 input/camera checks, 0 failures

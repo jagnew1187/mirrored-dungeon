@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 610.88 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PROFILE vigil sampled_frames=2563 mean_frame_ms=0.780577058135 process_monitor_mean_ms=5.50815060476029 process_monitor_max_ms=5.563 max_draw_calls=89.0 texture_bytes=55543023.0 nodes=116.0 node_growth=0.0
+PROFILE road sampled_frames=1184 mean_frame_ms=1.68928631756757 process_monitor_mean_ms=18.1290135135135 process_monitor_max_ms=44.9 max_draw_calls=112.0 texture_bytes=63325309.0 nodes=407.0 node_growth=0.0
+PROFILE bannerfall sampled_frames=3583 mean_frame_ms=0.55821434552051 process_monitor_mean_ms=9.52783784538071 process_monitor_max_ms=21.197 max_draw_calls=41.0 texture_bytes=66812113.0 nodes=81.0 node_growth=0.0

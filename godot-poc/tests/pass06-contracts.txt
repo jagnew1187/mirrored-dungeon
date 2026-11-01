@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: Native collision blocks tent footprint
+PASS: Collision does not play sliding walk forever
+PASS: Manual input cancels NPC approach
+PASS: Menu cancels NPC approach
+PASS: Absent enemies cannot complete authored encounter
+PASS: Damage waits for strike frame
+PASS: Directional sword cannot hit behind its strike
+PASS: Early repeated command buffers exactly one next attack
+PASS: Pause freezes combat and damage
+PASS: Critical modal hides health and attack controls
+PASS: Leash enters explicit return state
+PASS: Random population respects cooldown
+PASS: Random population respawns only after distant cooldown
+PASS: Random population state leaves quest ledger untouched
+PASS: Touch NPC/landmark target respects scrolling camera
+PASS: Touch joystick drag produces movement
+PASS: Touch release stops joystick
+PASS: Projectile collides with solid mill structure
+RESULT: 18 contract checks, 0 failures

@@ -1,0 +1,82 @@
+Snapshot immediately before Pass 05 packaging; new ZIP will be an additional untracked root file.
+Branch: main
+
+ M README.md
+ M camp-allies.js
+ M camp-lobby.js
+ M combat-feedback.js
+ M combat.js
+ M game-audio.js
+ M graphics.js
+ M index.html
+ M integrate.cjs
+ M journey.js
+ M manual-controls.js
+ M necro.js
+ M package.json
+ M pyro.js
+ M rewards.js
+ M rival.js
+ M test-audio-quality.cjs
+ M test-camp-lobby.cjs
+ M test-combat-feedback.cjs
+ M test-combat-sound.cjs
+ M test-immersion-audio.cjs
+ M test-manual-controls.cjs
+ M test-mobile.cjs
+ M test-strategy.js
+ M walls.js
+ M warlord-decor.js
+ M warlord-props.js
+ M world.js
+?? .godot-validation/
+?? CHANGELOG.md
+?? DEVELOPMENT_ROADMAP.md
+?? GAME_DESIGN_BIBLE.md
+?? MirroredDungeon_Godot_POC.zip
+?? MirroredDungeon_Godot_POC/
+?? apply-campaign-wilderness.cjs
+?? apply-campaign-world.cjs
+?? apply-campaign.cjs
+?? apply-combat-polish.cjs
+?? apply-game-interface.cjs
+?? assets/CAMPAIGN_NPC_ART.md
+?? assets/campaign-villagers-v1.png
+?? assets/mara-animation-v1.png
+?? assets/mara-portrait-v1.png
+?? campaign-characters.js
+?? campaign-model.js
+?? campaign-npc-art.js
+?? campaign-populations.js
+?? campaign-storage.js
+?? campaign-ui.js
+?? campaign-wilderness-data.js
+?? campaign-wilderness-render.js
+?? campaign-world.js
+?? campaign.js
+?? checkpoints/
+?? combat-polish.js
+?? design/
+?? desktop-inspection/
+?? fire-effects.js
+?? game-interface.js
+?? godot-poc/
+?? runtime-assets/npc-mara-portrait.js
+?? runtime-assets/npc-mara.js
+?? runtime-assets/npc-villagers.js
+?? test-camp-chant.cjs
+?? test-camp-footprints.cjs
+?? test-camp-solids.cjs
+?? test-campaign-model.cjs
+?? test-campaign-pass03.cjs
+?? test-campaign-wilderness.cjs
+?? test-campaign-world.cjs
+?? test-campaign.cjs
+?? test-combat-polish.cjs
+?? test-combat-readability.cjs
+?? test-entrance-layouts.cjs
+?? test-fire-clock.cjs
+?? test-game-interface.cjs
+?? test-map-footprints.cjs
+?? test-navigation.cjs
+?? test-touch-autoattack.cjs

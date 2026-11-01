@@ -1,0 +1,55 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: Branded title opens
+PASS: Main menu mouse click opens selection
+PASS: Walk/click approach opens mara dialogue
+PASS: Correct portrait speaker mara
+PASS: Walk/click approach opens bram dialogue
+PASS: Correct portrait speaker bram
+PASS: Walk/click approach opens finn dialogue
+PASS: Correct portrait speaker finn
+PASS: Protected chest interaction
+PASS: Stash restores supplies
+PASS: knight visibly advances >=5 walk frames
+PASS: knight keyboard movement follows class speed
+PASS: knight stops into idle
+PASS: knight does not damage before windup
+PASS: knight visible attack sequence advances
+PASS: knight attack reaches target
+PASS: knight applies class damage
+PASS: knight repeated attack defeats target
+PASS: knight never stuck in attack
+PASS: mage visibly advances >=5 walk frames
+PASS: mage keyboard movement follows class speed
+PASS: mage stops into idle
+PASS: mage does not damage before windup
+PASS: mage visible attack sequence advances
+PASS: mage attack reaches target
+PASS: mage applies class damage
+PASS: mage repeated attack defeats target
+PASS: mage never stuck in attack
+PASS: rogue visibly advances >=5 walk frames
+PASS: rogue keyboard movement follows class speed
+PASS: rogue stops into idle
+PASS: rogue does not damage before windup
+PASS: rogue visible attack sequence advances
+PASS: rogue attack reaches target
+PASS: rogue applies class damage
+PASS: rogue repeated attack defeats target
+PASS: rogue never stuck in attack
+PASS: Complete walk through camp exit
+PASS: Road branch is traversable to Pilgrim's Cross
+PASS: Long road route reaches mill approach
+PASS: Random defeat cannot complete quest
+PASS: Both authored guards defeated via target approach and attacks
+PASS: Explicit flour recovery after combat
+PASS: Road-to-town full traversal and transition
+PASS: Town resident remains accessible
+PASS: Authored defeats retained across travel
+PASS: Camera top-left clamp
+PASS: Hero moves at clamped edge
+PASS: Camera bottom-right clamp
+PASS: Death recovers at camp
+PASS: Escape pauses
+PASS: Settings accessible from pause
+RESULT: 52 playthrough checks, 0 failures
