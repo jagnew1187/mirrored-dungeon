@@ -1,0 +1,184 @@
+name: Publish Mirrored Dungeon Pass 11.3
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/deploy-pass113.yml
+      - MirroredDungeon_Pass11_3_Lean_Source.zip
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  GODOT_VERSION: 4.7.2
+  SOURCE_ARCHIVE: MirroredDungeon_Pass11_3_Lean_Source.zip
+  SOURCE_SHA256: 8d16298ca077ca6f045291ac7fdf12a8d069421a9315ba8650b9e5156c4b67f5
+
+jobs:
+  build:
+    name: Export verified Pass 11.3 archive
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out the archived release only
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: MirroredDungeon_Pass11_3_Lean_Source.zip
+          sparse-checkout-cone-mode: false
+
+      - name: Verify and extract source without changing development files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, stat, zipfile
+          archive = pathlib.Path(os.environ['SOURCE_ARCHIVE'])
+          actual = hashlib.sha256(archive.read_bytes()).hexdigest()
+          if actual != os.environ['SOURCE_SHA256']:
+              raise SystemExit('Source archive changed: review it before updating the pinned SHA256.')
+          target = pathlib.Path(os.environ['RUNNER_TEMP']) / 'pass113-source'
+          target.mkdir(parents=True, exist_ok=True)
+          with zipfile.ZipFile(archive) as source:
+              for entry in source.infolist():
+                  dest = (target / entry.filename).resolve()
+                  if not dest.is_relative_to(target.resolve()) or stat.S_ISLNK(entry.external_attr >> 16):
+                      raise SystemExit('Unsafe archive member: ' + entry.filename)
+              source.extractall(target)
+          project = target / 'godot-poc'
+          if not (project / 'project.godot').is_file():
+              raise SystemExit('Expected godot-poc/project.godot missing.')
+          for filename in ['classes.json', 'gear_registry.json', 'world_rules.json']:
+              json.loads((project / 'data' / filename).read_text(encoding='utf-8-sig'))
+          preset = project / 'export_presets.cfg'
+          text = preset.read_text(encoding='utf-8-sig')
+          if 'include_filter=""' not in text or 'variant/thread_support=false' not in text:
+              raise SystemExit('Unexpected export preset; inspect it instead of guessing.')
+          text = text.replace('include_filter=""', 'include_filter="*.json"', 1)
+          text = text.replace('vram_texture_compression/for_mobile=false', 'vram_texture_compression/for_mobile=true', 1)
+          preset.write_text(text, encoding='utf-8')
+          with open(os.environ['GITHUB_ENV'], 'a') as env:
+              env.write('PROJECT_DIR=' + str(project) + '\n')
+              env.write('SITE_DIR=' + os.environ['RUNNER_TEMP'] + '/pass113-site\n')
+          print('Verified Pass 11.3 source archive:', actual)
+          print('Web-only export settings: single-threaded, JSON data included, desktop/mobile textures.')
+          PY
+
+      - name: Install matching Godot engine and Web templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP"
+          curl --fail --location --retry 3 --connect-timeout 30 --max-time 600 \
+            "https://downloads.godotengine.org/?version=${GODOT_VERSION}&flavor=stable&slug=linux.x86_64.zip" -o godot-linux.zip
+          curl --fail --location --retry 3 --connect-timeout 30 --max-time 900 \
+            "https://downloads.godotengine.org/?version=${GODOT_VERSION}&flavor=stable&slug=export_templates.tpz" -o godot-templates.tpz
+          unzip -q godot-linux.zip -d godot-bin
+          GODOT="$RUNNER_TEMP/godot-bin/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+          chmod +x "$GODOT"
+          "$GODOT" --version | tee "$RUNNER_TEMP/godot-version.txt"
+          grep -q "^${GODOT_VERSION}\.stable" "$RUNNER_TEMP/godot-version.txt"
+          echo "GODOT_BIN=$GODOT" >> "$GITHUB_ENV"
+          python3 - <<'PY'
+          import os, pathlib, zipfile
+          target = pathlib.Path.home() / '.local/share/godot/export_templates' / (os.environ['GODOT_VERSION'] + '.stable')
+          target.mkdir(parents=True, exist_ok=True)
+          count = 0
+          with zipfile.ZipFile('godot-templates.tpz') as source:
+              for member in source.namelist():
+                  name = pathlib.PurePosixPath(member).name
+                  if (name.startswith('web') and name.endswith('.zip')) or name == 'version.txt':
+                      (target / name).write_bytes(source.read(member))
+                      count += name.startswith('web')
+          if not count:
+              raise SystemExit('No Web templates were found in the official template archive.')
+          print('Installed', count, 'Web template files into', target)
+          PY
+
+      - name: Import, start the engine, and export Web
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$SITE_DIR" "$RUNNER_TEMP/pass113-logs"
+          "$GODOT_BIN" --headless --path "$PROJECT_DIR" --editor --import 2>&1 | tee "$RUNNER_TEMP/pass113-logs/import.txt"
+          timeout 120s "$GODOT_BIN" --headless --path "$PROJECT_DIR" --quit-after 90 2>&1 | tee "$RUNNER_TEMP/pass113-logs/startup.txt"
+          "$GODOT_BIN" --headless --path "$PROJECT_DIR" --export-release Web "$SITE_DIR/index.html" 2>&1 | tee "$RUNNER_TEMP/pass113-logs/export.txt"
+          if grep -E 'SCRIPT ERROR:|Parse Error:|ERROR:' "$RUNNER_TEMP"/pass113-logs/*.txt; then
+            echo '::error::Engine errors found. Inspect the logs; do not publish this build.'
+            exit 1
+          fi
+          test -s "$SITE_DIR/index.html"
+          test -s "$SITE_DIR/index.js"
+          test -s "$SITE_DIR/index.wasm"
+          test -s "$SITE_DIR/index.pck"
+
+      - name: Check packaged data and identify the build
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, re
+          site = pathlib.Path(os.environ['SITE_DIR'])
+          pack = (site / 'index.pck').read_bytes()
+          for name in [b'data/classes.json', b'data/gear_registry.json', b'data/world_rules.json']:
+              if name not in pack:
+                  raise SystemExit('Required game data missing from PCK: ' + name.decode())
+          html = site / 'index.html'
+          text = html.read_text(encoding='utf-8')
+          text = re.sub(r'<title>.*?</title>', '<title>Mirrored Dungeon - Pass 11.3 Web Playtest</title>', text, count=1, flags=re.S)
+          text = text.replace('</head>', '<meta name="mirrored-dungeon-build" content="Pass 11.3">\n</head>', 1)
+          html.write_text(text, encoding='utf-8')
+          (site / '.nojekyll').write_text('')
+          info = {
+              'game': 'Mirrored Dungeon', 'pass': '11.3',
+              'godot': os.environ['GODOT_VERSION'], 'threaded': False,
+              'source_archive_sha256': os.environ['SOURCE_SHA256'],
+              'workflow_commit': os.environ['GITHUB_SHA'],
+              'note': 'Web playtest. Pass 11.4 exact-location saving is not included. Physical iPhone testing is pending.'
+          }
+          (site / 'build-info.json').write_text(json.dumps(info, indent=2) + '\n')
+          files = {p.name: {'bytes': p.stat().st_size, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in site.iterdir() if p.is_file()}
+          print(json.dumps(files, indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('## Pass 11.3 Web export\nVerified pinned source, native headless startup, generated Web files, and packaged JSON data.\n\nBrowser gameplay and physical-device performance are not certified by these checks.\n')
+          PY
+
+      - name: Save build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pass113-export-logs
+          path: ${{ runner.temp }}/pass113-logs/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Upload playable Web build
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ env.SITE_DIR }}
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure existing Pages site
+        uses: actions/configure-pages@v5
+      - name: Deploy Pass 11.3
+        id: deployment
+        uses: actions/deploy-pages@v4
