@@ -64,6 +64,12 @@ jobs:
           text = text.replace('include_filter=""', 'include_filter="*.json"', 1)
           text = text.replace('vram_texture_compression/for_mobile=false', 'vram_texture_compression/for_mobile=true', 1)
           preset.write_text(text, encoding='utf-8')
+          settings = project / 'project.godot'
+          config = settings.read_text(encoding='utf-8-sig')
+          if '[rendering]' not in config:
+              raise SystemExit('Rendering settings section missing.')
+          config = config.replace('[rendering]', '[rendering]\ntextures/vram_compression/import_etc2_astc=true', 1)
+          settings.write_text(config, encoding='utf-8')
           with open(os.environ['GITHUB_ENV'], 'a') as env:
               env.write('PROJECT_DIR=' + str(project) + '\n')
               env.write('SITE_DIR=' + os.environ['RUNNER_TEMP'] + '/pass113-site\n')
