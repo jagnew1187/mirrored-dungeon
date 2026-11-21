@@ -1,3 +1,7 @@
+# Current build: Pass 11.5 RC7
+
+The current game is the Godot project in [`godot-poc`](godot-poc/README.md). The JavaScript files below are the older prototype.
+
 # Mirrored Dungeon — Strategic Gauntlets 0.6
 
 Open `index.html` with the `runtime-assets/` folder beside it for offline play, or run `node serve.cjs` for the local preview. Keep that folder with the HTML when copying the build. `node integrate.cjs` rebuilds these bundles from the source assets. Artwork is split into local JavaScript bundles so no published file exceeds GitHub's per-file limit. Animation review pages remain self-contained.

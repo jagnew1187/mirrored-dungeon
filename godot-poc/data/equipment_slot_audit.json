@@ -1,0 +1,863 @@
+{
+  "review": "Pass10.2: ten allowed slots; shoulders integrate with Chest, belts support Legs; six cloaks remain owned legacy items with no equipment effects. Footwear icons exclusively Feet.",
+  "items": {
+    "sword": {
+      "name": "Arbiter's worn sword",
+      "category": "sword",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 64,
+      "legacy": false
+    },
+    "staff": {
+      "name": "Travel staff",
+      "category": "focus",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 65,
+      "legacy": false
+    },
+    "daggers": {
+      "name": "Balanced daggers",
+      "category": "dagger",
+      "slots": [
+        "weapon",
+        "offhand"
+      ],
+      "icon": 66,
+      "legacy": false
+    },
+    "coat": {
+      "name": "Travel coat",
+      "category": "cloth",
+      "slots": [
+        "armor"
+      ],
+      "icon": 67,
+      "legacy": false
+    },
+    "steel_sword": {
+      "name": "Serviceable steel sword",
+      "category": "sword",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 68,
+      "legacy": false
+    },
+    "ash_staff": {
+      "name": "Ashwood focus",
+      "category": "focus",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 69,
+      "legacy": false
+    },
+    "fine_daggers": {
+      "name": "Fine throwing daggers",
+      "category": "dagger",
+      "slots": [
+        "weapon",
+        "offhand"
+      ],
+      "icon": 70,
+      "legacy": false
+    },
+    "padded_coat": {
+      "name": "Padded coat",
+      "category": "light armor",
+      "slots": [
+        "armor"
+      ],
+      "icon": 71,
+      "legacy": false
+    },
+    "charm": {
+      "name": "Baker's keepsake",
+      "category": "charm",
+      "slots": [
+        "accessory"
+      ],
+      "icon": 73,
+      "legacy": false
+    },
+    "boots": {
+      "name": "Traveler's boots",
+      "category": "boots",
+      "slots": [
+        "feet"
+      ],
+      "icon": 72,
+      "legacy": false
+    },
+    "iron_sallet": {
+      "name": "Patrol sallet",
+      "category": "helm",
+      "slots": [
+        "head"
+      ],
+      "icon": 0,
+      "legacy": false
+    },
+    "linen_cowl": {
+      "name": "Linen scholar cowl",
+      "category": "hood",
+      "slots": [
+        "head"
+      ],
+      "icon": 1,
+      "legacy": false
+    },
+    "scout_mask": {
+      "name": "Charcoal scout mask",
+      "category": "mask",
+      "slots": [
+        "head"
+      ],
+      "icon": 2,
+      "legacy": false
+    },
+    "traveler_hat": {
+      "name": "Waxed traveler hat",
+      "category": "hat",
+      "slots": [
+        "head"
+      ],
+      "icon": 3,
+      "legacy": false
+    },
+    "vigil_helm": {
+      "name": "Vigil watch helm",
+      "category": "helm",
+      "slots": [
+        "head"
+      ],
+      "icon": 4,
+      "legacy": false
+    },
+    "star_circlet": {
+      "name": "Star-reader circlet",
+      "category": "circlet",
+      "slots": [
+        "head"
+      ],
+      "icon": 5,
+      "legacy": false
+    },
+    "watch_mantle": {
+      "name": "Watchman's pauldrons",
+      "category": "pauldrons",
+      "slots": [
+        "armor"
+      ],
+      "icon": 6,
+      "legacy": false
+    },
+    "scholar_wrap": {
+      "name": "Road scholar's wrap",
+      "category": "shawl",
+      "slots": [
+        "armor"
+      ],
+      "icon": 7,
+      "legacy": false
+    },
+    "wayfarer_shoulders": {
+      "name": "Wayfarer shoulder guards",
+      "category": "leather",
+      "slots": [
+        "armor"
+      ],
+      "icon": 8,
+      "legacy": false
+    },
+    "pilgrim_shawl": {
+      "name": "Pilgrim's wool shawl",
+      "category": "shawl",
+      "slots": [
+        "armor"
+      ],
+      "icon": 9,
+      "legacy": false
+    },
+    "marshal_shoulders": {
+      "name": "Marshal's ridge plates",
+      "category": "pauldrons",
+      "slots": [
+        "armor"
+      ],
+      "icon": 6,
+      "legacy": false
+    },
+    "ember_stole": {
+      "name": "Banked-ember stole",
+      "category": "shawl",
+      "slots": [
+        "armor"
+      ],
+      "icon": 11,
+      "legacy": false
+    },
+    "vigil_cuirass": {
+      "name": "Vigil iron cuirass",
+      "category": "plate",
+      "slots": [
+        "armor"
+      ],
+      "icon": 12,
+      "legacy": false
+    },
+    "scholar_robe": {
+      "name": "Road scholar's robe",
+      "category": "robe",
+      "slots": [
+        "armor"
+      ],
+      "icon": 13,
+      "legacy": false
+    },
+    "wayfarer_vest": {
+      "name": "Wayfarer hide vest",
+      "category": "leather",
+      "slots": [
+        "armor"
+      ],
+      "icon": 14,
+      "legacy": false
+    },
+    "quilted_robe": {
+      "name": "Quilted winter robe",
+      "category": "robe",
+      "slots": [
+        "armor"
+      ],
+      "icon": 15,
+      "legacy": false
+    },
+    "scavenger_mail": {
+      "name": "Scavenged ring mail",
+      "category": "mail",
+      "slots": [
+        "armor"
+      ],
+      "icon": 75,
+      "legacy": false
+    },
+    "iron_gauntlets": {
+      "name": "Iron grip gauntlets",
+      "category": "gauntlets",
+      "slots": [
+        "hands"
+      ],
+      "icon": 16,
+      "legacy": false
+    },
+    "ink_gloves": {
+      "name": "Ink-stained gloves",
+      "category": "gloves",
+      "slots": [
+        "hands"
+      ],
+      "icon": 17,
+      "legacy": false
+    },
+    "thrower_wraps": {
+      "name": "Thrower's wrist wraps",
+      "category": "wraps",
+      "slots": [
+        "hands"
+      ],
+      "icon": 18,
+      "legacy": false
+    },
+    "work_gloves": {
+      "name": "Millworker gloves",
+      "category": "gloves",
+      "slots": [
+        "hands"
+      ],
+      "icon": 19,
+      "legacy": false
+    },
+    "siege_grips": {
+      "name": "Siege grips",
+      "category": "gauntlets",
+      "slots": [
+        "hands"
+      ],
+      "icon": 20,
+      "legacy": false
+    },
+    "spellweave_gloves": {
+      "name": "Spellweave gloves",
+      "category": "gloves",
+      "slots": [
+        "hands"
+      ],
+      "icon": 21,
+      "legacy": false
+    },
+    "watch_belt": {
+      "name": "Watch utility belt",
+      "category": "belt",
+      "slots": [
+        "legs"
+      ],
+      "icon": 22,
+      "legacy": false
+    },
+    "reagent_sash": {
+      "name": "Reagent sash",
+      "category": "sash",
+      "slots": [
+        "legs"
+      ],
+      "icon": 23,
+      "legacy": false
+    },
+    "knife_belt": {
+      "name": "Balanced knife belt",
+      "category": "belt",
+      "slots": [
+        "legs"
+      ],
+      "icon": 24,
+      "legacy": false
+    },
+    "rope_belt": {
+      "name": "Pilgrim's braided cord",
+      "category": "cord",
+      "slots": [
+        "legs"
+      ],
+      "icon": 25,
+      "legacy": false
+    },
+    "brass_girdle": {
+      "name": "Brass-clasp girdle",
+      "category": "belt",
+      "slots": [
+        "legs"
+      ],
+      "icon": 26,
+      "legacy": false
+    },
+    "watch_greaves": {
+      "name": "Watch leg plates",
+      "category": "greaves",
+      "slots": [
+        "legs"
+      ],
+      "icon": 27,
+      "legacy": false
+    },
+    "scholar_trousers": {
+      "name": "Scholar's riding trousers",
+      "category": "trousers",
+      "slots": [
+        "legs"
+      ],
+      "icon": 28,
+      "legacy": false
+    },
+    "wayfarer_legs": {
+      "name": "Wayfarer leggings",
+      "category": "leather",
+      "slots": [
+        "legs"
+      ],
+      "icon": 29,
+      "legacy": false
+    },
+    "patched_leggings": {
+      "name": "Patched road leggings",
+      "category": "trousers",
+      "slots": [
+        "legs"
+      ],
+      "icon": 30,
+      "legacy": false
+    },
+    "brigand_cuisses": {
+      "name": "Brigand's cuisses",
+      "category": "greaves",
+      "slots": [
+        "legs"
+      ],
+      "icon": 31,
+      "legacy": false
+    },
+    "mooncloth_legs": {
+      "name": "Mooncloth leggings",
+      "category": "trousers",
+      "slots": [
+        "legs"
+      ],
+      "icon": 32,
+      "legacy": false
+    },
+    "iron_sabatons": {
+      "name": "Road-worn sabatons",
+      "category": "sabatons",
+      "slots": [
+        "feet"
+      ],
+      "icon": 33,
+      "legacy": false
+    },
+    "soft_slippers": {
+      "name": "Runescribe slippers",
+      "category": "slippers",
+      "slots": [
+        "feet"
+      ],
+      "icon": 34,
+      "legacy": false
+    },
+    "trail_boots": {
+      "name": "Trailrunner boots",
+      "category": "boots",
+      "slots": [
+        "feet"
+      ],
+      "icon": 35,
+      "legacy": false
+    },
+    "pilgrim_boots": {
+      "name": "Pilgrim's walking sandals",
+      "category": "sandals",
+      "slots": [
+        "feet"
+      ],
+      "icon": 36,
+      "legacy": false
+    },
+    "watch_boots": {
+      "name": "Vigil watch boots",
+      "category": "sabatons",
+      "slots": [
+        "feet"
+      ],
+      "icon": 37,
+      "legacy": false
+    },
+    "wayfarer_boots": {
+      "name": "Wayfarer moss boots",
+      "category": "boots",
+      "slots": [
+        "feet"
+      ],
+      "icon": 38,
+      "legacy": false
+    },
+    "pilgrim_cloak": {
+      "name": "Wayfarer's weather cloak",
+      "category": "cloak",
+      "slots": [],
+      "icon": 39,
+      "legacy": true
+    },
+    "watch_cape": {
+      "name": "Watch captain's cape",
+      "category": "cape",
+      "slots": [],
+      "icon": 40,
+      "legacy": true
+    },
+    "scholar_cloak": {
+      "name": "Road scholar's cloak",
+      "category": "cloak",
+      "slots": [],
+      "icon": 41,
+      "legacy": true
+    },
+    "shadow_cape": {
+      "name": "Smoke-dark half cape",
+      "category": "cape",
+      "slots": [],
+      "icon": 42,
+      "legacy": true
+    },
+    "fur_mantle": {
+      "name": "Northern fur mantle",
+      "category": "fur",
+      "slots": [],
+      "icon": 43,
+      "legacy": true
+    },
+    "lantern_cloak": {
+      "name": "Lantern keeper's cloak",
+      "category": "cloak",
+      "slots": [],
+      "icon": 44,
+      "legacy": true
+    },
+    "copper_necklace": {
+      "name": "Copper sun necklace",
+      "category": "necklace",
+      "slots": [
+        "neck"
+      ],
+      "icon": 45,
+      "legacy": false
+    },
+    "quartz_pendant": {
+      "name": "Quartz focus pendant",
+      "category": "pendant",
+      "slots": [
+        "neck"
+      ],
+      "icon": 46,
+      "legacy": false
+    },
+    "wolf_tooth": {
+      "name": "Wolf-tooth pendant",
+      "category": "pendant",
+      "slots": [
+        "neck"
+      ],
+      "icon": 47,
+      "legacy": false
+    },
+    "silver_chain": {
+      "name": "Silver road chain",
+      "category": "necklace",
+      "slots": [
+        "neck"
+      ],
+      "icon": 48,
+      "legacy": false
+    },
+    "river_amulet": {
+      "name": "River-glass amulet",
+      "category": "amulet",
+      "slots": [
+        "neck"
+      ],
+      "icon": 49,
+      "legacy": false
+    },
+    "vigil_oath": {
+      "name": "Oath of the Vigil",
+      "category": "amulet",
+      "slots": [
+        "neck"
+      ],
+      "icon": 50,
+      "legacy": false
+    },
+    "copper_ring": {
+      "name": "Copper signet",
+      "category": "ring",
+      "slots": [
+        "ring1"
+      ],
+      "icon": 51,
+      "legacy": false
+    },
+    "quartz_ring": {
+      "name": "Quartz band",
+      "category": "ring",
+      "slots": [
+        "ring1"
+      ],
+      "icon": 52,
+      "legacy": false
+    },
+    "leather_ring": {
+      "name": "Archer's thumb ring",
+      "category": "ring",
+      "slots": [
+        "ring1"
+      ],
+      "icon": 53,
+      "legacy": false
+    },
+    "hearth_ring": {
+      "name": "Hearthstone ring",
+      "category": "ring",
+      "slots": [
+        "ring1"
+      ],
+      "icon": 54,
+      "legacy": false
+    },
+    "steel_band": {
+      "name": "Tempered steel band",
+      "category": "ring",
+      "slots": [
+        "ring1"
+      ],
+      "icon": 55,
+      "legacy": false
+    },
+    "moon_ring": {
+      "name": "Moon-silver ring",
+      "category": "ring",
+      "slots": [
+        "ring1"
+      ],
+      "icon": 56,
+      "legacy": false
+    },
+    "quick_ring": {
+      "name": "Quickfinger loop",
+      "category": "ring",
+      "slots": [
+        "ring1"
+      ],
+      "icon": 57,
+      "legacy": false
+    },
+    "keeper_ring": {
+      "name": "Keeper's azure seal",
+      "category": "ring",
+      "slots": [
+        "ring1"
+      ],
+      "icon": 58,
+      "legacy": false
+    },
+    "compass": {
+      "name": "Old road compass",
+      "category": "compass",
+      "slots": [
+        "accessory"
+      ],
+      "icon": 59,
+      "legacy": false
+    },
+    "spell_stone": {
+      "name": "Pocket spellstone",
+      "category": "crystal",
+      "slots": [
+        "accessory"
+      ],
+      "icon": 60,
+      "legacy": false
+    },
+    "whetstone": {
+      "name": "Fine whetstone",
+      "category": "stone",
+      "slots": [
+        "accessory"
+      ],
+      "icon": 61,
+      "legacy": false
+    },
+    "ward_token": {
+      "name": "Brass ward token",
+      "category": "token",
+      "slots": [
+        "accessory"
+      ],
+      "icon": 62,
+      "legacy": false
+    },
+    "enforcer_seal": {
+      "name": "Broken enforcer's seal",
+      "category": "seal",
+      "slots": [
+        "accessory"
+      ],
+      "icon": 63,
+      "legacy": false
+    },
+    "vigil_covenant": {
+      "name": "Covenant of shared bread",
+      "category": "reliquary",
+      "slots": [
+        "accessory"
+      ],
+      "icon": 76,
+      "legacy": false
+    },
+    "short_sword": {
+      "name": "Militia short sword",
+      "category": "sword",
+      "slots": [
+        "weapon",
+        "offhand"
+      ],
+      "icon": 77,
+      "legacy": false
+    },
+    "wood_axe": {
+      "name": "Forester's hand axe",
+      "category": "axe",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 78,
+      "legacy": false
+    },
+    "long_sword": {
+      "name": "Watch longsword",
+      "category": "sword",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 79,
+      "legacy": false
+    },
+    "great_sword": {
+      "name": "Old garrison greatsword",
+      "category": "greatsword",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 80,
+      "legacy": false
+    },
+    "war_axe": {
+      "name": "Militia war axe",
+      "category": "greataxe",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 81,
+      "legacy": false
+    },
+    "field_wand": {
+      "name": "Field apprentice wand",
+      "category": "wand",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 82,
+      "legacy": false
+    },
+    "ember_wand": {
+      "name": "Ember-tip wand",
+      "category": "wand",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 83,
+      "legacy": false
+    },
+    "rowan_staff": {
+      "name": "Rowan pilgrim staff",
+      "category": "staff",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 84,
+      "legacy": false
+    },
+    "astrolabe_staff": {
+      "name": "Astrolabe staff",
+      "category": "staff",
+      "slots": [
+        "weapon"
+      ],
+      "icon": 85,
+      "legacy": false
+    },
+    "scout_knife": {
+      "name": "Scout's belt knife",
+      "category": "dagger",
+      "slots": [
+        "weapon",
+        "offhand"
+      ],
+      "icon": 86,
+      "legacy": false
+    },
+    "parrying_dagger": {
+      "name": "Notched parrying dagger",
+      "category": "dagger",
+      "slots": [
+        "weapon",
+        "offhand"
+      ],
+      "icon": 87,
+      "legacy": false
+    },
+    "needle_blade": {
+      "name": "Needle-point blade",
+      "category": "dagger",
+      "slots": [
+        "weapon",
+        "offhand"
+      ],
+      "icon": 88,
+      "legacy": false
+    },
+    "round_shield": {
+      "name": "Militia round shield",
+      "category": "roundshield",
+      "slots": [
+        "offhand"
+      ],
+      "icon": 89,
+      "legacy": false
+    },
+    "kite_shield": {
+      "name": "Vigil kite shield",
+      "category": "kiteshield",
+      "slots": [
+        "offhand"
+      ],
+      "icon": 90,
+      "legacy": false
+    },
+    "buckler": {
+      "name": "Traveler's buckler",
+      "category": "buckler",
+      "slots": [
+        "offhand"
+      ],
+      "icon": 91,
+      "legacy": false
+    },
+    "field_book": {
+      "name": "Apprentice field book",
+      "category": "book",
+      "slots": [
+        "offhand"
+      ],
+      "icon": 92,
+      "legacy": false
+    },
+    "ward_book": {
+      "name": "Book of small wards",
+      "category": "book",
+      "slots": [
+        "offhand"
+      ],
+      "icon": 93,
+      "legacy": false
+    },
+    "moon_orb": {
+      "name": "River-moon orb",
+      "category": "orb",
+      "slots": [
+        "offhand"
+      ],
+      "icon": 94,
+      "legacy": false
+    },
+    "parry_knife": {
+      "name": "Offhand parrying knife",
+      "category": "dagger",
+      "slots": [
+        "offhand"
+      ],
+      "icon": 95,
+      "legacy": false
+    },
+    "spell_lantern": {
+      "name": "Scholar's ward lantern",
+      "category": "lantern",
+      "slots": [
+        "offhand"
+      ],
+      "icon": 96,
+      "legacy": false
+    }
+  }
+}

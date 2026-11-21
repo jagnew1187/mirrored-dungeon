@@ -22,6 +22,7 @@ var echo_clock := 0.0
 
 func cancel(reset_cooldowns := false) -> void:
 	if active>=0 and is_instance_valid(game.hero): game.hero.attacking=false
+	if is_instance_valid(game.hero): game.hero.guard_time=0
 	active=-1;queued=-1;queue_time=0;guard=0;dash=0;rings.clear();echoes.clear();echo_clock=0
 	if reset_cooldowns: remaining.assign([0.0,0.0])
 
@@ -31,9 +32,12 @@ func activate(index: int) -> bool:
 		queued=index;queue_time=0.4;return true
 	var config: Dictionary=DATA[game.selected][index]
 	remaining[index]=config.cooldown;active=index;age=0;released=false;second_released=false
-	aim=Vector2.RIGHT.rotated(game.hero.DIRECTIONS.find(game.hero.direction)*PI/4) if game.selected=="rogue" and index==0 else game.aim_direction();game.cancel_approach();game.attack_buffer=0
-	game.hero.attack_duration=config.windup+config.recovery;game.hero.attack_impact=config.windup;game.hero.start_attack(aim)
-	if game.selected=="knight" and index==0: guard=config.duration;game.overlay.notify("Shield Guard · damage reduced")
+	aim=Vector2.RIGHT.rotated(game.hero.DIRECTIONS.find(game.hero.direction)*PI/4) if game.selected=="rogue" and index==0 else game.aim_direction()
+	# Cancel click-to-approach without releasing a separately held movement finger.
+	var held_move: Vector2=game.joystick if game.touch_id>=0 else Vector2.ZERO
+	game.cancel_approach(true);game.joystick=held_move;game.attack_buffer=0
+	game.hero.attack_duration=config.windup+config.recovery;game.hero.attack_impact=config.windup;game.hero.start_attack(aim,[["guard","cleave"],["burst","focused"],["step","twin"]][["knight","mage","rogue"].find(game.selected)][index],config.windup+config.second if config.has("second") else -1.0)
+	if game.selected=="knight" and index==0: guard=config.duration;game.hero.guard_time=guard;game.overlay.notify("Shield Guard · damage reduced")
 	if game.selected=="rogue" and index==0: dash=config.duration;aim=Vector2.RIGHT.rotated(game.hero.DIRECTIONS.find(game.hero.direction)*PI/4)
 	game.play_sound("arcane-cast" if game.selected=="mage" else "sword-swing")
 	return true
@@ -83,7 +87,7 @@ func release(config: Dictionary) -> void:
 
 func draw(canvas: Node2D) -> void:
 	if game.menu_open: return
-	for echo in echoes: canvas.draw_texture(echo.texture,echo.pos,Color(.55,.85,.76,echo.time*.85))
+	for echo in echoes: canvas.draw_texture(echo.texture,echo.pos,Color(.55,.85,.76,echo.time/.18*.35))
 	if guard>0:
 		var facing:=Vector2.RIGHT.rotated(game.hero.DIRECTIONS.find(game.hero.direction)*PI/4)
 		var opacity:=minf(1,guard*3)

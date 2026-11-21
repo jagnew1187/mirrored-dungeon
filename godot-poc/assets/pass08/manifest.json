@@ -1,0 +1,196 @@
+{
+  "knight": {
+    "cell": [
+      160,
+      128
+    ],
+    "root": [
+      80,
+      112
+    ],
+    "columns": [
+      "right",
+      "southeast",
+      "down",
+      "southwest",
+      "left",
+      "northwest",
+      "up",
+      "northeast"
+    ],
+    "rows": [
+      "windup",
+      "release",
+      "recover",
+      "hurt",
+      "death"
+    ],
+    "unique_source_rows": 5,
+    "retained_side_rows": {
+      "5": "right eight-frame attack",
+      "6": "left eight-frame attack"
+    },
+    "limitations": "Held key poses. Rogue hurt reuses recovery. Mage south release/recovery hold anticipation to retain staff. Directional/handedness cleanup and in-betweens still required."
+  },
+  "mage": {
+    "cell": [
+      160,
+      128
+    ],
+    "root": [
+      80,
+      112
+    ],
+    "columns": [
+      "right",
+      "southeast",
+      "down",
+      "southwest",
+      "left",
+      "northwest",
+      "up",
+      "northeast"
+    ],
+    "rows": [
+      "windup",
+      "release",
+      "recover",
+      "hurt",
+      "death"
+    ],
+    "unique_source_rows": 5,
+    "retained_side_rows": {
+      "5": "right eight-frame attack",
+      "6": "left eight-frame attack"
+    },
+    "limitations": "Held key poses. Rogue hurt reuses recovery. Mage south release/recovery hold anticipation to retain staff. Directional/handedness cleanup and in-betweens still required."
+  },
+  "rogue": {
+    "cell": [
+      160,
+      128
+    ],
+    "root": [
+      80,
+      112
+    ],
+    "columns": [
+      "right",
+      "southeast",
+      "down",
+      "southwest",
+      "left",
+      "northwest",
+      "up",
+      "northeast"
+    ],
+    "rows": [
+      "windup",
+      "release",
+      "recover",
+      "hurt",
+      "death"
+    ],
+    "unique_source_rows": 4,
+    "retained_side_rows": {
+      "5": "right eight-frame attack",
+      "6": "left eight-frame attack"
+    },
+    "limitations": "Held key poses. Rogue hurt reuses recovery. Mage south release/recovery hold anticipation to retain staff. Directional/handedness cleanup and in-betweens still required."
+  },
+  "militia": {
+    "cell": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      116
+    ],
+    "poses": [
+      "idle",
+      "stride",
+      "windup",
+      "release",
+      "hurt",
+      "fallen"
+    ],
+    "limitations": "Two-pose stride; recovery returns to ready; mirrored left facing is provisional. Raider retains the clean Pass07 release to exclude overlapping cape."
+  },
+  "archer": {
+    "cell": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      116
+    ],
+    "poses": [
+      "idle",
+      "stride",
+      "windup",
+      "release",
+      "hurt",
+      "fallen"
+    ],
+    "limitations": "Two-pose stride; recovery returns to ready; mirrored left facing is provisional. Raider retains the clean Pass07 release to exclude overlapping cape."
+  },
+  "shield": {
+    "cell": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      116
+    ],
+    "poses": [
+      "idle",
+      "stride",
+      "windup",
+      "release",
+      "hurt",
+      "fallen"
+    ],
+    "limitations": "Two-pose stride; recovery returns to ready; mirrored left facing is provisional. Raider retains the clean Pass07 release to exclude overlapping cape."
+  },
+  "raider": {
+    "cell": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      116
+    ],
+    "poses": [
+      "idle",
+      "stride",
+      "windup",
+      "release",
+      "hurt",
+      "fallen"
+    ],
+    "limitations": "Two-pose stride; recovery returns to ready; mirrored left facing is provisional. Raider retains the clean Pass07 release to exclude overlapping cape."
+  },
+  "enforcer": {
+    "cell": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      116
+    ],
+    "poses": [
+      "idle",
+      "stride",
+      "windup",
+      "release",
+      "hurt",
+      "fallen"
+    ],
+    "limitations": "Two-pose stride; recovery returns to ready; mirrored left facing is provisional. Raider retains the clean Pass07 release to exclude overlapping cape."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "forbidden_player_traditions": ["necromancy", "soul manipulation", "sacrificial rituals", "Old God corruption", "consuming living beings for power"],
+  "forbidden_playable_classes": ["Occultist", "Necromancer", "Warlock"],
+  "heroic_magic": {"arcane": "Elemental and protective magic; not inherently evil", "divine": "Healing, blessings, protection and cleansing", "nature": "Natural forces, restoration and environmental manipulation"},
+  "canon": ["The Knight is a former arbiter", "The Mage is a central protagonist", "The Rogue and Necromancer are fraternal twin brothers", "Mara is associated with Vigil Camp and has two identical twin sons", "Mara is not automatically a combat companion", "The Warlord was once a genuine hero", "The Pyromancer and Necromancer are important story figures", "The Old God is mysterious, threatening and not a conventional directly fought boss"],
+  "morality": "Morally ambiguous choices are not automatically forbidden magic",
+  "future_dialogue": {"implemented": false, "die": "d20", "advantage": "Roll two d20s and keep the higher", "disadvantage": "Roll two d20s and keep the lower", "inputs": ["protagonist identity", "background", "class proficiencies", "situational advantage or disadvantage", "companion interjections", "persistent consequences"]}
+}

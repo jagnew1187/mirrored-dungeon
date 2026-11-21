@@ -1,2 +1,6 @@
 .godot/
 exports/
+tests/
+qa/
+art-source/
+*.zip

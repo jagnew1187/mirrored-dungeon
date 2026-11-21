@@ -1,0 +1,1727 @@
+{
+  "knight": {
+    "name": "Knight",
+    "role": "Defense, protection and leadership",
+    "implemented": true,
+    "base": {
+      "hp": 270,
+      "speed": 204,
+      "range": 85,
+      "damage": 34,
+      "cooldown": 0.53,
+      "windup": 0.16,
+      "defense": 2
+    },
+    "growth": {
+      "hp": 12,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "knight"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "arbitration",
+      "leadership"
+    ],
+    "talents": [
+      {
+        "id": "root_a",
+        "name": "Resolve",
+        "branch": "a",
+        "max_rank": 3,
+        "requires": {},
+        "mods": {
+          "defense": 1
+        }
+      },
+      {
+        "id": "focus_a",
+        "name": "Bulwark",
+        "branch": "a",
+        "max_rank": 2,
+        "requires": {
+          "root_a": 2
+        },
+        "mods": {
+          "hp": 12
+        }
+      },
+      {
+        "id": "root_b",
+        "name": "Command",
+        "branch": "b",
+        "max_rank": 3,
+        "requires": {},
+        "mods": {
+          "damage": 1
+        }
+      },
+      {
+        "id": "focus_b",
+        "name": "Rally",
+        "branch": "b",
+        "max_rank": 2,
+        "requires": {
+          "root_b": 2
+        },
+        "mods": {
+          "hp": 10
+        }
+      },
+      {
+        "id": "bridge",
+        "name": "United Front",
+        "branch": "cross",
+        "max_rank": 1,
+        "requires": {
+          "root_a": 1,
+          "root_b": 1
+        },
+        "mods": {
+          "damage": 2
+        }
+      }
+    ],
+    "evolutions": [
+      {
+        "id": "guardian",
+        "title": "Guardian",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "bastion",
+        "title": "Bastion",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "marshal",
+        "title": "Marshal",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "high_marshal",
+        "title": "High Marshal",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "battle_commander",
+        "title": "Battle Commander",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": true
+      },
+      {
+        "id": "grand_commander",
+        "title": "Grand Commander",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": true
+      }
+    ],
+    "future_abilities": [],
+    "proposal": false,
+    "branches": {
+      "a": "Defense",
+      "b": "Leadership"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "mage": {
+    "name": "Mage",
+    "role": "Arcane and elemental magic",
+    "implemented": true,
+    "base": {
+      "hp": 200,
+      "speed": 225,
+      "range": 315,
+      "damage": 23,
+      "cooldown": 0.6,
+      "windup": 0.16,
+      "defense": 0
+    },
+    "growth": {
+      "hp": 8,
+      "damage": 2.5
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "mage"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "arcane knowledge",
+      "scholarship"
+    ],
+    "talents": [
+      {
+        "id": "root_a",
+        "name": "Arcane Study",
+        "branch": "a",
+        "max_rank": 3,
+        "requires": {},
+        "mods": {
+          "damage": 1
+        }
+      },
+      {
+        "id": "focus_a",
+        "name": "Elemental Focus",
+        "branch": "a",
+        "max_rank": 2,
+        "requires": {
+          "root_a": 2
+        },
+        "mods": {
+          "damage": 2
+        }
+      },
+      {
+        "id": "root_b",
+        "name": "Warding",
+        "branch": "b",
+        "max_rank": 3,
+        "requires": {},
+        "mods": {
+          "defense": 1
+        }
+      },
+      {
+        "id": "focus_b",
+        "name": "Protective Study",
+        "branch": "b",
+        "max_rank": 2,
+        "requires": {
+          "root_b": 2
+        },
+        "mods": {
+          "hp": 10
+        }
+      },
+      {
+        "id": "bridge",
+        "name": "Arcane Balance",
+        "branch": "cross",
+        "max_rank": 1,
+        "requires": {
+          "root_a": 1,
+          "root_b": 1
+        },
+        "mods": {
+          "hp": 12
+        }
+      }
+    ],
+    "evolutions": [
+      {
+        "id": "elementalist",
+        "title": "Elementalist",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "archmage",
+        "title": "Archmage",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "warden",
+        "title": "Warden",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "aegis_sage",
+        "title": "Aegis Sage",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "spellwarden",
+        "title": "Spellwarden",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": true
+      },
+      {
+        "id": "concordant_sage",
+        "title": "Concordant Sage",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": true
+      }
+    ],
+    "future_abilities": [],
+    "proposal": false,
+    "branches": {
+      "a": "Arcane",
+      "b": "Protection"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "rogue": {
+    "name": "Rogue",
+    "role": "Precision, mobility and disruption",
+    "implemented": true,
+    "base": {
+      "hp": 165,
+      "speed": 280,
+      "range": 270,
+      "damage": 19,
+      "cooldown": 0.37,
+      "windup": 0.12,
+      "defense": 0
+    },
+    "growth": {
+      "hp": 8,
+      "damage": 1.5
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "rogue"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "observation",
+      "streetwise"
+    ],
+    "talents": [
+      {
+        "id": "root_a",
+        "name": "Precision",
+        "branch": "a",
+        "max_rank": 3,
+        "requires": {},
+        "mods": {
+          "damage": 1
+        }
+      },
+      {
+        "id": "focus_a",
+        "name": "Measured Strike",
+        "branch": "a",
+        "max_rank": 2,
+        "requires": {
+          "root_a": 2
+        },
+        "mods": {
+          "cooldown": -0.01
+        }
+      },
+      {
+        "id": "root_b",
+        "name": "Footwork",
+        "branch": "b",
+        "max_rank": 3,
+        "requires": {},
+        "mods": {
+          "speed": 2
+        }
+      },
+      {
+        "id": "focus_b",
+        "name": "Fleet Step",
+        "branch": "b",
+        "max_rank": 2,
+        "requires": {
+          "root_b": 2
+        },
+        "mods": {
+          "hp": 8
+        }
+      },
+      {
+        "id": "bridge",
+        "name": "Adaptive Tactics",
+        "branch": "cross",
+        "max_rank": 1,
+        "requires": {
+          "root_a": 1,
+          "root_b": 1
+        },
+        "mods": {
+          "damage": 2
+        }
+      }
+    ],
+    "evolutions": [
+      {
+        "id": "duelist",
+        "title": "Duelist",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "blade_master",
+        "title": "Blade Master",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "scout",
+        "title": "Scout",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "pathfinder",
+        "title": "Pathfinder",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": true
+      },
+      {
+        "id": "skirmisher",
+        "title": "Skirmisher",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": true
+      },
+      {
+        "id": "master_skirmisher",
+        "title": "Master Skirmisher",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": true
+      }
+    ],
+    "future_abilities": [],
+    "proposal": false,
+    "branches": {
+      "a": "Precision",
+      "b": "Mobility"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "druid": {
+    "name": "Druid",
+    "role": "Nature, restoration and terrain",
+    "implemented": false,
+    "base": {
+      "hp": 200,
+      "speed": 225,
+      "range": 315,
+      "damage": 23,
+      "cooldown": 0.6,
+      "windup": 0.16,
+      "defense": 0
+    },
+    "growth": {
+      "hp": 8,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "druid"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "nature"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "grovekeeper",
+        "title": "Grovekeeper",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "elder_warden",
+        "title": "Elder Warden",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "wildkeeper",
+        "title": "Wildkeeper",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "wild_sage",
+        "title": "Wild Sage",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "verdant_keeper",
+        "title": "Verdant Keeper",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "verdant_elder",
+        "title": "Verdant Elder",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "ranger": {
+    "name": "Ranger",
+    "role": "Archery, tracking and scouting",
+    "implemented": false,
+    "base": {
+      "hp": 165,
+      "speed": 280,
+      "range": 270,
+      "damage": 19,
+      "cooldown": 0.37,
+      "windup": 0.12,
+      "defense": 0
+    },
+    "growth": {
+      "hp": 8,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "ranger"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "archery"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "tracker",
+        "title": "Tracker",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "master_tracker",
+        "title": "Master Tracker",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "marksman",
+        "title": "Marksman",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "eagle_eye",
+        "title": "Eagle Eye",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "trail_warden",
+        "title": "Trail Warden",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "trail_master",
+        "title": "Trail Master",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "paladin": {
+    "name": "Paladin",
+    "role": "Armored blessings and protection",
+    "implemented": false,
+    "base": {
+      "hp": 270,
+      "speed": 204,
+      "range": 85,
+      "damage": 34,
+      "cooldown": 0.53,
+      "windup": 0.16,
+      "defense": 2
+    },
+    "growth": {
+      "hp": 12,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "paladin"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "armored blessings and protection"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "protector",
+        "title": "Protector",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "sanctuary_knight",
+        "title": "Sanctuary Knight",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "vindicator",
+        "title": "Vindicator",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "dawn_champion",
+        "title": "Dawn Champion",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "oathkeeper",
+        "title": "Oathkeeper",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "oath_guardian",
+        "title": "Oath Guardian",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "berserker": {
+    "name": "Berserker",
+    "role": "Aggressive melee and disruption",
+    "implemented": false,
+    "base": {
+      "hp": 270,
+      "speed": 204,
+      "range": 85,
+      "damage": 34,
+      "cooldown": 0.53,
+      "windup": 0.16,
+      "defense": 2
+    },
+    "growth": {
+      "hp": 12,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "berserker"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "aggressive melee and disruption"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "ravager",
+        "title": "Ravager",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "war_champion",
+        "title": "War Champion",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "breaker",
+        "title": "Breaker",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "siegebreaker",
+        "title": "Siegebreaker",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "storm_warrior",
+        "title": "Storm Warrior",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "storm_champion",
+        "title": "Storm Champion",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "lancer": {
+    "name": "Lancer",
+    "role": "Reach, formation and positioning",
+    "implemented": false,
+    "base": {
+      "hp": 270,
+      "speed": 204,
+      "range": 85,
+      "damage": 34,
+      "cooldown": 0.53,
+      "windup": 0.16,
+      "defense": 2
+    },
+    "growth": {
+      "hp": 12,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "lancer"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "reach"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "vanguard",
+        "title": "Vanguard",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "spear_marshal",
+        "title": "Spear Marshal",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "sentinel",
+        "title": "Sentinel",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "line_guardian",
+        "title": "Line Guardian",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "formation_captain",
+        "title": "Formation Captain",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "formation_master",
+        "title": "Formation Master",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "artificer": {
+    "name": "Artificer",
+    "role": "Engineering, traps and devices",
+    "implemented": false,
+    "base": {
+      "hp": 165,
+      "speed": 280,
+      "range": 270,
+      "damage": 19,
+      "cooldown": 0.37,
+      "windup": 0.12,
+      "defense": 0
+    },
+    "growth": {
+      "hp": 8,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "artificer"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "engineering"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "engineer",
+        "title": "Engineer",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "master_engineer",
+        "title": "Master Engineer",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "tinker",
+        "title": "Tinker",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "master_tinker",
+        "title": "Master Tinker",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "innovator",
+        "title": "Innovator",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "grand_inventor",
+        "title": "Grand Inventor",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "bard": {
+    "name": "Bard",
+    "role": "Morale, inspiration and support",
+    "implemented": false,
+    "base": {
+      "hp": 200,
+      "speed": 225,
+      "range": 315,
+      "damage": 23,
+      "cooldown": 0.6,
+      "windup": 0.16,
+      "defense": 0
+    },
+    "growth": {
+      "hp": 8,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "bard"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "morale"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "herald",
+        "title": "Herald",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "grand_herald",
+        "title": "Grand Herald",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "minstrel",
+        "title": "Minstrel",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "virtuoso",
+        "title": "Virtuoso",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "chronicler",
+        "title": "Chronicler",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "master_chronicler",
+        "title": "Master Chronicler",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "monk": {
+    "name": "Monk",
+    "role": "Discipline, mobility and counters",
+    "implemented": false,
+    "base": {
+      "hp": 165,
+      "speed": 280,
+      "range": 270,
+      "damage": 19,
+      "cooldown": 0.37,
+      "windup": 0.12,
+      "defense": 0
+    },
+    "growth": {
+      "hp": 8,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "monk"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "discipline"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "adept",
+        "title": "Adept",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "ascendant",
+        "title": "Ascendant",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "wayfarer",
+        "title": "Wayfarer",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "way_master",
+        "title": "Way Master",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "harmonist",
+        "title": "Harmonist",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "harmony_master",
+        "title": "Harmony Master",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  },
+  "cleric": {
+    "name": "Cleric",
+    "role": "Healing, cleansing and spiritual defense",
+    "implemented": false,
+    "base": {
+      "hp": 200,
+      "speed": 225,
+      "range": 315,
+      "damage": 23,
+      "cooldown": 0.6,
+      "windup": 0.16,
+      "defense": 0
+    },
+    "growth": {
+      "hp": 8,
+      "damage": 2
+    },
+    "equipment_permissions": {
+      "class_tags": [
+        "cleric"
+      ],
+      "unrestricted_items": true
+    },
+    "movement": "Ground movement using existing speed; future terrain rules deferred",
+    "dialogue_proficiencies": [
+      "healing"
+    ],
+    "talents": [],
+    "evolutions": [
+      {
+        "id": "healer",
+        "title": "Healer",
+        "stage": 2,
+        "requires": {
+          "focus_a": 1
+        },
+        "branches": {
+          "a": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "high_healer",
+        "title": "High Healer",
+        "stage": 3,
+        "requires": {
+          "focus_a": 2,
+          "root_a": 3
+        },
+        "branches": {
+          "a": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "blessed",
+        "title": "Blessed",
+        "stage": 2,
+        "requires": {
+          "focus_b": 1
+        },
+        "branches": {
+          "b": 3
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "lightkeeper",
+        "title": "Lightkeeper",
+        "stage": 3,
+        "requires": {
+          "focus_b": 2,
+          "root_b": 3
+        },
+        "branches": {
+          "b": 5
+        },
+        "priority": 10,
+        "enabled": false
+      },
+      {
+        "id": "sanctuary_keeper",
+        "title": "Sanctuary Keeper",
+        "stage": 2,
+        "requires": {
+          "bridge": 1,
+          "root_a": 2,
+          "root_b": 2
+        },
+        "branches": {
+          "a": 2,
+          "b": 2
+        },
+        "priority": 20,
+        "enabled": false
+      },
+      {
+        "id": "sanctuary_elder",
+        "title": "Sanctuary Elder",
+        "stage": 3,
+        "requires": {
+          "bridge": 1,
+          "focus_a": 1,
+          "focus_b": 1
+        },
+        "branches": {
+          "a": 3,
+          "b": 3
+        },
+        "priority": 20,
+        "enabled": false
+      }
+    ],
+    "future_abilities": [],
+    "proposal": true,
+    "branches": {
+      "a": "Primary identity",
+      "b": "Supporting identity"
+    },
+    "attributes": {
+      "strength": 0,
+      "agility": 0,
+      "intellect": 0,
+      "vitality": 0
+    }
+  }
+}

@@ -93,26 +93,41 @@ func update(delta: float) -> void:
 	if game.area.area_id=="road" and game.random_dead.size()==3 and game.elapsed>=game.respawn_time and game.hero.position.distance_to(Vector2(1140,1370))>950:
 		game.random_dead.clear();game.population_cycle+=1;game.persist();game.spawn_random()
 
+func nameplates() -> Array[Dictionary]:
+	# Screen-space layout keeps names outside HUD, other names and actor bodies.
+	var result: Array[Dictionary]=[]
+	var transform: Transform2D=game.get_viewport().get_canvas_transform()
+	var viewport_size: Vector2=game.get_viewport_rect().size
+	var obstacles: Array[Rect2]=game.overlay.occlusion_rects()
+
+	obstacles.append(Rect2(transform*game.hero.position+Vector2(-48,-100),Vector2(96,106)))
+	for e in game.enemies:
+		if e.actor.visible: obstacles.append(Rect2(transform*e.actor.position+Vector2(-48,-100),Vector2(96,106)))
+	for e in game.enemies:
+		var screen: Vector2=transform*e.actor.position
+		if not e.actor.visible or not Rect2(Vector2.ZERO,viewport_size).has_point(screen): continue
+		var found:=false
+		for row in range(48):
+			for offset in [0,-170,170,-340,340]:
+				var at:=Vector2(clampf(screen.x-80+offset,8,viewport_size.x-168),clampf(screen.y-124+(ceili(row/2.0)*22*(1 if row%2==0 else -1)),154,viewport_size.y-110))
+				var rect:=Rect2(at,Vector2(160,20))
+				if obstacles.any(func(other):return other.grow(2).intersects(rect)): continue
+				result.append({"rect":rect,"enemy":e,"anchor":screen+Vector2(0,-84)})
+				obstacles.append(rect);found=true;break
+			if found: break
+	return result
+
 func draw(canvas: Node2D) -> void:
 	if game.menu_open: return
-	var labels: Array[Rect2]=[]
+	var inverse: Transform2D=canvas.get_viewport().get_canvas_transform().affine_inverse()
+	for label in nameplates():
+		var rect:=Rect2(inverse*label.rect.position,label.rect.size)
+		canvas.draw_line(inverse*(label.rect.position+label.rect.size*.5),inverse*label.anchor,Color(.75,.7,.5,.4),1)
+		canvas.draw_rect(rect,Color(.06,.1,.08,.85))
+		canvas.draw_string(ThemeDB.fallback_font,rect.position+Vector2(0,16),DATA[label.enemy.role].name,HORIZONTAL_ALIGNMENT_CENTER,160,14,Color("dfc9a0"))
 	for e in game.enemies:
 		if not e.actor.visible: continue
 		var p: Vector2=e.actor.position
-		var transform: Transform2D=canvas.get_viewport().get_canvas_transform()
-		var screen: Vector2=transform*p
-		if not Rect2(0,0,1152,720).has_point(screen): continue
-		var label_pos:=screen+Vector2(-80,-106)
-		label_pos.x=clampf(label_pos.x,8,984);label_pos.y=maxf(8,label_pos.y)
-		if label_pos.x<380 and label_pos.y<150: label_pos.y=150
-		if label_pos.x>830 and label_pos.y<75: label_pos.y=75
-		var rect:=Rect2(transform.affine_inverse()*label_pos,Vector2(160,20))
-		for attempt in range(12):
-			if not labels.any(func(other):return other.intersects(rect)): break
-			rect.position.y+=22
-		labels.append(rect)
-		canvas.draw_rect(rect,Color(.06,.1,.08,.75))
-		canvas.draw_string(ThemeDB.fallback_font,rect.position+Vector2(0,16),DATA[e.role].name,HORIZONTAL_ALIGNMENT_CENTER,160,14,Color("dfc9a0"))
 		if e.role in ["shield","enforcer"] and e.state not in ["recover","lunge"]:
 			var facing: float=Vector2.RIGHT.rotated(e.actor.DIRECTIONS.find(e.actor.direction)*PI/4).angle()
 			canvas.draw_arc(p,26,facing-0.7,facing+0.7,12,Color("b5bfc3"),4)

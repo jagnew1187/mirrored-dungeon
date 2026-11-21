@@ -1,0 +1,2053 @@
+{
+  "sword": {
+    "name": "Arbiter's worn sword",
+    "slot": "weapon",
+    "category": "sword",
+    "classes": [
+      "knight"
+    ],
+    "mods": {},
+    "value": 8,
+    "rarity": "Common",
+    "description": "A familiar blade, kept sharp through exile.",
+    "hands": 1,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 64
+  },
+  "staff": {
+    "name": "Travel staff",
+    "slot": "weapon",
+    "category": "focus",
+    "classes": [
+      "mage"
+    ],
+    "mods": {},
+    "value": 8,
+    "rarity": "Common",
+    "description": "A simple focus for an arcane bolt.",
+    "hands": 2,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 65
+  },
+  "daggers": {
+    "name": "Balanced daggers",
+    "slot": "weapon",
+    "category": "dagger",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {},
+    "value": 8,
+    "rarity": "Common",
+    "description": "Light blades suited to a moving target.",
+    "hands": 1,
+    "slots": [
+      "weapon",
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 66
+  },
+  "coat": {
+    "name": "Travel coat",
+    "slot": "armor",
+    "category": "cloth",
+    "classes": [],
+    "mods": {},
+    "value": 5,
+    "rarity": "Common",
+    "description": "Worn protection against weather and road dust.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 67
+  },
+  "steel_sword": {
+    "name": "Serviceable steel sword",
+    "slot": "weapon",
+    "category": "sword",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "damage": 4.0
+    },
+    "value": 26,
+    "rarity": "Uncommon",
+    "description": "A sound edge with more weight behind each strike.",
+    "hands": 1,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 68
+  },
+  "ash_staff": {
+    "name": "Ashwood focus",
+    "slot": "weapon",
+    "category": "focus",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "damage": 4.0
+    },
+    "value": 26,
+    "rarity": "Uncommon",
+    "description": "Steadies the release of an arcane bolt.",
+    "hands": 2,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 69
+  },
+  "fine_daggers": {
+    "name": "Fine throwing daggers",
+    "slot": "weapon",
+    "category": "dagger",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "damage": 3.0,
+      "cooldown": -0.02
+    },
+    "value": 26,
+    "rarity": "Uncommon",
+    "description": "Balanced for a fast, precise release.",
+    "hands": 1,
+    "slots": [
+      "weapon",
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 70
+  },
+  "padded_coat": {
+    "name": "Padded coat",
+    "slot": "armor",
+    "category": "light armor",
+    "classes": [],
+    "mods": {
+      "hp": 12.0,
+      "defense": 1.0
+    },
+    "value": 18,
+    "rarity": "Common",
+    "description": "A little extra protection without slowing the wearer.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 71
+  },
+  "charm": {
+    "name": "Baker's keepsake",
+    "slot": "accessory",
+    "category": "charm",
+    "classes": [],
+    "mods": {
+      "hp": 16.0
+    },
+    "value": 15,
+    "rarity": "Uncommon",
+    "description": "A small reminder of the people who share their bread.",
+    "hands": 1,
+    "slots": [
+      "accessory"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 73
+  },
+  "boots": {
+    "name": "Traveler's boots",
+    "slot": "feet",
+    "category": "boots",
+    "classes": [],
+    "mods": {
+      "speed": 8.0
+    },
+    "value": 12,
+    "rarity": "Common",
+    "description": "Supple leather boots made for long days on the road.",
+    "hands": 1,
+    "slots": [
+      "feet"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 72
+  },
+  "tonic": {
+    "name": "Restorative tonic",
+    "slot": "",
+    "category": "consumable",
+    "classes": [],
+    "mods": {},
+    "value": 6,
+    "stack": 5,
+    "heal": 60,
+    "rarity": "Common",
+    "description": "Restores 60 health. Cannot be used at full health or after defeat.",
+    "hands": 1,
+    "slots": [
+      ""
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 74
+  },
+  "iron_sallet": {
+    "name": "Patrol sallet",
+    "slot": "head",
+    "category": "helm",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "defense": 1.0,
+      "speed": -2.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Its low visor is dented by a mill stone.",
+    "hands": 1,
+    "slots": [
+      "head"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 0
+  },
+  "linen_cowl": {
+    "name": "Linen scholar cowl",
+    "slot": "head",
+    "category": "hood",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "A stitched brim shades a reader's eyes.",
+    "hands": 1,
+    "slots": [
+      "head"
+    ],
+    "set": "scholar",
+    "gate": "",
+    "icon": 1
+  },
+  "scout_mask": {
+    "name": "Charcoal scout mask",
+    "slot": "head",
+    "category": "mask",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "agility": 2.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Charcoal cloth breaks up a face in moonlight.",
+    "hands": 1,
+    "slots": [
+      "head"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 2
+  },
+  "traveler_hat": {
+    "name": "Waxed traveler hat",
+    "slot": "head",
+    "category": "hat",
+    "classes": [],
+    "mods": {
+      "vitality": 2.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "Rain runs away from the braided band.",
+    "hands": 1,
+    "slots": [
+      "head"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 3
+  },
+  "vigil_helm": {
+    "name": "Vigil watch helm",
+    "slot": "head",
+    "category": "helm",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "strength": 2.0,
+      "defense": 1.0,
+      "speed": -3.0
+    },
+    "rarity": "Uncommon",
+    "value": 24,
+    "description": "A sunburst survives beneath the soot.",
+    "hands": 1,
+    "slots": [
+      "head"
+    ],
+    "set": "watch",
+    "gate": "",
+    "icon": 4
+  },
+  "star_circlet": {
+    "name": "Star-reader circlet",
+    "slot": "head",
+    "category": "circlet",
+    "classes": [
+      "mage",
+      "rogue"
+    ],
+    "mods": {
+      "intellect": 2.0,
+      "hp": 5.0
+    },
+    "rarity": "Rare",
+    "value": 32,
+    "description": "Tiny etched stars guide a steady hand.",
+    "hands": 1,
+    "slots": [
+      "head"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 5
+  },
+  "watch_mantle": {
+    "name": "Watchman's pauldrons",
+    "slot": "armor",
+    "category": "pauldrons",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "defense": 1.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Iron plates overlap like sheltering shingles. Integrated shoulder protection occupies Chest and replaces other chest gear.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 6
+  },
+  "scholar_wrap": {
+    "name": "Road scholar's wrap",
+    "slot": "armor",
+    "category": "shawl",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 1.0,
+      "vitality": 1.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Its padded collar protects a rolled map. Integrated shoulder protection occupies Chest and replaces other chest gear.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "scholar",
+    "gate": "",
+    "icon": 7
+  },
+  "wayfarer_shoulders": {
+    "name": "Wayfarer shoulder guards",
+    "slot": "armor",
+    "category": "leather",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "agility": 1.0,
+      "vitality": 1.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Flexible stitching leaves throwing arms free. Integrated shoulder protection occupies Chest and replaces other chest gear.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "wayfarer",
+    "gate": "",
+    "icon": 8
+  },
+  "pilgrim_shawl": {
+    "name": "Pilgrim's wool shawl",
+    "slot": "armor",
+    "category": "shawl",
+    "classes": [],
+    "mods": {
+      "hp": 8.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "Mended by several different hands. Integrated shoulder protection occupies Chest and replaces other chest gear.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 9
+  },
+  "marshal_shoulders": {
+    "name": "Marshal's ridge plates",
+    "slot": "armor",
+    "category": "pauldrons",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "strength": 3.0,
+      "speed": -3.0
+    },
+    "rarity": "Uncommon",
+    "value": 24,
+    "description": "Broad ridges turn a downward blade. Integrated shoulder protection occupies Chest and replaces other chest gear.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 6
+  },
+  "ember_stole": {
+    "name": "Banked-ember stole",
+    "slot": "armor",
+    "category": "shawl",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 3.0,
+      "defense": -0.5
+    },
+    "rarity": "Rare",
+    "value": 30,
+    "description": "A warm lining helps numb fingers shape spells. Integrated shoulder protection occupies Chest and replaces other chest gear.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 11
+  },
+  "vigil_cuirass": {
+    "name": "Vigil iron cuirass",
+    "slot": "armor",
+    "category": "plate",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "defense": 2.0,
+      "speed": -5.0
+    },
+    "rarity": "Uncommon",
+    "value": 26,
+    "description": "The watch insignia has been carefully restored.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "watch",
+    "gate": "",
+    "icon": 12
+  },
+  "scholar_robe": {
+    "name": "Road scholar's robe",
+    "slot": "armor",
+    "category": "robe",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 3.0,
+      "hp": 6.0
+    },
+    "rarity": "Uncommon",
+    "value": 25,
+    "description": "Scroll loops double as reinforced seams.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "scholar",
+    "gate": "",
+    "icon": 13
+  },
+  "wayfarer_vest": {
+    "name": "Wayfarer hide vest",
+    "slot": "armor",
+    "category": "leather",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "agility": 2.0,
+      "defense": 1.0
+    },
+    "rarity": "Uncommon",
+    "value": 25,
+    "description": "A fitted vest with a knife-safe inner pocket.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "wayfarer",
+    "gate": "",
+    "icon": 14
+  },
+  "quilted_robe": {
+    "name": "Quilted winter robe",
+    "slot": "armor",
+    "category": "robe",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "hp": 16.0,
+      "speed": -3.0
+    },
+    "rarity": "Common",
+    "value": 18,
+    "description": "A practical answer to an exposed spellcaster.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 15
+  },
+  "scavenger_mail": {
+    "name": "Scavenged ring mail",
+    "slot": "armor",
+    "category": "mail",
+    "classes": [
+      "knight",
+      "rogue"
+    ],
+    "mods": {
+      "defense": 2.0,
+      "cooldown": 0.02
+    },
+    "rarity": "Rare",
+    "value": 30,
+    "description": "Mismatched rings trade agility for protection.",
+    "hands": 1,
+    "slots": [
+      "armor"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 75
+  },
+  "iron_gauntlets": {
+    "name": "Iron grip gauntlets",
+    "slot": "hands",
+    "category": "gauntlets",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "strength": 2.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "The palms are lined with rough suede.",
+    "hands": 1,
+    "slots": [
+      "hands"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 16
+  },
+  "ink_gloves": {
+    "name": "Ink-stained gloves",
+    "slot": "hands",
+    "category": "gloves",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Faint formulae cover the fingertips.",
+    "hands": 1,
+    "slots": [
+      "hands"
+    ],
+    "set": "scholar",
+    "gate": "",
+    "icon": 17
+  },
+  "thrower_wraps": {
+    "name": "Thrower's wrist wraps",
+    "slot": "hands",
+    "category": "wraps",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "cooldown": -0.01,
+      "agility": 1.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Firm bindings keep a release consistent.",
+    "hands": 1,
+    "slots": [
+      "hands"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 18
+  },
+  "work_gloves": {
+    "name": "Millworker gloves",
+    "slot": "hands",
+    "category": "gloves",
+    "classes": [],
+    "mods": {
+      "hp": 6.0
+    },
+    "rarity": "Common",
+    "value": 8,
+    "description": "Honest leather remembers honest work.",
+    "hands": 1,
+    "slots": [
+      "hands"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 19
+  },
+  "siege_grips": {
+    "name": "Siege grips",
+    "slot": "hands",
+    "category": "gauntlets",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "strength": 3.0,
+      "speed": -2.0
+    },
+    "rarity": "Uncommon",
+    "value": 22,
+    "description": "Heavy knuckles are scarred by broken masonry.",
+    "hands": 1,
+    "slots": [
+      "hands"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 20
+  },
+  "spellweave_gloves": {
+    "name": "Spellweave gloves",
+    "slot": "hands",
+    "category": "gloves",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 3.0,
+      "hp": -4.0
+    },
+    "rarity": "Rare",
+    "value": 28,
+    "description": "Fine weave favors precision over padding.",
+    "hands": 1,
+    "slots": [
+      "hands"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 21
+  },
+  "watch_belt": {
+    "name": "Watch utility belt",
+    "slot": "legs",
+    "category": "belt",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "vitality": 2.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "A wide buckle spreads the weight of armor. Leg support equipment occupies Legs and replaces other leg gear.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 22
+  },
+  "reagent_sash": {
+    "name": "Reagent sash",
+    "slot": "legs",
+    "category": "sash",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 1.0,
+      "vitality": 1.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "Carefully sealed pouches smell of cedar. Leg support equipment occupies Legs and replaces other leg gear.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 23
+  },
+  "knife_belt": {
+    "name": "Balanced knife belt",
+    "slot": "legs",
+    "category": "belt",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "agility": 2.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "Each loop sits within easy reach. Leg support equipment occupies Legs and replaces other leg gear.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 24
+  },
+  "rope_belt": {
+    "name": "Pilgrim's braided cord",
+    "slot": "legs",
+    "category": "cord",
+    "classes": [],
+    "mods": {
+      "speed": 3.0,
+      "hp": 3.0
+    },
+    "rarity": "Common",
+    "value": 8,
+    "description": "A plain cord serves many small purposes. Leg support equipment occupies Legs and replaces other leg gear.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 25
+  },
+  "brass_girdle": {
+    "name": "Brass-clasp girdle",
+    "slot": "legs",
+    "category": "belt",
+    "classes": [],
+    "mods": {
+      "defense": 1.0,
+      "speed": -1.0
+    },
+    "rarity": "Uncommon",
+    "value": 18,
+    "description": "A broad clasp shields the lower ribs. Leg support equipment occupies Legs and replaces other leg gear.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 26
+  },
+  "watch_greaves": {
+    "name": "Watch leg plates",
+    "slot": "legs",
+    "category": "greaves",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "defense": 1.0,
+      "vitality": 1.0,
+      "speed": -3.0
+    },
+    "rarity": "Common",
+    "value": 14,
+    "description": "Hinged knees let the watch climb steep roads.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 27
+  },
+  "scholar_trousers": {
+    "name": "Scholar's riding trousers",
+    "slot": "legs",
+    "category": "trousers",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "hp": 8.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "The reinforced seat is made for long journeys.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 28
+  },
+  "wayfarer_legs": {
+    "name": "Wayfarer leggings",
+    "slot": "legs",
+    "category": "leather",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "agility": 2.0,
+      "speed": 2.0
+    },
+    "rarity": "Uncommon",
+    "value": 20,
+    "description": "Soft hide moves without a rustle.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "wayfarer",
+    "gate": "",
+    "icon": 29
+  },
+  "patched_leggings": {
+    "name": "Patched road leggings",
+    "slot": "legs",
+    "category": "trousers",
+    "classes": [],
+    "mods": {
+      "vitality": 2.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "Every patch is stronger than the fabric beneath.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 30
+  },
+  "brigand_cuisses": {
+    "name": "Brigand's cuisses",
+    "slot": "legs",
+    "category": "greaves",
+    "classes": [
+      "knight",
+      "rogue"
+    ],
+    "mods": {
+      "strength": 2.0,
+      "defense": 1.0,
+      "speed": -4.0
+    },
+    "rarity": "Uncommon",
+    "value": 24,
+    "description": "Looted steel has found a better cause.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 31
+  },
+  "mooncloth_legs": {
+    "name": "Mooncloth leggings",
+    "slot": "legs",
+    "category": "trousers",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0,
+      "speed": 2.0
+    },
+    "rarity": "Rare",
+    "value": 28,
+    "description": "Pale thread catches even a sliver of moonlight.",
+    "hands": 1,
+    "slots": [
+      "legs"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 32
+  },
+  "iron_sabatons": {
+    "name": "Road-worn sabatons",
+    "slot": "feet",
+    "category": "sabatons",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "defense": 1.0,
+      "speed": -2.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Blunted toes are kind to neither stone nor boot.",
+    "hands": 1,
+    "slots": [
+      "feet"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 33
+  },
+  "soft_slippers": {
+    "name": "Runescribe slippers",
+    "slot": "feet",
+    "category": "slippers",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 1.0,
+      "speed": 3.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Silent soles let their wearer think aloud.",
+    "hands": 1,
+    "slots": [
+      "feet"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 34
+  },
+  "trail_boots": {
+    "name": "Trailrunner boots",
+    "slot": "feet",
+    "category": "boots",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "speed": 6.0
+    },
+    "rarity": "Common",
+    "value": 14,
+    "description": "The heel grips wet roots without a sound.",
+    "hands": 1,
+    "slots": [
+      "feet"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 35
+  },
+  "pilgrim_boots": {
+    "name": "Pilgrim's walking sandals",
+    "slot": "feet",
+    "category": "sandals",
+    "classes": [],
+    "mods": {
+      "hp": 5.0,
+      "speed": 2.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "Care and polish have outlasted their first owner.",
+    "hands": 1,
+    "slots": [
+      "feet"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 36
+  },
+  "watch_boots": {
+    "name": "Vigil watch boots",
+    "slot": "feet",
+    "category": "sabatons",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "vitality": 2.0,
+      "defense": 1.0,
+      "speed": -3.0
+    },
+    "rarity": "Uncommon",
+    "value": 22,
+    "description": "Steel caps carry the watch across broken glass.",
+    "hands": 1,
+    "slots": [
+      "feet"
+    ],
+    "set": "watch",
+    "gate": "",
+    "icon": 37
+  },
+  "wayfarer_boots": {
+    "name": "Wayfarer moss boots",
+    "slot": "feet",
+    "category": "boots",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "agility": 2.0,
+      "speed": 4.0
+    },
+    "rarity": "Rare",
+    "value": 28,
+    "description": "Soft green leather belongs on the forest road.",
+    "hands": 1,
+    "slots": [
+      "feet"
+    ],
+    "set": "wayfarer",
+    "gate": "",
+    "icon": 38
+  },
+  "pilgrim_cloak": {
+    "name": "Wayfarer's weather cloak",
+    "slot": "",
+    "category": "cloak",
+    "classes": [],
+    "mods": {
+      "hp": 6.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "A folded cloak waits where travelers once rested. Legacy cloak: retained as owned gear, unequippable, with no active statistics.",
+    "hands": 1,
+    "slots": [],
+    "set": "",
+    "gate": "",
+    "icon": 39,
+    "legacy": true
+  },
+  "watch_cape": {
+    "name": "Watch captain's cape",
+    "slot": "",
+    "category": "cape",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "strength": 2.0,
+      "hp": 4.0
+    },
+    "rarity": "Uncommon",
+    "value": 20,
+    "description": "Its faded blue still signals a place of refuge. Legacy cloak: retained as owned gear, unequippable, with no active statistics.",
+    "hands": 1,
+    "slots": [],
+    "set": "",
+    "gate": "",
+    "icon": 40,
+    "legacy": true
+  },
+  "scholar_cloak": {
+    "name": "Road scholar's cloak",
+    "slot": "",
+    "category": "cloak",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0,
+      "hp": 4.0
+    },
+    "rarity": "Uncommon",
+    "value": 20,
+    "description": "An inner flap keeps rain off an open book. Legacy cloak: retained as owned gear, unequippable, with no active statistics.",
+    "hands": 1,
+    "slots": [],
+    "set": "scholar",
+    "gate": "",
+    "icon": 41,
+    "legacy": true
+  },
+  "shadow_cape": {
+    "name": "Smoke-dark half cape",
+    "slot": "",
+    "category": "cape",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "agility": 2.0,
+      "speed": 3.0
+    },
+    "rarity": "Uncommon",
+    "value": 20,
+    "description": "Cut short enough to clear a throwing arm. Legacy cloak: retained as owned gear, unequippable, with no active statistics.",
+    "hands": 1,
+    "slots": [],
+    "set": "",
+    "gate": "",
+    "icon": 42,
+    "legacy": true
+  },
+  "fur_mantle": {
+    "name": "Northern fur mantle",
+    "slot": "",
+    "category": "fur",
+    "classes": [],
+    "mods": {
+      "vitality": 3.0,
+      "speed": -2.0
+    },
+    "rarity": "Rare",
+    "value": 24,
+    "description": "Dense fur buys warmth at the cost of weight. Legacy cloak: retained as owned gear, unequippable, with no active statistics.",
+    "hands": 1,
+    "slots": [],
+    "set": "",
+    "gate": "",
+    "icon": 43,
+    "legacy": true
+  },
+  "lantern_cloak": {
+    "name": "Lantern keeper's cloak",
+    "slot": "",
+    "category": "cloak",
+    "classes": [],
+    "mods": {
+      "defense": 1.0,
+      "hp": 4.0
+    },
+    "rarity": "Rare",
+    "value": 24,
+    "description": "Small brass clasps once held a night lantern. Legacy cloak: retained as owned gear, unequippable, with no active statistics.",
+    "hands": 1,
+    "slots": [],
+    "set": "",
+    "gate": "",
+    "icon": 44,
+    "legacy": true
+  },
+  "copper_necklace": {
+    "name": "Copper sun necklace",
+    "slot": "neck",
+    "category": "necklace",
+    "classes": [],
+    "mods": {
+      "hp": 5.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "A humble sun hangs from a repaired chain.",
+    "hands": 1,
+    "slots": [
+      "neck"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 45
+  },
+  "quartz_pendant": {
+    "name": "Quartz focus pendant",
+    "slot": "neck",
+    "category": "pendant",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0
+    },
+    "rarity": "Common",
+    "value": 14,
+    "description": "Clear quartz steadies a wandering thought.",
+    "hands": 1,
+    "slots": [
+      "neck"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 46
+  },
+  "wolf_tooth": {
+    "name": "Wolf-tooth pendant",
+    "slot": "neck",
+    "category": "pendant",
+    "classes": [
+      "knight",
+      "rogue"
+    ],
+    "mods": {
+      "strength": 2.0
+    },
+    "rarity": "Common",
+    "value": 14,
+    "description": "The cord is newer than the tooth.",
+    "hands": 1,
+    "slots": [
+      "neck"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 47
+  },
+  "silver_chain": {
+    "name": "Silver road chain",
+    "slot": "neck",
+    "category": "necklace",
+    "classes": [],
+    "mods": {
+      "vitality": 2.0,
+      "speed": 1.0
+    },
+    "rarity": "Uncommon",
+    "value": 20,
+    "description": "Links worn smooth by a long journey.",
+    "hands": 1,
+    "slots": [
+      "neck"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 48
+  },
+  "river_amulet": {
+    "name": "River-glass amulet",
+    "slot": "neck",
+    "category": "amulet",
+    "classes": [
+      "mage",
+      "rogue"
+    ],
+    "mods": {
+      "intellect": 2.0,
+      "agility": 1.0
+    },
+    "rarity": "Rare",
+    "value": 28,
+    "description": "Blue glass holds the color of running water.",
+    "hands": 1,
+    "slots": [
+      "neck"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 49
+  },
+  "vigil_oath": {
+    "name": "Oath of the Vigil",
+    "slot": "neck",
+    "category": "amulet",
+    "classes": [],
+    "mods": {
+      "hp": 8.0,
+      "defense": 1.0
+    },
+    "rarity": "Epic",
+    "value": 48,
+    "description": "Given meaning by bread shared after a hard road.",
+    "hands": 1,
+    "slots": [
+      "neck"
+    ],
+    "set": "",
+    "gate": "bread",
+    "icon": 50
+  },
+  "copper_ring": {
+    "name": "Copper signet",
+    "slot": "ring1",
+    "category": "ring",
+    "classes": [],
+    "mods": {
+      "strength": 1.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "The seal has been worn almost smooth.",
+    "hands": 1,
+    "slots": [
+      "ring1"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 51
+  },
+  "quartz_ring": {
+    "name": "Quartz band",
+    "slot": "ring1",
+    "category": "ring",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 1.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "A tiny crystal is set close to the hand.",
+    "hands": 1,
+    "slots": [
+      "ring1"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 52
+  },
+  "leather_ring": {
+    "name": "Archer's thumb ring",
+    "slot": "ring1",
+    "category": "ring",
+    "classes": [
+      "rogue",
+      "knight"
+    ],
+    "mods": {
+      "agility": 1.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "It guides cord and grip alike.",
+    "hands": 1,
+    "slots": [
+      "ring1"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 53
+  },
+  "hearth_ring": {
+    "name": "Hearthstone ring",
+    "slot": "ring1",
+    "category": "ring",
+    "classes": [],
+    "mods": {
+      "vitality": 1.0
+    },
+    "rarity": "Common",
+    "value": 10,
+    "description": "Its red stone remembers a warm hearth.",
+    "hands": 1,
+    "slots": [
+      "ring1"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 54
+  },
+  "steel_band": {
+    "name": "Tempered steel band",
+    "slot": "ring1",
+    "category": "ring",
+    "classes": [],
+    "mods": {
+      "defense": 0.5
+    },
+    "rarity": "Uncommon",
+    "value": 16,
+    "description": "A modest band made to survive a hard life.",
+    "hands": 1,
+    "slots": [
+      "ring1"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 55
+  },
+  "moon_ring": {
+    "name": "Moon-silver ring",
+    "slot": "ring1",
+    "category": "ring",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0,
+      "hp": -2.0
+    },
+    "rarity": "Rare",
+    "value": 24,
+    "description": "Cold silver rewards a careful caster.",
+    "hands": 1,
+    "slots": [
+      "ring1"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 56
+  },
+  "quick_ring": {
+    "name": "Quickfinger loop",
+    "slot": "ring1",
+    "category": "ring",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "cooldown": -0.01
+    },
+    "rarity": "Rare",
+    "value": 24,
+    "description": "A narrow loop never catches a knife hilt.",
+    "hands": 1,
+    "slots": [
+      "ring1"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 57
+  },
+  "keeper_ring": {
+    "name": "Keeper's azure seal",
+    "slot": "ring1",
+    "category": "ring",
+    "classes": [],
+    "mods": {
+      "hp": 5.0,
+      "speed": 2.0
+    },
+    "rarity": "Rare",
+    "value": 24,
+    "description": "Blue enamel marks a promise kept.",
+    "hands": 1,
+    "slots": [
+      "ring1"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 58
+  },
+  "compass": {
+    "name": "Old road compass",
+    "slot": "accessory",
+    "category": "compass",
+    "classes": [],
+    "mods": {
+      "speed": 4.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "It points toward the road more often than north.",
+    "hands": 1,
+    "slots": [
+      "accessory"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 59
+  },
+  "spell_stone": {
+    "name": "Pocket spellstone",
+    "slot": "accessory",
+    "category": "crystal",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0
+    },
+    "rarity": "Common",
+    "value": 14,
+    "description": "Smooth edges make it comfortable to hold.",
+    "hands": 1,
+    "slots": [
+      "accessory"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 60
+  },
+  "whetstone": {
+    "name": "Fine whetstone",
+    "slot": "accessory",
+    "category": "stone",
+    "classes": [
+      "knight",
+      "rogue"
+    ],
+    "mods": {
+      "damage": 1.0
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "A few careful strokes improve any edge.",
+    "hands": 1,
+    "slots": [
+      "accessory"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 61
+  },
+  "ward_token": {
+    "name": "Brass ward token",
+    "slot": "accessory",
+    "category": "token",
+    "classes": [],
+    "mods": {
+      "hp": 8.0
+    },
+    "rarity": "Uncommon",
+    "value": 18,
+    "description": "A worn spiral ward is stamped into the brass.",
+    "hands": 1,
+    "slots": [
+      "accessory"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 62
+  },
+  "enforcer_seal": {
+    "name": "Broken enforcer's seal",
+    "slot": "accessory",
+    "category": "seal",
+    "classes": [],
+    "mods": {
+      "defense": 1.0,
+      "vitality": 2.0
+    },
+    "rarity": "Rare",
+    "value": 32,
+    "description": "The office survives only as a broken emblem.",
+    "hands": 1,
+    "slots": [
+      "accessory"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 63
+  },
+  "vigil_covenant": {
+    "name": "Covenant of shared bread",
+    "slot": "accessory",
+    "category": "reliquary",
+    "classes": [],
+    "mods": {
+      "hp": 10.0,
+      "damage": 2.0
+    },
+    "rarity": "Legendary",
+    "value": 65,
+    "description": "Its value lies in the people who made it possible.",
+    "hands": 1,
+    "slots": [
+      "accessory"
+    ],
+    "set": "",
+    "gate": "both",
+    "icon": 76
+  },
+  "short_sword": {
+    "name": "Militia short sword",
+    "slot": "weapon",
+    "category": "sword",
+    "classes": [
+      "knight",
+      "rogue"
+    ],
+    "mods": {
+      "damage": 2.0
+    },
+    "rarity": "Common",
+    "value": 18,
+    "description": "An unadorned blade that does its work.",
+    "hands": 1,
+    "slots": [
+      "weapon",
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 77
+  },
+  "wood_axe": {
+    "name": "Forester's hand axe",
+    "slot": "weapon",
+    "category": "axe",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "damage": 3.0,
+      "speed": -2.0
+    },
+    "rarity": "Common",
+    "value": 18,
+    "description": "Rehung on a sound ash handle.",
+    "hands": 1,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 78
+  },
+  "long_sword": {
+    "name": "Watch longsword",
+    "slot": "weapon",
+    "category": "sword",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "damage": 3.0,
+      "defense": 0.5
+    },
+    "rarity": "Uncommon",
+    "value": 28,
+    "description": "A guard wide enough to catch a careless blow.",
+    "hands": 1,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 79
+  },
+  "great_sword": {
+    "name": "Old garrison greatsword",
+    "slot": "weapon",
+    "category": "greatsword",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "damage": 7.0,
+      "cooldown": 0.04,
+      "speed": -5.0
+    },
+    "rarity": "Uncommon",
+    "value": 36,
+    "description": "A broad blade demands room and commitment.",
+    "hands": 2,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 80
+  },
+  "war_axe": {
+    "name": "Militia war axe",
+    "slot": "weapon",
+    "category": "greataxe",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "damage": 8.0,
+      "cooldown": 0.06,
+      "defense": -1.0
+    },
+    "rarity": "Rare",
+    "value": 40,
+    "description": "Its heavy head ends a swing with authority.",
+    "hands": 2,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 81
+  },
+  "field_wand": {
+    "name": "Field apprentice wand",
+    "slot": "weapon",
+    "category": "wand",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0
+    },
+    "rarity": "Common",
+    "value": 16,
+    "description": "A short focus leaves the other hand free.",
+    "hands": 1,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 82
+  },
+  "ember_wand": {
+    "name": "Ember-tip wand",
+    "slot": "weapon",
+    "category": "wand",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "damage": 3.0,
+      "hp": -4.0
+    },
+    "rarity": "Uncommon",
+    "value": 26,
+    "description": "A banked spark dances at its copper tip.",
+    "hands": 1,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 83
+  },
+  "rowan_staff": {
+    "name": "Rowan pilgrim staff",
+    "slot": "weapon",
+    "category": "staff",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 4.0,
+      "hp": 8.0
+    },
+    "rarity": "Uncommon",
+    "value": 30,
+    "description": "Carved knots provide purchase on cold mornings.",
+    "hands": 2,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 84
+  },
+  "astrolabe_staff": {
+    "name": "Astrolabe staff",
+    "slot": "weapon",
+    "category": "staff",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "damage": 5.0,
+      "intellect": 2.0,
+      "speed": -3.0
+    },
+    "rarity": "Rare",
+    "value": 40,
+    "description": "Bronze rings align a precise spell release.",
+    "hands": 2,
+    "slots": [
+      "weapon"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 85
+  },
+  "scout_knife": {
+    "name": "Scout's belt knife",
+    "slot": "weapon",
+    "category": "dagger",
+    "classes": [
+      "rogue",
+      "knight"
+    ],
+    "mods": {
+      "damage": 1.0,
+      "speed": 2.0
+    },
+    "rarity": "Common",
+    "value": 14,
+    "description": "Small enough to keep close on a long march.",
+    "hands": 1,
+    "slots": [
+      "weapon",
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 86
+  },
+  "parrying_dagger": {
+    "name": "Notched parrying dagger",
+    "slot": "weapon",
+    "category": "dagger",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "defense": 1.0,
+      "agility": 1.0
+    },
+    "rarity": "Uncommon",
+    "value": 22,
+    "description": "The notches are deliberate and carefully filed.",
+    "hands": 1,
+    "slots": [
+      "weapon",
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 87
+  },
+  "needle_blade": {
+    "name": "Needle-point blade",
+    "slot": "weapon",
+    "category": "dagger",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "damage": 3.0,
+      "cooldown": -0.01,
+      "hp": -3.0
+    },
+    "rarity": "Rare",
+    "value": 30,
+    "description": "A narrow point rewards exact placement.",
+    "hands": 1,
+    "slots": [
+      "weapon",
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 88
+  },
+  "round_shield": {
+    "name": "Militia round shield",
+    "slot": "offhand",
+    "category": "roundshield",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "defense": 1.0
+    },
+    "rarity": "Common",
+    "value": 14,
+    "description": "Iron bands hold split planks together.",
+    "hands": 1,
+    "slots": [
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 89
+  },
+  "kite_shield": {
+    "name": "Vigil kite shield",
+    "slot": "offhand",
+    "category": "kiteshield",
+    "classes": [
+      "knight"
+    ],
+    "mods": {
+      "defense": 2.0,
+      "speed": -3.0
+    },
+    "rarity": "Uncommon",
+    "value": 24,
+    "description": "A long taper covers the forward leg.",
+    "hands": 1,
+    "slots": [
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 90
+  },
+  "buckler": {
+    "name": "Traveler's buckler",
+    "slot": "offhand",
+    "category": "buckler",
+    "classes": [
+      "knight",
+      "rogue"
+    ],
+    "mods": {
+      "defense": 0.5
+    },
+    "rarity": "Common",
+    "value": 12,
+    "description": "Light enough for an unconventional traveler.",
+    "hands": 1,
+    "slots": [
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 91
+  },
+  "field_book": {
+    "name": "Apprentice field book",
+    "slot": "offhand",
+    "category": "book",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 2.0
+    },
+    "rarity": "Common",
+    "value": 14,
+    "description": "Notes are cramped between water-stained diagrams.",
+    "hands": 1,
+    "slots": [
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 92
+  },
+  "ward_book": {
+    "name": "Book of small wards",
+    "slot": "offhand",
+    "category": "book",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "hp": 12.0,
+      "defense": 0.5
+    },
+    "rarity": "Uncommon",
+    "value": 24,
+    "description": "Practical protection, written in plain language.",
+    "hands": 1,
+    "slots": [
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 93
+  },
+  "moon_orb": {
+    "name": "River-moon orb",
+    "slot": "offhand",
+    "category": "orb",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 3.0,
+      "hp": -3.0
+    },
+    "rarity": "Rare",
+    "value": 28,
+    "description": "A pale reflection follows the holder's gaze.",
+    "hands": 1,
+    "slots": [
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 94
+  },
+  "parry_knife": {
+    "name": "Offhand parrying knife",
+    "slot": "offhand",
+    "category": "dagger",
+    "classes": [
+      "rogue"
+    ],
+    "mods": {
+      "agility": 2.0,
+      "defense": 0.5
+    },
+    "rarity": "Common",
+    "value": 16,
+    "description": "Its blunt spine is meant to catch steel.",
+    "hands": 1,
+    "slots": [
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 95
+  },
+  "spell_lantern": {
+    "name": "Scholar's ward lantern",
+    "slot": "offhand",
+    "category": "lantern",
+    "classes": [
+      "mage"
+    ],
+    "mods": {
+      "intellect": 1.0,
+      "hp": 10.0
+    },
+    "rarity": "Rare",
+    "value": 28,
+    "description": "Its covered light illuminates the page, not the road.",
+    "hands": 1,
+    "slots": [
+      "offhand"
+    ],
+    "set": "",
+    "gate": "",
+    "icon": 96
+  }
+}

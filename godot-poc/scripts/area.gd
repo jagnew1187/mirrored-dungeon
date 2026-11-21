@@ -58,7 +58,11 @@ func build_woodland_detail() -> void:
 			decoration(["shrub","shrub","rock","log"][i%4],p)
 
 func point(id: String, label: String, p: Vector2, kind: String, text: String, target := "") -> void:
-	points.append({"id":id,"name":label,"pos":p,"kind":kind,"text":text,"target":target})
+	var entry: Dictionary={"id":id,"name":label,"pos":p,"kind":kind,"text":text,"target":target}
+	if kind=="exit":
+		var link: Dictionary=preload("res://scripts/map_transitions.gd").LINKS.get(area_id,{}).get(id,{})
+		entry.destination_entrance=link.get("entrance","")
+	points.append(entry)
 	if kind in ["mara","boy","anja","oren","ves"]:
 		var actor := CharacterBody2D.new(); actor.set_script(load("res://scripts/actor.gd")); actor.kind=kind;actor.position=p;actors.add_child(actor)
 
@@ -79,6 +83,7 @@ func build_camp() -> void:
 	point("stash","Protected stash",Vector2(220,535),"stash","Camp supplies are safe.")
 	point("roster","Camp supplies",Vector2(350,620),"management","Prepare for the next outing.")
 	point("road","Old Mill Road →",Vector2(1050,530),"exit","","road")
+	point("bannerfall","Bannerfall shortcut ↓",Vector2(510,685),"exit","","bannerfall")
 
 func build_road() -> void:
 	bounds=Vector2(3072,2112);spawn=Vector2(180,1730)
