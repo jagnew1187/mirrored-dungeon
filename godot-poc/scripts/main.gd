@@ -22,7 +22,8 @@ var path := PackedVector2Array()
 var pending: Dictionary = {}
 var target: Node2D
 var auto_attack:=false
-var auto_stall:=0.0
+var engaged_target: Node2D
+var attack_target: Node2D
 var web_layout_callback: JavaScriptObject
 var enemies: Array[Dictionary] = []
 var projectiles: Array[Dictionary] = []
@@ -59,7 +60,7 @@ var enemy_ai = preload("res://scripts/enemy_ai.gd").new()
 const ELITE := "mill-enforcer-v1"
 
 func _ready() -> void:
-	get_window().title="Mirrored Dungeon · Pass 11.5 RC7"
+	get_window().title="Mirrored Dungeon · Pass 11.5 RC8"
 	presentation.sync_web_viewport(get_window())
 	presentation.touch_mode=presentation.mobile_web or DisplayServer.is_touchscreen_available()
 	get_viewport().size_changed.connect(update_presentation)
@@ -70,7 +71,7 @@ func _ready() -> void:
 		JavaScriptBridge.get_interface("window").addEventListener("pagehide",web_release_callback)
 		JavaScriptBridge.get_interface("document").addEventListener("visibilitychange",web_release_callback)
 		web_layout_callback=JavaScriptBridge.create_callback(func(_arguments):
-			if is_instance_valid(overlay) and overlay.page_id=="characters": overlay.relayout())
+			if is_instance_valid(overlay): overlay.call_deferred("relayout"))
 		var visual=JavaScriptBridge.get_interface("window").visualViewport
 		if visual!=null: visual.addEventListener("resize",web_layout_callback);visual.addEventListener("scroll",web_layout_callback)
 	rng.seed=8026;abilities.game=self;enemy_ai.game=self
@@ -153,11 +154,11 @@ func encounter_complete() -> bool:
 
 func stop_auto_attack() -> void:
 	if auto_attack: attack_buffer=0;attack_held=false
-	auto_attack=false;auto_stall=0;target=null;path.clear()
+	auto_attack=false;engaged_target=null;target=null;path.clear()
 
 func cancel_approach(preserve_auto:=false) -> void:
 	path.clear();pending.clear();joystick=Vector2.ZERO
-	if not preserve_auto or not auto_attack: stop_auto_attack()
+	if not preserve_auto: stop_auto_attack()
 
 func move_actor(actor: CharacterBody2D, velocity: Vector2) -> void:
 	var old:=actor.position;actor.velocity=velocity;actor.move_and_slide()
@@ -168,11 +169,13 @@ func move_actor(actor: CharacterBody2D, velocity: Vector2) -> void:
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(hero): return
 	hero.paused=menu_open
-	for e in enemies: e.actor.paused=menu_open
+	for i in range(enemies.size()-1,-1,-1):
+		if is_instance_valid(enemies[i].actor): enemies[i].actor.paused=menu_open
+		else: enemies.remove_at(i)
 	if menu_open: hero.moving=false;return
 	abilities.update(delta)
-	if auto_attack and not is_instance_valid(target): stop_auto_attack()
-	if target!=null and (not is_instance_valid(target) or not target.is_inside_tree() or target.health<=0): stop_auto_attack()
+	if auto_attack and not valid_combat_target(engaged_target): stop_auto_attack()
+	if target!=null and not valid_combat_target(target): target=null
 	elapsed+=delta;cooldown=maxf(0,cooldown-delta);attack_buffer=maxf(0,attack_buffer-delta)
 	var direction:=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	direction+=Vector2(float(Input.is_physical_key_pressed(KEY_D))-float(Input.is_physical_key_pressed(KEY_A)),float(Input.is_physical_key_pressed(KEY_S))-float(Input.is_physical_key_pressed(KEY_W)))
@@ -181,20 +184,10 @@ func _physics_process(delta: float) -> void:
 		else: direction=Vector2.ZERO
 	if direction.length()>0.1: cancel_approach(true)
 	else: direction=joystick
-	var manual_movement:=direction.length()>.1
-	if is_instance_valid(target) and auto_attack:
-		var in_range: bool=hero.position.distance_to(target.position)<=stats.range*0.9 and area.line_clear(hero.position,target.position)
-		if not in_range:
-			if direction.length()<=.1 and (path.is_empty() or int(elapsed*5)!=int((elapsed-delta)*5)):
-				path=area.route(hero.position,target.position)
-				if auto_attack and path.is_empty(): stop_auto_attack();overlay.notify("Target unreachable. Auto-attack stopped.")
-		else:
-			path.clear();attack_buffer=maxf(attack_buffer,0.12)
-	elif is_instance_valid(target) and not presentation.touch_mode:
-		# Preserve the original desktop target chase/attack behavior.
-		if hero.position.distance_to(target.position)>stats.range*0.9:
-			if path.is_empty() or int(elapsed*5)!=int((elapsed-delta)*5): path=area.route(hero.position,target.position)
-		else: path.clear();attack_buffer=maxf(attack_buffer,0.12)
+	if auto_attack:
+		# Engagement never creates movement. A target outside range pauses attacks.
+		if basic_target_in_range(): attack_buffer=maxf(attack_buffer,0.12)
+		else: attack_buffer=0
 	if direction==Vector2.ZERO and not path.is_empty():
 		if hero.position.distance_to(path[0])<9: path.remove_at(0)
 		if not path.is_empty(): direction=hero.position.direction_to(path[0])
@@ -206,15 +199,11 @@ func _physics_process(delta: float) -> void:
 	if abilities.active>=0 and abilities.dash<=0: movement_factor*=0.55
 	if abilities.dash>0: move_actor(hero,abilities.aim*abilities.DATA.rogue[0].speed)
 	else: move_actor(hero,direction.limit_length()*stats.speed*movement_factor)
-	if auto_attack and not manual_movement and not path.is_empty():
-		auto_stall=auto_stall+delta if hero.position.distance_to(previous_position)<.05 else 0.0
-		if auto_stall>1.5: stop_auto_attack();overlay.notify("Target unreachable. Auto-attack stopped.")
-	else: auto_stall=0
 	if update_auto_travel(previous_position): return
 	camera.position=hero.position
 	if not attack_held and not Input.is_physical_key_pressed(KEY_SPACE): action_input_armed=true
 	if action_input_armed and (attack_held or Input.is_physical_key_pressed(KEY_SPACE)): attack_buffer=maxf(attack_buffer,0.15)
-	var auto_in_range: bool=not auto_attack or (is_instance_valid(target) and hero.position.distance_to(target.position)<=stats.range and area.line_clear(hero.position,target.position))
+	var auto_in_range: bool=not auto_attack or basic_target_in_range()
 	if attack_buffer>0 and cooldown<=0 and attack_clock<0 and abilities.active<0 and auto_in_range: begin_attack()
 	if attack_clock>=0:
 		attack_clock+=delta
@@ -229,18 +218,38 @@ func _physics_process(delta: float) -> void:
 		fallen=true;abilities.cancel();cancel_approach();attack_clock=-1;attack_buffer=0;attack_held=false;projectiles.clear();hero.attacking=false;hero.health=0;hero.begin_death(false);persist();overlay.page("defeat")
 	queue_redraw()
 
+func valid_combat_target(actor) -> bool:
+	return is_instance_valid(actor) and actor.is_inside_tree() and actor.health>0
+
+func basic_target_in_range() -> bool:
+	return valid_combat_target(engaged_target) and hero.position.distance_to(engaged_target.position)<=stats.range and area.line_clear(hero.position,engaged_target.position)
+
+func engage_combat(reach: float) -> bool:
+	# Search only on deliberate offensive input, using the existing nearest/LOS rule.
+	var chosen: Node2D=target if valid_combat_target(target) else null
+	if chosen==null and valid_combat_target(engaged_target): chosen=engaged_target
+	if chosen==null:
+		var distance:=reach
+		for enemy in enemies:
+			if not valid_combat_target(enemy.actor): continue
+			var candidate: float=hero.position.distance_to(enemy.actor.position)
+			if candidate<=distance and area.line_clear(hero.position,enemy.actor.position):
+				chosen=enemy.actor;distance=candidate
+	if chosen==null: return false
+	target=chosen;engaged_target=chosen;auto_attack=true
+	path.clear();pending.clear();attack_buffer=0;attack_held=false
+	return true
+
 func request_attack() -> void:
-	if menu_open: return
-	if presentation.touch_mode and is_instance_valid(target) and target.health>0:
-		if auto_attack: stop_auto_attack()
-		else: auto_attack=true;auto_stall=0;attack_held=false;attack_buffer=0;pending.clear();overlay.notify("Auto-attack on. Tap Attack again or empty ground to stop.")
-		return
+	if menu_open or fallen: return
+	if engage_combat(stats.range): return
 	path.clear();pending.clear()
-	# Keep one deliberate command until the current cooldown ends.
+	# Preserve deliberate empty-space swings and desktop held attacks.
 	attack_buffer=maxf(0.22,cooldown+0.05)
 
 func begin_attack() -> void:
 	attack_buffer=0;cooldown=stats.cooldown;attack_clock=0;attack_released=false;attacks_started+=1
+	attack_target=engaged_target if auto_attack else target
 	var aim: Vector2=aim_direction()
 	attack_direction=aim;hero.attack_duration=0.32;hero.attack_impact=stats.windup;hero.start_attack(aim)
 	play_sound({"knight":"sword-swing","mage":"arcane-cast","rogue":"dagger-throw"}[selected])
@@ -252,9 +261,9 @@ func release_attack() -> void:
 			if difference.length()<=stats.range and (difference.length()<20 or attack_direction.dot(difference.normalized())>=0.35) and area.line_clear(hero.position,e.actor.position): damage_enemy(e,stats.damage)
 	else:
 		var aim:=attack_direction
-		if is_instance_valid(target):
-			var flight: float=hero.position.distance_to(target.position)/(440.0 if selected=="mage" else 545.0)
-			aim=hero.position.direction_to(target.position+target.velocity*flight)
+		if valid_combat_target(attack_target):
+			var flight: float=hero.position.distance_to(attack_target.position)/(440.0 if selected=="mage" else 545.0)
+			aim=hero.position.direction_to(attack_target.position+attack_target.velocity*flight)
 		projectiles.append({"pos":hero.position,"direction":aim,"travel":0.0,"kind":selected,"damage":stats.damage,"max":stats.range,"muzzle":hero.visual_muzzle()})
 
 func damage_enemy(e: Dictionary, amount: float, source := Vector2.INF) -> void:
@@ -288,7 +297,8 @@ func damage_enemy(e: Dictionary, amount: float, source := Vector2.INF) -> void:
 		overlay.notify("+%d XP · +%d coins · Loot dropped nearby"%[45 if e.role=="enforcer" else (6 if e.random else 20),15 if e.role=="enforcer" else (3 if e.random else 6)])
 	refresh_stats();persist()
 	if campaign.progress().level>old_level: overlay.notify("Level %d · stronger for the road ahead."%campaign.progress().level)
-	if target==e.actor: stop_auto_attack()
+	if engaged_target==e.actor: stop_auto_attack()
+	elif target==e.actor: stop_auto_attack()
 	e.actor.collision_layer=0;e.actor.collision_mask=0;e.actor.begin_death();e.actor.moving=false;enemies.erase(e)
 	if encounter_complete() and not recovered: overlay.notify("The mill patrol is defeated. Recover the flour at the mill.")
 
@@ -380,8 +390,7 @@ func world_click(pos: Vector2) -> void:
 	if not nearest.is_empty(): approach(nearest);return
 	var picked: Node2D=pick_enemy(get_viewport().get_canvas_transform()*pos)
 	if picked!=null:
-		cancel_approach();target=picked
-		if not presentation.touch_mode and hero.position.distance_to(target.position)<=stats.range: request_attack()
+		cancel_approach(true);target=picked
 		return
 	# Near-body misses consume combat intent without starting travel.
 	if presentation.touch_mode and pick_enemy(get_viewport().get_canvas_transform()*pos,22)!=null: return
@@ -410,8 +419,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.pressed and event.button_index==MOUSE_BUTTON_LEFT: world_click(get_global_mouse_position())
 	if event is InputEventScreenTouch:
 		if event.pressed:
-			if touch_id<0 and event.position.x<minf(220,get_viewport_rect().size.x*.40) and event.position.y>get_viewport_rect().size.y*.58: cancel_approach(true);touch_id=event.index;touch_origin=event.position
-			elif not (event.position.x<minf(220,get_viewport_rect().size.x*.40) and event.position.y>get_viewport_rect().size.y*.58): world_click(get_viewport().get_canvas_transform().affine_inverse()*event.position)
+			if touch_id<0 and movement_region().has_point(event.position): cancel_approach(true);touch_id=event.index;touch_origin=event.position
+			elif not (movement_region().has_point(event.position)): world_click(get_viewport().get_canvas_transform().affine_inverse()*event.position)
 		elif event.index==touch_id: touch_id=-1;joystick=Vector2.ZERO
 	if event is InputEventScreenDrag and event.index==touch_id: joystick=((event.position-touch_origin)/65).limit_length()
 
@@ -474,7 +483,9 @@ func draw_feedback(canvas: Node2D) -> void:
 		var ink:=Color("a6dcff") if n.get("blocked",false) else Color("f7db9b");ink.a=alpha
 		canvas.draw_string_outline(ThemeDB.fallback_font,n.pos,n.text,HORIZONTAL_ALIGNMENT_CENTER,-1,21,3,Color(0.04,0.06,0.06,alpha))
 		canvas.draw_string(ThemeDB.fallback_font,n.pos,n.text,HORIZONTAL_ALIGNMENT_CENTER,-1,21,ink)
-	if is_instance_valid(target): canvas.draw_arc(target.position,24,0,TAU,32,Color("e8bd6f"),2)
+	if valid_combat_target(target): canvas.draw_arc(target.position,24,0,TAU,32,Color("e8bd6f"),1)
+	if auto_attack and valid_combat_target(engaged_target):
+		canvas.draw_arc(engaged_target.position,28,0,TAU,32,Color("8fbd98") if basic_target_in_range() else Color("b5a47c"),2)
 
 func refresh_stats() -> void:
 	stats=campaign.stats()
@@ -517,6 +528,7 @@ func at_camp_service() -> bool:
 	return area.area_id=="vigil" and (hero.position.distance_to(Vector2(220,535))<90 or hero.position.distance_to(Vector2(350,620))<90)
 
 func aim_direction() -> Vector2:
+	if auto_attack and valid_combat_target(engaged_target): return hero.position.direction_to(engaged_target.position)
 	if is_instance_valid(target): return hero.position.direction_to(target.position)
 	var nearest: Node2D
 	var distance: float=stats.range
@@ -629,6 +641,14 @@ func _input(event: InputEvent) -> void:
 	if presentation.observe(event) and is_instance_valid(overlay): overlay.relayout()
 	if event is InputEventScreenTouch and not event.pressed and event.index==touch_id:
 		touch_id=-1;joystick=Vector2.ZERO
+func movement_region() -> Rect2:
+	var safe: Rect2=Rect2(overlay.root.position,overlay.ui_size*overlay.root.scale)
+	return Rect2(safe.position+Vector2(0,safe.size.y*.58),Vector2(minf(220,safe.size.x*.40),safe.size.y*.42))
+
+func resting_stick_origin() -> Vector2:
+	var safe: Rect2=Rect2(overlay.root.position,overlay.ui_size*overlay.root.scale)
+	return safe.position+Vector2(minf(120,safe.size.x*.22),safe.size.y-85)
+
 func pick_enemy(screen: Vector2, padding: float=0) -> Node2D:
 	var best: Node2D=null
 	var score:=INF

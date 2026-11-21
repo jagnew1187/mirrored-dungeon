@@ -10,6 +10,9 @@ var origin := Vector2.ZERO
 var visual_size := Vector2.ZERO
 var fade := 1.0
 static var textures: Dictionary = {}
+static var contacts: Dictionary = {}
+var shadow: Node2D
+var shadow_radius:=Vector2.ZERO
 const ART := ["tent","pavilion","chest","crate","table","fire","barrel","supply_crate","barricade","rubble","arch","banner","dummy","brazier"]
 const NATURE := ["oak","pine","birch","shrub","rock","log"]
 
@@ -30,6 +33,14 @@ func _ready() -> void:
 		art=texture("res://assets/"+kind+".png");visual_size=Vector2(footprint.x,footprint.x*art.get_height()/art.get_width());origin=Vector2(visual_size.x/2,visual_size.y)
 	elif kind=="gate":
 		art=texture("res://assets/arch.png");visual_size=Vector2(160,240);origin=Vector2(80,240)
+	if art:
+		var contact:=ground_contact(art)
+		var ratio:=visual_size/art.get_size()
+		origin=Vector2(contact.get_center().x,contact.end.y)*ratio
+		shadow_radius=Vector2(maxf(3,contact.size.x*ratio.x*.48),maxf(2,minf(footprint.y*.22,contact.size.x*ratio.x*.16)))
+		shadow=Node2D.new();shadow.z_index=-1;add_child(shadow)
+		shadow.draw.connect(draw_ground_shadow)
+		shadow.queue_redraw()
 	# Static artwork is drawn once; only near-camera fire is redrawn each frame.
 	queue_redraw()
 
@@ -52,8 +63,6 @@ func _process(delta: float) -> void:
 
 func _draw() -> void:
 	if art:
-		# Small ground shadow at the base, never a full-image collision footprint.
-		draw_set_transform(Vector2(5,-3),0,Vector2(1,.25));draw_circle(Vector2.ZERO,minf(footprint.x*.52,70),Color(0.02,.035,.025,.28));draw_set_transform(Vector2.ZERO)
 		if kind=="fire":
 			for i in range(6,0,-1):
 				draw_set_transform(Vector2(0,-15),0,Vector2(1,.55));draw_circle(Vector2.ZERO,22+i*12,Color(.9,.38,.06,.012+sin(time*6)*.002));draw_set_transform(Vector2.ZERO)
@@ -71,3 +80,29 @@ func _draw() -> void:
 		draw_rect(Rect2(-7,-95,14,95),Color("574e3c"));draw_rect(Rect2(-32,-74,64,13),Color("796d52"));draw_line(Vector2(-4,-90),Vector2(-4,-5),Color("a3936e"),2)
 	if title!="":
 		draw_string(ThemeDB.fallback_font,Vector2(-maxf(footprint.x,180)/2,24),title,HORIZONTAL_ALIGNMENT_CENTER,maxf(footprint.x,180),16,Color("ddc99e"))
+
+func ground_contact(tex: Texture2D) -> Rect2:
+	# Cache source-pixel contact geometry once per texture, never per frame.
+	var key:=tex.resource_path
+	if contacts.has(key): return contacts[key]
+	var pixels:=tex.get_image()
+	if pixels.is_compressed(): pixels.decompress()
+	var bottom:=-1
+	for y in range(pixels.get_height()-1,-1,-1):
+		for x in range(pixels.get_width()):
+			if pixels.get_pixel(x,y).a>=.65: bottom=y;break
+		if bottom>=0: break
+	var left:=pixels.get_width();var right:=0
+	var band:=maxi(2,mini(12,int(pixels.get_height()*.06)))
+	for y in range(maxi(0,bottom-band+1),bottom+1):
+		for x in range(pixels.get_width()):
+			if pixels.get_pixel(x,y).a>=.65: left=mini(left,x);right=maxi(right,x+1)
+	var result:=Rect2(left,bottom-band+1,maxi(1,right-left),band) if bottom>=0 else Rect2(Vector2.ZERO,tex.get_size())
+	contacts[key]=result
+	return result
+
+func draw_ground_shadow() -> void:
+	# Both artwork and its shadow share the same ground contact and parent transform.
+	# A separate ground layer prevents a later Y-sorted prop shadow covering actors.
+	shadow.draw_set_transform(Vector2.ZERO,0,shadow_radius)
+	shadow.draw_circle(Vector2.ZERO,1,Color(.02,.035,.025,.22),true,-1,false)

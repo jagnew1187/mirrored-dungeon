@@ -188,7 +188,10 @@ func _refresh_character_layout() -> void:
 func layout_navigation() -> void:
 	var phone: bool=game.presentation.profile=="Phone"
 	var map_size:=144.0 if game.presentation.profile=="Tablet" else 156.0
-	if phone: map_size=minf(120,ui_size.x-hud.size.x-48) if ui_size.x<ui_size.y else 128.0
+	if phone:
+		map_size=minf(120,ui_size.x-hud.size.x-48) if ui_size.x<ui_size.y else 128.0
+		# Reserve independent upper navigation and bottom combat lanes.
+		if ui_size.x>ui_size.y: map_size=minf(map_size,maxf(48,ui_size.y-72-maxf(44,44/preferences.ui_scale)-60))
 	minimap.size=Vector2.ONE*map_size;minimap.position=Vector2(ui_size.x-map_size-18,16)
 	if phone:
 		var hit_height:=maxf(44,44/preferences.ui_scale)
@@ -215,6 +218,17 @@ func layout_navigation() -> void:
 		character_button.position=menu_button.position+Vector2(0,60)
 		interact_button.position.y=140+map_size
 		target_label.position=Vector2(ui_size.x*.36,20);target_label.size=Vector2(ui_size.x*.34,52)
+	if phone and ui_size.x>ui_size.y:
+		var bottom:=ui_size.y-18
+		attack_button.position=Vector2(ui_size.x-90,bottom-72)
+		for i in range(2):
+			ability_buttons[i].position=Vector2(ui_size.x-154-i*64,bottom-56)
+		interact_button.size=Vector2(96,maxf(44,44/preferences.ui_scale))
+		interact_button.position=Vector2(ui_size.x-322,bottom-interact_button.size.y)
+		toast.position=Vector2(hud.position.x+hud.size.x+12,20)
+		toast.size=Vector2(maxf(40,minimap.position.x-toast.position.x-20),64)
+		target_label.position=Vector2(hud.position.x+hud.size.x+12,88)
+		target_label.size=Vector2(maxf(40,minimap.position.x-target_label.position.x-20),48)
 	minimap.refresh()
 
 func configure_hud(phone: bool) -> void:
@@ -333,7 +347,7 @@ func page(id: String) -> void:
 	clear(id)
 	match id:
 		"title":
-			text("A G N E W   F O R G E",14,Palette.MUTED);text("MIRRORED DUNGEON · 11.5 RC7",32,Palette.PAPER);text("T H E   L A S T   V I G I L",16,Palette.GOLD)
+			text("A G N E W   F O R G E",14,Palette.MUTED);text("MIRRORED DUNGEON · 11.5 RC8",32,Palette.PAPER);text("T H E   L A S T   V I G I L",16,Palette.GOLD)
 			text("A refuge in the shadow of occupation.",18,Palette.MUTED)
 			var has_save: bool=sorted_slots().any(func(e):return not e.record.is_empty())
 			option("Continue",continue_latest,not has_save);option("New Campaign",func():page("characters"));option("Load Campaign",func():slot_page=0;page("slots"));option("Settings",func():page("settings"))

@@ -7,7 +7,7 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	var origin: Vector2=game.touch_origin if game.touch_id>=0 else Vector2(minf(120,get_viewport_rect().size.x*.22),get_viewport_rect().size.y-110)
+	var origin: Vector2=game.touch_origin if game.touch_id>=0 else game.resting_stick_origin()
 	draw_circle(origin,65,Color(0.05,0.12,0.10,0.5))
 	draw_arc(origin,65,0,TAU,40,Color("c5b380"),2)
 	draw_circle(origin+game.joystick*50,23,Color(0.7,0.65,0.45,0.6))

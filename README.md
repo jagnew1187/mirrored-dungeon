@@ -1,4 +1,4 @@
-# Current build: Pass 11.5 RC7
+# Current build: Pass 11.5 RC8
 
 The current game is the Godot project in [`godot-poc`](godot-poc/README.md). The JavaScript files below are the older prototype.
 

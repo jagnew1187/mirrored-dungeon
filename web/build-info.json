@@ -1,0 +1,12 @@
+{
+  "game": "Mirrored Dungeon",
+  "release": "RC8 Mobile Combat Fixes",
+  "pass": "11.5 RC8",
+  "godot": "4.7.2",
+  "sourceSha256": "f72df57d8d36169337cc1b7606376d9ec79b2baab43f86ad8f15b0036f0b2597",
+  "features": [
+    "Engagement-based auto-attack",
+    "Visible-viewport mobile HUD",
+    "Ground-contact prop shadows"
+  ]
+}

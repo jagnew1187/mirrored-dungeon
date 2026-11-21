@@ -31,6 +31,7 @@ func activate(index: int) -> bool:
 	if game.attack_clock>=0:
 		queued=index;queue_time=0.4;return true
 	var config: Dictionary=DATA[game.selected][index]
+	if config.has("damage"): game.engage_combat(config.range)
 	remaining[index]=config.cooldown;active=index;age=0;released=false;second_released=false
 	aim=Vector2.RIGHT.rotated(game.hero.DIRECTIONS.find(game.hero.direction)*PI/4) if game.selected=="rogue" and index==0 else game.aim_direction()
 	# Cancel click-to-approach without releasing a separately held movement finger.

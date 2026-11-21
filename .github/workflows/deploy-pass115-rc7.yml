@@ -1,4 +1,4 @@
-name: Publish Mirrored Dungeon Pass 11.5 RC7
+name: Publish Mirrored Dungeon RC8 Mobile Combat Fixes
 
 on:
   workflow_dispatch:
@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/deploy-pass115-rc7.yml
       - godot-poc/**
+      - web/**
 
 permissions:
   contents: read
@@ -15,137 +16,54 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-env:
-  GODOT_VERSION: 4.7.2
-
 jobs:
   build:
-    name: Export current Pass 11.5 RC7 source
+    name: Verify locally tested RC8 production export
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 10
     steps:
-      - name: Check out current RC7 source
+      - name: Check out production export and matching source
         uses: actions/checkout@v6
         with:
           fetch-depth: 1
           persist-credentials: false
-          sparse-checkout: godot-poc
-
-      - name: Prepare current source for Web export
+          sparse-checkout: |
+            godot-poc
+            web
+      - name: Verify release identity, source and web hashes
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import json, os, pathlib
-          project = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / 'godot-poc'
-          for filename in ['classes.json', 'gear_registry.json', 'world_rules.json']:
-              json.loads((project / 'data' / filename).read_text(encoding='utf-8-sig'))
-          assert '11.5 RC7' in (project / 'scripts/interface.gd').read_text()
-          preset = project / 'export_presets.cfg'
-          text = preset.read_text().replace('include_filter=""', 'include_filter="*.json"', 1)
-          text = text.replace('vram_texture_compression/for_mobile=false', 'vram_texture_compression/for_mobile=true', 1)
-          preset.write_text(text)
-          settings = project / 'project.godot'
-          config = settings.read_text().replace('[rendering]', '[rendering]\ntextures/vram_compression/import_etc2_astc=true', 1)
-          config = config.replace('config/version="11.5-RC2"', 'config/version="11.5-RC7"')
-          settings.write_text(config)
-          with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('PROJECT_DIR=' + str(project) + '\n')
-              env.write('SITE_DIR=' + os.environ['RUNNER_TEMP'] + '/pass115-rc7-site\n')
+          import hashlib, json, pathlib
+          site = pathlib.Path('web')
+          manifest = json.loads((site / 'release-manifest.json').read_text())
+          info = json.loads((site / 'build-info.json').read_text())
+          assert manifest['release'] == info['pass'] == '11.5 RC8'
+          assert '11.5 RC8' in (pathlib.Path('godot-poc/scripts/interface.gd')).read_text()
+          assert set(p.name for p in site.iterdir()) == set(manifest['files']) | {'release-manifest.json'}
+          for name, record in manifest['files'].items():
+              assert pathlib.Path(name).name == name
+              data = (site / name).read_bytes()
+              assert len(data) == record['bytes'] and hashlib.sha256(data).hexdigest() == record['sha256'], name
+          text_ext = {'.gd','.uid','.gdshader','.import','.tscn','.json','.godot','.cfg'}
+          for name, digest in manifest['source'].items():
+              file = pathlib.Path('godot-poc') / name
+              assert file.resolve().is_relative_to(pathlib.Path('godot-poc').resolve())
+              data = file.read_bytes()
+              if file.suffix in text_ext: data = data.replace(b'\r\n', b'\n')
+              assert hashlib.sha256(data).hexdigest() == digest, name
+          digest = hashlib.sha256(json.dumps(manifest['source'], sort_keys=True).encode()).hexdigest()
+          assert digest == manifest['sourceSha256'] == info['sourceSha256']
+          assert (site / 'index.wasm').read_bytes()[:4] == b'\0asm'
+          assert (site / 'index.pck').stat().st_size > 1000000
+          assert 'RC8' in (site / 'index.html').read_text()
+          print('Verified exact locally tested RC8 export and matching corrected source.')
           PY
-
-      - name: Install matching Godot engine and Web templates
-        shell: bash
-        run: |
-          set -euo pipefail
-          cd "$RUNNER_TEMP"
-          curl --fail --location --retry 3 --connect-timeout 30 --max-time 600 \
-            "https://downloads.godotengine.org/?version=${GODOT_VERSION}&flavor=stable&slug=linux.x86_64.zip" -o godot-linux.zip
-          curl --fail --location --retry 3 --connect-timeout 30 --max-time 900 \
-            "https://downloads.godotengine.org/?version=${GODOT_VERSION}&flavor=stable&slug=export_templates.tpz" -o godot-templates.tpz
-          unzip -q godot-linux.zip -d godot-bin
-          GODOT="$RUNNER_TEMP/godot-bin/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
-          chmod +x "$GODOT"
-          "$GODOT" --version | tee "$RUNNER_TEMP/godot-version.txt"
-          grep -q "^${GODOT_VERSION}\.stable" "$RUNNER_TEMP/godot-version.txt"
-          echo "GODOT_BIN=$GODOT" >> "$GITHUB_ENV"
-          python3 - <<'PY'
-          import os, pathlib, zipfile
-          target = pathlib.Path.home() / '.local/share/godot/export_templates' / (os.environ['GODOT_VERSION'] + '.stable')
-          target.mkdir(parents=True, exist_ok=True)
-          count = 0
-          with zipfile.ZipFile('godot-templates.tpz') as source:
-              for member in source.namelist():
-                  name = pathlib.PurePosixPath(member).name
-                  if (name.startswith('web') and name.endswith('.zip')) or name == 'version.txt':
-                      (target / name).write_bytes(source.read(member))
-                      count += name.startswith('web')
-          if not count:
-              raise SystemExit('No Web templates were found in the official template archive.')
-          print('Installed', count, 'Web template files into', target)
-          PY
-
-      - name: Import, start the engine, and export Web
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p "$SITE_DIR" "$RUNNER_TEMP/pass115-rc7-logs"
-          "$GODOT_BIN" --headless --path "$PROJECT_DIR" --editor --import 2>&1 | tee "$RUNNER_TEMP/pass115-rc7-logs/import.txt"
-          timeout 120s "$GODOT_BIN" --headless --path "$PROJECT_DIR" --quit-after 90 2>&1 | tee "$RUNNER_TEMP/pass115-rc7-logs/startup.txt"
-          "$GODOT_BIN" --headless --path "$PROJECT_DIR" --export-release Web "$SITE_DIR/index.html" 2>&1 | tee "$RUNNER_TEMP/pass115-rc7-logs/export.txt"
-          if grep -E 'SCRIPT ERROR:|Parse Error:|ERROR:' "$RUNNER_TEMP"/pass115-rc7-logs/*.txt; then
-            echo '::error::Engine errors found. Inspect the logs; do not publish this build.'
-            exit 1
-          fi
-          test -s "$SITE_DIR/index.html"
-          test -s "$SITE_DIR/index.js"
-          test -s "$SITE_DIR/index.wasm"
-          test -s "$SITE_DIR/index.pck"
-
-      - name: Check packaged data and identify the build
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import hashlib, json, os, pathlib, re
-          site = pathlib.Path(os.environ['SITE_DIR'])
-          pack = (site / 'index.pck').read_bytes()
-          for name in [b'data/classes.json', b'data/gear_registry.json', b'data/world_rules.json']:
-              if name not in pack:
-                  raise SystemExit('Required game data missing from PCK: ' + name.decode())
-          html = site / 'index.html'
-          text = html.read_text(encoding='utf-8')
-          text = re.sub(r'<title>.*?</title>', '<title>Mirrored Dungeon - Pass 11.5 RC7 Web Playtest</title>', text, count=1, flags=re.S)
-          text = text.replace('</head>', '<meta name="mirrored-dungeon-build" content="Pass 11.5 RC7">\n</head>', 1)
-          html.write_text(text, encoding='utf-8')
-          (site / '.nojekyll').write_text('')
-          info = {
-              'game': 'Mirrored Dungeon', 'pass': '11.5 RC7',
-              'godot': os.environ['GODOT_VERSION'], 'threaded': False,
-              'source': 'godot-poc at workflow_commit',
-              'workflow_commit': os.environ['GITHUB_SHA'],
-              'note': 'RC7 responsive mobile HUD, character creation and touch auto-attack. Physical iPhone acceptance remains pending.'
-          }
-          (site / 'build-info.json').write_text(json.dumps(info, indent=2) + '\n')
-          files = {p.name: {'bytes': p.stat().st_size, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in site.iterdir() if p.is_file()}
-          print(json.dumps(files, indent=2))
-          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
-              summary.write('## Pass 11.5 RC7 Web export\nVerified current RC7 source, native headless startup, generated Web files, and packaged JSON data.\n\nBrowser gameplay and physical-device performance are not certified by these checks.\n')
-          PY
-
-      - name: Save build logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pass115-rc7-export-logs
-          path: ${{ runner.temp }}/pass115-rc7-logs/
-          if-no-files-found: ignore
-          retention-days: 7
-
       - name: Upload playable Web build
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ${{ env.SITE_DIR }}
+          path: web
 
   deploy:
     name: Publish to GitHub Pages
@@ -162,7 +80,7 @@ jobs:
     steps:
       - name: Configure existing Pages site
         uses: actions/configure-pages@v5
-      - name: Deploy Pass 11.5 RC7
+      - name: Deploy Pass 11.5 RC8
         id: deployment
         uses: actions/deploy-pages@v4
 

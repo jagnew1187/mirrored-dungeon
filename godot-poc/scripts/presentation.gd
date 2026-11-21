@@ -31,6 +31,9 @@ func zoom_for(extent: Vector2, bounds: Vector2) -> float:
 	return maxf(ZOOM[profile], maxf(extent.x / bounds.x, extent.y / bounds.y))
 
 func safe_rect(extent: Vector2) -> Rect2:
+	return menu_rect(extent)
+
+func inset_rect(extent: Vector2) -> Rect2:
 	# Browser-managed safe viewport is the default. Read CSS env insets when the host opts into viewport-fit=cover.
 	var inset:=Vector4.ZERO
 	if OS.has_feature("web"):
@@ -65,7 +68,7 @@ func sync_web_viewport(window: Window) -> void:
 	if window.content_scale_size!=logical: window.content_scale_size=logical
 
 func menu_rect(extent: Vector2) -> Rect2:
-	var available:=safe_rect(extent)
+	var available:=inset_rect(extent)
 	if not OS.has_feature("web"): return available
 	var raw=JavaScriptBridge.eval("JSON.stringify(window.visualViewport ? [visualViewport.offsetLeft,visualViewport.offsetTop,visualViewport.width,visualViewport.height,innerWidth,innerHeight] : null)")
 	if raw is String:
