@@ -46,7 +46,7 @@ jobs:
               assert pathlib.Path(name).name == name
               data = (site / name).read_bytes()
               assert len(data) == record['bytes'] and hashlib.sha256(data).hexdigest() == record['sha256'], name
-          text_ext = {'.gd','.uid','.gdshader','.import','.tscn','.json','.godot','.cfg'}
+          text_ext = {'.gd','.uid','.gdshader','.import','.tscn','.json','.godot','.cfg','.md'}
           for name, digest in manifest['source'].items():
               file = pathlib.Path('godot-poc') / name
               assert file.resolve().is_relative_to(pathlib.Path('godot-poc').resolve())

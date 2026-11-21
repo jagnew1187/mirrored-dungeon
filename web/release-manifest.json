@@ -7,7 +7,7 @@
     },
     "build-info.json": {
       "bytes": 337,
-      "sha256": "4534d94e3aa31e1e36f616fa0cbe226e87701ce5fdcb67a70af2080bc1f238cd"
+      "sha256": "0b93141b6cb5f30768e1aa7015c1b2f2392963c40e86c169db25ad188ab1b6cd"
     },
     "index.apple-touch-icon.png": {
       "bytes": 11944,
@@ -121,7 +121,7 @@
     "assets/arcane-cast.wav.import": "782f79660768036f9fb3a8a15516374ba7d4226307e9ef066ed8e21d1b40aa46",
     "assets/arch.png": "2e33785a920366d65560c77aae24812983ca87bb6f7ff8a719ca105328303432",
     "assets/arch.png.import": "86e87dc1fa68d329b9d004ab99b2716c1beec461d74288bfb3ccf1d7799d3c1c",
-    "assets/AUDIO_CREDITS.md": "251e7dcd1dc10f949b4399a3b2b48027445166f1ea910cf42f3017ebca8f45cb",
+    "assets/AUDIO_CREDITS.md": "b072cde0be27ca9e0d8678cfdf41ceddb237029aedb99d39bee653cdbe7c498f",
     "assets/banner.png": "25f09befaefbe78fe7616f3a90fc8471b18b29e26af12572fa3ae4a39861e5d4",
     "assets/banner.png.import": "de8774fa7a28a18b461fa040ebb22df7efcb132bebdc138225117f26bb9ab9e5",
     "assets/barrel.png": "e9e97a2f2fa4ae4e2772b93ce0d4a37a941307181f9bdda8ddf35c3ca1e77e3a",
@@ -844,6 +844,6 @@
     "project.godot": "890f34b5912cf5c13ce481c24934d7c7bbed0f6d17d9e2e8773afea3fa13ecfc",
     "export_presets.cfg": "28c7715796ae852d7728560cdc2d440458bea1d41cd60f25f619136184644209"
   },
-  "sourceSha256": "f72df57d8d36169337cc1b7606376d9ec79b2baab43f86ad8f15b0036f0b2597",
-  "sourceNormalization": "LF for .gd,.uid,.gdshader,.import,.tscn,.json,.godot,.cfg"
+  "sourceSha256": "bbb1958d76c58c34c518772300deebe2332d39afd90658214bea91e3df4ad63a",
+  "sourceNormalization": "LF for .gd,.uid,.gdshader,.import,.tscn,.json,.godot,.cfg,.md"
 }
