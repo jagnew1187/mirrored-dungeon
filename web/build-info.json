@@ -3,7 +3,7 @@
   "release": "TC-02 Tactical Combat",
   "pass": "TC-02",
   "godot": "4.7.2",
-  "sourceSha256": "38dffac0cb49a7dd9b8d0c3099f1bda4e396da81ada26509308f128e15923d16",
+  "sourceSha256": "f0e784acdc9c69f9460c240ba8cb593c9abfb75db892f0fa0c1a4b182e6704fd",
   "features": [
     "Gridless tactical Mirror Warden encounter",
     "Quick, heavy, tracking and ground-denial attacks",

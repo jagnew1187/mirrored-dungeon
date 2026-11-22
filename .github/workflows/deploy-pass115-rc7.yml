@@ -51,7 +51,7 @@ jobs:
               file = pathlib.Path('godot-poc') / name
               assert file.resolve().is_relative_to(pathlib.Path('godot-poc').resolve())
               data = file.read_bytes()
-              if file.suffix in text_ext: data = data.replace(b'\r\n', b'\n')
+              if file.suffix in text_ext or file.name == '.gitignore': data = data.replace(b'\r\n', b'\n')
               assert hashlib.sha256(data).hexdigest() == digest, name
           digest = hashlib.sha256(json.dumps(manifest['source'], sort_keys=True).encode()).hexdigest()
           assert digest == manifest['sourceSha256'] == info['sourceSha256']

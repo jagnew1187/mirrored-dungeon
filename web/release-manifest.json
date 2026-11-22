@@ -7,7 +7,7 @@
     },
     "build-info.json": {
       "bytes": 460,
-      "sha256": "da9e3c2fc58f242c90058a8ba2887accb29eee4ff1210dd86f4f0e5265630156"
+      "sha256": "e2acca36a3b2091ff707a0f6239d7c93925bab34db53e4d817e32c2343fab926"
     },
     "index.apple-touch-icon.png": {
       "bytes": 11944,
@@ -47,7 +47,7 @@
     }
   },
   "source": {
-    ".gitignore": "db37e091e8c6f67f8a121463a32ddc6de1c78cfd0402389da2e82c6ce4921537",
+    ".gitignore": "209ab24725b5e6d55efc7143b999caa36e25c65501dd0231f737704f6342b700",
     "assets/anja.png": "d6032d102ea481ea6b67c463f7010440f72d164d6c9046781d6e4aeca52d36e8",
     "assets/anja.png.import": "e9914d4aecbfdba5dac4a6e947dbc2afa3051f0f113e49879e4602753f90ae06",
     "assets/anja_portrait.png": "633456d1c75fb4b0918fc73a2af9bc469c170fd29c793e00a8e6cead5556ea53",
@@ -862,5 +862,5 @@
     "scripts/ui_theme.gd": "3b2d4181472923f51d3c881bea696c1e1d04352333e92c8382cddb15dd0f758c",
     "scripts/ui_theme.gd.uid": "88819dadc7a25a4c54f7d22a44c4b2b3cd0f92a5f4c8fc4ac17422dce7747fc7"
   },
-  "sourceSha256": "38dffac0cb49a7dd9b8d0c3099f1bda4e396da81ada26509308f128e15923d16"
+  "sourceSha256": "f0e784acdc9c69f9460c240ba8cb593c9abfb75db892f0fa0c1a4b182e6704fd"
 }
