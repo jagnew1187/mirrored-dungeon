@@ -9,6 +9,7 @@ var routes: Array = []
 var actors: Node2D
 var grid := AStarGrid2D.new()
 var tiles: Array[Texture2D] = []
+var ground_material: ShaderMaterial
 var game: Node
 
 func _ready() -> void:
@@ -161,6 +162,8 @@ func _draw() -> void:
 func build_ground() -> void:
 	var ground:=ColorRect.new();ground.size=bounds;ground.z_index=-10;ground.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	var material:=ShaderMaterial.new();material.shader=load("res://scripts/ground.gdshader")
+	ground_material=material
+	material.set_shader_parameter("floor_variant",game.get("floor_variant") if game.get("floor_variant")!=null else 0)
 	material.set_shader_parameter("map_size",bounds);material.set_shader_parameter("camp",area_id=="vigil")
 	for i in range(4): material.set_shader_parameter("tile"+str(i),tiles[i])
 	var segments:=PackedVector4Array()

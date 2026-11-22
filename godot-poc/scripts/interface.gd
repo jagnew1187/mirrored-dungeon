@@ -43,6 +43,9 @@ var hud_clock:=0.0
 var hud_updates:=0
 var menu_builds:=0
 var inventory_builds:=0
+var inventory_gesture=preload("res://scripts/inventory_gesture.gd").new()
+var layout_pending:=false
+var layout_count:=0
 var target_label: Label
 var character_button: Button
 var interact_button: Button
@@ -104,7 +107,7 @@ func _ready() -> void:
 	veil=ColorRect.new();veil.color=Color(.025,.03,.04,.9);root.add_child(veil)
 	window=PanelContainer.new();window.set_script(load("res://scripts/ui_frame.gd"));window.add_theme_stylebox_override("panel",Palette.panel(Palette.INK,20));root.add_child(window)
 	column=VBoxContainer.new();window.add_child(column)
-	scroll=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;column.add_child(scroll)
+	scroll=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;column.add_child(scroll);scroll.get_v_scroll_bar().value_changed.connect(inventory_gesture.scrolled)
 	content=VBoxContainer.new();content.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(content)
 	tooltip_panel=PanelContainer.new();tooltip_panel.custom_minimum_size.y=56;tooltip_panel.add_theme_stylebox_override("panel",Palette.panel(Color("11151a"),8,Color("535548")));column.add_child(tooltip_panel)
 	tooltip_label=Label.new();tooltip_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;tooltip_label.add_theme_font_size_override("font_size",14);tooltip_panel.add_child(tooltip_label)
@@ -116,10 +119,16 @@ func _ready() -> void:
 	bubble=Label.new();bubble.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;bubble.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;bubble.add_theme_stylebox_override("normal",Palette.panel(Palette.INK,8));bubble.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(bubble);bubble.hide()
 	status_strip=Control.new();status_strip.set_script(load("res://scripts/status_strip.gd"));status_strip.game=game;root.add_child(status_strip)
 	minimap=Control.new();minimap.set_script(load("res://scripts/local_minimap.gd"));minimap.game=game;root.add_child(minimap)
-	get_viewport().size_changed.connect(relayout);relayout()
+	get_viewport().size_changed.connect(request_relayout);relayout()
+
+func request_relayout() -> void:
+	if layout_pending: return
+	layout_pending=true;call_deferred("relayout")
 
 func relayout() -> void:
+	layout_pending=false
 	if not is_instance_valid(root): return
+	layout_count+=1
 	var extent: Vector2=get_viewport().get_visible_rect().size
 	var safe: Rect2=game.presentation.safe_rect(extent)
 	ui_size=safe.size/preferences.ui_scale;root.position=safe.position;root.scale=Vector2.ONE*preferences.ui_scale;root.size=ui_size
@@ -290,6 +299,8 @@ func option(value: String, action: Callable, disabled:=false) -> Button:
 func footer_button(value: String, action: Callable) -> Button:
 	var button:=Button.new();button.text=value;button.custom_minimum_size.y=52;button.size_flags_horizontal=Control.SIZE_EXPAND_FILL;button.pressed.connect(action);footer.add_child(button);return button
 func clear(id: String) -> void:
+	inventory_gesture.reset(true)
+	tooltip_panel.custom_minimum_size.y=56
 	status_strip.dismiss()
 	minimap.hide()
 	hide_item_popup()
@@ -302,6 +313,7 @@ func clear(id: String) -> void:
 	for control in [hud,attack_button,controls,toast,objective_label,target_label,menu_button,character_button]+ability_buttons: control.hide()
 	relayout()
 func close() -> void:
+	inventory_gesture.reset(true)
 	hide_item_popup()
 	if game.fallen: return
 	game.started=true;game.menu_open=false;window.hide();veil.hide();tooltip_panel.hide();combat_touches.clear();game.attack_held=false;game.action_input_armed=false;game.joystick=Vector2.ZERO;game.touch_id=-1
@@ -312,10 +324,12 @@ func focus_first() -> void:
 		if not node.disabled: node.grab_focus();return
 func set_tooltip(id: String, target: String="", worn:=false) -> void:
 	if not game.campaign.Gear.ITEMS.has(id): return
+	# Inspection must not shrink the footer and move the item under a second tap.
+	if page_id=="equipment": tooltip_panel.custom_minimum_size.y=maxf(tooltip_panel.custom_minimum_size.y,tooltip_panel.size.y)
 	var item: Dictionary=game.campaign.Gear.ITEMS[id];tooltip_updates+=1
 	tooltip_label.text="%s · %s · %s\n%s"%[item.name,item.rarity,item.category,sheet_model().comparison(id)]
 	tooltip_label.add_theme_color_override("font_color",Palette.rarity(item.rarity))
-	if not popup_pinned: show_item_popup(id,target,worn,false)
+	if not popup_pinned and not game.presentation.touch_mode and inventory_gesture.active.get("pointer",-1)==-1: show_item_popup(id,target,worn,false)
 func row_buttons(labels: Array, actions: Array) -> void:
 	var row:=HFlowContainer.new();content.add_child(row)
 	for i in range(labels.size()):
@@ -340,6 +354,9 @@ func return_title() -> void:
 	if game.campaign.error.is_empty(): page("title")
 	else: text(game.campaign.error,16,Color("efa38c"))
 func page(id: String) -> void:
+	if game.get("tactical")!=null and game.tactical.active:
+		if id=="title": game.tactical.withdraw(false)
+		else: game.tactical.pause();return
 	if id=="equipment": character("Equipment");return
 	if id=="inventory": inventory("inventory");return
 	if id=="stash": inventory("stash");return
@@ -347,14 +364,16 @@ func page(id: String) -> void:
 	clear(id)
 	match id:
 		"title":
-			text("A G N E W   F O R G E",14,Palette.MUTED);text("MIRRORED DUNGEON · 11.5 RC8",32,Palette.PAPER);text("T H E   L A S T   V I G I L",16,Palette.GOLD)
+			text("A G N E W   F O R G E",14,Palette.MUTED);text("MIRRORED DUNGEON · TC-02 · 11.5 RC9 baseline",32,Palette.PAPER);text("T H E   L A S T   V I G I L",16,Palette.GOLD)
 			text("A refuge in the shadow of occupation.",18,Palette.MUTED)
 			var has_save: bool=sorted_slots().any(func(e):return not e.record.is_empty())
 			option("Continue",continue_latest,not has_save);option("New Campaign",func():page("characters"));option("Load Campaign",func():slot_page=0;page("slots"));option("Settings",func():page("settings"))
 			footer_button("Quit",func():page("quit"))
+			if game.has_method("prototype_visit") and not game.started: option("TC-02 · Mirror Warden trial",game.prototype_visit)
 		"pause":
 			title_header("THE LAST VIGIL","World paused · your road can wait.")
 			option("Resume",close);row_buttons(["Character","Inventory","Journal"],[func():character("Equipment"),func():inventory("inventory"),func():page("journal")])
+			if game.has_method("cycle_floor"): option("TC-02 floor: "+["Original","A +25%","B +50%","C Irregular"][game.floor_variant],func():game.cycle_floor();page("pause"))
 			option("Party roster",party_menu);option("Settings",func():page("settings"));option("Save Campaign",func():game.persist();text("Saved at your safe refuge." if game.campaign.error.is_empty() else game.campaign.error,16))
 			option("Return to Vigil",func():game.enter_area("vigil");close());footer_button("Return to Title",return_title);footer_button("Resume",close)
 		"characters": build_creation()
@@ -490,6 +509,7 @@ func equipment_card(slot_name: String) -> Button:
 		else: bag_filter=slot_name;inventory("inventory"))
 	return button
 func build_equipment() -> void:
+	bag_mode="inventory"
 	var live: Dictionary=sheet_model().stats()
 	text("HP %d / %d · Defense %s · Damage %s · Speed %s"%[ceili(sheet_health()),live.hp,ItemPresenter.number(live.defense),ItemPresenter.number(live.damage),ItemPresenter.number(live.speed)],16)
 	text("Strength %s · Agility %s · Intellect %s · Vitality %s"%[live.strength,live.agility,live.intellect,live.vitality],14,Palette.MUTED)
@@ -514,7 +534,9 @@ func build_equipment() -> void:
 	var strip:=HFlowContainer.new();content.add_child(strip)
 	for i in range(game.campaign.data.inventory.size()):
 		var id: String=game.campaign.data.inventory[i].id
-		var b:=Button.new();b.custom_minimum_size=Vector2(58,58);b.icon=Palette.item_icon(id);b.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;b.expand_icon=true;b.add_theme_constant_override("icon_max_width",52);b.tooltip_text=game.campaign.Gear.ITEMS[id].name;b.pressed.connect(func():bag_mode="inventory";inspect_item(id,i,"inventory"));strip.add_child(b)
+		var b:=Button.new();b.custom_minimum_size=Vector2(58,58);b.icon=Palette.item_icon(id);b.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;b.expand_icon=true;b.add_theme_constant_override("icon_max_width",52);b.tooltip_text=game.campaign.Gear.ITEMS[id].name;b.pressed.connect(func():
+			if inventory_gesture.button_inspection_allowed(): bag_mode="inventory";inspect_item(id,i,"inventory")
+		);strip.add_child(b);inventory_gesture.bind(b,id,i,game.campaign.revision,sheet_character_id)
 func loadout_menu() -> void:
 	clear("loadouts");title_header("EQUIPMENT LOADOUTS","Presets use carried and equipped items. Stash items must be withdrawn first.")
 	var model=sheet_model();var expected: int=model.revision
@@ -571,15 +593,18 @@ func build_inventory() -> void:
 		button.text=item.name+"\n"+("%d coins"%(item.value*2) if bag_mode=="shop" else "×%d"%list[index].count)+(" · Equipped" if id in model.data.equipped.values() else "")
 		button.text+=(" · F" if id in model.data.favorites else "")+(" · L" if id in model.data.locks else "")
 		button.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;button.icon=Palette.item_icon(id);button.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER;button.vertical_icon_alignment=VERTICAL_ALIGNMENT_TOP;button.expand_icon=true;button.add_theme_constant_override("icon_max_width",40);button.add_theme_color_override("font_color",Palette.rarity(item.rarity))
-		button.mouse_entered.connect(func():set_tooltip(id));button.focus_entered.connect(func():set_tooltip(id));button.pressed.connect(func():inspect_item(id,index,bag_mode))
+		button.mouse_entered.connect(func():set_tooltip(id));button.focus_entered.connect(func():set_tooltip(id));button.pressed.connect(func():
+			if inventory_gesture.button_inspection_allowed(): inspect_item(id,index,bag_mode)
+		)
+		if bag_mode=="inventory": inventory_gesture.bind(button,id,index,built_revision,sheet_character_id)
 		button.mouse_exited.connect(func():
 			if not popup_pinned: item_popup.hide())
 		button.gui_input.connect(func(event):
-			if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT and bag_mode=="inventory": apply_inventory(func():return model.equip(index),built_revision))
+			if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT and bag_mode=="inventory": quick_equip(id,index,built_revision))
 	if display_capacity>12: pagination(bag_page,ceili(display_capacity/12.0),func(value):bag_page=value;inventory(bag_mode,false))
 	if game.at_camp_service(): footer_button("Rest",func():game.hero.health=game.hero.max_health;notify("Rested and ready.");close())
 	ownership_list()
-	tooltip_panel.show();tooltip_label.text="Hover or focus an item for comparison. Select for actions; right-click to Quick Equip.\nE = equipped copy · F = favorite · L = locked (all copies)."
+	tooltip_panel.show();tooltip_label.text="Select to inspect. Double-tap or double-click the same item to equip; right-click also equips.\nE = equipped copy · F = favorite · L = locked (all copies)."
 	footer_button("Close",close)
 func dialogue(p: Dictionary, body: String, choices: Array=[]) -> void:
 	if choices.is_empty() and body.length()<130 and p.get("kind","")=="boy":
@@ -628,7 +653,7 @@ func _process(delta: float) -> void:
 	if not game.menu_open:
 		update_label(objective_label,game.objective());update_label(status,("%s · %s\n%d / %d" if game.presentation.profile=="Phone" else "%s · %s\n%d / %d health")%[game.campaign.data.name,game.selected.capitalize(),ceili(game.hero.health),game.hero.max_health])
 		health.max_value=game.hero.max_health;health.value=game.hero.health
-		update_label(target_label,(game.enemy_ai.DATA[game.target.role].name+"\n%d / %d"%[ceili(game.target.health),game.target.max_health]) if is_instance_valid(game.target) else "")
+		update_label(target_label,(str(game.target.get_meta("tactical_name",game.enemy_ai.DATA[game.target.role].name))+"\n%d / %d"%[ceili(game.target.health),game.target.max_health]) if is_instance_valid(game.target) else "")
 		var nearby: Dictionary=game.nearby_interaction()
 		if not is_instance_valid(game.target) and nearby.get("kind","")=="exit": update_label(target_label,str(nearby.name)+"\n"+game.presentation.action_prompt("Travel","E"))
 		toast_time=maxf(0,toast_time-delta)
@@ -650,6 +675,7 @@ func toggle_character() -> void:
 	if game.menu_open and page_id in ["equipment","loadouts"]: close()
 	else: character("Equipment")
 func _input(event: InputEvent) -> void:
+	if inventory_gesture.consume(event,self): get_viewport().set_input_as_handled();return
 	if game.presentation.observe(event): relayout()
 	if status_strip.consume(event): get_viewport().set_input_as_handled();return
 	if minimap.consume(event): get_viewport().set_input_as_handled();return
@@ -764,6 +790,29 @@ func confirm_transaction(message: String, action: Callable, expected: int) -> vo
 	clear("transaction");text(message,24);text("Your balance: %d coins"%game.campaign.data.gold)
 	option("Confirm",func():apply_inventory(action,expected))
 	footer_button("Cancel",func():inventory(bag_mode,false))
+
+func quick_equip(id: String,index: int,expected: int) -> void:
+	inventory_gesture.reset()
+	if expected!=game.campaign.revision: return
+	var model=sheet_model()
+	if index<0 or index>=model.data.inventory.size() or model.data.inventory[index].id!=id: return
+	if id in model.data.equipped.values():
+		tooltip_label.text="Already equipped. Unequip remains available from its equipment slot.";return
+	var was_equipment: bool=character_tab=="Equipment"
+	var old_scroll:=scroll.scroll_vertical
+	var ok: bool=model.equip(index)
+	if not ok:
+		tooltip_label.text=model.gear_error
+		popup_label.add_text("\n"+model.gear_error)
+		return
+	game.refresh_stats();game.persist()
+	var slot: String=model.Rules.target_slot(id,{})
+	if was_equipment: character("Equipment")
+	else: inventory("inventory",false)
+	scroll.set_deferred("scroll_vertical",old_scroll)
+	stats_snapshot=sheet_model().stats().duplicate()
+	tooltip_label.text="Equipped "+model.Gear.ITEMS[id].name+". Attributes and equipment updated."
+	show_item_popup(id,slot,true,true)
 
 func apply_inventory(action: Callable, expected: int) -> void:
 	# A stale button/confirmation cannot operate on an index changed by another click.

@@ -124,7 +124,7 @@ func draw(canvas: Node2D) -> void:
 		var rect:=Rect2(inverse*label.rect.position,label.rect.size)
 		canvas.draw_line(inverse*(label.rect.position+label.rect.size*.5),inverse*label.anchor,Color(.75,.7,.5,.4),1)
 		canvas.draw_rect(rect,Color(.06,.1,.08,.85))
-		canvas.draw_string(ThemeDB.fallback_font,rect.position+Vector2(0,16),DATA[label.enemy.role].name,HORIZONTAL_ALIGNMENT_CENTER,160,14,Color("dfc9a0"))
+		canvas.draw_string(ThemeDB.fallback_font,rect.position+Vector2(0,16),label.enemy.actor.get_meta("tactical_name",DATA.get(label.enemy.role,DATA.enforcer).name),HORIZONTAL_ALIGNMENT_CENTER,160,14,Color("dfc9a0"))
 	for e in game.enemies:
 		if not e.actor.visible: continue
 		var p: Vector2=e.actor.position

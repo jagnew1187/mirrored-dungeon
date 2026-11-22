@@ -3,7 +3,7 @@ extends Node2D
 var game: Node
 
 func _process(_delta: float) -> void:
-	visible=not game.menu_open and (game.show_touch or game.presentation.touch_mode or game.touch_id>=0)
+	visible=not (game.get("tactical")!=null and game.tactical.active) and not game.menu_open and (game.show_touch or game.presentation.touch_mode or game.touch_id>=0)
 	queue_redraw()
 
 func _draw() -> void:

@@ -1,4 +1,4 @@
-name: Publish Mirrored Dungeon RC8 Mobile Combat Fixes
+name: Publish Mirrored Dungeon TC-02 Tactical Combat
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    name: Verify locally tested RC8 production export
+    name: Verify locally tested TC-02 production export
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -39,8 +39,8 @@ jobs:
           site = pathlib.Path('web')
           manifest = json.loads((site / 'release-manifest.json').read_text())
           info = json.loads((site / 'build-info.json').read_text())
-          assert manifest['release'] == info['pass'] == '11.5 RC8'
-          assert '11.5 RC8' in (pathlib.Path('godot-poc/scripts/interface.gd')).read_text()
+          assert manifest['release'] == info['pass'] == 'TC-02'
+          assert 'TC-02' in (pathlib.Path('godot-poc/scripts/interface.gd')).read_text()
           assert set(p.name for p in site.iterdir()) == set(manifest['files']) | {'release-manifest.json'}
           for name, record in manifest['files'].items():
               assert pathlib.Path(name).name == name
@@ -57,8 +57,8 @@ jobs:
           assert digest == manifest['sourceSha256'] == info['sourceSha256']
           assert (site / 'index.wasm').read_bytes()[:4] == b'\0asm'
           assert (site / 'index.pck').stat().st_size > 1000000
-          assert 'RC8' in (site / 'index.html').read_text()
-          print('Verified exact locally tested RC8 export and matching corrected source.')
+          assert 'TC-02' in (site / 'index.html').read_text()
+          print('Verified exact locally tested TC-02 export and matching corrected source.')
           PY
       - name: Upload playable Web build
         uses: actions/upload-pages-artifact@v4
@@ -80,7 +80,7 @@ jobs:
     steps:
       - name: Configure existing Pages site
         uses: actions/configure-pages@v5
-      - name: Deploy Pass 11.5 RC8
+      - name: Deploy Pass TC-02
         id: deployment
         uses: actions/deploy-pages@v4
 

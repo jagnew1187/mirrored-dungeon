@@ -60,7 +60,7 @@ var enemy_ai = preload("res://scripts/enemy_ai.gd").new()
 const ELITE := "mill-enforcer-v1"
 
 func _ready() -> void:
-	get_window().title="Mirrored Dungeon · Pass 11.5 RC8"
+	get_window().title="Mirrored Dungeon · Pass 11.5 RC9"
 	presentation.sync_web_viewport(get_window())
 	presentation.touch_mode=presentation.mobile_web or DisplayServer.is_touchscreen_available()
 	get_viewport().size_changed.connect(update_presentation)
@@ -71,12 +71,12 @@ func _ready() -> void:
 		JavaScriptBridge.get_interface("window").addEventListener("pagehide",web_release_callback)
 		JavaScriptBridge.get_interface("document").addEventListener("visibilitychange",web_release_callback)
 		web_layout_callback=JavaScriptBridge.create_callback(func(_arguments):
-			if is_instance_valid(overlay): overlay.call_deferred("relayout"))
+			if is_instance_valid(overlay): overlay.request_relayout())
 		var visual=JavaScriptBridge.get_interface("window").visualViewport
 		if visual!=null: visual.addEventListener("resize",web_layout_callback);visual.addEventListener("scroll",web_layout_callback)
 	rng.seed=8026;abilities.game=self;enemy_ai.game=self
 	campaign.fresh("knight");campaign.slot="";stats=campaign.stats()
-	overlay=CanvasLayer.new();overlay.set_script(load("res://scripts/interface.gd"));overlay.game=self;add_child(overlay)
+	overlay=CanvasLayer.new();overlay.physics_interpolation_mode=Node.PHYSICS_INTERPOLATION_MODE_OFF;overlay.set_script(load("res://scripts/interface.gd"));overlay.game=self;add_child(overlay)
 	for i in range(8):
 		var sound:=AudioStreamPlayer.new();add_child(sound);sound_pool.append(sound)
 	enter_area("vigil");overlay.page("title")
@@ -128,7 +128,7 @@ func enter_area(id: String, restored_health: float=-1.0, entrance: String="", la
 			var fallback: Array[Vector2]=Transitions.placements(area,area.spawn,Vector2.DOWN)
 			if not fallback.is_empty(): hero.position=fallback[0];arrival_positions=fallback
 		transition_until=elapsed+.6
-	camera=Camera2D.new();camera.position=hero.position;camera.limit_left=0;camera.limit_top=0;camera.limit_right=int(area.bounds.x);camera.limit_bottom=int(area.bounds.y);area.add_child(camera);camera.make_current();update_presentation()
+	camera=Camera2D.new();camera.process_callback=Camera2D.CAMERA2D_PROCESS_PHYSICS;camera.process_physics_priority=100;camera.position_smoothing_enabled=false;camera.position=hero.position;camera.limit_left=0;camera.limit_top=0;camera.limit_right=int(area.bounds.x);camera.limit_bottom=int(area.bounds.y);area.add_child(camera);camera.make_current();update_presentation()
 	if id!="road": campaign.data.checkpoint=id
 	if id=="bannerfall": campaign.add_loot("pilgrim-cache","pilgrim_boots",id,safe_loot_position(Vector2(980,740)))
 	persist()
@@ -137,10 +137,12 @@ func enter_area(id: String, restored_health: float=-1.0, entrance: String="", la
 		for i in range(MEMBERS.size()):
 			if not defeated.has(MEMBERS[i]): spawn_enemy(Vector2(2600+i*140,590),MEMBERS[i],false,"shield" if i==0 else "militia")
 		if not campaign.data.claims.has(ELITE): spawn_enemy(Vector2(2230,850),ELITE,false,"enforcer")
+	area.reset_physics_interpolation()
+	camera.reset_smoothing();camera.force_update_scroll()
 	if is_instance_valid(overlay.minimap): overlay.minimap.refresh()
 
 func spawn_enemy(p: Vector2, id: String, random_population: bool, role := "militia") -> void:
-	var actor:=CharacterBody2D.new();actor.set_script(load("res://scripts/actor.gd"));actor.kind="enemy";actor.role=role;actor.health=enemy_ai.DATA[role].hp;actor.max_health=actor.health;actor.position=p;actor.authored=not random_population;area.actors.add_child(actor)
+	var actor:=CharacterBody2D.new();actor.set_script(load("res://scripts/actor.gd"));actor.kind="enemy";actor.role=role;actor.health=enemy_ai.DATA[role].hp;actor.max_health=actor.health;actor.position=p;actor.authored=not random_population;area.actors.add_child(actor);actor.reset_physics_interpolation()
 	enemies.append({"role":role,"aim":Vector2.RIGHT,"pattern":0,"actor":actor,"home":p,"id":id,"encounter":"" if random_population else ENCOUNTER,"random":random_population,"cooldown":0.6,"state":"idle","windup":0.0,"stagger":0.0,"wander":p,"wander_at":elapsed+2.0,"route":PackedVector2Array(),"repath":0.0})
 
 func spawn_random() -> void:
@@ -270,7 +272,7 @@ func damage_enemy(e: Dictionary, amount: float, source := Vector2.INF) -> void:
 	if not is_instance_valid(e.actor) or e.actor.health<=0: return
 	var blocked:=false
 	if source==Vector2.INF: source=hero.position
-	if e.role in ["shield","enforcer"] and e.state not in ["recover","lunge"] and e.stagger<=0:
+	if e.get("armor_role",e.role) in ["shield","enforcer"] and e.state not in ["recover","lunge"] and e.stagger<=0:
 		var facing:=Vector2.RIGHT.rotated(e.actor.DIRECTIONS.find(e.actor.direction)*PI/4)
 		if facing.dot(e.actor.position.direction_to(source))>0.55: amount*=0.4;blocked=true
 	e.actor.modulate=Color.WHITE
@@ -284,6 +286,9 @@ func damage_enemy(e: Dictionary, amount: float, source := Vector2.INF) -> void:
 	numbers.append({"pos":number_origin-Vector2(0,stack*22),"text":("BLOCK " if blocked else "")+overlay.ItemPresenter.number(amount),"time":0.8,"blocked":blocked})
 	play_sound("hit-arcane" if selected=="mage" else "hit-metal")
 	if e.actor.health>0: return
+	enemy_defeated(e)
+
+func enemy_defeated(e: Dictionary) -> void:
 	if e.random:
 		random_dead.append(int(e.id))
 		if random_dead.size()==3: respawn_time=elapsed+30

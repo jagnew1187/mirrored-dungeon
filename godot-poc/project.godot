@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Mirrored Dungeon — Godot POC"
-config/version="11.5-RC8"
+config/name="Mirrored Dungeon TC-01"
+config/version="11.5-RC9"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.7")
 
@@ -24,6 +24,10 @@ window/stretch/mode="disabled"
 [input_devices]
 
 pointing/emulate_mouse_from_touch=true
+
+[physics]
+
+common/physics_interpolation=true
 
 [rendering]
 textures/vram_compression/import_etc2_astc=true

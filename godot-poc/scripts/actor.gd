@@ -73,6 +73,10 @@ func begin_death(remove_after := true) -> void:
 	collision_layer=0;collision_mask=0;set_process(true)
 	presentation_state="death"
 
+func _physics_process(_delta: float) -> void:
+	# Transform changes share the physics clock; frame animation remains render-driven.
+	if not paused and is_instance_valid(sprite): sprite.position=sprite_rest+(hit_offset*(hurt/.16)).round()
+
 func _process(delta: float) -> void:
 	if configured!=kind: configure()
 	# Defeat presentation may finish under the defeat overlay; simulation stays paused.
@@ -87,7 +91,6 @@ func _process(delta: float) -> void:
 	if paused: sprite.pause();return
 	notice_time=maxf(0,notice_time-delta)
 	hurt=maxf(0,hurt-delta);release_flash=maxf(0,release_flash-delta);guard_time=maxf(0,guard_time-delta)
-	sprite.position=sprite_rest+(hit_offset*(hurt/.16)).round()
 	sprite.modulate=Color(1.6,1.4,1.2) if hurt>.12 else (Color(1.15,.85,.75) if hurt>0 else Color.WHITE)
 	if attacking:
 		attack_age+=delta
